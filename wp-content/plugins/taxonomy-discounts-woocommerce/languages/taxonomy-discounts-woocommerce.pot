@@ -1,0 +1,243 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Taxonomy / Term based Discounts for WooCommerce\n"
+"POT-Creation-Date: 2019-02-20 09:09+0000\n"
+"PO-Revision-Date: 2016-03-22 11:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: Webdados <info@webdados.pt>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: taxonomy-discounts-woocommerce.php:44
+msgid ""
+"<strong>Taxonomy/Term and Role based Discounts for WooCommerce</strong> is "
+"enabled but not effective. It requires <strong>WooCommerce</strong> in "
+"order to work."
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:171
+#: taxonomy-discounts-woocommerce.php:925
+msgid "Taxonomy/Term and Role based Discounts for WooCommerce"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:172
+msgid "Taxonomy Discounts"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:188
+msgid "Are you sure you want to permanently delete this discount rule?"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:258
+msgid "all users"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:259
+msgid "logged in users"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:269
+msgid "Percentage"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:272
+msgid "Buy x get y free"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:845
+#, php-format
+msgid "<strong>%d%%</strong> discount"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:847
+#: taxonomy-discounts-woocommerce.php:1138
+#, php-format
+msgid "From <strong>%d</strong> bought, <strong>%d%%</strong> discount"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:854
+#: taxonomy-discounts-woocommerce.php:1000
+#: taxonomy-discounts-woocommerce.php:1142
+#, php-format
+msgid "For each <strong>%s</strong> bought <strong>%s</strong> is free"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:928
+msgid "Rate this plugin on WordPress.org"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:930
+msgid "Check out our other plugins"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:932
+msgid "Buy me a beer"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:945
+msgid "Add new Taxonomy/Term based discount rule:"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:950
+#: taxonomy-discounts-woocommerce.php:1082
+msgid "Taxonomy"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:953
+#: taxonomy-discounts-woocommerce.php:980
+#: taxonomy-discounts-woocommerce.php:1245
+msgid "choose"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:971
+#: taxonomy-discounts-woocommerce.php:1083
+msgid "User role"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:977
+msgid "Discount type"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:986
+#: taxonomy-discounts-woocommerce.php:1173
+msgid "Min. Qtt."
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:986
+#: taxonomy-discounts-woocommerce.php:1084
+#: taxonomy-discounts-woocommerce.php:1175
+msgid "Discount"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:986
+msgid "Aggregate variations"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:994
+#: taxonomy-discounts-woocommerce.php:1021
+#: taxonomy-discounts-woocommerce.php:1034
+#: taxonomy-discounts-woocommerce.php:1197
+#: taxonomy-discounts-woocommerce.php:1203
+msgid "No"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:995
+#: taxonomy-discounts-woocommerce.php:1020
+#: taxonomy-discounts-woocommerce.php:1033
+#: taxonomy-discounts-woocommerce.php:1196
+#: taxonomy-discounts-woocommerce.php:1202
+msgid "Yes"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1012
+#: taxonomy-discounts-woocommerce.php:1081
+msgid "Priority"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1016
+#: taxonomy-discounts-woocommerce.php:1085
+msgid "Disable extra coupon discounts"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1017
+msgid "Disable coupons"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1030
+#: taxonomy-discounts-woocommerce.php:1086
+msgid "Active"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1038
+#: taxonomy-discounts-woocommerce.php:1087
+msgid "From"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1040
+#: taxonomy-discounts-woocommerce.php:1046
+#: taxonomy-discounts-woocommerce.php:1207
+#: taxonomy-discounts-woocommerce.php:1211
+msgid "yyyy-mm-dd"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1044
+#: taxonomy-discounts-woocommerce.php:1088
+msgid "To"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1055
+#: taxonomy-discounts-woocommerce.php:1215
+msgid "Save"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1076
+msgid "Discount rules"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1081
+msgid "Pri."
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1082
+#: taxonomy-discounts-woocommerce.php:1241
+msgid "Term"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1084
+msgid "Type"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1085
+msgid "Dis. coupons"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1107
+msgid "Edit"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1111
+msgid "Delete Permanently"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1120
+msgid "All users"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1123
+msgid "Logged in users"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1139
+msgid "aggr. var."
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1162
+msgid "Cancel"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1179
+msgid "Do not aggr. var."
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1180
+msgid "Aggr. var."
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1225
+msgid "No Taxonomy/Term based discounts created yet"
+msgstr ""
+
+#: taxonomy-discounts-woocommerce.php:1256
+msgid "No terms available"
+msgstr ""

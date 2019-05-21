@@ -1,0 +1,1264 @@
+/* line 45, ../sass/bk-main.scss */
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+/* line 49, ../sass/bk-main.scss */
+html, body {
+  width: 100%;
+}
+
+/* line 52, ../sass/bk-main.scss */
+body {
+  height: 100%;
+  font-size: 1.25em;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  animation: fadein 3s;
+  overflow-x: hidden;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 64, ../sass/bk-main.scss */
+#sp-loader {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+/* line 73, ../sass/bk-main.scss */
+p {
+  font-size: 1.4em;
+  color: #000000;
+}
+
+/* line 77, ../sass/bk-main.scss */
+.vc-theme {
+  overflow: hidden;
+}
+
+/* line 81, ../sass/bk-main.scss */
+.page-header {
+  position: relative;
+  z-index: 12;
+  padding-bottom: 0;
+  margin: 0;
+  border-bottom: 0;
+}
+/* line 87, ../sass/bk-main.scss */
+.page-header .menu-toggle {
+  cursor: pointer;
+  position: absolute;
+  top: 42px;
+  right: 30px;
+  width: 55px;
+  height: 40px;
+}
+/* line 94, ../sass/bk-main.scss */
+.page-header .menu-toggle .hamburger {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+}
+/* line 100, ../sass/bk-main.scss */
+.page-header .menu-toggle.fixed {
+  top: 20px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 104, ../sass/bk-main.scss */
+.page-header .menu-toggle .group-hamburger {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+}
+/* line 111, ../sass/bk-main.scss */
+.page-header .group-hamburger span {
+  display: block;
+  position: absolute;
+  left: 2px;
+  width: 40px;
+  height: 3px;
+  background-color: #d1b16e;
+  transition: background .2s ease;
+}
+/* line 120, ../sass/bk-main.scss */
+.page-header .group-hamburger .hamburger-1 {
+  top: 4px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 125, ../sass/bk-main.scss */
+.page-header .group-hamburger .hamburger-2 {
+  top: 13px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 129, ../sass/bk-main.scss */
+.page-header .group-hamburger .hamburger-3 {
+  top: 22px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 133, ../sass/bk-main.scss */
+.page-header .group-hamburger.fixed .hamburger-1 {
+  top: 23px;
+  transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
+}
+/* line 137, ../sass/bk-main.scss */
+.page-header .group-hamburger.fixed .hamburger-2 {
+  opacity: 0;
+}
+/* line 140, ../sass/bk-main.scss */
+.page-header .group-hamburger.fixed .hamburger-3 {
+  transform: matrix(-0.7071, 0.7071, -0.7071, -0.7071, 0, 0);
+}
+/* line 143, ../sass/bk-main.scss */
+.page-header .top-ber {
+  position: fixed;
+  width: 100%;
+  height: 130px;
+  z-index: 9;
+}
+
+/* line 150, ../sass/bk-main.scss */
+.logo {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 60px;
+}
+/* line 154, ../sass/bk-main.scss */
+.logo img {
+  width: 10em;
+}
+
+/* line 158, ../sass/bk-main.scss */
+.logo:after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 3px;
+  background: #d1b16e;
+}
+
+/* line 167, ../sass/bk-main.scss */
+.header-benner {
+  font-size: 2em;
+  color: #fff;
+  line-height: 1;
+}
+/* line 171, ../sass/bk-main.scss */
+.header-benner span {
+  color: #d1b16e;
+}
+
+/* line 175, ../sass/bk-main.scss */
+.page-header.sub-page .menu-toggle {
+  cursor: pointer;
+  position: absolute;
+  top: 21px;
+  width: 55px;
+  height: 40px;
+}
+
+/* line 183, ../sass/bk-main.scss */
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+/* line 193, ../sass/bk-main.scss */
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 200, ../sass/bk-main.scss */
+.parallax-fullpage {
+  height: 100%;
+}
+
+/* line 203, ../sass/bk-main.scss */
+.page-warp {
+  display: table;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  background-attachment: fixed;
+  position: fixed;
+  z-index: 1;
+}
+/* line 211, ../sass/bk-main.scss */
+.page-warp .warp {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 218, ../sass/bk-main.scss */
+.group-btn {
+  margin-top: 60px;
+}
+/* line 220, ../sass/bk-main.scss */
+.group-btn .btn-srabua {
+  padding: 10px 0px;
+  background: #d1b16e;
+  display: inline-block;
+  font-weight: 500;
+  width: 250px;
+  font-size: 1em;
+  color: #fff;
+}
+
+/* line 230, ../sass/bk-main.scss */
+.mouse-bottom {
+  position: fixed;
+  bottom: 0;
+  left: calc(50% - 15px);
+  z-index: 1;
+}
+
+/* line 236, ../sass/bk-main.scss */
+.up-down {
+  position: absolute;
+  -webkit-animation: bar 1s infinite;
+  /* Safari 4+ */
+}
+
+/* line 240, ../sass/bk-main.scss */
+#sprinkles path {
+  -webkit-animation: sprinkle-spin 1s infinite;
+  /* Safari 4+ */
+  -webkit-transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes frosting-opacity {
+  0%, 100% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes sprinkle-spin {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bar {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+/* line 273, ../sass/bk-main.scss */
+.front-page {
+  height: 100%;
+}
+
+/* line 276, ../sass/bk-main.scss */
+.main-page {
+  background: #fff;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 282, ../sass/bk-main.scss */
+.main-page.fixed {
+  transform: matrix(1, 0, 0, 1, -225, 0);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 286, ../sass/bk-main.scss */
+.sub-top-ber {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  z-index: 9;
+  background: #fff;
+  box-shadow: 1px 1px 1px 1px #fff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 295, ../sass/bk-main.scss */
+.sub-top-ber.fixed {
+  box-shadow: 1px 1px 1px 1px #e8e8e8;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 299, ../sass/bk-main.scss */
+.header-title {
+  display: block;
+  position: absolute;
+  top: 27px;
+  width: 50%;
+  left: 50%;
+  margin-left: -25%;
+  text-align: center;
+}
+
+/* line 308, ../sass/bk-main.scss */
+.booking-toggle {
+  position: absolute;
+  top: 27px;
+  left: 30px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* line 315, ../sass/bk-main.scss */
+.affix {
+  position: fixed;
+  top: 0;
+}
+
+/* line 319, ../sass/bk-main.scss */
+.block-wrapper {
+  padding-top: 134px;
+  background-color: #fff;
+}
+
+/* line 323, ../sass/bk-main.scss */
+.block-wrapper.footer-block-top {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+/* line 327, ../sass/bk-main.scss */
+.frontpage-right {
+  line-height: 1.25;
+  margin-bottom: 62px;
+}
+
+/* line 331, ../sass/bk-main.scss */
+.sub-page-mini .frontpage-right {
+  line-height: 1.25;
+  margin-bottom: 62px;
+}
+
+/* line 335, ../sass/bk-main.scss */
+.menu-location {
+  padding-left: 140px;
+  padding-right: 140px;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* line 343, ../sass/bk-main.scss */
+.menu-location:before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 50px;
+  height: 2px;
+  background: #d1b16e;
+}
+
+/* line 351, ../sass/bk-main.scss */
+.header-contant {
+  font-size: 2em;
+  line-height: 1;
+  padding-bottom: 1em;
+}
+/* line 355, ../sass/bk-main.scss */
+.header-contant span {
+  color: #d1b16e;
+}
+
+/* line 359, ../sass/bk-main.scss */
+.header-contant-sub {
+  font-size: 2em;
+  line-height: 1;
+  padding-bottom: 1em;
+  padding-left: 140px;
+  padding-right: 140px;
+}
+/* line 365, ../sass/bk-main.scss */
+.header-contant-sub span {
+  color: #d1b16e;
+}
+
+/* line 369, ../sass/bk-main.scss */
+.detail-contant {
+  font-size: 0.9em;
+}
+
+/* line 372, ../sass/bk-main.scss */
+.sub-page-mini .detail-contant {
+  font-size: 0.9em;
+  padding: 0 140px;
+}
+
+/* line 376, ../sass/bk-main.scss */
+.heading-small {
+  width: 60%;
+  font-size: 2em;
+  line-height: 1;
+  font-weight: 100;
+  margin-top: 1em;
+}
+/* line 382, ../sass/bk-main.scss */
+.heading-small span {
+  color: #d1b16e;
+  padding-right: 15px;
+}
+
+/* line 387, ../sass/bk-main.scss */
+.vc-theme:not(:first-child) {
+  padding-top: 3em;
+  clear: both;
+}
+
+/* line 391, ../sass/bk-main.scss */
+.header-Opening {
+  font-size: 2em;
+  line-height: 1;
+  font-weight: 100;
+  padding-top: 1em;
+  color: #d1b16e;
+}
+
+/* line 398, ../sass/bk-main.scss */
+.group-day:first-child {
+  padding-top: 1.5em;
+}
+
+/* line 401, ../sass/bk-main.scss */
+.group-day {
+  text-align: left;
+  line-height: 1;
+}
+/* line 404, ../sass/bk-main.scss */
+.group-day .name {
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 409, ../sass/bk-main.scss */
+.group-day .detail {
+  display: inline-block;
+  line-height: 1.2;
+}
+
+/* line 414, ../sass/bk-main.scss */
+.detail-open-bottom {
+  font-size: 0.9em;
+  padding-top: 4em;
+}
+
+/* line 418, ../sass/bk-main.scss */
+.page-header .main-menu-wrapper {
+  width: 450px;
+  right: -450px;
+  padding: 0 0 0 170px;
+}
+
+/* line 423, ../sass/bk-main.scss */
+.page-header .main-menu-wrapper {
+  position: fixed;
+  width: 170px;
+  top: 0px;
+  right: -170px;
+  bottom: 0;
+  background: #fff;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  padding: 0 0 0 45px;
+  z-index: 8;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 435, ../sass/bk-main.scss */
+.page-header .main-menu-wrapper.fixed {
+  transform: matrix(1, 0, 0, 1, -450, 0);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 439, ../sass/bk-main.scss */
+.page-header .main-menu-wrapper .list-aligner {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 446, ../sass/bk-main.scss */
+.page-header .main-menu-wrapper ul {
+  padding: 60px 0 60px 0;
+}
+
+/* line 449, ../sass/bk-main.scss */
+.is-frontpage .main-menu .home-link {
+  display: none;
+}
+
+/* line 452, ../sass/bk-main.scss */
+.page-header .main-menu-wrapper a {
+  display: inline-block;
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+/* line 458, ../sass/bk-main.scss */
+.bg-full {
+  background-image: url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  padding-top: 60.2%;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 2em;
+}
+
+/* line 467, ../sass/bk-main.scss */
+.warp-bg {
+  position: absolute;
+  top: calc(50% - 5em);
+  width: 100%;
+  text-align: center;
+}
+
+/* line 473, ../sass/bk-main.scss */
+.content-center {
+  padding: 1em 0;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 2em;
+  color: #fff;
+  line-height: 1.2;
+}
+
+/* line 481, ../sass/bk-main.scss */
+.frontpage-left {
+  position: relative;
+}
+
+/* line 484, ../sass/bk-main.scss */
+.header-about-hours {
+  color: #d1b16e;
+  margin-bottom: 15px;
+}
+
+/* line 488, ../sass/bk-main.scss */
+.group-open-day {
+  margin-bottom: 10px;
+}
+/* line 490, ../sass/bk-main.scss */
+.group-open-day .name {
+  width: 150px;
+  display: inline-block;
+}
+/* line 494, ../sass/bk-main.scss */
+.group-open-day .detail {
+  width: 200px;
+  display: inline-block;
+}
+
+/* line 499, ../sass/bk-main.scss */
+.group-header {
+  background: #fff;
+}
+
+@media only screen and (min-width: 45em) {
+  /* line 503, ../sass/bk-main.scss */
+  .content-center {
+    font-size: 1em;
+  }
+
+  /* line 506, ../sass/bk-main.scss */
+  .page-header .main-menu-wrapper a {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  /* line 510, ../sass/bk-main.scss */
+  .page-header .main-menu-wrapper ul {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0 0 20px 0;
+  }
+
+  /* line 517, ../sass/bk-main.scss */
+  .page-header .main-menu-wrapper .list-aligner {
+    position: relative;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  /* line 523, ../sass/bk-main.scss */
+  .page-header .main-menu-wrapper {
+    width: 450px;
+    right: -450px;
+    padding: 0 0 0 150px;
+  }
+
+  /* line 528, ../sass/bk-main.scss */
+  .block-wrapper .page-content {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  /* line 532, ../sass/bk-main.scss */
+  .sub-page-mini .block-wrapper .page-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* line 536, ../sass/bk-main.scss */
+  .background-gold {
+    background: #f5f0e9;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  /* line 541, ../sass/bk-main.scss */
+  .booking-toggle {
+    left: 50px;
+  }
+
+  /* line 544, ../sass/bk-main.scss */
+  .frontpage-right {
+    width: 100%;
+    margin-left: 0%;
+    padding: 0;
+    line-height: 1.303030303;
+  }
+
+  /* line 550, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-right {
+    width: 100%;
+    margin-left: 0%;
+    padding: 0;
+    line-height: 1.303030303;
+    margin-bottom: 0;
+  }
+
+  /* line 557, ../sass/bk-main.scss */
+  .frontpage-left {
+    width: 37.5%;
+    padding-right: 0;
+    position: relative;
+  }
+
+  /* line 562, ../sass/bk-main.scss */
+  .frontpage-left {
+    width: 75%;
+  }
+
+  /* line 565, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-left {
+    width: 100%;
+  }
+
+  /* line 568, ../sass/bk-main.scss */
+  .booking-toggle {
+    left: 34px;
+  }
+
+  /* line 571, ../sass/bk-main.scss */
+  .page-header .menu-toggle {
+    right: 92px;
+  }
+
+  /* line 574, ../sass/bk-main.scss */
+  .frontpage-right.num-2 {
+    margin-top: 2.2em;
+    margin-bottom: 0px;
+  }
+
+  /* line 578, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-right.num-2 {
+    margin-top: 0em;
+    margin-bottom: 0px;
+  }
+}
+@media only screen and (min-width: 62em) {
+  /* line 584, ../sass/bk-main.scss */
+  .content-center {
+    font-size: 1em;
+  }
+
+  /* line 587, ../sass/bk-main.scss */
+  .frontpage-left {
+    width: 50%;
+    padding-right: 8.3333333333%;
+    float: left;
+  }
+
+  /* line 592, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-left {
+    width: 50%;
+    padding-right: 0;
+    float: left;
+  }
+
+  /* line 597, ../sass/bk-main.scss */
+  .frontpage-right {
+    width: 50%;
+    float: right;
+    margin-left: 0;
+  }
+
+  /* line 602, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-right {
+    width: 50%;
+    float: right;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 75em) {
+  /* line 610, ../sass/bk-main.scss */
+  .content-center {
+    font-size: 2em;
+  }
+
+  /* line 613, ../sass/bk-main.scss */
+  .block-wrapper .page-content {
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+
+  /* line 617, ../sass/bk-main.scss */
+  .background-gold {
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+
+  /* line 621, ../sass/bk-main.scss */
+  .sub-page-mini .block-wrapper .page-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* line 625, ../sass/bk-main.scss */
+  .booking-toggle {
+    left: 85px;
+  }
+
+  /* line 628, ../sass/bk-main.scss */
+  .frontpage-right {
+    width: 50.6666666667%;
+    padding-left: 7.3333333333%;
+    float: right;
+    margin-left: 0;
+  }
+
+  /* line 634, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-right {
+    width: 50%;
+    float: right;
+    margin-left: 0;
+  }
+
+  /* line 639, ../sass/bk-main.scss */
+  .frontpage-left {
+    width: 42.3333333333%;
+    padding-right: 0;
+  }
+
+  /* line 643, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-left {
+    width: 50%;
+    float: left;
+    margin-left: 0;
+  }
+}
+/* line 649, ../sass/bk-main.scss */
+.background-gold {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+@media only screen and (min-width: 100em) {
+  /* line 654, ../sass/bk-main.scss */
+  .block-wrapper .page-content {
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+
+  /* line 658, ../sass/bk-main.scss */
+  .background-gold {
+    background: #f5f0e9;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+
+  /* line 665, ../sass/bk-main.scss */
+  .sub-page-mini .block-wrapper .page-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* line 669, ../sass/bk-main.scss */
+  .booking-toggle {
+    left: 98px;
+  }
+
+  /* line 672, ../sass/bk-main.scss */
+  .frontpage-right {
+    width: 50%;
+    padding-left: 16px;
+    margin-bottom: 2.25em;
+  }
+
+  /* line 677, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-right {
+    width: 50%;
+    padding-left: 0px;
+    margin-bottom: 0em;
+  }
+
+  /* line 682, ../sass/bk-main.scss */
+  .frontpage-left {
+    width: 42.5%;
+    padding-right: 0;
+  }
+
+  /* line 686, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-left {
+    width: 50%;
+    padding-right: 0;
+  }
+}
+/* line 691, ../sass/bk-main.scss */
+.group-border {
+  border: 1px solid #d1b16e;
+  padding: 50px;
+  border-right: none;
+  background: #fff;
+}
+
+/* line 700, ../sass/bk-main.scss */
+footer {
+  background: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 705, ../sass/bk-main.scss */
+.img-footer {
+  width: 150px;
+  display: inline-block;
+}
+
+/* line 709, ../sass/bk-main.scss */
+.footer-text {
+  font-size: 14px;
+}
+
+/* line 712, ../sass/bk-main.scss */
+.ul-footer li {
+  line-height: 1.4;
+  color: #d1b16e;
+  font-size: 11px;
+}
+
+/* line 717, ../sass/bk-main.scss */
+.ul-footer li a {
+  color: #333;
+  font-size: 14px;
+}
+
+/* line 721, ../sass/bk-main.scss */
+.lang-footer {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 726, ../sass/bk-main.scss */
+.lang-footer li {
+  display: inline-block;
+  padding-right: 15px;
+  position: relative;
+  font-size: 11px;
+}
+
+/* line 733, ../sass/bk-main.scss */
+.lang-footer li a {
+  color: #333;
+  font-size: 13px;
+}
+
+/* line 737, ../sass/bk-main.scss */
+.lang-footer li:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 7.5px;
+  width: 1px;
+  height: 10px;
+  background: #6b6b6b;
+}
+
+/* line 746, ../sass/bk-main.scss */
+.lang-footer li:last-child:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 7.5px;
+  width: 0px;
+  height: 10px;
+  background: #fff;
+}
+
+/* line 755, ../sass/bk-main.scss */
+.circle-border {
+  border: 2px solid #d1b16e;
+  padding: 8px;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+  font-size: 16px;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/* line 766, ../sass/bk-main.scss */
+.circle-border i {
+  position: relative;
+  color: #d1b16e;
+  top: -5px;
+  left: -2px;
+}
+
+/* line 772, ../sass/bk-main.scss */
+.circle-border i[class*="fa-facebook"] {
+  left: 1px;
+}
+
+/* line 775, ../sass/bk-main.scss */
+.circle-border i[class*="fa-youtube-play"] {
+  left: -3px;
+}
+
+/* line 778, ../sass/bk-main.scss */
+.group-footer-detail {
+  position: relative;
+  top: -19px;
+}
+/* line 781, ../sass/bk-main.scss */
+.group-footer-detail p {
+  font-size: 14px;
+  padding-top: 5px;
+  margin: 0;
+  line-height: 1.2;
+}
+/* line 786, ../sass/bk-main.scss */
+.group-footer-detail p span {
+  width: 50px;
+  display: inline-block;
+}
+/* line 790, ../sass/bk-main.scss */
+.group-footer-detail p a {
+  color: #333;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 797, ../sass/bk-main.scss */
+  body {
+    font-size: 62.5% !important;
+  }
+}
+@media (min-aspect-ratio: 16 / 9) {
+  /* line 826, ../sass/bk-main.scss */
+  .fullscreen-bg__video {
+    width: 100%;
+    height: auto;
+  }
+}
+/* line 831, ../sass/bk-main.scss */
+.show-img-chef {
+  display: block;
+}
+
+/* line 834, ../sass/bk-main.scss */
+.img-chef {
+  display: none;
+}
+
+@media (max-aspect-ratio: 16 / 9) {
+  /* line 838, ../sass/bk-main.scss */
+  .fullscreen-bg__video {
+    width: auto;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 844, ../sass/bk-main.scss */
+  .detail-open-bottom {
+    padding-bottom: 4em;
+  }
+
+  /* line 847, ../sass/bk-main.scss */
+  .show-img-chef {
+    display: none;
+  }
+
+  /* line 850, ../sass/bk-main.scss */
+  .img-chef {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  /* line 855, ../sass/bk-main.scss */
+  .background-gold {
+    padding: 30px;
+  }
+
+  /* line 858, ../sass/bk-main.scss */
+  .show-img-chef {
+    display: none;
+  }
+
+  /* line 861, ../sass/bk-main.scss */
+  .img-chef {
+    display: block;
+  }
+
+  /* line 864, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-left.num-1 {
+    padding-top: 0em;
+  }
+
+  /* line 867, ../sass/bk-main.scss */
+  .frontpage-left.num-1 {
+    padding-top: 2em;
+  }
+
+  /* line 870, ../sass/bk-main.scss */
+  .frontpage-right {
+    margin-bottom: 0;
+  }
+
+  /* line 873, ../sass/bk-main.scss */
+  .sub-page-mini .frontpage-right {
+    margin-bottom: 0;
+  }
+
+  /* line 876, ../sass/bk-main.scss */
+  .header-Opening {
+    font-size: 2.3em;
+  }
+
+  /* line 879, ../sass/bk-main.scss */
+  .detail-contant {
+    font-size: 1.5em;
+  }
+
+  /* line 882, ../sass/bk-main.scss */
+  .sub-page-mini .detail-contant {
+    padding: 0 140px;
+  }
+
+  /* line 885, ../sass/bk-main.scss */
+  .detail-open-bottom {
+    font-size: 1.5em;
+  }
+
+  /* line 888, ../sass/bk-main.scss */
+  .detail-opening {
+    font-size: 1em;
+  }
+
+  /* line 891, ../sass/bk-main.scss */
+  .cory-right a {
+    color: #d1b16e;
+  }
+
+  /* line 895, ../sass/bk-main.scss */
+  .moblie-menu .panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+    overflow: hidden;
+  }
+  /* line 901, ../sass/bk-main.scss */
+  .moblie-menu .lang-footer {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+  }
+  /* line 907, ../sass/bk-main.scss */
+  .moblie-menu .panel-default > .panel-heading {
+    color: #333;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  /* line 912, ../sass/bk-main.scss */
+  .moblie-menu .panel-collapse {
+    top: 0;
+    padding: 15px 15px;
+  }
+  /* line 916, ../sass/bk-main.scss */
+  .moblie-menu .group-footer-detail {
+    position: relative;
+    top: 0px;
+  }
+
+  /* line 922, ../sass/bk-main.scss */
+  .block-wrapper.footer-block-top {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* line 926, ../sass/bk-main.scss */
+  .ul-footer {
+    padding: 20px 20px 0;
+  }
+
+  /* line 929, ../sass/bk-main.scss */
+  .logo-footer {
+    text-align: center;
+  }
+
+  /* line 932, ../sass/bk-main.scss */
+  .comma-top img {
+    width: 20px;
+  }
+
+  /* line 935, ../sass/bk-main.scss */
+  .content-center {
+    padding: 1em 0;
+    width: 90%;
+    font-size: 1.5em;
+  }
+
+  /* line 940, ../sass/bk-main.scss */
+  .warp-bg {
+    position: absolute;
+    top: calc(50% - 32%);
+  }
+
+  /* line 944, ../sass/bk-main.scss */
+  .fullscreen-bg {
+    background: url("../images/bg-vdo.jpg") center center/cover no-repeat;
+  }
+
+  /* line 948, ../sass/bk-main.scss */
+  .fullscreen-bg__video {
+    display: none;
+  }
+
+  /* line 951, ../sass/bk-main.scss */
+  .page-header .menu-toggle {
+    top: 20px;
+    right: 20px;
+  }
+
+  /* line 955, ../sass/bk-main.scss */
+  .block-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  /* line 959, ../sass/bk-main.scss */
+  .sub-page-mini .block-wrapper {
+    padding: 0;
+  }
+
+  /* line 962, ../sass/bk-main.scss */
+  .booking-toggle {
+    top: 30px;
+    font-size: 1.5em;
+  }
+
+  /* line 966, ../sass/bk-main.scss */
+  .page-header .top-ber {
+    height: 80px;
+  }
+
+  /* line 969, ../sass/bk-main.scss */
+  .page-header .main-menu-wrapper.fixed {
+    transform: matrix(1, 0, 0, 1, -270, 0);
+  }
+
+  /* line 972, ../sass/bk-main.scss */
+  .page-header .main-menu-wrapper {
+    width: 270px;
+    right: -270px;
+    padding: 0 0 0 30px;
+  }
+
+  /* line 977, ../sass/bk-main.scss */
+  .page-header .main-menu-wrapper a {
+    display: inline-block;
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 5px;
+  }
+
+  /* line 983, ../sass/bk-main.scss */
+  .page-header .main-menu-wrapper ul {
+    padding: 120px 0 60px 0;
+  }
+}

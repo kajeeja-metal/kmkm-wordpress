@@ -1,0 +1,8 @@
+2019-05-16T04:28:08+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 79
+
+2019-05-16T04:28:11+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 79
+
+2019-05-16T04:28:16+00:00 CRITICAL syntax error, unexpected '$term' (T_VARIABLE), expecting ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 79
+
+2019-05-16T04:28:18+00:00 CRITICAL syntax error, unexpected '$term' (T_VARIABLE), expecting ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 79
+

@@ -1,0 +1,548 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH Automatic Role Changer for WooCommerce\n"
+"POT-Creation-Date: 2018-05-08 15:41+0100\n"
+"PO-Revision-Date: 2018-05-08 15:48+0100\n"
+"Last-Translator: \n"
+"Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.13\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __ ;_e;_n:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: plugin-fw\n"
+
+#: functions.php:37
+msgid ""
+"YITH Automatic Role Changer for WooCommerce is enabled but not effective. It "
+"requires WooCommerce in order to work."
+msgstr ""
+"YITH Automatic Role Changer voor WooCommerce is ingeschakeld maar niet "
+"werkend. Het heeft WooCommerce nodig om te werken."
+
+#: includes/class.yith-role-changer-admin-premium.php:68
+msgctxt ""
+"As used in the following sentence: \"The user will adquire the role WHEN\": "
+msgid "When:"
+msgstr "Wanneer:"
+
+#: includes/class.yith-role-changer-admin-premium.php:83
+msgid "User purchases a specific product"
+msgstr "Gebruiker koopt een specifiek product"
+
+#: includes/class.yith-role-changer-admin-premium.php:96
+msgid "Order total is within the following price range"
+msgstr "Het ordertotaal valt binnen de volgende prijsklasse"
+
+#: includes/class.yith-role-changer-admin-premium.php:109
+msgid "Customer's total spend falls within the following price range"
+msgstr "Klant totaal gespendeerde valt binnen de volgende prijsklasse"
+
+#: includes/class.yith-role-changer-admin-premium.php:122
+msgid "User purchases products from specific categories or tags"
+msgstr "Gebruiker koopt product van specifieke categorieën of tags"
+
+#: includes/class.yith-role-changer-admin-premium.php:135
+msgid "Select a price range: "
+msgstr "Selecteer een prijsklasse: "
+
+#: includes/class.yith-role-changer-admin-premium.php:136
+msgid "Fill at least one"
+msgstr "Vul ten minste een"
+
+#: includes/class.yith-role-changer-admin-premium.php:140
+#: includes/class.yith-role-changer-admin-premium.php:265
+msgctxt "start date"
+msgid "From: "
+msgstr "Van: "
+
+#: includes/class.yith-role-changer-admin-premium.php:143
+#: includes/class.yith-role-changer-admin-premium.php:153
+msgid "Amount&hellip;"
+msgstr "Bedrag&hellip;"
+
+#: includes/class.yith-role-changer-admin-premium.php:150
+#: includes/class.yith-role-changer-admin-premium.php:275
+msgctxt "end date"
+msgid "To: "
+msgstr "Tot: "
+
+#: includes/class.yith-role-changer-admin-premium.php:159
+msgid "\"To\" field must be greather than \"From\" field"
+msgstr "\"Tot\" veld moet groter zijn dan \"Van\" veld"
+
+#: includes/class.yith-role-changer-admin-premium.php:165
+msgid "Select a taxonomy: "
+msgstr "Selecteer een taxonomy: "
+
+#: includes/class.yith-role-changer-admin-premium.php:179
+msgid "Category"
+msgstr "Categorie"
+
+#: includes/class.yith-role-changer-admin-premium.php:191
+msgid "Tag"
+msgstr "Tag"
+
+#: includes/class.yith-role-changer-admin-premium.php:254
+msgid "Set a date range: "
+msgstr "Stel een datumbereik in: "
+
+#: includes/class.yith-role-changer-admin-premium.php:256
+#: includes/class.yith-role-changer-admin-premium.php:293
+#: includes/class.yith-role-changer-admin-premium.php:312
+msgid "(Optional)"
+msgstr "(Optioneel)"
+
+#: includes/class.yith-role-changer-admin-premium.php:259
+msgid ""
+"Note: If you do not either enter any end date or a duration in days, this "
+"role will be valid forever"
+msgstr ""
+"Let op: Indien u geen einddatum of duur in dagen invult, zal deze rol altijd "
+"ongeldig zijn"
+
+#: includes/class.yith-role-changer-admin-premium.php:268
+msgctxt "placeholder"
+msgid "From&hellip;"
+msgstr "Van&hellip;"
+
+#: includes/class.yith-role-changer-admin-premium.php:278
+msgctxt "placeholder"
+msgid "To&hellip;"
+msgstr "Tot&hellip;"
+
+#: includes/class.yith-role-changer-admin-premium.php:290
+msgid "Set a duration for the roles (days): "
+msgstr "Stel een duur in voor de rollen (dagen): "
+
+#: includes/class.yith-role-changer-admin-premium.php:296
+msgid ""
+"Note: This role will last as long as specified in these settings, even "
+"though an end date for this rule has been already specified. If the rule has "
+"no end date, and you leave this field empty, the role will never be removed."
+msgstr ""
+"Let op: Deze rol heeft een duur zoals aangegeven in deze instellingen, ook "
+"al is er al een einddatum voor deze regel gespecificeerd. Indien de regel "
+"geen einddatum heeft, en u laat dit veld leeg, zal de rol nooit verwijderd "
+"worden."
+
+#: includes/class.yith-role-changer-admin-premium.php:309
+msgid "Do not apply this rule to users with the following role(s):"
+msgstr "Pas deze regel niet toe op gebruikers met de volgende rol(len):"
+
+#: includes/class.yith-role-changer-admin-premium.php:425
+#: includes/class.yith-role-changer-admin-premium.php:429
+msgid "Activation date: "
+msgstr "Activatiedatum: "
+
+#: includes/class.yith-role-changer-admin-premium.php:432
+msgid "Activated at the time of purchase"
+msgstr "Geactiveerd op het moment van aankoop"
+
+#: includes/class.yith-role-changer-admin-premium.php:438
+#: includes/class.yith-role-changer-admin-premium.php:442
+msgid "Valid until: "
+msgstr "Geldig tot: "
+
+#: includes/class.yith-role-changer-admin-premium.php:445
+msgid "Permanent role"
+msgstr "Permanente rol"
+
+#: includes/class.yith-role-changer-admin-premium.php:466
+#: includes/class.yith-role-changer-admin.php:218
+msgid "Please, name this rule."
+msgstr "Geef deze regel een naam alstublieft."
+
+#: includes/class.yith-role-changer-admin-premium.php:467
+#: includes/class.yith-role-changer-admin.php:219
+msgid ""
+"This name already exists and is used to identify another rule. Please, try "
+"name."
+msgstr ""
+"Deze naam bestaat al en wordt gebruikt om een andere regel te herkennen. "
+"Probeer een andere naam alstublieft."
+
+#: includes/class.yith-role-changer-admin-premium.php:468
+#: includes/class.yith-role-changer-admin.php:220
+msgid "Are you sure you want to delete this rule?"
+msgstr "Weet u zeker dat u deze regel wilt verwijderen?"
+
+#: includes/class.yith-role-changer-admin-premium.php:469
+#: includes/class.yith-role-changer-admin.php:221
+msgid "Are you sure you want to delete all the rules? This cannot be undone."
+msgstr ""
+"Weet u zeker dat u alle regels wilt verwijderen? Deze actie kan niet "
+"ongedaan gemaakt worden."
+
+#: includes/class.yith-role-changer-admin-premium.php:471
+msgid "Are you sure you want to apply this action? This cannot be undone."
+msgstr ""
+"Weet je zeker dat je deze actie wilt toepassen? Dit kan niet ongedaan "
+"gemaakt worden."
+
+#: includes/class.yith-role-changer-admin-premium.php:472
+msgid ""
+"All the orders with valid rules will be processed and assign/switch user "
+"roles automatically."
+msgstr ""
+"Alle bestellingen met geldige regels zullen worden verwerkt en toewijzen/"
+"wijzigen automatisch van gebruikersrol."
+
+#: includes/class.yith-role-changer-admin-premium.php:473
+msgid ""
+"All orders with valid rules between {date_from} and {date_to} will be "
+"processed and will assign/switch user roles automatically."
+msgstr ""
+"Alle bestellingen met geldige regels tussen {date_from} en {date_to} zullen "
+"worden verwerkt en toewijzen/wijzigen automatisch van gebruikersrol."
+
+#: includes/class.yith-role-changer-admin-premium.php:474
+msgid ""
+"All the orders with valid rules since {date_from} will be processed and will "
+"assign/switch user roles automatically."
+msgstr ""
+"Alle bestellingen met geldige regels vanaf {date_from} zullen worden "
+"verwerkt en toewijzen/wijzigen automatisch van gebruikersrol."
+
+#: includes/class.yith-role-changer-admin-premium.php:475
+msgid ""
+"All the orders with valid rules until {date_to} will be processed and will "
+"assign/switch user roles automatically."
+msgstr ""
+"Alle bestellingen met geldige regels tot {date_to} zullen worden verwerkt en "
+"toewijzen/wijzigen automatisch van gebruikersrol."
+
+#: includes/class.yith-role-changer-admin-premium.php:476
+msgid "Warning: \"From\" field must not be greater than \"To\" field"
+msgstr "Waarschuwing: \"Vanaf\" veld moet groter zijn dan \"tot\" veld"
+
+#: includes/class.yith-role-changer-admin.php:124
+msgid "Automatic role changer"
+msgstr "Automatic role changer"
+
+#: includes/class.yith-role-changer-admin.php:144
+msgid "Customer gains the following role: "
+msgid_plural "Customer gains the following roles: "
+msgstr[0] "Klant verdient de volgende rol: "
+msgstr[1] "Klant verdient de volgende rollen: "
+
+#: includes/class.yith-role-changer-admin.php:182
+#, php-format
+msgid "A new role gained with this order"
+msgid_plural "%d new roles gained with this order"
+msgstr[0] "Een nieuwe rol verdient met deze bestelling"
+msgstr[1] "%d nieuwe rollen verdient met deze bestelling"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:130
+msgid "Plugin Documentation"
+msgstr "Plugin Documentatie"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:138
+msgid "Settings"
+msgstr "Instellingen"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:139
+#: includes/class.yith-ywarc-plugin-fw-loader.php:257
+msgid "Premium live demo"
+msgstr "Premium live demo"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:139
+msgid "Live demo"
+msgstr "Live demo"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:143
+#: includes/class.yith-ywarc-plugin-fw-loader.php:200
+msgid "Premium Version"
+msgstr "Premium Versie"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:192
+msgid "Automatic Role Changer"
+msgstr "Automatic Role Changer"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:195
+msgid "Rules"
+msgstr "Regels"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:236
+msgid "Plugin documentation"
+msgstr "Plugin Documentatie"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:240
+msgid "Help Center"
+msgstr "Help Center"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:247
+msgid "Discover the premium version"
+msgstr "Ontdek de premium versie"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:252
+msgid "Free vs Premium"
+msgstr "Free vs Premium"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:262
+msgid "WordPress support forum"
+msgstr "WordPress support forum"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:267
+#: includes/class.yith-ywarc-plugin-fw-loader.php:279
+msgid "Changelog"
+msgstr "Wijzigingenlogboek"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:267
+#: includes/class.yith-ywarc-plugin-fw-loader.php:279
+msgid "current version"
+msgstr "huidige versie"
+
+#: includes/class.yith-ywarc-plugin-fw-loader.php:274
+msgid "Support platform"
+msgstr "Support platform"
+
+#: includes/emails/class.yith-role-changer-admin-email.php:33
+msgid "Automatic Role Changer email for Admin"
+msgstr "Automatic Role Changer e-mail voor Admin"
+
+#: includes/emails/class.yith-role-changer-admin-email.php:34
+msgid ""
+"The administrator will receive an email when a order with roles to be \n"
+"\t\t\tgranted passes to \"Completed\" or \"Processing\" status."
+msgstr ""
+"De administrator zal een e-mail ontvangen wanneer een bestelling met toe te "
+"passen regels\n"
+"\t\t\tnaar \"Compleet\" of \"In behandeling\" status veranderd."
+
+#: includes/emails/class.yith-role-changer-admin-email.php:37
+#: includes/emails/class.yith-role-changer-admin-email.php:38
+msgid "New roles will be added to user"
+msgstr "Nieuwe rollen worden toegevoegd aan gebruiker"
+
+#: includes/emails/class.yith-role-changer-admin-email.php:100
+#: includes/emails/class.yith-role-changer-user-email.php:121
+msgid "Enable/Disable"
+msgstr "Inschakelen/Uitschakelen"
+
+#: includes/emails/class.yith-role-changer-admin-email.php:102
+#: includes/emails/class.yith-role-changer-user-email.php:123
+msgid "Enable this email notification"
+msgstr "Deze e-mail meldingen inschakelen"
+
+#: includes/emails/class.yith-role-changer-admin-email.php:106
+msgid "Recipient(s)"
+msgstr "Ontvanger(s)"
+
+#: includes/emails/class.yith-role-changer-admin-email.php:108
+#, php-format
+msgid "Enter recipients (comma separated) for this email. Defaults to %s."
+msgstr ""
+"Vul ontvangers in voor deze mail (scheiden met komma). Defaults naar %s."
+
+#: includes/emails/class.yith-role-changer-admin-email.php:114
+#: includes/emails/class.yith-role-changer-user-email.php:127
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: includes/emails/class.yith-role-changer-admin-email.php:116
+#: includes/emails/class.yith-role-changer-user-email.php:129
+#, php-format
+msgid ""
+"This controls the email subject line. Leave blank to use the default "
+"subject: <code>%s</code>."
+msgstr ""
+"Dit bepaald het onderwerp van de e-mail. Laat leeg indien u het defautl "
+"ondewerp wilt gebruiken: <code>%s</code>."
+
+#: includes/emails/class.yith-role-changer-admin-email.php:122
+#: includes/emails/class.yith-role-changer-user-email.php:135
+msgid "Email Heading"
+msgstr "E-mail Hoofd"
+
+#: includes/emails/class.yith-role-changer-admin-email.php:124
+#: includes/emails/class.yith-role-changer-user-email.php:137
+#, php-format
+msgid ""
+"This controls the main heading included in the email notification. Leave "
+"blank to use the default heading: <code>%s</code>."
+msgstr ""
+"Dit bepaald het e-mail hoofd bijgevoegd aan de e-mail melding. Laat leeg "
+"indien u het default e-mail hoofd wilt gebruiken: <code>%s</code>."
+
+#: includes/emails/class.yith-role-changer-user-email.php:35
+msgid "Automatic Role Changer email for User"
+msgstr "Automatic Role Changer e-mail voor gebruiker"
+
+#: includes/emails/class.yith-role-changer-user-email.php:36
+msgid ""
+"The user will receive an email when a order with roles to be \n"
+"\t\t\tgranted passes to \"Completed\" or \"Processing\" status."
+msgstr ""
+"De gebruiker zal een e-mail ontvangen wanneer een bestelling met toe te "
+"passen regels\n"
+"\t\t\tnaar \"compleet\" of \"In behandeling\" status veranderd."
+
+#: includes/emails/class.yith-role-changer-user-email.php:39
+#: includes/emails/class.yith-role-changer-user-email.php:40
+msgid "You've earned roles"
+msgstr "U heeft rollen verdient"
+
+#: includes/emails/class.yith-role-changer-user-email.php:143
+msgid "Email type"
+msgstr "E-mail type"
+
+#: includes/emails/class.yith-role-changer-user-email.php:145
+msgid "Choose which format of email to send."
+msgstr "Kies welke e-mail opmaak wordt verzonden."
+
+#: templates/admin/add-rule.php:27
+msgid "The user will:"
+msgstr "De gebruiker zal:"
+
+#: templates/admin/add-rule.php:40
+msgctxt "Complete sentence: The user will gain the role"
+msgid "gain the role"
+msgstr "de rol verdienen"
+
+#: templates/admin/add-rule.php:52
+msgctxt "Complete sentence: The user will switch from this role to this one"
+msgid "switch"
+msgstr "veranderen"
+
+#: templates/admin/add-rule.php:61
+msgctxt "Complete sentence: The user will switch from this role to this one"
+msgid "from this role:"
+msgstr "van deze rol:"
+
+#: templates/admin/add-rule.php:64
+msgctxt "Complete sentence: The user will switch from this role to this one"
+msgid "to this one:"
+msgstr "naar deze rol:"
+
+#: templates/admin/add-rule.php:75
+msgid "Choose a product: "
+msgstr "Kies een product: "
+
+#: templates/admin/add-rule.php:99
+msgid "Search for a product&hellip;"
+msgstr "Zoek een product&hellip;"
+
+#: templates/admin/add-rule.php:115
+msgid "Save rule"
+msgstr "Regel opslaan"
+
+#: templates/admin/add-rule.php:118
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: templates/admin/load-rules.php:23
+msgid "MY RULES"
+msgstr "MIJN REGELS"
+
+#: templates/admin/load-rules.php:26
+msgctxt "toggle button label."
+msgid "Show"
+msgstr "Tonen"
+
+#: templates/admin/load-rules.php:28
+msgctxt "toggle button label."
+msgid "Hide"
+msgstr "Verbergen"
+
+#: templates/admin/load-rules.php:30
+msgctxt "toggle button label."
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: templates/admin/load-rules.php:34
+#, php-format
+msgctxt "\"Show\" / \"Hide\" / \"Delete\" all rules"
+msgid "( %s / %s / %s all rules )"
+msgstr "( %s / %s / %s alle regels )"
+
+#: templates/admin/rules-tab-premium.php:14 templates/admin/rules-tab.php:14
+msgid ""
+"Here you can create and configure your own rules for automatic role switch."
+msgstr ""
+"Hier kunt u uw eigen regels voor automatische rol-verandering creëren en "
+"bewerken."
+
+#: templates/admin/rules-tab-premium.php:19 templates/admin/rules-tab.php:19
+msgid ""
+"To start, click on \"Add new rule\", name your rule and set it up as you "
+"wish. Don't forget to save the settings when you're finished."
+msgstr ""
+"Om te beginnen, klik op \"Nieuwe regel toevoegen\", geef te regel een naam "
+"en stel hem in naar wens. Vergeet niet de wijzigingen op te slaan als u "
+"klaar bent."
+
+#: templates/admin/rules-tab-premium.php:29 templates/admin/rules-tab.php:30
+msgid "Name the rule..."
+msgstr "Geef de regel een naam..."
+
+#: templates/admin/rules-tab-premium.php:31 templates/admin/rules-tab.php:33
+msgid "Add new rule"
+msgstr "Nieuwe regel toevoegen"
+
+#: templates/admin/rules-tab-premium.php:35
+msgid ""
+"This will check all your current orders and search for those matching your "
+"current rules. This will set as many user roles as many that it will find. "
+"This procedure cannot be undone. Use with caution."
+msgstr ""
+"Dit zal al je huidige bestellingen controleren en zoeken naar overeenkomsten "
+"met huidige regels. Dit zal zoveel gebruikersrollen instellen als het "
+"tegenkomt. Deze procedure kan niet ongedaan gemaakt worden. Gebruik het "
+"voorzichtig."
+
+#: templates/admin/rules-tab-premium.php:38
+msgid "Force apply rules"
+msgstr "Forceer toepassen regels"
+
+#: templates/admin/rules-tab-premium.php:41
+msgid "Set a date range to filter the search"
+msgstr "Stel een datumbereik in om de zoekopdracht te filteren"
+
+#: templates/admin/rules-tab-premium.php:42
+msgid "Set dates"
+msgstr "Stel data in"
+
+#: templates/admin/rules-tab-premium.php:51
+msgid "Search for orders by:"
+msgstr "Bestellingen zoeken op:"
+
+#: templates/admin/rules-tab-premium.php:54
+msgid "Created date"
+msgstr "Gemaakt op datum"
+
+#: templates/admin/rules-tab-premium.php:58
+msgid "Completed date"
+msgstr "Afgerond op datum"
+
+#: templates/admin/rules-tab-premium.php:62
+msgid "Paid date"
+msgstr "Betaaldatum"
+
+#: templates/admin/rules-tab-premium.php:67
+msgctxt ""
+"Date format. (Do not change the format to local format, the format must be "
+"YYYY-MM-DD always)"
+msgid "YYYY-MM-DD"
+msgstr "JJJJ-MM-DD"
+
+#: templates/admin/rules-tab-premium.php:72
+msgid "From:"
+msgstr "Vanaf:"
+
+#: templates/admin/rules-tab-premium.php:77
+msgid "To:"
+msgstr "Tot:"
+
+#: templates/emails/role-changer-user.php:34
+msgid "Hi, thanks for your purchase."
+msgstr "Hallo, bedankt voor uw aankoop."
+
+#~ msgid "Total spend falls within the following price range"
+#~ msgstr "Totale uitgaven vallen binnen de volgende prijsklasse"

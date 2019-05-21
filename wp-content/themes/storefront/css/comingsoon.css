@@ -1,0 +1,3443 @@
+/* line 1, ../sass/comingsoon.scss */
+.comingsoon-main {
+  position: relative;
+  margin: 0;
+  padding-bottom: 274px;
+  min-height: 100%;
+  height: 110%;
+  padding-bottom: 0px;
+  /*.row{
+  	margin: 0;
+  }*/
+  /********** general *******/
+  /*********** product *******/
+  /*.product_slide div .video-container iframe,
+  .product_slide div .video-container object,
+  .product_slide div .video-container embed,{
+  	top: 50%;
+  	-webkit-transform: translateY(-50%);
+  		-ms-transform: translateY(-50%);
+  		transform: translateY(-50%);
+  } 
+  */
+  /*********** about *********/
+  /********* contact *******/
+  /********* store *******/
+  /********* faqs *******/
+  /********* sitemap ********/
+}
+/* line 8, ../sass/comingsoon.scss */
+.comingsoon-main .bow {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+/* line 16, ../sass/comingsoon.scss */
+.comingsoon-main .coming-soon {
+  height: 100%;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 28, ../sass/comingsoon.scss */
+.comingsoon-main .hover_color {
+  color: #A8A7A8;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+}
+/* line 36, ../sass/comingsoon.scss */
+.comingsoon-main .hover_color:hover {
+  color: #910000;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+}
+/* line 44, ../sass/comingsoon.scss */
+.comingsoon-main .hover_color2:focus {
+  color: none;
+}
+/* line 48, ../sass/comingsoon.scss */
+.comingsoon-main h1, .comingsoon-main h2, .comingsoon-main h3, .comingsoon-main h4 {
+  margin: 0;
+}
+/* line 52, ../sass/comingsoon.scss */
+.comingsoon-main h1, .comingsoon-main .h1 {
+  font-size: 65px;
+  font-weight: 700;
+  position: relative;
+}
+/* line 59, ../sass/comingsoon.scss */
+.comingsoon-main h2, .comingsoon-main .h2 {
+  font-size: 22px;
+}
+/* line 64, ../sass/comingsoon.scss */
+.comingsoon-main h3, .comingsoon-main .h3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #DCDEDF;
+  margin-bottom: 10px;
+}
+/* line 72, ../sass/comingsoon.scss */
+.comingsoon-main h4, .comingsoon-main .h4 {
+  font-size: 14px;
+}
+/* line 76, ../sass/comingsoon.scss */
+.comingsoon-main .font700 {
+  font-weight: 700;
+}
+/* line 80, ../sass/comingsoon.scss */
+.comingsoon-main .normal_text {
+  font-size: 18px;
+  color: #999799;
+  font-family: 'cordia_newbold';
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+/* line 88, ../sass/comingsoon.scss */
+.comingsoon-main .normal_text_20 {
+  font-size: 20px;
+  color: #999799;
+  font-family: 'cordia_newbold';
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+/* line 96, ../sass/comingsoon.scss */
+.comingsoon-main label {
+  font-family: 'cordia_newregular';
+  font-size: 18px;
+  color: #A9A8A9;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+/* line 104, ../sass/comingsoon.scss */
+.comingsoon-main label.error {
+  color: #800008;
+  display: none;
+  font-size: 18px;
+}
+/* line 110, ../sass/comingsoon.scss */
+.comingsoon-main input, .comingsoon-main textarea {
+  font-family: 'cordia_newregular';
+  font-size: 18px;
+  border-radius: 0;
+  color: #A9A8A9;
+}
+/* line 117, ../sass/comingsoon.scss */
+.comingsoon-main textarea:focus, .comingsoon-main input:focus {
+  outline: 0;
+}
+/* line 121, ../sass/comingsoon.scss */
+.comingsoon-main .clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+/* line 130, ../sass/comingsoon.scss */
+.comingsoon-main ::-webkit-input-placeholder {
+  color: #999799;
+}
+/* line 134, ../sass/comingsoon.scss */
+.comingsoon-main :-moz-placeholder {
+  /* Firefox 18- */
+  color: #999799;
+}
+/* line 138, ../sass/comingsoon.scss */
+.comingsoon-main ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #999799;
+}
+/* line 142, ../sass/comingsoon.scss */
+.comingsoon-main :-ms-input-placeholder {
+  color: #999799;
+}
+/* line 150, ../sass/comingsoon.scss */
+.comingsoon-main .hover_btn {
+  display: block;
+  border: 0;
+  position: relative;
+  text-align: center;
+  font-size: 21px;
+  text-align: center;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  background: #AC232B;
+  color: #fff;
+  padding: 8px;
+  margin: auto;
+  width: 100%;
+  max-width: 309px;
+  margin-top: 30px;
+}
+/* line 170, ../sass/comingsoon.scss */
+.comingsoon-main .hover_btn:hover {
+  background: #AC232B;
+  color: #fff;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 179, ../sass/comingsoon.scss */
+.comingsoon-main .default_btn {
+  border: 1px solid #C8B98F;
+  border-radius: 5px;
+  background: transparent;
+  height: 30px;
+  padding: 0 50px;
+  text-align: center;
+  display: inline-block;
+  font-family: 'cordia_newbold';
+  font-size: 18px;
+  line-height: 23px;
+  color: #999799;
+}
+/* line 193, ../sass/comingsoon.scss */
+.comingsoon-main #logo .default_btn {
+  margin-top: 15px;
+}
+/* line 197, ../sass/comingsoon.scss */
+.comingsoon-main .default_btn:hover {
+  border: 1px solid #C8B98F;
+  border-radius: 5px;
+  background: transparent;
+  height: 30px;
+  padding: 0 50px;
+  text-align: center;
+  display: inline-block;
+  font-family: 'cordia_newbold';
+  font-size: 18px;
+  line-height: 23px;
+  color: #999799;
+}
+/* line 211, ../sass/comingsoon.scss */
+.comingsoon-main .full_width_btn {
+  width: 100%;
+  margin-top: 20px;
+}
+/* line 216, ../sass/comingsoon.scss */
+.comingsoon-main #cover {
+  background: #000;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+}
+/* line 225, ../sass/comingsoon.scss */
+.comingsoon-main .container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+/* line 232, ../sass/comingsoon.scss */
+.comingsoon-main .hidden_br {
+  display: none;
+}
+/* line 236, ../sass/comingsoon.scss */
+.comingsoon-main .gold_font {
+  color: #a89245;
+}
+/* line 240, ../sass/comingsoon.scss */
+.comingsoon-main .tablet_br {
+  display: block;
+  height: 1px;
+}
+/* line 245, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_br {
+  display: none;
+  height: 1px;
+}
+/* line 254, ../sass/comingsoon.scss */
+.comingsoon-main .responsive_img {
+  width: 100%;
+  display: block;
+}
+/* line 261, ../sass/comingsoon.scss */
+.comingsoon-main .top_bar {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+}
+/* line 270, ../sass/comingsoon.scss */
+.comingsoon-main .top_bar_container {
+  padding: 9px 0;
+  position: relative;
+}
+/* line 275, ../sass/comingsoon.scss */
+.comingsoon-main .top_bar_nav {
+  width: 100%;
+  margin-bottom: 0;
+}
+/* line 280, ../sass/comingsoon.scss */
+.comingsoon-main .top_bar_nav li {
+  float: left;
+  display: inline-block;
+  margin-right: 6.5%;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+/* line 288, ../sass/comingsoon.scss */
+.comingsoon-main .top_bar_nav li:last-child {
+  margin-right: 0;
+}
+/* line 292, ../sass/comingsoon.scss */
+.comingsoon-main .top_bar_nav li a {
+  color: #262626;
+  font-size: 10px;
+  font-family: 'Noto Serif', serif;
+}
+/* line 298, ../sass/comingsoon.scss */
+.comingsoon-main a.active {
+  color: #910000 !important;
+}
+/* line 302, ../sass/comingsoon.scss */
+.comingsoon-main .top_hover {
+  color: #8A8A8D !important;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+  cursor: pointer;
+}
+/* line 311, ../sass/comingsoon.scss */
+.comingsoon-main .top_hover:hover {
+  color: #910000 !important;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+}
+/* line 319, ../sass/comingsoon.scss */
+.comingsoon-main #diner_hover:hover {
+  color: #800008 !important;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+}
+/* line 327, ../sass/comingsoon.scss */
+.comingsoon-main #everyday_hover:hover {
+  color: #2B6C93 !important;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+}
+/* line 335, ../sass/comingsoon.scss */
+.comingsoon-main .main_slide_container {
+  position: fixed;
+  z-index: 880;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/* line 344, ../sass/comingsoon.scss */
+.comingsoon-main .main_slide {
+  width: 100%;
+  height: 100%;
+}
+/* line 349, ../sass/comingsoon.scss */
+.comingsoon-main .main_slide > div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+/* line 357, ../sass/comingsoon.scss */
+.comingsoon-main #logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 500px;
+  min-height: 300px;
+}
+/* line 368, ../sass/comingsoon.scss */
+.comingsoon-main .subtitle_cover {
+  position: relative;
+  top: 5%;
+  left: 5%;
+  width: 60%;
+  height: 300px;
+}
+/* line 377, ../sass/comingsoon.scss */
+.comingsoon-main #logo img {
+  width: 100%;
+  margin-left: 21%;
+  display: block;
+  max-width: 500px;
+  /*width: 300px;*/
+}
+/* line 385, ../sass/comingsoon.scss */
+.comingsoon-main #playbtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 89px;
+  height: 89px;
+}
+/* line 396, ../sass/comingsoon.scss */
+.comingsoon-main #playbtn img {
+  width: 100%;
+  display: block;
+}
+/* line 401, ../sass/comingsoon.scss */
+.comingsoon-main #pager {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  z-index: 700;
+}
+/* line 409, ../sass/comingsoon.scss */
+.comingsoon-main #pager span {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  margin: 0 8px;
+  background: #262626;
+  cursor: pointer;
+  text-indent: -9999px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 425, ../sass/comingsoon.scss */
+.comingsoon-main #pager span.cycle-pager-active {
+  background: transparent;
+  border: 1px solid #800008;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 434, ../sass/comingsoon.scss */
+.comingsoon-main #scroll_down_btn {
+  position: fixed;
+  z-index: 760;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+99&0+0,1+99 */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(top, transparent 0%, black 99%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, transparent 0%, black 99%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, transparent 0%, black 99%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+  /* IE6-8 */
+}
+/* line 455, ../sass/comingsoon.scss */
+.comingsoon-main #scroll_down_btn:hover {
+  height: 60px;
+}
+/* line 459, ../sass/comingsoon.scss */
+.comingsoon-main #scroll_down_btn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 468, ../sass/comingsoon.scss */
+.comingsoon-main .overlayFromMenu {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 890;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+/* line 480, ../sass/comingsoon.scss */
+.comingsoon-main .overlayFromMenu img {
+  position: absolute;
+  width: 30%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 490, ../sass/comingsoon.scss */
+.comingsoon-main .country_lang_container {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+/* line 496, ../sass/comingsoon.scss */
+.comingsoon-main .object {
+  display: inline-block;
+  margin-left: 10px;
+  height: 37px;
+  line-height: 28px;
+  font-size: 14px;
+  color: #8A8A8D;
+  position: relative;
+}
+/* line 506, ../sass/comingsoon.scss */
+.comingsoon-main .options {
+  position: absolute;
+  background: #262626;
+  width: 190px;
+  top: 30px;
+  right: -9px;
+  display: none;
+}
+/* line 515, ../sass/comingsoon.scss */
+.comingsoon-main .options:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #262626;
+  top: -5px;
+  right: 12px;
+}
+/* line 527, ../sass/comingsoon.scss */
+.comingsoon-main .options h3 {
+  border-bottom: 1px solid #000;
+  position: relative;
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  font-size: 9px;
+  color: #fff;
+  padding: 8px 0;
+  letter-spacing: 1px;
+  padding-left: 25px;
+}
+/* line 539, ../sass/comingsoon.scss */
+.comingsoon-main .options h3:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #C8B98F;
+  position: absolute;
+  left: 10px;
+  top: 11px;
+}
+/* line 549, ../sass/comingsoon.scss */
+.comingsoon-main .options a {
+  display: block;
+  padding: 0 6px;
+  height: 26px;
+  line-height: 22px;
+  color: #A9A8A9;
+  letter-spacing: 2px;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+  font-family: 'cordia_newregular';
+}
+/* line 563, ../sass/comingsoon.scss */
+.comingsoon-main .options a img {
+  vertical-align: sub;
+}
+/* line 567, ../sass/comingsoon.scss */
+.comingsoon-main .options a:hover {
+  color: #C8B98F;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+}
+/* line 575, ../sass/comingsoon.scss */
+.comingsoon-main .options a span {
+  color: #C8B98F;
+  font-family: 'cordia_newbold';
+}
+/* line 580, ../sass/comingsoon.scss */
+.comingsoon-main header {
+  background: #111;
+  position: fixed;
+  z-index: 800;
+  padding-top: 41px;
+  height: 100px;
+  border-bottom: 1px solid #800008;
+  width: 100%;
+}
+/* line 588, ../sass/comingsoon.scss */
+.comingsoon-main header .group-logo {
+  text-align: center;
+  position: relative;
+  height: 48px;
+  border-bottom: none;
+}
+/* line 593, ../sass/comingsoon.scss */
+.comingsoon-main header .group-logo .img-logo {
+  display: inline-block;
+  max-width: 186px;
+}
+/* line 600, ../sass/comingsoon.scss */
+.comingsoon-main .logo_large {
+  width: 186px;
+  margin: 0 auto 17px;
+}
+/* line 605, ../sass/comingsoon.scss */
+.comingsoon-main .logo_large img {
+  width: 100%;
+  display: block;
+}
+/* line 610, ../sass/comingsoon.scss */
+.comingsoon-main .main_nav {
+  border-top: 2px solid #4C0000;
+  text-align: center;
+  padding: 2px 0 10px;
+}
+/* line 616, ../sass/comingsoon.scss */
+.comingsoon-main .main_nav a {
+  color: #A8A7A8;
+  font-size: 15px;
+  font-family: 'cordia_newbold';
+  letter-spacing: 2px;
+  display: inline-block;
+  margin: 0 50px;
+}
+/* line 625, ../sass/comingsoon.scss */
+.comingsoon-main .main_nav a:first-child {
+  margin-left: 0;
+}
+/* line 629, ../sass/comingsoon.scss */
+.comingsoon-main .main_nav a:last-child {
+  margin-right: 0;
+}
+/* line 633, ../sass/comingsoon.scss */
+.comingsoon-main .disable_link {
+  color: #262626 !important;
+}
+/* line 637, ../sass/comingsoon.scss */
+.comingsoon-main footer {
+  background: #000;
+  width: 100%;
+  position: fixed;
+  z-index: 800;
+  bottom: -77px;
+  left: 0;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 650, ../sass/comingsoon.scss */
+.comingsoon-main footer.move_up {
+  bottom: 0;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 658, ../sass/comingsoon.scss */
+.comingsoon-main .footer_nav_container {
+  background: #111;
+}
+/* line 662, ../sass/comingsoon.scss */
+.comingsoon-main .footer_nav {
+  text-align: center;
+  width: 90%;
+  height: 34px;
+  max-width: 955px;
+  margin: auto;
+  position: relative;
+}
+/* line 671, ../sass/comingsoon.scss */
+.comingsoon-main #more_btn {
+  font-size: 14px;
+  color: #A9A8A9;
+  font-family: 'cordia_newregular';
+  display: inline-block;
+  position: relative;
+  margin-left: 270px;
+  position: absolute;
+  right: 0;
+  letter-spacing: 2px;
+  top: 5px;
+}
+/* line 684, ../sass/comingsoon.scss */
+.comingsoon-main .icon {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 15px;
+  font-size: 14px;
+  color: #A9A8A9;
+  font-family: 'cordia_newregular';
+  letter-spacing: 2px;
+  position: relative;
+  padding: 5px 0 7px;
+}
+/* line 696, ../sass/comingsoon.scss */
+.comingsoon-main .icon div {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 701, ../sass/comingsoon.scss */
+.comingsoon-main .icon div img {
+  width: 100%;
+}
+/* line 705, ../sass/comingsoon.scss */
+.comingsoon-main .icon span {
+  display: inline-block;
+}
+/* line 709, ../sass/comingsoon.scss */
+.comingsoon-main #cat_btn {
+  width: 200px;
+  text-align: right;
+}
+/* line 714, ../sass/comingsoon.scss */
+.comingsoon-main #cat_btn div {
+  background: url(../images/icon1.svg);
+  width: 11px;
+  height: 10px;
+  background-size: 100% 200%;
+  background-position: 0 0;
+  margin-left: 10px;
+}
+/* line 723, ../sass/comingsoon.scss */
+.comingsoon-main #col_grid_btn div {
+  background: url(../images/icon2.svg);
+  width: 11px;
+  height: 10px;
+  background-size: 100% 200%;
+  background-position: 0 0;
+}
+/* line 731, ../sass/comingsoon.scss */
+.comingsoon-main #col_full_btn div {
+  background: url(../images/icon3.svg);
+  width: 11px;
+  height: 11px;
+  background-size: 100% 200%;
+  background-position: 0 0;
+}
+/* line 739, ../sass/comingsoon.scss */
+.comingsoon-main #search_btn div {
+  background: url(../images/icon4.svg);
+  width: 11px;
+  height: 11px;
+  background-size: 100% 200%;
+  background-position: 0 0;
+}
+/* line 747, ../sass/comingsoon.scss */
+.comingsoon-main #random_btn {
+  width: 200px;
+  text-align: left;
+}
+/* line 752, ../sass/comingsoon.scss */
+.comingsoon-main #random_btn div {
+  background: url(../images/icon5.svg);
+  width: 14px;
+  height: 11px;
+  background-size: 100% 200%;
+  background-position: 0 0;
+  margin-right: 10px;
+}
+/* line 761, ../sass/comingsoon.scss */
+.comingsoon-main .icon:hover div {
+  background-position: 0 -100% !important;
+}
+/* line 765, ../sass/comingsoon.scss */
+.comingsoon-main .icon:hover span {
+  color: #C8B98F;
+}
+/* line 769, ../sass/comingsoon.scss */
+.comingsoon-main .col_active div {
+  background-position: 0 -100% !important;
+}
+/* line 773, ../sass/comingsoon.scss */
+.comingsoon-main .cat_options, .comingsoon-main .cat_options2 {
+  position: absolute;
+  border-bottom: solid 1px #262626;
+  background: #111111;
+  width: 200px;
+  bottom: 32px;
+  right: -17px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+/* line 790, ../sass/comingsoon.scss */
+.comingsoon-main .cat_options2 {
+  width: 300px;
+}
+/* line 798, ../sass/comingsoon.scss */
+.comingsoon-main #random {
+  right: auto;
+  left: -17px;
+}
+/* line 803, ../sass/comingsoon.scss */
+.comingsoon-main .cat_options li, .comingsoon-main .cat_options2 li {
+  width: 100%;
+}
+/* line 807, ../sass/comingsoon.scss */
+.comingsoon-main .lang-japan .cat_options li a {
+  font-size: 13px !important;
+}
+/* line 811, ../sass/comingsoon.scss */
+.comingsoon-main .cat_options li a {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-align: right;
+  position: relative;
+  color: #A9A8A9;
+  padding: 5px 40px 7px 0;
+  right: auto;
+  margin-left: 0;
+  font-family: 'cordia_newbold';
+}
+/* line 824, ../sass/comingsoon.scss */
+.comingsoon-main .cat_options2 li a {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  color: #A9A8A9;
+  right: auto;
+  padding: 5px 0 5px 0;
+  font-family: 'cordia_newbold';
+}
+/* line 836, ../sass/comingsoon.scss */
+.comingsoon-main .cat_options li a:hover, .comingsoon-main .cat_options2 li a:hover {
+  background: #262626;
+  color: #C8B98F;
+}
+/* line 841, ../sass/comingsoon.scss */
+.comingsoon-main .cat_options li a:after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #A9A8A9;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+/* line 851, ../sass/comingsoon.scss */
+.comingsoon-main .cat_options li a:hover:after {
+  background: #C8B98F;
+}
+/* line 855, ../sass/comingsoon.scss */
+.comingsoon-main #random li a {
+  text-align: left;
+  padding: 5px 0 7px 40px;
+}
+/* line 860, ../sass/comingsoon.scss */
+.comingsoon-main #random li a:after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #A9A8A9;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+/* line 871, ../sass/comingsoon.scss */
+.comingsoon-main a.cat_active {
+  color: #C8B98F !important;
+}
+/* line 875, ../sass/comingsoon.scss */
+.comingsoon-main a.cat_active:after {
+  background: #C8B98F !important;
+}
+/* line 879, ../sass/comingsoon.scss */
+.comingsoon-main .footer_nav2 {
+  width: 90%;
+  max-width: 955px;
+  margin: auto;
+  text-align: center;
+}
+/* line 886, ../sass/comingsoon.scss */
+.comingsoon-main .footer_nav2 li {
+  display: inline-block;
+  padding: 6px 0 10px;
+  margin: 0 45px;
+}
+/* line 892, ../sass/comingsoon.scss */
+.comingsoon-main .footer_nav2 li:first-child {
+  margin-left: 0;
+}
+/* line 896, ../sass/comingsoon.scss */
+.comingsoon-main .footer_nav2 li:last-child {
+  margin-right: 0;
+}
+/* line 900, ../sass/comingsoon.scss */
+.comingsoon-main .footer_nav2 li a {
+  font-size: 15px;
+  font-family: 'cordia_newbold';
+  letter-spacing: 2px;
+}
+/* line 906, ../sass/comingsoon.scss */
+.comingsoon-main .copyright_container {
+  width: 90%;
+  max-width: 955px;
+  margin: auto;
+  font-size: 14px;
+  color: #68686C;
+  font-family: 'cordia_newregular';
+  letter-spacing: 2px;
+  padding: 6px 0 10px;
+}
+/* line 917, ../sass/comingsoon.scss */
+.comingsoon-main .social {
+  display: inline-block;
+  float: left;
+}
+/* line 922, ../sass/comingsoon.scss */
+.comingsoon-main .social a {
+  color: #68686C;
+  font-size: 17px;
+  margin-right: 15px;
+}
+/* line 928, ../sass/comingsoon.scss */
+.comingsoon-main #copyright {
+  float: right;
+  display: inline-block;
+}
+/* line 933, ../sass/comingsoon.scss */
+.comingsoon-main #main_content {
+  padding: 150px 15px 130px;
+}
+/* line 937, ../sass/comingsoon.scss */
+.comingsoon-main #transparent_content {
+  width: 100%;
+  height: 100%;
+}
+/* line 942, ../sass/comingsoon.scss */
+.comingsoon-main .social_container {
+  position: fixed;
+  padding: 10px 18px 0 30px;
+  border-right: 1px solid #800d09;
+  height: 100%;
+  z-index: 860;
+  background: #111111;
+  top: 0;
+  left: -462px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 957, ../sass/comingsoon.scss */
+.comingsoon-main .social_container.opened {
+  left: 0;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: 910;
+}
+/* line 966, ../sass/comingsoon.scss */
+.comingsoon-main .social_container h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+/* line 973, ../sass/comingsoon.scss */
+.comingsoon-main .social_btn {
+  cursor: pointer;
+  width: 33px;
+  height: 123px;
+  background: url(../images/social_section_btn.png);
+  background-position: 0 0;
+  right: -33px;
+  top: 28px;
+  position: absolute;
+}
+/* line 984, ../sass/comingsoon.scss */
+.comingsoon-main .social_container.opened .social_btn {
+  background-position: 0 -123px;
+}
+/* line 988, ../sass/comingsoon.scss */
+.comingsoon-main .social_wrapper {
+  height: 100%;
+}
+/* line 993, ../sass/comingsoon.scss */
+.comingsoon-main .social_list {
+  width: 400px;
+  padding: 15px 0;
+}
+/* line 998, ../sass/comingsoon.scss */
+.comingsoon-main .social_list:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* line 1004, ../sass/comingsoon.scss */
+.comingsoon-main .social_list li {
+  border-right: #262626 1px solid;
+  border-bottom: #262626 1px solid;
+  margin-bottom: 15px;
+}
+/* line 1010, ../sass/comingsoon.scss */
+.comingsoon-main .social_list li img {
+  width: 100%;
+  display: block;
+}
+/* line 1015, ../sass/comingsoon.scss */
+.comingsoon-main .grid-sizer {
+  width: 48%;
+}
+/* line 1016, ../sass/comingsoon.scss */
+.comingsoon-main .gutter-sizer {
+  width: 4%;
+}
+/* line 1018, ../sass/comingsoon.scss */
+.comingsoon-main .social_item {
+  width: 48%;
+}
+/* line 1022, ../sass/comingsoon.scss */
+.comingsoon-main .social_full {
+  width: 100%;
+}
+/* line 1026, ../sass/comingsoon.scss */
+.comingsoon-main .social_text {
+  padding: 10px;
+  color: #000;
+}
+/* line 1031, ../sass/comingsoon.scss */
+.comingsoon-main .social_text p {
+  color: #A9A8A9;
+  font-size: 12px;
+  font-family: 'helvetica';
+}
+/* line 1037, ../sass/comingsoon.scss */
+.comingsoon-main .social_list_head {
+  background: #000;
+  border-bottom: 1px solid #262626;
+  padding: 5px 10px;
+}
+/* line 1043, ../sass/comingsoon.scss */
+.comingsoon-main .social_icon {
+  display: inline-block;
+  float: left;
+}
+/* line 1048, ../sass/comingsoon.scss */
+.comingsoon-main .social_icon a {
+  font-size: 17px;
+  margin-right: 10px;
+}
+/* line 1053, ../sass/comingsoon.scss */
+.comingsoon-main .social_date {
+  font-size: 16px;
+  float: right;
+  color: #A9A8A9;
+  font-family: 'cordia_newregular';
+  letter-spacing: 1px;
+}
+/* line 1061, ../sass/comingsoon.scss */
+.comingsoon-main .music_container {
+  position: fixed;
+  padding: 10px 30px 0;
+  border-left: 1px solid #800d09;
+  height: 100%;
+  z-index: 860;
+  background: #111111;
+  top: 0;
+  right: -461px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 1076, ../sass/comingsoon.scss */
+.comingsoon-main .music_container.opened {
+  right: 0;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: 910;
+}
+/* line 1085, ../sass/comingsoon.scss */
+.comingsoon-main .music_container h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+/* line 1092, ../sass/comingsoon.scss */
+.comingsoon-main .music_btn {
+  cursor: pointer;
+  width: 33px;
+  height: 123px;
+  background: url(../images/music_section_btn.png);
+  background-position: 0 0;
+  left: -33px;
+  top: 28px;
+  position: absolute;
+}
+/* line 1103, ../sass/comingsoon.scss */
+.comingsoon-main .music_container.opened .music_btn {
+  background-position: 0 -123px;
+}
+/* line 1107, ../sass/comingsoon.scss */
+.comingsoon-main .track_list {
+  width: 400px;
+  height: 90%;
+}
+/* line 1112, ../sass/comingsoon.scss */
+.comingsoon-main .track_list li {
+  padding: 15px 0;
+}
+/* line 1116, ../sass/comingsoon.scss */
+.comingsoon-main .track_list li:first-child {
+  padding-top: 0;
+}
+/* line 1120, ../sass/comingsoon.scss */
+.comingsoon-main .track_list li iframe {
+  width: 100%;
+}
+/* line 1124, ../sass/comingsoon.scss */
+.comingsoon-main .overlay_black {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 905;
+  top: 0;
+  left: 0;
+  display: none;
+}
+/* line 1135, ../sass/comingsoon.scss */
+.comingsoon-main .pri_term {
+  position: fixed;
+  z-index: 910;
+  width: 90%;
+  height: 100%;
+  max-width: 630px;
+  top: 0;
+  left: 50%;
+  padding: 60px 0;
+  text-align: center;
+  color: #DCDEDF;
+  display: none;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* line 1152, ../sass/comingsoon.scss */
+.comingsoon-main #policy {
+  text-align: left;
+}
+/* line 1156, ../sass/comingsoon.scss */
+.comingsoon-main .scroll_control {
+  position: relative;
+  height: 90%;
+}
+/* line 1161, ../sass/comingsoon.scss */
+.comingsoon-main .pri_term h2 {
+  font-size: 12px;
+  font-weight: 700;
+  width: 265px;
+  padding: 15px 0;
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+/* line 1172, ../sass/comingsoon.scss */
+.comingsoon-main .pri_term h3 {
+  font-family: 'cordia_newbold';
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+/* line 1178, ../sass/comingsoon.scss */
+.comingsoon-main .pri_term h4 {
+  font-family: 'cordia_newbold';
+  font-size: 18px;
+}
+/* line 1183, ../sass/comingsoon.scss */
+.comingsoon-main .pri_term p {
+  font-family: 'cordia_newregular';
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #999799;
+}
+/* line 1190, ../sass/comingsoon.scss */
+.comingsoon-main .close_btn {
+  position: fixed;
+  top: 40px;
+  right: -220px;
+}
+/* line 1196, ../sass/comingsoon.scss */
+.comingsoon-main .fullpage {
+  width: 100%;
+  height: 100%;
+}
+/* line 1201, ../sass/comingsoon.scss */
+.comingsoon-main .fullpage.blured {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+/* line 1206, ../sass/comingsoon.scss */
+.comingsoon-main .newsletter_container {
+  position: fixed;
+  z-index: 910;
+  width: 90%;
+  max-width: 545px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: none;
+}
+/* line 1219, ../sass/comingsoon.scss */
+.comingsoon-main .newsletter_container .close_btn {
+  position: absolute;
+  top: -40px;
+  right: -50px;
+}
+/* line 1225, ../sass/comingsoon.scss */
+.comingsoon-main .newsletter_container h2 {
+  font-size: 15px;
+  font-weight: 700;
+  width: 265px;
+  padding: 11px 0;
+  border: 1px solid #979797;
+  border-radius: 5px;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+/* line 1236, ../sass/comingsoon.scss */
+.comingsoon-main .red_font {
+  color: #800008;
+}
+/* line 1240, ../sass/comingsoon.scss */
+.comingsoon-main #newsletter_form {
+  color: #A9A8A9;
+  font-family: 'cordia_newregular';
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+/* line 1247, ../sass/comingsoon.scss */
+.comingsoon-main .input_box {
+  width: 100%;
+  height: 25px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid #55565A;
+  padding: 0 5px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 1260, ../sass/comingsoon.scss */
+.comingsoon-main .input_disabled {
+  background: #262626;
+}
+/* line 1264, ../sass/comingsoon.scss */
+.comingsoon-main .select_box {
+  width: 100%;
+  height: 25px;
+  border-radius: 5px;
+  background: transparent url(../images/select_arrow.png) 99% center no-repeat;
+  border: 1px solid #55565A;
+  padding: 0 5px;
+  font-size: 18px;
+  font-family: 'cordia_newregular';
+  -webkit-appearance: none;
+  color: #A9A8A9;
+}
+/* line 1277, ../sass/comingsoon.scss */
+.comingsoon-main .newsletter_full {
+  margin-bottom: 7px;
+}
+/* line 1281, ../sass/comingsoon.scss */
+.comingsoon-main .newsletter_left {
+  margin-bottom: 7px;
+  width: 47%;
+  float: left;
+}
+/* line 1287, ../sass/comingsoon.scss */
+.comingsoon-main .newsletter_right {
+  margin-bottom: 7px;
+  width: 47%;
+  float: right;
+}
+/* line 1293, ../sass/comingsoon.scss */
+.comingsoon-main .agree {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+/* line 1300, ../sass/comingsoon.scss */
+.comingsoon-main .submit_btn {
+  border: 1px solid #C8B98F;
+  border-radius: 5px;
+  background: transparent;
+  height: 30px;
+  width: 210px;
+  margin: auto;
+  display: block;
+  margin-top: 20px;
+}
+/* line 1311, ../sass/comingsoon.scss */
+.comingsoon-main .thankyou_message {
+  position: fixed;
+  z-index: 910;
+  width: 100%;
+  /*max-width: 545px;*/
+  text-align: center;
+  top: 40vh;
+  /*top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  	-ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);*/
+  display: none;
+}
+/* line 1326, ../sass/comingsoon.scss */
+.comingsoon-main .thankyou_message h2 {
+  font-weight: 700;
+  font-size: 15px;
+  color: #DCDEDF;
+}
+/* line 1332, ../sass/comingsoon.scss */
+.comingsoon-main .thankyou_message p {
+  color: #A9A8A9;
+  font-size: 20px;
+  font-family: 'cordia_newregular';
+  margin: 5px 0 20px;
+}
+/* line 1339, ../sass/comingsoon.scss */
+.comingsoon-main #search_container {
+  position: fixed;
+  z-index: 805;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+/* line 1348, ../sass/comingsoon.scss */
+.comingsoon-main #search_top {
+  background: #111111;
+  height: 45px;
+  padding: 10px 0;
+}
+/* line 1354, ../sass/comingsoon.scss */
+.comingsoon-main #tag_list {
+  text-align: center;
+}
+/* line 1358, ../sass/comingsoon.scss */
+.comingsoon-main #tag_list span {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 5px;
+  border: 1px solid #55565A;
+  font-family: 'cordia_newregular';
+  font-size: 14px;
+  color: #A9A8A9;
+  letter-spacing: 0.05px;
+  height: 25px;
+  line-height: 20px;
+  padding: 0 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+/* line 1374, ../sass/comingsoon.scss */
+.comingsoon-main #search_bottom {
+  padding: 7px 0;
+  background: #000;
+}
+/* line 1379, ../sass/comingsoon.scss */
+.comingsoon-main #search_box_container {
+  width: 90%;
+  max-width: 940px;
+  border-radius: 5px;
+  border: 1px solid #55565A;
+  border-top: 0;
+  border-bottom: 0;
+  margin: auto;
+  position: relative;
+}
+/* line 1390, ../sass/comingsoon.scss */
+.comingsoon-main #search_box {
+  border: 0;
+  background: #000;
+  height: 30px;
+  padding: 0 10px;
+  font-family: 'cordia_newregular';
+  font-size: 14px;
+  color: #A9A8A9;
+  letter-spacing: 2px;
+}
+/* line 1401, ../sass/comingsoon.scss */
+.comingsoon-main #do_search_btn {
+  display: block;
+  background: url(../images/magnify.png);
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  margin-top: -6px;
+  right: 5px;
+  position: absolute;
+  border: 0;
+  padding: 0;
+}
+/* line 1415, ../sass/comingsoon.scss */
+.comingsoon-main #hide_search_btn {
+  position: absolute;
+  right: -30px;
+  top: 7px;
+}
+/* line 1421, ../sass/comingsoon.scss */
+.comingsoon-main #tags {
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  height: 30px;
+  padding: 3px 10px 0;
+}
+/* line 1431, ../sass/comingsoon.scss */
+.comingsoon-main #tags > div {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+  border: 1px solid #55565A;
+  font-family: 'cordia_newregular';
+  font-size: 14px;
+  color: #A9A8A9;
+  letter-spacing: 0.05px;
+  height: 25px;
+  line-height: 20px;
+  padding: 0 35px 0 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  position: relative;
+  background: #000;
+}
+/* line 1449, ../sass/comingsoon.scss */
+.comingsoon-main .remove_tag_btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-left: 1px solid #55565A;
+  width: 20px;
+  text-align: center;
+  height: 100%;
+  line-height: 19px;
+}
+/* line 1462, ../sass/comingsoon.scss */
+.comingsoon-main .category_description {
+  width: 90%;
+  max-width: 570px;
+  margin: 0 auto 30px;
+  text-align: center;
+  color: #DCDEDF;
+  font-family: 'cordia_newregular';
+}
+/* line 1471, ../sass/comingsoon.scss */
+.comingsoon-main .product-grid-sizer {
+  width: 24%;
+}
+/* line 1475, ../sass/comingsoon.scss */
+.comingsoon-main .product-gutter-sizer {
+  width: 1.3%;
+}
+/* line 1479, ../sass/comingsoon.scss */
+.comingsoon-main .item {
+  width: 24%;
+}
+/* line 1483, ../sass/comingsoon.scss */
+.comingsoon-main .product_item {
+  position: relative;
+  margin-bottom: 15px;
+  display: block;
+}
+/* line 1493, ../sass/comingsoon.scss */
+.comingsoon-main .product_list.grid .item {
+  width: 15.8%;
+}
+/* line 1497, ../sass/comingsoon.scss */
+.comingsoon-main .product_list.grid .product-grid-sizer {
+  width: 15.8%;
+}
+/* line 1501, ../sass/comingsoon.scss */
+.comingsoon-main .product_list.grid .product-gutter-sizer {
+  width: 1%;
+}
+/* line 1505, ../sass/comingsoon.scss */
+.comingsoon-main .product_item img {
+  width: 100%;
+  display: block;
+}
+/* line 1510, ../sass/comingsoon.scss */
+.comingsoon-main .product_hover {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/* line 1525, ../sass/comingsoon.scss */
+.comingsoon-main .product_item:hover .product_hover {
+  opacity: 1;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 1533, ../sass/comingsoon.scss */
+.comingsoon-main .number {
+  display: none;
+}
+/* line 1537, ../sass/comingsoon.scss */
+.comingsoon-main #product_detail_container {
+  position: fixed;
+  /*top: 30px;*/
+  left: 50%;
+  height: 100%;
+  z-index: 910;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  display: none;
+}
+/* line 1549, ../sass/comingsoon.scss */
+.comingsoon-main #product_detail {
+  position: relative;
+  height: 100%;
+}
+/* line 1554, ../sass/comingsoon.scss */
+.comingsoon-main .scroll_woohoo {
+  height: 100%;
+}
+/* line 1558, ../sass/comingsoon.scss */
+.comingsoon-main .product_slide_container {
+  width: 100%;
+  position: relative;
+  background: #000;
+}
+/* line 1564, ../sass/comingsoon.scss */
+.comingsoon-main .product_slide {
+  width: 100%;
+}
+/* line 1568, ../sass/comingsoon.scss */
+.comingsoon-main .product_slide > div {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+/* line 1574, ../sass/comingsoon.scss */
+.comingsoon-main .product_slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* line 1580, ../sass/comingsoon.scss */
+.comingsoon-main .product_slide_left {
+  position: fixed;
+}
+/* line 1593, ../sass/comingsoon.scss */
+.comingsoon-main .prev_btn {
+  position: absolute;
+  z-index: 500;
+  left: 5px;
+  top: 50%;
+  opacity: .25;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 1605, ../sass/comingsoon.scss */
+.comingsoon-main .prev_btn:hover {
+  opacity: 1;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 1613, ../sass/comingsoon.scss */
+.comingsoon-main .next_btn {
+  position: absolute;
+  z-index: 500;
+  right: 5px;
+  top: 50%;
+  opacity: .25;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 1625, ../sass/comingsoon.scss */
+.comingsoon-main .next_btn:hover {
+  opacity: 1;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 1633, ../sass/comingsoon.scss */
+.comingsoon-main .close_product_btn {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  z-index: 500;
+}
+/* line 1640, ../sass/comingsoon.scss */
+.comingsoon-main .product_detail_top {
+  background: #000;
+  border: 2px solid #262626;
+  border-left: 0;
+  border-top: 0;
+  padding: 25px 20px;
+}
+/* line 1648, ../sass/comingsoon.scss */
+.comingsoon-main .product_relate {
+  background: #000;
+  margin-top: 15px;
+  border: 2px solid #262626;
+  border-left: 0;
+  border-top: 0;
+  padding: 25px 20px;
+}
+/* line 1657, ../sass/comingsoon.scss */
+.comingsoon-main .product_detail_top h2 {
+  font-size: 400;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+/* line 1663, ../sass/comingsoon.scss */
+.comingsoon-main .product_detail_top h3 {
+  font-size: 18px;
+  color: #C8B98F;
+  letter-spacing: 2px;
+  font-family: 'cordia_newregular';
+  margin-bottom: 15px;
+}
+/* line 1671, ../sass/comingsoon.scss */
+.comingsoon-main .product_relate h3 {
+  font-size: 18px;
+  color: #C8B98F;
+  letter-spacing: 2px;
+  font-family: 'cordia_newregular';
+  margin-bottom: 15px;
+}
+/* line 1679, ../sass/comingsoon.scss */
+.comingsoon-main .shop_now {
+  font-size: 22px;
+  color: #C8B98F;
+  letter-spacing: 4px;
+  line-height: 18px;
+  width: 100%;
+}
+/* line 1687, ../sass/comingsoon.scss */
+.comingsoon-main .shop_now:hover {
+  font-size: 22px;
+  color: #C8B98F;
+  letter-spacing: 4px;
+  line-height: 18px;
+  width: 100%;
+}
+/* line 1695, ../sass/comingsoon.scss */
+.comingsoon-main .product_tags_list {
+  margin-top: 35px;
+}
+/* line 1699, ../sass/comingsoon.scss */
+.comingsoon-main .product_tags_list a {
+  border: 1px solid #55565A;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 8px;
+  font-family: 'cordia_newregular';
+  font-size: 14px;
+  color: #A9A8A9;
+  letter-spacing: 0.05px;
+  padding: 0 10px;
+  height: 25px;
+}
+/* line 1712, ../sass/comingsoon.scss */
+.comingsoon-main .share_container {
+  border-top: 1px solid #262626;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+/* line 1718, ../sass/comingsoon.scss */
+.comingsoon-main .share_container span {
+  font-family: 'cordia_newregular';
+  font-size: 14px;
+  color: #A9A8A9;
+  letter-spacing: 1.86px;
+}
+/* line 1725, ../sass/comingsoon.scss */
+.comingsoon-main .share_container a {
+  font-size: 17px;
+  margin-left: 40px;
+  vertical-align: middle;
+}
+/* line 1731, ../sass/comingsoon.scss */
+.comingsoon-main .relate_list {
+  width: 100%;
+}
+/* line 1735, ../sass/comingsoon.scss */
+.comingsoon-main .relate_list li {
+  width: 33%;
+  float: left;
+  margin-right: 0.5%;
+  margin-bottom: 2px;
+}
+/* line 1742, ../sass/comingsoon.scss */
+.comingsoon-main .relate_list li:nth-child(3n) {
+  margin-right: 0;
+}
+/* line 1746, ../sass/comingsoon.scss */
+.comingsoon-main .relate_list li img {
+  width: 100%;
+  display: block;
+}
+/* line 1751, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_header_top {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+  padding: 15px 0;
+  display: none;
+}
+/* line 1762, ../sass/comingsoon.scss */
+.comingsoon-main .logo_small {
+  width: 136px;
+  margin: auto;
+}
+/* line 1767, ../sass/comingsoon.scss */
+.comingsoon-main .logo_small img {
+  width: 100%;
+  display: block;
+}
+/* line 1772, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_btn {
+  position: absolute;
+  width: 24px;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+}
+/* line 1780, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_btn div {
+  height: 2px;
+  border-radius: 2px;
+  background: #A9A8A9;
+  margin-bottom: 5px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 1791, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_btn div:last-child {
+  margin-bottom: 0;
+}
+/* line 1796, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_lang_btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 17px;
+  text-align: center;
+  font-size: 15px;
+  color: #C8B98F;
+  line-height: 0.7;
+  cursor: pointer;
+}
+/* line 1809, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_lang_container {
+  position: absolute;
+  width: 100%;
+  top: 58px;
+  background: #262626;
+  padding: 20px 15px 30px;
+  display: none;
+}
+/* line 1818, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_lang_container:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #262626;
+  top: -5px;
+  right: 19px;
+}
+/* line 1831, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_lang_container h3 {
+  font-size: 9px;
+  color: #DCDEDF;
+  letter-spacing: 0.89px;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 0;
+}
+/* line 1840, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_lang_head {
+  border-bottom: 1px solid #000;
+  padding-bottom: 8px;
+  padding-left: 50px;
+}
+/* line 1846, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_lang_container h3:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #C8B98F;
+  position: absolute;
+  left: 10px;
+  top: 3px;
+}
+/* line 1856, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_lang_container a {
+  display: inline-block;
+  padding-left: 50px;
+  margin-top: 15px;
+  font-family: 'cordia_newregular';
+  font-size: 14px;
+  color: #A9A8A9;
+  letter-spacing: 2.33px;
+}
+/* line 1866, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_lang_container a img {
+  margin-right: 10px;
+}
+/* line 1870, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_lang_container a span {
+  color: #C8B98F;
+  font-family: 'cordia_newbold';
+  margin-right: 10px;
+}
+/* line 1876, ../sass/comingsoon.scss */
+.comingsoon-main .site_menu_container {
+  position: fixed;
+  background: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  padding-top: 15px;
+  display: none;
+}
+/* line 1888, ../sass/comingsoon.scss */
+.comingsoon-main .close_site_menu_btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+/* line 1895, ../sass/comingsoon.scss */
+.comingsoon-main .site_menu {
+  border-top: 1px solid #262626;
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 1903, ../sass/comingsoon.scss */
+.comingsoon-main .site_menu li {
+  padding-top: 30px;
+  display: none;
+  list-style: none;
+}
+/* line 1909, ../sass/comingsoon.scss */
+.comingsoon-main .site_menu li a {
+  font-size: 21px;
+  letter-spacing: 1.4px;
+  color: #262626;
+}
+/* line 1915, ../sass/comingsoon.scss */
+.comingsoon-main .close__everyday_btn {
+  display: none;
+}
+/* line 1919, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_top_hover {
+  color: #8A8A8D !important;
+}
+/* line 1923, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_header_bottom {
+  position: fixed;
+  top: 58px;
+  left: 0;
+  width: 100%;
+  background: #111111;
+  text-align: center;
+  border-top: #4C0000 1px solid;
+  z-index: 899;
+  padding: 5px 0 15px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  display: none;
+}
+/* line 1941, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_header_bottom.home_mobile_header {
+  top: -43px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 1949, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_social_btn {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+}
+/* line 1955, ../sass/comingsoon.scss */
+.comingsoon-main .normal_nav_btn {
+  font-family: 'cordia_newbold';
+  font-size: 16px;
+  color: #910000;
+  letter-spacing: 2px;
+  position: relative;
+}
+/* line 1963, ../sass/comingsoon.scss */
+.comingsoon-main .normal_nav_btn:hover {
+  color: #910000;
+}
+/* line 1967, ../sass/comingsoon.scss */
+.comingsoon-main .normal_nav_btn:focus {
+  color: #910000;
+}
+/* line 1971, ../sass/comingsoon.scss */
+.comingsoon-main .normal_nav_btn:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #910000;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+}
+/* line 1984, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_normal_nav_container {
+  position: fixed;
+  background: #111111;
+  text-align: center;
+  top: 0;
+  left: 0;
+  z-index: 898;
+  width: 100%;
+  height: 100%;
+  padding-top: 102px;
+  display: none;
+}
+/* line 1997, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_normal_nav {
+  background: #111;
+  width: 100%;
+  border-top: 1px solid #262626;
+}
+/* line 2003, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_normal_nav li {
+  text-align: center;
+  margin-top: 25px;
+}
+/* line 2008, ../sass/comingsoon.scss */
+.comingsoon-main .mobile_normal_nav li a {
+  font-family: 'cordia_newbold';
+  font-size: 20px;
+  letter-spacing: 2.85px;
+}
+/* line 2014, ../sass/comingsoon.scss */
+.comingsoon-main .caret-right {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: baseline;
+  border-left: 4px solid;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+}
+/* line 2026, ../sass/comingsoon.scss */
+.comingsoon-main .caret-left {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 2px;
+  vertical-align: baseline;
+  border-right: 4px solid;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+}
+/* line 2038, ../sass/comingsoon.scss */
+.comingsoon-main #nav_b {
+  right: -100%;
+  left: auto;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 2047, ../sass/comingsoon.scss */
+.comingsoon-main #nav_b.move_in {
+  right: 0;
+}
+/* line 2053, ../sass/comingsoon.scss */
+.comingsoon-main .ornament {
+  margin: 40px auto;
+  width: 200px;
+}
+/* line 2058, ../sass/comingsoon.scss */
+.comingsoon-main .ornament img {
+  width: 100%;
+  display: block;
+}
+/* line 2063, ../sass/comingsoon.scss */
+.comingsoon-main .text {
+  font-size: 20px;
+  color: #999799;
+  font-family: 'cordia_newregular';
+  width: 100%;
+  max-width: 575px;
+  margin: auto;
+  text-align: center;
+}
+/* line 2073, ../sass/comingsoon.scss */
+.comingsoon-main #about_bg {
+  background-image: url(../images/about_bg.jpg);
+}
+/* line 2077, ../sass/comingsoon.scss */
+.comingsoon-main .footer_page_name {
+  color: #C8B98F;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: 'cordia_newbold';
+  padding: 7px 0 10px;
+  margin-bottom: 0;
+}
+/* line 2088, ../sass/comingsoon.scss */
+.comingsoon-main .contact_text {
+  width: 90%;
+  margin: auto;
+}
+/* line 2093, ../sass/comingsoon.scss */
+.comingsoon-main #contact_bg {
+  background: #000 url(../images/contact_bg.jpg) no-repeat fixed center;
+  background-size: cover;
+}
+/* line 2098, ../sass/comingsoon.scss */
+.comingsoon-main #contact_form {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+/* line 2103, ../sass/comingsoon.scss */
+.comingsoon-main #contact_form h2 {
+  font-weight: 700;
+  font-size: 12px;
+  color: #DCDEDF;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #000;
+}
+/* line 2111, ../sass/comingsoon.scss */
+.comingsoon-main #contact_form h3 {
+  padding-bottom: 8px;
+  border-bottom: 2px solid #000;
+}
+/* line 2116, ../sass/comingsoon.scss */
+.comingsoon-main .contact_about_list {
+  padding-top: 10px;
+  margin-bottom: 25px;
+}
+/* line 2121, ../sass/comingsoon.scss */
+.comingsoon-main .contact_about_list li input {
+  float: left;
+  margin-top: 4px;
+}
+/* line 2126, ../sass/comingsoon.scss */
+.comingsoon-main .contact_about_list li div {
+  margin-left: 25px;
+}
+/* line 2130, ../sass/comingsoon.scss */
+.comingsoon-main .contact_about_list li div h4 {
+  font-family: 'cordia_newregular';
+  font-size: 20px;
+  color: #999799;
+}
+/* line 2136, ../sass/comingsoon.scss */
+.comingsoon-main .message_box {
+  width: 100%;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid #55565A;
+  padding: 10px 5px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 2148, ../sass/comingsoon.scss */
+.comingsoon-main .iframe-rwd {
+  position: relative;
+  padding-bottom: 65.25%;
+  padding-top: 100px;
+  height: 0;
+  overflow: hidden;
+}
+/* line 2156, ../sass/comingsoon.scss */
+.comingsoon-main .iframe-rwd iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 2164, ../sass/comingsoon.scss */
+.comingsoon-main .contact_map {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  margin-top: 60px;
+}
+/* line 2172, ../sass/comingsoon.scss */
+.comingsoon-main .btn-file {
+  position: relative;
+  overflow: hidden;
+}
+/* line 2176, ../sass/comingsoon.scss */
+.comingsoon-main .btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+/* line 2190, ../sass/comingsoon.scss */
+.comingsoon-main input[readonly] {
+  background: transparent !important;
+  cursor: text !important;
+  font-size: 18px;
+}
+/* line 2197, ../sass/comingsoon.scss */
+.comingsoon-main .btn-primary {
+  border: 1px solid #55565A;
+  border-radius: 5px !important;
+  background: transparent;
+  height: 30px;
+  width: 100%;
+  margin: auto;
+  display: block;
+  font-size: 18px;
+  font-family: 'cordia_newbold';
+  color: #999799;
+  line-height: 10px;
+}
+/* line 2211, ../sass/comingsoon.scss */
+.comingsoon-main .btn-primary:hover {
+  background: transparent;
+  border: 1px solid #55565A;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+/* line 2220, ../sass/comingsoon.scss */
+.comingsoon-main .input-group-btn {
+  padding: 0;
+  vertical-align: top;
+}
+/* line 2225, ../sass/comingsoon.scss */
+.comingsoon-main .file_name {
+  border: 0;
+  color: #999799;
+  position: relative;
+  color: #999799 !important;
+  text-align: right;
+  width: 100%;
+}
+/* line 2235, ../sass/comingsoon.scss */
+.comingsoon-main .input-group {
+  display: block;
+}
+/* line 2239, ../sass/comingsoon.scss */
+.comingsoon-main .contact_about_select {
+  display: none;
+}
+/* line 2243, ../sass/comingsoon.scss */
+.comingsoon-main .select_box2 {
+  width: 100%;
+  height: 45px;
+  background: #111111 url(../images/select_arrow2.png) 20px center no-repeat;
+  border: 1px solid #000000;
+  padding: 0 5px;
+  padding-left: 50px;
+  font-size: 20px;
+  font-family: 'cordia_newregular';
+  -webkit-appearance: none;
+  color: #C8B98F;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+/* line 2258, ../sass/comingsoon.scss */
+.comingsoon-main .close_social_btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: none;
+}
+/* line 2267, ../sass/comingsoon.scss */
+.comingsoon-main #large_map {
+  padding-top: 136px;
+  height: 468px;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+/* line 2274, ../sass/comingsoon.scss */
+.comingsoon-main #store_list_container {
+  padding-bottom: 130px;
+}
+/* line 2278, ../sass/comingsoon.scss */
+.comingsoon-main #store_list_container h2 {
+  font-weight: 700;
+  font-size: 12px;
+  color: #DCDEDF;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #000;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+/* line 2288, ../sass/comingsoon.scss */
+.comingsoon-main .store_list > div {
+  border: 1px solid #000;
+  border-top: 4px solid #000;
+  width: 24.2%;
+  float: left;
+  margin-right: 1.066%;
+  margin-bottom: 14px;
+}
+/* line 2297, ../sass/comingsoon.scss */
+.comingsoon-main .store_list > div:nth-child(4n) {
+  margin-right: 0;
+}
+/* line 2301, ../sass/comingsoon.scss */
+.comingsoon-main .store_list a {
+  display: block;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  background: transparent;
+  position: relative;
+}
+/* line 2311, ../sass/comingsoon.scss */
+.comingsoon-main .store_list a:hover {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  background: #000;
+}
+/* line 2319, ../sass/comingsoon.scss */
+.comingsoon-main .store_list a img {
+  width: 100%;
+  display: block;
+}
+/* line 2324, ../sass/comingsoon.scss */
+.comingsoon-main .store_detail {
+  padding: 20px 15px;
+  min-height: 240px;
+  position: relative;
+}
+/* line 2330, ../sass/comingsoon.scss */
+.comingsoon-main .store_address {
+  /* position: absolute; */
+  top: 60px;
+  padding: 0 15px;
+  width: 100%;
+  left: 0;
+  margin-bottom: 0;
+}
+/* line 2339, ../sass/comingsoon.scss */
+.comingsoon-main .store_time {
+  /* position: absolute; */
+  top: 133px;
+  padding: 0 15px;
+  width: 100%;
+  left: 0;
+  margin-bottom: 0;
+}
+/* line 2348, ../sass/comingsoon.scss */
+.comingsoon-main .store_phone {
+  /* position: absolute; */
+  bottom: 20px;
+  padding: 0 15px;
+  width: 100%;
+  left: 0;
+  margin-bottom: 0;
+}
+/* line 2357, ../sass/comingsoon.scss */
+.comingsoon-main .store_number {
+  width: 30px;
+  height: 35px;
+  text-align: center;
+  line-height: 26px;
+  color: #A9A8A9;
+  background: #000;
+  font-size: 20px;
+  font-family: 'cordia_newbold';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+/* line 2372, ../sass/comingsoon.scss */
+.comingsoon-main .stores_options {
+  font-size: 14px;
+  width: 330px;
+  right: 0;
+}
+/* line 2378, ../sass/comingsoon.scss */
+.comingsoon-main .country_options {
+  font-size: 14px;
+  left: 0 !important;
+  right: auto;
+}
+/* line 2384, ../sass/comingsoon.scss */
+.comingsoon-main .stores_icon {
+  position: relative;
+  padding-right: 38px;
+  margin: 0;
+}
+/* line 2390, ../sass/comingsoon.scss */
+.comingsoon-main .stores_icon:after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #A9A8A9;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+/* line 2400, ../sass/comingsoon.scss */
+.comingsoon-main .country_icon {
+  position: relative;
+  padding-left: 38px;
+  margin: 0;
+  width: 262px;
+}
+/* line 2407, ../sass/comingsoon.scss */
+.comingsoon-main .country_icon:after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #A9A8A9;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+/* line 2417, ../sass/comingsoon.scss */
+.comingsoon-main #store_info {
+  padding-top: 150px;
+  padding-bottom: 130px;
+}
+/* line 2422, ../sass/comingsoon.scss */
+.comingsoon-main #store_info_top {
+  margin-bottom: 20px;
+}
+/* line 2426, ../sass/comingsoon.scss */
+.comingsoon-main .store_slide_container {
+  width: 100%;
+  position: relative;
+}
+/* line 2431, ../sass/comingsoon.scss */
+.comingsoon-main .store_slide {
+  width: 100%;
+}
+/* line 2435, ../sass/comingsoon.scss */
+.comingsoon-main .store_slide img {
+  width: 100%;
+  display: block;
+}
+/* line 2440, ../sass/comingsoon.scss */
+.comingsoon-main .store_slide_container #pager {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  z-index: 700;
+}
+/* line 2448, ../sass/comingsoon.scss */
+.comingsoon-main .store_map {
+  width: 100%;
+  height: 236px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+/* line 2455, ../sass/comingsoon.scss */
+.comingsoon-main .underline_h2 {
+  border-bottom: 2px solid #000;
+  font-weight: 700;
+  font-size: 12px;
+  color: #DCDEDF;
+  letter-spacing: 0.56px;
+  line-height: 17px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+/* line 2466, ../sass/comingsoon.scss */
+.comingsoon-main .underline_h3 {
+  border-bottom: 2px solid #000;
+  font-family: 'cordia_newregular';
+  font-size: 18px;
+  color: #DCDEDF;
+  letter-spacing: 0.05px;
+  line-height: 21px;
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+}
+/* line 2477, ../sass/comingsoon.scss */
+.comingsoon-main #to_contact_btn {
+  width: 100%;
+}
+/* line 2483, ../sass/comingsoon.scss */
+.comingsoon-main #faqs_text {
+  width: 90%;
+  margin: 0 auto 15px;
+}
+/* line 2488, ../sass/comingsoon.scss */
+.comingsoon-main #faqs_container {
+  padding-top: 150px;
+  padding-bottom: 130px;
+}
+/* line 2493, ../sass/comingsoon.scss */
+.comingsoon-main .underline_link {
+  /* To help answer any q: */
+  font-family: 'cordia_newbold';
+  text-decoration: underline;
+  font-size: 15px;
+  color: #C8B98F;
+  letter-spacing: 0.02px;
+  line-height: 20px;
+}
+/* line 2503, ../sass/comingsoon.scss */
+.comingsoon-main #faqs_section {
+  margin-top: 10px;
+}
+/* line 2507, ../sass/comingsoon.scss */
+.comingsoon-main #faqs_section h3 {
+  font-weight: 700;
+  font-size: 12px;
+  color: #DCDEDF;
+  letter-spacing: 0.2px;
+  line-height: 17px;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+/* line 2517, ../sass/comingsoon.scss */
+.comingsoon-main .answer_box {
+  padding: 30px 20px;
+  background: #111111;
+  border: 1px solid #000;
+  border-radius: 5px;
+  min-height: 530px;
+}
+/* line 2525, ../sass/comingsoon.scss */
+.comingsoon-main .answer_box p {
+  font-family: 'cordia_newregular';
+  font-size: 20px;
+  color: #A9A8A9;
+  letter-spacing: 0.34px;
+  line-height: 20px;
+}
+/* line 2533, ../sass/comingsoon.scss */
+.comingsoon-main #question_cat_list {
+  background: #111111;
+  border: 1px solid #000;
+  border-top: 0;
+  border-radius: 5px;
+  font-family: 'cordia_newregular';
+}
+/* line 2541, ../sass/comingsoon.scss */
+.comingsoon-main .question_cat {
+  border-top: 1px solid #000;
+  font-size: 20px;
+  color: #A9A8A9;
+  letter-spacing: 0.02px;
+  padding: 10px 30px 13px;
+  cursor: pointer;
+}
+/* line 2550, ../sass/comingsoon.scss */
+.comingsoon-main .question_cat:hover {
+  color: #C8B98F;
+  background: #262626;
+}
+/* line 2555, ../sass/comingsoon.scss */
+.comingsoon-main .faq_cat_active {
+  color: #C8B98F;
+  background: #262626;
+}
+/* line 2560, ../sass/comingsoon.scss */
+.comingsoon-main .question_list {
+  background: #000;
+  display: none;
+}
+/* line 2565, ../sass/comingsoon.scss */
+.comingsoon-main .question_list li {
+  font-size: 20px;
+  color: #A9A8A9;
+  letter-spacing: 0.02px;
+  padding: 10px 0 15px 64px;
+  cursor: pointer;
+  line-height: 1;
+  position: relative;
+}
+/* line 2575, ../sass/comingsoon.scss */
+.comingsoon-main .question_list li:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #A9A8A9;
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  margin-top: -1px;
+}
+/* line 2586, ../sass/comingsoon.scss */
+.comingsoon-main .question_list li:hover {
+  color: #C8B98F;
+  background: #262626;
+}
+/* line 2591, ../sass/comingsoon.scss */
+.comingsoon-main .question_list li:hover:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #C8B98F;
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  margin-top: -1px;
+}
+/* line 2602, ../sass/comingsoon.scss */
+.comingsoon-main .question_list li.question_active {
+  color: #C8B98F;
+  background: #262626;
+}
+/* line 2607, ../sass/comingsoon.scss */
+.comingsoon-main .question_list li.question_active:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #C8B98F;
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  margin-top: -1px;
+}
+/* line 2618, ../sass/comingsoon.scss */
+.comingsoon-main .have_caret {
+  margin-right: 20px;
+}
+/* line 2625, ../sass/comingsoon.scss */
+.comingsoon-main #black_bg {
+  background: #000;
+}
+/* line 2629, ../sass/comingsoon.scss */
+.comingsoon-main #sitemap_container {
+  padding: 230px 15px 130px;
+}
+/* line 2633, ../sass/comingsoon.scss */
+.comingsoon-main #sitemap_container h2 {
+  font-size: 12px;
+  color: #DCDEDF;
+  letter-spacing: 0.2px;
+}
+/* line 2639, ../sass/comingsoon.scss */
+.comingsoon-main .sitemap_nav > li > a {
+  font-family: 'cordia_newregular';
+  font-size: 20px;
+  color: #A9A8A9;
+}
+/* line 2646, ../sass/comingsoon.scss */
+.comingsoon-main #sitemap_nav_top {
+  border-bottom: 1px solid #262626;
+  padding-bottom: 40px;
+}
+/* line 2651, ../sass/comingsoon.scss */
+.comingsoon-main .sitemap_subnav > li {
+  padding-left: 15px;
+}
+/* line 2655, ../sass/comingsoon.scss */
+.comingsoon-main .sitemap_subnav > li > a {
+  font-family: 'cordia_newregular';
+  font-size: 20px;
+  color: #8A8A8D;
+}
+/* line 2661, ../sass/comingsoon.scss */
+.comingsoon-main #sitemap_nav_bottom {
+  padding-top: 40px;
+}
+/* line 2665, ../sass/comingsoon.scss */
+.comingsoon-main #sitemap_nav_bottom a {
+  font-size: 12px;
+  color: #DCDEDF;
+  letter-spacing: 0.2px;
+}
+/* line 2671, ../sass/comingsoon.scss */
+.comingsoon-main #sitemap_nav_bottom a:hover {
+  color: #910000;
+}
+/* line 2675, ../sass/comingsoon.scss */
+.comingsoon-main #sitemap_nav_bottom > div {
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 1199px) {
+  /* line 2680, ../sass/comingsoon.scss */
+  .comingsoon-main .main_nav a {
+    margin: 0 25px;
+  }
+  /* line 2684, ../sass/comingsoon.scss */
+  .comingsoon-main .store_map {
+    width: 100%;
+    height: 193px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  /* line 2694, ../sass/comingsoon.scss */
+  .comingsoon-main .main_slide_container {
+    position: relative;
+    z-index: 880;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  /* line 2703, ../sass/comingsoon.scss */
+  .comingsoon-main #transparent_content {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  /* line 2709, ../sass/comingsoon.scss */
+  .comingsoon-main #scroll_down_btn {
+    position: absolute;
+    z-index: 760;
+  }
+  /* line 2714, ../sass/comingsoon.scss */
+  .comingsoon-main .cat_options li a, .comingsoon-main .cat_options2 li a {
+    font-size: 18px;
+  }
+  /* line 2718, ../sass/comingsoon.scss */
+  .comingsoon-main #cat_btn div {
+    background: url(../images/icon1.svg);
+    width: 20px;
+    height: 18px;
+    background-size: 100% 200%;
+    background-position: 0 0;
+    margin-left: 10px;
+  }
+  /* line 2727, ../sass/comingsoon.scss */
+  .comingsoon-main #col_grid_btn div {
+    background: url(../images/icon2.svg);
+    width: 20px;
+    height: 18px;
+    background-size: 100% 200%;
+    background-position: 0 0;
+  }
+  /* line 2735, ../sass/comingsoon.scss */
+  .comingsoon-main #col_full_btn div {
+    background: url(../images/icon3.svg);
+    width: 20px;
+    height: 20px;
+    background-size: 100% 200%;
+    background-position: 0 0;
+  }
+  /* line 2743, ../sass/comingsoon.scss */
+  .comingsoon-main #search_btn div {
+    background: url(../images/icon4.svg);
+    width: 20px;
+    height: 20px;
+    background-size: 100% 200%;
+    background-position: 0 0;
+  }
+  /* line 2751, ../sass/comingsoon.scss */
+  .comingsoon-main #random_btn div {
+    background: url(../images/icon5.svg);
+    width: 20px;
+    height: 16px;
+    background-size: 100% 200%;
+    background-position: 0 0;
+    margin-right: 10px;
+  }
+  /* line 2760, ../sass/comingsoon.scss */
+  .comingsoon-main .icon span {
+    display: inline-block;
+    font-size: 16px;
+  }
+  /* line 2765, ../sass/comingsoon.scss */
+  .comingsoon-main .music_container {
+    display: none;
+  }
+  /* line 2769, ../sass/comingsoon.scss */
+  .comingsoon-main .close__everyday_btn {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    display: block;
+  }
+}
+@media only screen and (max-width: 991px) {
+  /* line 2779, ../sass/comingsoon.scss */
+  .comingsoon-main footer {
+    position: static;
+  }
+  /* line 2783, ../sass/comingsoon.scss */
+  .comingsoon-main footer#fixed_tablet {
+    position: fixed;
+    bottom: 0;
+  }
+  /* line 2788, ../sass/comingsoon.scss */
+  .comingsoon-main .icon {
+    letter-spacing: 0.7px;
+  }
+  /* line 2792, ../sass/comingsoon.scss */
+  .comingsoon-main .store_list > div {
+    border: 1px solid #000;
+    border-top: 4px solid #000;
+    width: 33%;
+    float: left;
+    margin-right: 0.5%;
+    margin-bottom: 14px;
+  }
+  /* line 2801, ../sass/comingsoon.scss */
+  .comingsoon-main .store_list > div:nth-child(4n) {
+    margin-right: 0.5%;
+  }
+  /* line 2805, ../sass/comingsoon.scss */
+  .comingsoon-main .store_list > div:nth-child(3n) {
+    margin-right: 0;
+  }
+  /* line 2809, ../sass/comingsoon.scss */
+  .comingsoon-main #large_map {
+    padding-top: 90px;
+  }
+  /* line 2813, ../sass/comingsoon.scss */
+  .comingsoon-main #store_info {
+    padding-top: 90px;
+    padding-bottom: 130px;
+  }
+  /* line 2818, ../sass/comingsoon.scss */
+  .comingsoon-main #store_img_large {
+    margin-bottom: 15px;
+  }
+  /* line 2822, ../sass/comingsoon.scss */
+  .comingsoon-main .store_map {
+    width: 48.5%;
+    height: 175px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    float: left;
+  }
+  /* line 2830, ../sass/comingsoon.scss */
+  .comingsoon-main #graphic_map {
+    width: 48.5%;
+    float: right;
+  }
+  /* line 2835, ../sass/comingsoon.scss */
+  .comingsoon-main #more_btn {
+    display: none;
+  }
+  /* line 2839, ../sass/comingsoon.scss */
+  .comingsoon-main .footer_bottom {
+    display: none;
+  }
+  /* line 2843, ../sass/comingsoon.scss */
+  .comingsoon-main .stores_icon {
+    width: auto !important;
+    padding-right: 30px;
+  }
+  /* line 2848, ../sass/comingsoon.scss */
+  .comingsoon-main .country_icon {
+    width: auto !important;
+    padding-left: 30px;
+  }
+  /* line 2855, ../sass/comingsoon.scss */
+  .comingsoon-main .close_btn {
+    position: fixed;
+    top: 40px;
+    right: 0;
+  }
+  /* line 2861, ../sass/comingsoon.scss */
+  .comingsoon-main #sitemap_container h2 {
+    font-size: 12px;
+    color: #DCDEDF;
+    letter-spacing: 0.2px;
+    margin-bottom: 30px;
+  }
+  /* line 2868, ../sass/comingsoon.scss */
+  .comingsoon-main #main_content {
+    padding: 110px 15px 50px;
+  }
+  /* line 2872, ../sass/comingsoon.scss */
+  .comingsoon-main .contact_map {
+    width: 290px;
+    height: 290px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin-top: 60px;
+    float: left;
+  }
+  /* line 2881, ../sass/comingsoon.scss */
+  .comingsoon-main .contact_info {
+    margin-left: 310px;
+    margin-top: 60px;
+  }
+  /* line 2886, ../sass/comingsoon.scss */
+  .comingsoon-main .contact_about_list {
+    display: none;
+  }
+  /* line 2890, ../sass/comingsoon.scss */
+  .comingsoon-main #contact_faqs {
+    display: none;
+  }
+  /* line 2894, ../sass/comingsoon.scss */
+  .comingsoon-main .contact_about_select {
+    display: block;
+  }
+  /* line 2898, ../sass/comingsoon.scss */
+  .comingsoon-main .input_box {
+    height: 40px;
+  }
+  /* line 2902, ../sass/comingsoon.scss */
+  .comingsoon-main .message_box {
+    height: 320px;
+  }
+  /* line 2906, ../sass/comingsoon.scss */
+  .comingsoon-main .select_box {
+    width: 100%;
+    height: 40px;
+  }
+  /* line 2911, ../sass/comingsoon.scss */
+  .comingsoon-main #faqs_section > div:nth-child(2) {
+    margin-top: 30px;
+  }
+  /* line 2915, ../sass/comingsoon.scss */
+  .comingsoon-main .product-grid-sizer {
+    width: 32%;
+  }
+  /* line 2919, ../sass/comingsoon.scss */
+  .comingsoon-main .product-gutter-sizer {
+    width: 2%;
+  }
+  /* line 2923, ../sass/comingsoon.scss */
+  .comingsoon-main .item {
+    width: 32%;
+  }
+  /* line 2927, ../sass/comingsoon.scss */
+  .comingsoon-main .product_item {
+    position: relative;
+    margin-bottom: 15px;
+    display: block;
+  }
+  /* line 2933, ../sass/comingsoon.scss */
+  .comingsoon-main .product_list.grid .item {
+    width: 24%;
+  }
+  /* line 2937, ../sass/comingsoon.scss */
+  .comingsoon-main .product_list.grid .product-grid-sizer {
+    width: 24%;
+  }
+  /* line 2941, ../sass/comingsoon.scss */
+  .comingsoon-main .product_list.grid .product-gutter-sizer {
+    width: 1.3%;
+  }
+  /* line 2945, ../sass/comingsoon.scss */
+  .comingsoon-main .cat_options, .comingsoon-main .cat_options2 {
+    position: fixed;
+    border-bottom: solid 1px #262626;
+    background: #111111;
+    width: 100%;
+    bottom: 33px;
+    right: 0;
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-topright: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    overflow: hidden;
+    display: none;
+    text-align: center;
+  }
+  /* line 2963, ../sass/comingsoon.scss */
+  .comingsoon-main .cat_options li a, .comingsoon-main .cat_options2 li a {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    color: #A9A8A9;
+    padding: 5px 0 7px 0;
+    right: auto;
+    margin-left: 0;
+    font-family: 'cordia_newbold';
+  }
+  /* line 2976, ../sass/comingsoon.scss */
+  .comingsoon-main #cat_btn {
+    width: auto;
+    text-align: right;
+  }
+  /* line 2981, ../sass/comingsoon.scss */
+  .comingsoon-main #cat_btn span {
+    display: none;
+  }
+  /* line 2985, ../sass/comingsoon.scss */
+  .comingsoon-main #random_btn span {
+    display: none;
+  }
+  /* line 2989, ../sass/comingsoon.scss */
+  .comingsoon-main #random_btn {
+    width: auto;
+    text-align: left;
+  }
+  /* line 2994, ../sass/comingsoon.scss */
+  .comingsoon-main .cat_options li a:after, .comingsoon-main .cat_options2 li a:after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #A9A8A9;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: none;
+  }
+  /* line 3005, ../sass/comingsoon.scss */
+  .comingsoon-main .cat_options li a:hover:after, .comingsoon-main .cat_options2 li a:hover:after {
+    background: #C8B98F;
+  }
+  /* line 3009, ../sass/comingsoon.scss */
+  .comingsoon-main #random li a {
+    text-align: center;
+    padding: 5px 0 7px 0;
+  }
+  /* line 3014, ../sass/comingsoon.scss */
+  .comingsoon-main #random li a:after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #A9A8A9;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    display: none;
+  }
+  /* line 3025, ../sass/comingsoon.scss */
+  .comingsoon-main #random {
+    right: auto;
+    left: 0;
+  }
+  /* line 3030, ../sass/comingsoon.scss */
+  .comingsoon-main .stores_icon {
+    width: 140px !important;
+  }
+  /* line 3034, ../sass/comingsoon.scss */
+  .comingsoon-main .country_icon {
+    width: 140px !important;
+  }
+  /* line 3038, ../sass/comingsoon.scss */
+  .comingsoon-main .top_bar {
+    display: none;
+  }
+  /* line 3042, ../sass/comingsoon.scss */
+  .comingsoon-main header {
+    display: none !important;
+  }
+  /* line 3046, ../sass/comingsoon.scss */
+  .comingsoon-main .overlayFromMenu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 920;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+    display: none;
+  }
+  /* line 3058, ../sass/comingsoon.scss */
+  .comingsoon-main .social {
+    display: inline-block;
+    float: none;
+  }
+  /* line 3063, ../sass/comingsoon.scss */
+  .comingsoon-main .social {
+    display: inline-block;
+    float: none;
+  }
+  /* line 3068, ../sass/comingsoon.scss */
+  .comingsoon-main #copyright {
+    float: none;
+    display: inline-block;
+    font-family: 'cordia_newregular';
+    font-size: 16px;
+    color: #55565A;
+    letter-spacing: 1.6px;
+  }
+  /* line 3077, ../sass/comingsoon.scss */
+  .comingsoon-main .social_container {
+    position: fixed;
+    padding: 10px 18px 0 15px;
+    border-right: 1px solid #800d09;
+    height: 100%;
+    width: 100%;
+    z-index: 860;
+    background: #111;
+    top: 0;
+    left: -100%;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+  /* line 3093, ../sass/comingsoon.scss */
+  .comingsoon-main .social_btn {
+    display: none;
+  }
+  /* line 3097, ../sass/comingsoon.scss */
+  .comingsoon-main .social_list {
+    width: 100%;
+    padding: 15px 0;
+  }
+  /* line 3102, ../sass/comingsoon.scss */
+  .comingsoon-main .close_social_btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: block;
+    cursor: pointer;
+  }
+  /* line 3110, ../sass/comingsoon.scss */
+  .comingsoon-main #sitemap_container {
+    padding: 140px 15px 130px;
+  }
+  /* line 3114, ../sass/comingsoon.scss */
+  .comingsoon-main #store_list_container {
+    padding-bottom: 130px;
+  }
+  /* line 3118, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_header_bottom {
+    display: block;
+  }
+  /* line 3122, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_header_top {
+    display: block;
+  }
+  /* line 3126, ../sass/comingsoon.scss */
+  .comingsoon-main .product_slide_left {
+    position: relative;
+  }
+  /* line 3130, ../sass/comingsoon.scss */
+  .comingsoon-main .product_slide_container {
+    border-right-color: #262626;
+    border-right-style: solid;
+    border-right-width: 2px;
+  }
+  /* line 3136, ../sass/comingsoon.scss */
+  .comingsoon-main .close_product_btn {
+    position: fixed;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* line 3142, ../sass/comingsoon.scss */
+  .comingsoon-main .store_list > div {
+    border: 1px solid #000;
+    border-top: 4px solid #000;
+    width: 100%;
+    float: none;
+    margin-right: 0;
+    margin-bottom: 14px;
+  }
+  /* line 3151, ../sass/comingsoon.scss */
+  .comingsoon-main .store_list > div:nth-child(4n) {
+    margin-right: 0;
+  }
+  /* line 3155, ../sass/comingsoon.scss */
+  .comingsoon-main .store_list > div:nth-child(3n) {
+    margin-right: 0;
+  }
+  /* line 3159, ../sass/comingsoon.scss */
+  .comingsoon-main #large_map {
+    /*padding-top: 90px;*/
+    height: 320px;
+    overflow: hidden;
+    box-sizing: content-box;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+  }
+  /* line 3169, ../sass/comingsoon.scss */
+  .comingsoon-main .store_map {
+    width: 100%;
+    height: 175px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    float: none;
+  }
+  /* line 3177, ../sass/comingsoon.scss */
+  .comingsoon-main #graphic_map {
+    width: 100%;
+    float: none;
+  }
+  /* line 3182, ../sass/comingsoon.scss */
+  .comingsoon-main #sitemap_container h2 {
+    font-size: 12px;
+    color: #DCDEDF;
+    letter-spacing: 0.2px;
+    margin-bottom: 20px;
+  }
+  /* line 3189, ../sass/comingsoon.scss */
+  .comingsoon-main .contact_map {
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin-top: 40px;
+    float: none;
+  }
+  /* line 3198, ../sass/comingsoon.scss */
+  .comingsoon-main .contact_info {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  /* line 3203, ../sass/comingsoon.scss */
+  .comingsoon-main .newsletter_left {
+    margin-bottom: 7px;
+    width: 100%;
+    float: none;
+  }
+  /* line 3209, ../sass/comingsoon.scss */
+  .comingsoon-main .newsletter_right {
+    margin-bottom: 7px;
+    width: 100%;
+    float: none;
+  }
+  /* line 3215, ../sass/comingsoon.scss */
+  .comingsoon-main #faqs_section h3 {
+    font-weight: 700;
+    font-size: 12px;
+    color: #DCDEDF;
+    letter-spacing: 0.2px;
+    line-height: 17px;
+    padding-left: 0;
+    margin-bottom: 10px;
+  }
+  /* line 3225, ../sass/comingsoon.scss */
+  .comingsoon-main .agree {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  /* line 3232, ../sass/comingsoon.scss */
+  .comingsoon-main .newsletter_container {
+    padding: 20px 0 50px;
+    height: 100%;
+  }
+  /* line 3237, ../sass/comingsoon.scss */
+  .comingsoon-main .product-grid-sizer {
+    width: 49%;
+  }
+  /* line 3241, ../sass/comingsoon.scss */
+  .comingsoon-main .product-gutter-sizer {
+    width: 2%;
+  }
+  /* line 3245, ../sass/comingsoon.scss */
+  .comingsoon-main .item {
+    width: 49%;
+  }
+  /* line 3249, ../sass/comingsoon.scss */
+  .comingsoon-main .product_list.grid .item {
+    width: 32%;
+  }
+  /* line 3253, ../sass/comingsoon.scss */
+  .comingsoon-main .product_list.grid .product-grid-sizer {
+    width: 32%;
+  }
+  /* line 3257, ../sass/comingsoon.scss */
+  .comingsoon-main .product_list.grid .product-gutter-sizer {
+    width: 2%;
+  }
+  /* line 3261, ../sass/comingsoon.scss */
+  .comingsoon-main .product_item {
+    position: relative;
+    margin-bottom: 5px;
+    display: block;
+  }
+  /* line 3267, ../sass/comingsoon.scss */
+  .comingsoon-main #search_top {
+    background: #111;
+    height: auto;
+    padding: 10px 0 0;
+  }
+  /* line 3273, ../sass/comingsoon.scss */
+  .comingsoon-main #tag_list span {
+    margin-bottom: 5px;
+  }
+  /* line 3277, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_lang_container {
+    position: absolute;
+    width: 100%;
+    top: 58px;
+    background: #262626;
+    padding: 20px 15px 30px;
+    display: none;
+    text-align: center;
+  }
+  /* line 3287, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_lang_container:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #262626;
+    top: -5px;
+    right: 19px;
+  }
+  /* line 3300, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_lang_container h3 {
+    font-size: 9px;
+    color: #DCDEDF;
+    letter-spacing: 0.89px;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0;
+    display: inline-block;
+  }
+  /* line 3310, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_lang_head {
+    border-bottom: 1px solid #000;
+    padding-bottom: 8px;
+    padding-left: 0;
+  }
+  /* line 3316, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_lang_container h3:before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #C8B98F;
+    position: absolute;
+    left: 10px;
+    top: 3px;
+  }
+  /* line 3326, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_lang_container a {
+    display: inline-block;
+    padding-left: 0;
+    margin-top: 6px;
+    font-family: 'cordia_newregular';
+    font-size: 14px;
+    color: #A9A8A9;
+    letter-spacing: 2.33px;
+    width: 98px;
+    text-align: left;
+  }
+  /* line 3338, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_lang_container a img {
+    margin-right: 10px;
+  }
+  /* line 3342, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_lang_container a span {
+    color: #C8B98F;
+    font-family: 'cordia_newbold';
+    margin-right: 10px;
+  }
+  /* line 3348, ../sass/comingsoon.scss */
+  .comingsoon-main #mobile_country {
+    margin-bottom: 40px;
+  }
+  /* line 3352, ../sass/comingsoon.scss */
+  .comingsoon-main .site_menu li {
+    padding-top: 15px;
+  }
+  /* line 3356, ../sass/comingsoon.scss */
+  .comingsoon-main .mobile_normal_nav li {
+    text-align: center;
+    margin-top: 15px;
+  }
+  /* line 3361, ../sass/comingsoon.scss */
+  .comingsoon-main .social_item {
+    width: 100%;
+  }
+  /* line 3365, ../sass/comingsoon.scss */
+  .comingsoon-main #product_detail_container {
+    width: 100%;
+  }
+  /* line 3369, ../sass/comingsoon.scss */
+  .comingsoon-main .newsletter_container .close_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  /* line 3375, ../sass/comingsoon.scss */
+  .comingsoon-main #search_box_container {
+    width: 75%;
+    max-width: 940px;
+    border-radius: 5px;
+    border: 1px solid #55565A;
+    border-top: 0;
+    border-bottom: 0;
+    margin: auto;
+    position: relative;
+  }
+  /* line 3386, ../sass/comingsoon.scss */
+  .comingsoon-main .close_product_btn {
+    position: fixed;
+    /*top: -20px;*/
+    right: 40px;
+    z-index: 500;
+  }
+  /* line 3393, ../sass/comingsoon.scss */
+  .comingsoon-main #cover {
+    background: #000;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    display: none;
+  }
+  /* line 3403, ../sass/comingsoon.scss */
+  .comingsoon-main .overlayFromMenu img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+  /* line 3413, ../sass/comingsoon.scss */
+  .comingsoon-main .relate_list li {
+    width: 49%;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 2px;
+  }
+  /* line 3420, ../sass/comingsoon.scss */
+  .comingsoon-main .relate_list li:nth-child(3n) {
+    margin-right: 1%;
+  }
+  /* line 3424, ../sass/comingsoon.scss */
+  .comingsoon-main .relate_list li:nth-child(2n) {
+    margin-right: 0;
+  }
+  /* line 3428, ../sass/comingsoon.scss */
+  .comingsoon-main .share_container a {
+    font-size: 17px;
+    margin-left: 20px;
+    vertical-align: middle;
+  }
+  /* line 3434, ../sass/comingsoon.scss */
+  .comingsoon-main .product_tags_list a {
+    margin-bottom: 5px;
+  }
+}
+/* line 3439, ../sass/comingsoon.scss */
+.comingsoon-main .head_menu {
+  color: #8A8A8D !important;
+  cursor: default;
+}
+@media only screen and (min-width: 991px) {
+  /* line 3445, ../sass/comingsoon.scss */
+  .comingsoon-main .country_options {
+    font-size: 14px;
+    left: 0 !important;
+    right: auto;
+  }
+  /* line 3451, ../sass/comingsoon.scss */
+  .comingsoon-main .country_icon:after {
+    background: unset;
+    position: unset;
+  }
+  /* line 3456, ../sass/comingsoon.scss */
+  .comingsoon-main #bottom_menu_country_display:before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #A9A8A9;
+    position: absolute;
+    top: 15px;
+    margin-left: -15px;
+  }
+}

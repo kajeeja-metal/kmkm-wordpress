@@ -1,0 +1,20 @@
+2019-05-15T09:58:58+00:00 CRITICAL syntax error, unexpected ';', expecting variable (T_VARIABLE) or '{' or '$' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 2301
+
+2019-05-15T10:17:09+00:00 CRITICAL Allowed memory size of 134217728 bytes exhausted (tried to allocate 65028096 bytes) in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 687
+
+2019-05-15T10:18:52+00:00 CRITICAL Allowed memory size of 134217728 bytes exhausted (tried to allocate 52445184 bytes) in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1273
+
+2019-05-15T10:21:01+00:00 CRITICAL Allowed memory size of 134217728 bytes exhausted (tried to allocate 62930944 bytes) in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1273
+
+2019-05-15T10:22:11+00:00 CRITICAL syntax error, unexpected end of file in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 113
+
+2019-05-15T10:22:23+00:00 CRITICAL syntax error, unexpected end of file in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 114
+
+2019-05-15T10:25:49+00:00 CRITICAL syntax error, unexpected end of file in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 113
+
+2019-05-15T10:26:44+00:00 CRITICAL syntax error, unexpected end of file in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 114
+
+2019-05-15T10:26:46+00:00 CRITICAL syntax error, unexpected end of file in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 114
+
+2019-05-15T10:27:26+00:00 CRITICAL syntax error, unexpected end of file in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php on line 114
+

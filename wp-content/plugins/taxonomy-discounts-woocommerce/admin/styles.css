@@ -1,0 +1,40 @@
+
+.tdw-ajax-loading {
+	opacity: 0.5;
+}
+#tdw-form-add p.tdw-float-left {
+	float: left;
+	margin-top: 0px;
+	margin-right: 0.75em;
+}
+#tdw-form-add input[type=number],
+#tdw-form-edit input[type=number] {
+	width: 50px;
+}
+.tdw-date-field {
+	width: 100px;
+}
+.tdw-time-field {
+	width: 75px;
+}
+#tdw-form-add-2,
+#tdw-form-add-3 {
+	float: left;
+}
+.tdw-hidden {
+	display: none;
+}
+#tdw-rules-table {
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+#tdw-rules-table table tbody tr td {
+	border-top: 1px solid #e1e1e1;
+}
+#tdw-rules-table table tbody tr:first-child td,
+#tdw-rules-table table tbody tr.tdw-edit-rule td {
+	border-top: 0px;
+}
+#tdw-form-edit-role {
+	max-width: 125px;
+}
