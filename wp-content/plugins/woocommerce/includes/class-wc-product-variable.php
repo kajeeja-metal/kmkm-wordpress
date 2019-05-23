@@ -342,7 +342,7 @@ class WC_Product_Variable extends WC_Product {
 				'is_virtual'            => $variation->is_virtual(),
 				'max_qty'               => 0 < $variation->get_max_purchase_quantity() ? $variation->get_max_purchase_quantity() : '',
 				'min_qty'               => $variation->get_min_purchase_quantity(),
-				'price_html'            => $show_variation_price ? '<span class="price">' . $variation->get_price_html() . '</span>' : '',
+				'price_html'            => $show_variation_price ? '<span class="price" style="color:#">' . $variation->get_price_html() . '</span>' : '',
 				'sku'                   => $variation->get_sku(),
 				'variation_description' => wc_format_content( $variation->get_description() ),
 				'variation_id'          => $variation->get_id(),

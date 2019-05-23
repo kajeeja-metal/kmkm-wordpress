@@ -1,0 +1,16 @@
+2019-05-21T07:34:35+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\single-product\title.php on line 44
+
+2019-05-21T08:25:10+00:00 CRITICAL syntax error, unexpected '}', expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 58
+
+2019-05-21T08:25:10+00:00 CRITICAL syntax error, unexpected '}', expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 58
+
+2019-05-21T08:25:11+00:00 CRITICAL syntax error, unexpected '}', expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 58
+
+2019-05-21T08:25:32+00:00 CRITICAL syntax error, unexpected '}', expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 58
+
+2019-05-21T08:25:40+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 69
+
+2019-05-21T08:25:49+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 56
+
+2019-05-21T08:25:50+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 56
+

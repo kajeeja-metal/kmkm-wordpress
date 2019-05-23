@@ -135,39 +135,58 @@ jQuery(document).ready(function($) {
 
 	// }
 	// }});
+	setTimeout(function(){ 
+		$('.woocommerce-notices-wrapper').fadeTo("slow", 0.001, function(){ //fade
+             $(this).slideUp("slow", function() { //slide up
+                 $(this).remove(); //then remove from the DOM
+             });
+         });
+	}, 3000);
+	
 	$('.site-search').click(function (e) {
 		$('#woocommerce-product-search-field-0').toggleClass('active');
 	});
-	$('#selectScents').click(function( event, variation) {
+	$('.product_meta + .price').css({'display':'none'});
+	$('.selectScents').click(function( event, variation) {
 		$('.overlay-select-scents').addClass('active');
 		$('body').css({'overflow':'hidden'});
 		$(".woocommerce-product-gallery").flexslider(0);
 		$('.product_title').addClass('blur');
+		$('.tagged_as').addClass('blur');
+		$('.size-main').addClass('blur');
 		$('.woocommerce-product-details__short-description').addClass('blur');
 		$('.btn-select-scent').addClass('blur');
 		$( '.variations_form' ).each( function() {
 		    $(this).on( 'found_variation', function( event, variation ) {
-		        console.log(variation);//all details here
 		        var price = variation.display_price;//selectedprice
-		        $('.sku_wrapper + .price').html(price);
-		        console.log(price);
+		        $('.price-main').html("<div style='color: #6d6d6d;fonr-size:16px;    letter-spacing: 1px;'>Price :<span style='letter-spacing: 1px; font-size: 20px; color:#000;font-family: HKGrotesk-Bold !important; '> "+price + ' THB</span></div>');
 		    });
 		});
 	});
 	$('.swatch-image').click(function(e) {
+		$('.woocommerce-variation-add-to-cart .screen-reader-text').html('<span style="padding-right:15px;letter-spacing: 1px;">Quantity : </span>');
+		$('.price-main').css({'margin':'30px 0px 0px'});
 		$('.overlay-select-scents').removeClass('active');
 		$('.product_title').removeClass('blur');
+		$('.tagged_as').removeClass('blur');
+		$('.size-main').removeClass('blur');
+		// $('.header-detail-name').css({'display':'block'});
 		$('.woocommerce-product-details__short-description').removeClass('blur');
 		$('.btn-select-scent').removeClass('blur');
-		$('body').css({'overflow':'scroll'});
+		$('body').css({'overflow':'auto'});
 		$('.product_title.entry-title + .price').html('');
 		// setTimeout(function(){ $('.woocommerce-variation-price').clone().appendTo(".product_title.entry-title + .price"); }, 800);
 		
-		$('.tagged_as').css({'display':'block'});
-		$('.sku_wrapper').css({'display':'block'});
-		$('.type-product .price').css({'display':'block'});
-		$('.tagged_as').css({'display':'block'});
-		
+		$('.product_meta').css({'display':'block'});
+		var img = $(this).find('img').attr('src');
+		var details_name = $(this).find('.name-scents').text();
+		var details_detailname = $(this).find('.description-scents').text();
+		$('.img-scents img').attr("src", img);
+		$('.detail-scents-select .name-scents').text(details_name);
+		$('.detail-scents-select .description-scents').text(details_detailname);
+		$('#selectScents').css({'display':'none'});
+		$('.overlay-edit-scents').css({'display':'block'});
+		$('.woocommerce-variation-add-to-cart.variations_button').css({'display':'block'});
 	});
 	
 	
@@ -184,6 +203,15 @@ jQuery(document).ready(function($) {
 	    }
 	});
 });
+jQuery(window).on('mousewheel', function(event, delta) {
+    //console.log(event.deltaX, event.deltaY, event.deltaFactor);
+    if(delta > 0) {
+    console.log('scroll up');
+    } 
+    else {
+    console.log('scroll down');
+    }
+});
 // var scrolled = jQuery(window).scrollTop();
 // jQuery(window).scroll(function(e) { // เมื่อมีการ scroll
 //     var scrolled = jQuery(window).scrollTop();
@@ -192,27 +220,57 @@ jQuery(document).ready(function($) {
 //     } else {
 //     }
 // });
-// window.addEventListener('wheel', function(e) {
-//   if (e.deltaY < 0) {
-//   	event.preventDefault();
-//   	jQuery('.description-single').addClass('active');
-//   	jQuery('html, body').stop().animate({
-//             scrollTop: 0
-//         }, 1000);
+/* See related post at
+https://codepen.io/Javarome/post/full-page-sliding
+*/
+function ScrollHandler(pageId) { 
+  var page = jQuery('#' + pageId);
+  var pageStart = page.offset().top;
+  var pageJump = false;
 
-//   }
-//   if (e.deltaY > 0) {
-//     console.log(e.deltaY);
-    
-//     if(jQuery(".description-single").hasClass( "active" )){
-//     	jQuery('html, body').stop().animate({
-//             scrollTop: jQuery(".description-single").offset().top
-//         }, 1000);
-//         jQuery('.description-single').removeClass('active');
-//     }else{
-    	
-//     }
-//   }
-// });
+  function scrollToPage() {
+    pageJump = true;
+      jQuery('html, body').animate({ 
+      scrollTop: pageStart
+    }, {
+      duration: 1000,
+      complete: function() {
+        pageJump = false;
+      }
+    });  
+  }
+  window.addEventListener('wheel', function(event) {
+   var viewStart = jQuery(window).scrollTop();
+   if (!pageJump) { 
+      var pageHeight = page.height();
+      var pageStopPortion = pageHeight / 2;
+      var viewHeight = jQuery(window).height();
+
+      var viewEnd = viewStart + viewHeight;
+      var pageStartPart = viewEnd - pageStart;
+      var pageEndPart = (pageStart + pageHeight) - viewStart;
+      
+      var canJumpDown = pageStartPart >= 0; 
+      var stopJumpDown = pageStartPart > pageStopPortion; 
+      
+      var canJumpUp = pageEndPart >= 0; 
+      var stopJumpUp = pageEndPart > pageStopPortion; 
+
+      var scrollingForward = event.deltaY > 0;
+      if (  ( scrollingForward && canJumpDown && !stopJumpDown) 
+         || (!scrollingForward && canJumpUp   && !stopJumpUp)) {
+        event.preventDefault();
+        scrollToPage();
+      } 
+   } else {
+     event.preventDefault();
+   }    
+  },{passive: false});
+}
+new ScrollHandler('product-582'); 
+new ScrollHandler('two');
+new ScrollHandler('three');
+new ScrollHandler('four');
+
 
 

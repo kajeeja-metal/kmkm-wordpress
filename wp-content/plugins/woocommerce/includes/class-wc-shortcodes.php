@@ -579,7 +579,7 @@ class WC_Shortcodes {
 
 		remove_filter( 'woocommerce_add_to_cart_form_action', '__return_empty_string' );
 
-		return '<div class="woocommerce">' . ob_get_clean() . '</div>';
+		// return '<div class="woocommerce">' . ob_get_clean() . '</div>';
 	}
 
 	/**

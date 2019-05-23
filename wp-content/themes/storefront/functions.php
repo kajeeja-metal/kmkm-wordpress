@@ -45,6 +45,23 @@ function display_price_in_variation_option_name( $term ) {
 
 }
 add_filter( 'woocommerce_variation_option_name_price', 'display_price_in_variation_option_name' );
+add_action('add_to_cart_redirect', 'resolve_dupes_add_to_cart_redirect');
+
+function resolve_dupes_add_to_cart_redirect($url = false) {
+
+     // If another plugin beats us to the punch, let them have their way with the URL
+     if(!empty($url)) { return $url; }
+
+     // Redirect back to the original page, without the 'add-to-cart' parameter.
+     // We add the `get_bloginfo` part so it saves a redirect on https:// sites.
+     return add_query_arg(array(), remove_query_arg('add-to-cart'));
+
+}
+
+remove_action( 'storefront_content_top', 'storefront_shop_messages' , 15);
+remove_action( 'woocommerce_before_single_product', 'wc_print_notices' , 10);
+
+add_action( 'storefront_before_header',  'wc_print_notices' );
 
 
 // wp_register_script( 'ajax-js', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), '', true );
