@@ -1,0 +1,52 @@
+2019-05-30T07:57:48+00:00 CRITICAL syntax error, unexpected ''<a href="'' (T_CONSTANT_ENCAPSED_STRING) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 317
+
+2019-05-30T07:57:57+00:00 CRITICAL syntax error, unexpected ''<a href="'' (T_CONSTANT_ENCAPSED_STRING) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 317
+
+2019-05-30T07:59:16+00:00 CRITICAL syntax error, unexpected '.' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 317
+
+2019-05-30T08:00:16+00:00 CRITICAL syntax error, unexpected '{' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 320
+
+2019-05-30T08:01:25+00:00 CRITICAL syntax error, unexpected '{' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 317
+
+2019-05-30T08:02:30+00:00 CRITICAL syntax error, unexpected '$term' (T_VARIABLE) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 317
+
+2019-05-30T08:12:00+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_category_link(), 0 passed in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 317 and exactly 1 expected in D:\xampp\htdocs\kmkm-wordpress\wp-includes\category-template.php:19
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php(317): get_category_link()
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\shortcodes.php(319): wckc_list_taxonomy_archive('', '', 'list_taxonomy_a...')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(rev_sl...', 'do_shortcode_ta...', '<div class="vce...')
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\visualcomposer\visualcomposer\Modules\FrontView\FrontViewController.php(54): do_shortcode('<div class="vce...')
+#5 [internal function]: VisualComposer\Modules\FrontView\FrontViewController->VisualComposer\Modules\FrontView\{closure}(Array)
+#6 D:\xampp\ht in D:\xampp\htdocs\kmkm-wordpress\wp-includes\category-template.php on line 19
+
+2019-05-30T08:14:12+00:00 CRITICAL syntax error, unexpected '.' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 317
+
+2019-05-30T08:29:19+00:00 CRITICAL Cannot redeclare get_categories() (previously declared in D:\xampp\htdocs\kmkm-wordpress\wp-includes\category.php:26) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 331
+
+2019-05-30T08:29:20+00:00 CRITICAL Cannot redeclare get_categories() (previously declared in D:\xampp\htdocs\kmkm-wordpress\wp-includes\category.php:26) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 331
+
+2019-05-30T08:29:50+00:00 CRITICAL syntax error, unexpected ')', expecting ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 327
+
+2019-05-30T09:10:23+00:00 CRITICAL syntax error, unexpected '}' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 295
+
+2019-05-30T09:10:24+00:00 CRITICAL syntax error, unexpected '}' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 295
+
+2019-05-30T09:13:39+00:00 CRITICAL Cannot redeclare wckc_list_taxonomy_archive() (previously declared in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php:289) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 339
+
+2019-05-30T10:09:09+00:00 CRITICAL syntax error, unexpected ')' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 337
+
+2019-05-30T10:09:14+00:00 CRITICAL syntax error, unexpected ')' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 337
+
+2019-05-30T10:09:26+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function add_menu_page(), 2 passed in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 336 and at least 4 expected in D:\xampp\htdocs\kmkm-wordpress\wp-admin\includes\plugin.php:1092
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php(336): add_menu_page('Page Title', 'Menu Title')
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): custom_menu('')
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-admin\includes\menu.php(149): do_action('admin_menu', '')
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-admin\menu.php(294): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-admin\admin.php(140): require('D:\\xampp\\htdocs...')
+#7 {main}
+  thrown in D:\xampp\htdocs\kmkm-wordpress\wp-admin\includes\plugin.php on line 1092
+

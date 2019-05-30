@@ -284,3 +284,47 @@ function bbloomer_checkout_radio_choice_set_session() {
     }
     die();
 }
+
+add_shortcode('list_taxonomy_archive', 'wckc_list_taxonomy_archive');
+function wckc_list_taxonomy_archive($atts){
+    $a = shortcode_atts( array(
+        'cpt' => 'post',
+        'tax' => 'category',
+    ), $atts );
+ 
+    $output = '';
+ 
+    $terms = get_terms( array('taxonomy' => $a['tax'], 'hide_empty' => false, 'parent' => -1) );
+
+ 
+    if( $terms ){
+        $output .= '<div class="list_tax_archive">';
+        foreach ($terms as $term) {
+            if ( is_array($term) && isset($term['invalid_taxonomy']) )
+                return;
+ 
+            $args = array (
+                'post_type'         => $a['cpt'],
+                $a['tax']           => $term->slug,
+                'posts_per_page'    => '-1',
+            );
+ 
+            // The Query
+            $posts = get_posts($args);
+ 
+            if( empty($posts)){
+                return;
+            }
+            $output .= "<h4><a href=http://localhost/kmkm-wordpress/category/".$term->slug.">".$term->name."</a></h4>";
+            $output .= '<ul class="term_archive">';
+            foreach($posts as $post){
+                $output .= '<li><a href="'.get_permalink( $post  ).'">'.get_the_title( $post ).'</a></li>';
+            }
+            $output .= '</ul>';
+ 
+        }
+        $output .= '</div>';
+    }
+    return $output;
+ 
+}
