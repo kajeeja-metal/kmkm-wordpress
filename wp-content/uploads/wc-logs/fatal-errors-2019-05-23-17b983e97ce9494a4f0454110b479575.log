@@ -1,0 +1,30 @@
+2019-05-23T10:09:32+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Cart::add_shipping() in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php:232
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): bbloomer_checkout_radio_choice_fee(Object(WC_Cart))
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1723): do_action('woocommerce_car...', Object(WC_Cart))
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(278): WC_Cart->calculate_fees()
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(822): WC_Cart_Totals->get_fees_from_cart()
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(142): WC_Cart_Totals->calculat in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 232
+
+2019-05-23T10:11:54+00:00 CRITICAL syntax error, unexpected '0' (T_LNUMBER) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 229
+
+2019-05-23T10:30:54+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function bbloomer_checkout_radio_choice_fee(), 0 passed in D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php on line 284 and exactly 1 expected in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php:208
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(284): bbloomer_checkout_radio_choice_fee()
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1723): do_action('woocommerce_car...', Object(WC_Cart))
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(278): WC_Cart->calculate_fees()
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(822): WC_Cart_Totals->get_fees_from_cart()
+#6 D in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 208
+
+2019-05-23T10:37:57+00:00 CRITICAL syntax error, unexpected '<' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 216
+
+2019-05-23T10:49:19+00:00 CRITICAL syntax error, unexpected 'Card' (T_STRING) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 218
+
+2019-05-23T10:49:22+00:00 CRITICAL syntax error, unexpected 'Card' (T_STRING) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 218
+
+2019-05-23T10:57:39+00:00 CRITICAL syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\checkout\thankyou.php on line 57
+

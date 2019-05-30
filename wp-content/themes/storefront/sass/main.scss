@@ -581,10 +581,11 @@ form {
 ul.products li.product .woocommerce-LoopProduct-link{
   text-align: left;
   h2{
-    padding-left: 10px;
-    padding-right: 10px;
     margin-bottom: 10px;
     font-size: 16px;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    line-height: 1.4;
     @include font-bold;
   }
   .price{
@@ -593,6 +594,19 @@ ul.products li.product .woocommerce-LoopProduct-link{
 }
 .text-center{
   text-align: center;
+}
+.onsale{
+    position: absolute;
+    top: 0;
+    width: 130px;
+    border-radius: 0px;
+    background: #800008;
+    letter-spacing: 1px;
+    @include font-bold;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    top: 15px;
 }
 .btn-main{
   background: transparent !important;

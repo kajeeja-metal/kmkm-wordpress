@@ -163,3 +163,124 @@ add_action( 'after_setup_theme', 'bbloomer_remove_zoom_lightbox_theme_support', 
 function bbloomer_remove_zoom_lightbox_theme_support() { 
 	remove_theme_support( 'wc-product-gallery-zoom' );
 }
+
+add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_text', 10, 3);
+function woocommerce_custom_sale_text($text, $post, $_product)
+{
+    return '<span class="onsale">DISCOUNT</span>';
+}
+
+// Output the Custom field in Product pages
+add_action( 'woocommerce_review_order_before_payments', 'bbloomer_checkout_radio_choice' );
+add_action( 'woocommerce_review_order_before_payment', 'bbloomer_checkout_radio_choice' );
+ 
+function bbloomer_checkout_radio_choice() {
+    
+   $chosen = WC()->session->get('radio_chosen');
+   $chosen = empty( $chosen ) ? WC()->checkout->get_value('radio_choice') : $chosen;
+   $chosen = empty( $chosen ) ? 'no_option' : $chosen;
+       
+   $args = array(
+   'type' => 'radio',
+   'class' => array( 'form-row-wide' ),
+   'options' => array(
+      'no_option' => 'None',
+      'option_1' => 'HBD Card',
+      'option_2' => 'Congradtulation Card',
+      'option_3' => 'Text Card',
+   ),
+   'default' => $chosen
+   );
+    
+   echo '<div id="checkout-radio">';
+   echo '<h3>Customize Your Order!</h3>';
+   woocommerce_form_field( 'radio_choice', $args, $chosen );
+   echo '</div>';
+    
+}
+ 
+// Part 2 
+// Add Fee and Calculate Total
+// Based on session's "radio_chosen"
+ 
+#2 Calculate New Total
+add_filter( 'woocommerce_get_price_html', 'bbloomer_price_free_zero_empty', 100, 2 );
+  
+function bbloomer_price_free_zero_empty( $price, $product ){
+ 
+if ( '' === $product->get_price() || 0 == $product->get_price() ) {
+    $price = '<span class="woocommerce-Price-amount amount">FREE</span>';
+} 
+ 
+return $price;
+}
+add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
+ 
+function bbloomer_checkout_radio_choice_fee( $cart ) {
+  
+  if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
+   
+  $radio = WC()->session->get( 'radio_chosen' );
+    
+  if ( "option_1" == $radio ) {
+   $fee = 0;
+   $name = 'HBD Card';
+  } elseif ( "option_2" == $radio ) {
+   $fee = 0;
+   $name = 'Congradtulation Card';
+  }
+  elseif ( "option_3" == $radio ) {
+   $fee = 10;
+   $name = 'Text Card';
+  }
+   
+  $cart->add_fee( __($name, 'woocommerce'), $fee );
+  
+}
+ 
+// Part 3 
+// Refresh Checkout if Radio Changes
+// Uses jQuery
+ 
+add_action( 'wp_footer', 'bbloomer_checkout_radio_choice_refresh' );
+ 
+function bbloomer_checkout_radio_choice_refresh() {
+if ( ! is_checkout() ) return;
+    ?>
+    <script type="text/javascript">
+    jQuery( function($){
+        $('form.checkout').on('change', 'input[name=radio_choice]', function(e){
+            e.preventDefault();
+            var p = $(this).val();
+            $.ajax({
+                type: 'POST',
+                url: wc_checkout_params.ajax_url,
+                data: {
+                    'action': 'woo_get_ajax_data',
+                    'radio': p,
+                },
+                success: function (result) {
+                    $('body').trigger('update_checkout');
+                }
+            });
+        });
+    });
+    </script>
+    <?php
+}
+ 
+// Part 4 
+// Add Radio Choice to Session
+// Uses Ajax
+ 
+add_action( 'wp_ajax_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
+add_action( 'wp_ajax_nopriv_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
+ 
+function bbloomer_checkout_radio_choice_set_session() {
+    if ( isset($_POST['radio']) ){
+        $radio = sanitize_key( $_POST['radio'] );
+        WC()->session->set('radio_chosen', $radio );
+        echo json_encode( $radio );
+    }
+    die();
+}

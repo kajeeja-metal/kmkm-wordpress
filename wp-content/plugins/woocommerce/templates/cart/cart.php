@@ -22,7 +22,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0" style="    border: 1px solid #000;">
 		<thead>
 			<tr>
 				<th class="product-remove">&nbsp;</th>
@@ -125,7 +125,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 				}
 			}
 			?>
-
+		</tbody>
+	</table>
+	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+		<tbody>
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
 			<tr>
@@ -153,7 +156,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 </form>
 
 <div class="cart-collaterals">
+
 	<?php
+		do_action( 'woocommerce_review_order_before_payments' );
 		/**
 		 * Cart collaterals hook.
 		 *
