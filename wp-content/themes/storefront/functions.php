@@ -272,7 +272,6 @@ if ( ! is_checkout() ) return;
 // Part 4 
 // Add Radio Choice to Session
 // Uses Ajax
- 
 add_action( 'wp_ajax_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
 add_action( 'wp_ajax_nopriv_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
  
@@ -294,7 +293,7 @@ function wckc_list_taxonomy_archive($atts){
  
     $output = '';
  
-    $terms = get_terms( array('taxonomy' => $a['tax'], 'hide_empty' => false, 'parent' => -1) );
+    $terms = get_terms( array('taxonomy' => $a['tax'], 'hide_empty' => false) );
 
  
     if( $terms ){

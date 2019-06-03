@@ -1,0 +1,38 @@
+.group_category_blog{
+	border-bottom: 1px solid #CECECE;
+	.list_category_blog{
+		white-space: nowrap;
+		padding: 0 8.617924em;
+		div{
+			display: inline-block;
+		    font-size: 14px;
+		    position: relative;
+		    letter-spacing: 1px;
+		    color:#77777A;
+		    padding: 15px 20px;
+		    &:after{
+		    	content: '';
+		    	position: absolute;
+		    	left: 0;
+		    	right: 0;
+		    	bottom: 0;
+		    	height: 1px;
+		    	background: transparent;
+		    }
+		    &:hover{
+		    	a{
+		    		color:#000 !important;
+		    	}
+		    	&:after{
+			    	content: '';
+			    	position: absolute;
+			    	left: 0;
+			    	right: 0;
+			    	bottom: -1px;
+			    	height: 1px;
+			    	background: #000;
+			    }
+		    }
+		}
+	}
+}

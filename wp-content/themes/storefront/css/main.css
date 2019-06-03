@@ -2497,3 +2497,45 @@ a.remove::before {
     padding: 0;
   }
 }
+/* line 1, ../sass/_editorial.scss */
+.group_category_blog {
+  border-bottom: 1px solid #CECECE;
+}
+/* line 3, ../sass/_editorial.scss */
+.group_category_blog .list_category_blog {
+  white-space: nowrap;
+  padding: 0 8.617924em;
+}
+/* line 6, ../sass/_editorial.scss */
+.group_category_blog .list_category_blog div {
+  display: inline-block;
+  font-size: 14px;
+  position: relative;
+  letter-spacing: 1px;
+  color: #77777A;
+  padding: 15px 20px;
+}
+/* line 13, ../sass/_editorial.scss */
+.group_category_blog .list_category_blog div:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: transparent;
+}
+/* line 23, ../sass/_editorial.scss */
+.group_category_blog .list_category_blog div:hover a {
+  color: #000 !important;
+}
+/* line 26, ../sass/_editorial.scss */
+.group_category_blog .list_category_blog div:hover:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: #000;
+}
