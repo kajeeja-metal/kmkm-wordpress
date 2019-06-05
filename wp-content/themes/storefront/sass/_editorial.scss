@@ -36,3 +36,20 @@
 		}
 	}
 }
+.background-post{
+	background-size: cover;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-position: center;
+        border: 1px solid #cecece;
+}
+.box-group{
+	display: flex;
+  	justify-content: center;
+  	flex-wrap: wrap;
+  	padding-bottom: 50px;
+}
+.box {
+	width: 70%;
+	margin-bottom: 30px;
+}

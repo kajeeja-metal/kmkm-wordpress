@@ -2539,3 +2539,26 @@ a.remove::before {
   height: 1px;
   background: #000;
 }
+
+/* line 39, ../sass/_editorial.scss */
+.background-post {
+  background-size: cover;
+  height: 550px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #cecece;
+}
+
+/* line 46, ../sass/_editorial.scss */
+.box-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+
+/* line 52, ../sass/_editorial.scss */
+.box {
+  width: 70%;
+  margin-bottom: 30px;
+}
