@@ -7,18 +7,15 @@
 </style>
 <div id="primary">
     <main id="main" class="site-main" role="main" style="    margin-top: 0;">
-    	 <!-- <?php echo do_shortcode( '[list_taxonomy_archive]' ); ?> -->
+    	 <?php echo do_shortcode( '[rev_slider alias="editoral"]' ); ?>
     	 <?php 
 			if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-			the_post_thumbnail( 'full' );
+			// the_post_thumbnail( 'full' );
 			$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 			// echo($url);
 			}
 			$imgURL = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'secondary-image', NULL, 'full');
     	 ?>
-    	 <figure class="bg-">
-    	 	
-    	 </figure>
     	 <div class="group_category_blog">
 			<div class="list_category_blog">
 				<div><a href="http://localhost/kmkm-wordpress/category/all-editorial">ALL EDITORIAL</a></div>

@@ -2551,14 +2551,89 @@ a.remove::before {
 
 /* line 46, ../sass/_editorial.scss */
 .box-group {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   padding-bottom: 50px;
 }
 
-/* line 52, ../sass/_editorial.scss */
+/* line 49, ../sass/_editorial.scss */
 .box {
   width: 70%;
   margin-bottom: 30px;
+}
+
+/* line 56, ../sass/_editorial.scss */
+.box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* line 61, ../sass/_editorial.scss */
+.box-group-item {
+  position: relative;
+  counter-reset: box;
+  column-count: 3;
+  column-gap: 30px;
+  margin: 0 auto;
+}
+/* line 67, ../sass/_editorial.scss */
+.box-group-item .box-container {
+  position: relative;
+  break-inside: avoid;
+}
+/* line 70, ../sass/_editorial.scss */
+.box-group-item .box-container .background-post {
+  width: 100% !important;
+  margin-bottom: 0px;
+  border: none;
+  height: 275px;
+}
+/* line 76, ../sass/_editorial.scss */
+.box-group-item .box-container .box-detail {
+  width: 100% !important;
+  border-color: #F2F2F2 !important;
+}
+
+/* line 82, ../sass/_editorial.scss */
+.banner-single {
+  background-size: cover;
+  height: 650px;
+  display: flex;
+  align-items: center;
+  background-position: center center;
+}
+/* line 88, ../sass/_editorial.scss */
+.banner-single:after {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.1);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/* line 99, ../sass/_editorial.scss */
+.content-box-images {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+/* line 104, ../sass/_editorial.scss */
+.content-box-images h2 {
+  font-size: 68px;
+  font-family: 'HKGrotesk-Bold' !important;
+  color: #fff;
+  letter-spacing: 2px;
+}
+/* line 110, ../sass/_editorial.scss */
+.content-box-images h6 {
+  font-size: 30px;
+  font-family: 'HKGrotesk-Regular' !important;
+  color: #fff;
+  width: 45%;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin: 0 auto;
 }

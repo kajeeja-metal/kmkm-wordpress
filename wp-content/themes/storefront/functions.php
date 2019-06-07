@@ -333,10 +333,35 @@ function wckc_list_taxonomy_archive($atts){
         array(
             // Replace [YOUR THEME TEXT DOMAIN] below with the text domain of your theme (found in the theme's `style.css`).
             'label' => __( 'Secondary Image', '[YOUR THEME TEXT DOMAIN]'),
-            'id' => 'secondary-image',
+            'id' => 'Ads Images',
             'post_type' => 'page'
         )
     );
 
 }
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            // Replace [YOUR THEME TEXT DOMAIN] below with the text domain of your theme (found in the theme's `style.css`).
+            'label' => __( 'Secondary Image', '[YOUR THEME TEXT DOMAIN]'),
+            'id' => 'Banner Images',
+            'post_type' => 'post'
+        )
+    );
+
+}
+
+// Filter except length to 35 words.
+// tn custom excerpt length
+function excerpt($limit) {
+    $excerpt = explode(' ', get_the_excerpt(), $limit);
+    if (count($excerpt)>=$limit) {
+        array_pop($excerpt);
+        $excerpt = implode(" ",$excerpt).'';
+      } else {
+        $excerpt = implode(" ",$excerpt);
+      } 
+    $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+    return $excerpt;
+    }
 remove_filter( 'the_excerpt', 'wpautop' );
