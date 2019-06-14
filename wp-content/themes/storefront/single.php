@@ -5,13 +5,15 @@
  * @package storefront
  */
 
+session_start();
+$_SESSION['id_products'] = null;
 get_header(); ?>
 <style type="text/css">
 	.col-full{
 		padding: 0 !important;
 	}
 </style>
-	<div id="primary">
+	<div id="primary" class="storefront-full-width-content">
 		<main id="main" class="site-main" role="main" style="    margin-top: 0px;">
 
 		<?php
@@ -33,15 +35,48 @@ get_header(); ?>
 				<h6><?php echo excerpt(20); ?></h6>
 			</figcaption>
 		</figure>
-		<?php echo the_content();?>
+		<div class="col-grid">
+			<div class="content-area">
+				<?php echo the_content();?>
+			</div>
+			<?php
+				do_action( 'storefront_single_post_after' );
 
+			endwhile; // End of the loop.
+			?>
+			<?php get_sidebar(); ?>
+		</div>
 		<?php
-			do_action( 'storefront_single_post_after' );
-
-		endwhile; // End of the loop.
+			
+			$tags = wp_get_post_tags(get_the_ID());
+			$args     = array( 'post_type' => 'product', 'posts_per_page' => -1);
+			$products = get_posts( $args );
+			$count = count($products);
+			$id_products = $_SESSION['id_products'];;
+			for ($i=0; $i < $count; $i++) { 
+				if(get_post_meta($products[$i]->ID, 'editoral', true) == $tags[0]->name && $tags[0]->name != ''){
+				 	 $id_products = $id_products . $products[$i]->ID . ",";
+				 	  $_SESSION['id_products'] = $id_products;
+				 }
+			}
+			if($_SESSION['id_products'] != ''){?>
+			<section class="related products" style="    padding: 0 2.617924em;padding-top: 50px;">
+			<h2 style="text-align: center;">Relate Products</h2>
+				<?php
+					echo do_shortcode('[products ids="'.$_SESSION['id_products'].'" columns="6"]');
+				?>
+			</section>
+				<?php
+			}
+			
 		?>
+		
 
+
+
+		</section>
 		</main><!-- #main -->
+		
 	</div><!-- #primary -->
 
 <?php

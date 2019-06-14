@@ -10,19 +10,9 @@
 <article id="post-<?php the_ID(); ?>" style="padding: 3em 6em;
     background: #f3f3f3;" class="box-group">
 	<?php
-	$a = shortcode_atts( array(
-        'cpt' => 'post',
-        'tax' => 'category',
-    ), $atts );
- 
-    $output = '';
- 
-    $terms = get_terms( array('taxonomy' => $a['tax'], 'hide_empty' => false) );
-    $queried_category = get_term( get_query_var('cat'), 'category' ); 
-
 	    $args = array(
 	        'post_type' => 'post',
-	        'category_name' => $queried_category->slug,
+	        'category_name' => 'all-editorial',
 	        'posts_per_page' => 999,
 	    );
 
@@ -45,23 +35,23 @@
 		    	<div class="box-container">
 				    <div class="background-post pull-left box" style="background-image:url(<?php echo $url ?>) "> 
 				    </div>
-				    <div class="box-detail pull-right box" style="width: 34%;
+				    <div class="box-detail pull-right box" style="width: 30%;
 						    padding: 49px;
-						    background: #fff;">
+						    background: #fff;
+						    border: 1px solid #cecece;">
 				    	<h5><?php the_category( ' / ' ); ?></h5>
 					    <h2><a href="<?php echo get_permalink( $post ) ?>"><?php the_title(); ?></a></h2>
 					    <div>
 					    	<?php echo excerpt(30); ?>
-
 					    </div>
-					    <div class="date"><?php echo get_the_date( 'd F Y' ); ?></div>
 				    </div>
 			    </div>
 
-				<?php if( ($counter%6) == 0 ){ echo '</div>';}?>
-			<?php if(($counter%5) == 4){ echo '</div>'; echo '<div style="margin-bottom:30px">'. do_shortcode( '[rev_slider alias="ads"]' ) .'</div>'; }?>
+				<?php if( ($counter%6) == 0 ){ echo '</div>'; $counter ;}?>
+			<?php if(($counter%5) == 4){ echo '</div>'; }?>
 
-			<?php if( ($counter%9) == 0 ){ $counter = 0 ;}?>
+
+			<?php if( ($counter%6) == 0 ){ $counter = 0 ;}?>
 		    <?php $counter++ ; ?>
 
 		
@@ -73,3 +63,4 @@
 		}
 	?>
 </article><!-- #post-## -->
+s

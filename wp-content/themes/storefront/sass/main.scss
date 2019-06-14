@@ -324,6 +324,9 @@ header.site-header{
 body:not(.home) .site-main{
     margin-top: 80px;
 }
+body.category .site-main{
+    margin-top: 0px !important;
+}
 body.single-product .site-main{
     margin-top: 34px;
 }
