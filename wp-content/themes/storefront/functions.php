@@ -438,3 +438,4 @@ function my_recent_widget_registration() {
   register_widget('My_Recent_Posts_Widget');
 }
 add_action('widgets_init', 'my_recent_widget_registration');
+

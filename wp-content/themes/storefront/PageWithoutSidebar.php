@@ -15,7 +15,9 @@
 			// echo($url);
 			}
 			$imgURL = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'secondary-image', NULL, 'full');
+			
     	 ?>
+
     	 <div class="group_category_blog">
 			<div class="list_category_blog">
 				<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/all-editorial" class="hover_blog">ALL EDITORIAL</a></div>

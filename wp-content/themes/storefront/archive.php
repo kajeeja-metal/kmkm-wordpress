@@ -26,18 +26,79 @@ get_header(); ?>
 				// echo($url);
 				}
 				$imgURL = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'secondary-image', NULL, 'full');
-	    	 ?>
-	    	 <div class="group_category_blog">
-				<div class="list_category_blog">
-					<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/all-editorial" class="hover_blog">ALL EDITORIAL</a></div>
-					<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/craftmanship" class="hover_blog">CRAFTMANSHIP</a></div>
-					<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/decoration" class="hover_blog">DECORATION</a></div>
-					<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/karmakamet-tips" class="hover_blog">KARMAKAMET TIPS</a></div>
-					<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/new-and-events" class="hover_blog">NEW AND EVENTS</a></div>
-					<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/our-product" class="hover_blog">OUR PRODUCT</a></div>
-					<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/scent-and-space" class="hover_blog">SCENT AND SPACE</a></div>
-				</div>
-			</div>
+				    $queried_category = get_term( get_query_var('cat'), 'category' );
+				    $categories = get_the_category(); //returns categories
+					$thiscat = $categories[0];
+					
+					$parent_id = $thiscat->parent; //the parent id
+					$parent = get_category($parent_id); //this returns the parent category as an object
+
+					//use id or slug of category you are searching for
+					if( $parent_id == 88 || $thiscat->slug == 'all-scents' ){
+						?>
+						<div class="group_category_blog box-shadow">
+							<div class="list_category_blog">
+								<div class="box-nav">
+									<a href="http://localhost/kmkm-wordpress/category/all-scents" class=" hover_blog">Fragrance Oil Single</a>
+									<div class="list_category_blog_dd hover_blog">
+										<div><a href="http://localhost/kmkm-wordpress/category/flower">Flower </a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/craftmanship">Herb and Spice</a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/decoration">Wood</a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/karmakamet-tips">Fruit</a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/new-and-events">Etcetara</a></div>
+									</div>
+								</div>
+								<div class="box-nav">
+									<a href="http://localhost/kmkm-wordpress/category/craftmanship" class="hover_blog">Fragrance Oil Blend</a>
+									<div class="list_category_blog_dd hover_blog">
+										<div><a href="http://localhost/kmkm-wordpress/category/all-scents">Little India Series</a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/craftmanship">Patir en voyage Series</a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/decoration">Potpourri </a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/karmakamet-tips">Special Edition </a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/new-and-events">Heritage Bazaar</a></div>
+									</div>
+								</div>
+								<div class="box-nav">
+									<a href="http://localhost/kmkm-wordpress/category/decoration" class="hover_blog">Essential Oil Single</a>
+									<div class="list_category_blog_dd hover_blog">
+										<div><a href="http://localhost/kmkm-wordpress/category/all-scents">Flower </a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/craftmanship">Herb and Spice</a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/decoration">Wood</a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/karmakamet-tips">Fruit</a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/new-and-events">Etcetara</a></div>
+									</div>
+								</div>
+								<div class="box-nav">
+									<a href="http://localhost/kmkm-wordpress/category/karmakamet-tips" class="hover_blog">Essential Oil Blend</a>
+									<div class="list_category_blog_dd hover_blog">
+										<div><a href="http://localhost/kmkm-wordpress/category/all-scents">Refreshing </a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/craftmanship">Relaxing</a></div>
+										<div><a href="http://localhost/kmkm-wordpress/category/decoration">Romantic</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					<?php
+						}else{
+					?>
+					<div class="group_category_blog">
+						<div class="list_category_blog">
+							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/all-editorial" class="hover_blog">ALL EDITORIAL</a></div>
+							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/craftmanship" class="hover_blog">CRAFTMANSHIP</a></div>
+							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/decoration" class="hover_blog">DECORATION</a></div>
+							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/karmakamet-tips" class="hover_blog">KARMAKAMET TIPS</a></div>
+							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/new-and-events" class="hover_blog">NEW AND EVENTS</a></div>
+							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/our-product" class="hover_blog">OUR PRODUCT</a></div>
+							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/scent-and-space" class="hover_blog">SCENT AND SPACE</a></div>
+						</div>
+					</div>
+					<?php		
+						}
+					?>
+	    	 
+
+	    	 
 
 			<?php
 			get_template_part( 'content-blog', 'page' );

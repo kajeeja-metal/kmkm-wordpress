@@ -52,18 +52,23 @@ get_header(); ?>
 			$args     = array( 'post_type' => 'product', 'posts_per_page' => -1);
 			$products = get_posts( $args );
 			$count = count($products);
-			$id_products = $_SESSION['id_products'];;
+			$id_products = $_SESSION['id_products'];
+			$is = 0;
 			for ($i=0; $i < $count; $i++) { 
-				if(get_post_meta($products[$i]->ID, 'editoral', true) == $tags[0]->name && $tags[0]->name != ''){
+				$editoral = 'editoral'.$i;
+				$is++;
+				 if(get_post_meta($products[$i]->ID, 'editoral'.$is , true) == $tags[0]->name && $tags[0]->name != ''){
 				 	 $id_products = $id_products . $products[$i]->ID . ",";
-				 	  $_SESSION['id_products'] = $id_products;
+				 	 $_SESSION['id_products'] = $id_products;
 				 }
+
+				
 			}
 			if($_SESSION['id_products'] != ''){?>
 			<section class="related products" style="    padding: 0 2.617924em;padding-top: 50px;">
 			<h2 style="text-align: center;">Relate Products</h2>
 				<?php
-					echo do_shortcode('[products ids="'.$_SESSION['id_products'].'" columns="6"]');
+					echo do_shortcode('[products ids="'.$_SESSION['id_products'].'" columns="5"]');
 				?>
 			</section>
 				<?php
