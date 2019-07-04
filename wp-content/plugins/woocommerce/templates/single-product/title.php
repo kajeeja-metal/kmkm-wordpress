@@ -22,7 +22,7 @@ global $product;
 ?>
 <?php do_action('woocommerce_before_single_product'); ?>
 <?php do_action( 'woocommerce_product_meta_start' ); ?>
-<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as" style="    border: 1px solid #000;color: #000;padding: 2px 10px;font-size: 13px;display: inline-block;margin-bottom: 5px;    letter-spacing: 1px;">' . _n( '', '', '0', 'woocommerce' ) . ' ', '</span>' ); ?>
+<?php echo wc_get_product_tag_list( $product->get_id(), ' ', '<span class="tagged_as" >' . _n( '', '', '0', 'woocommerce' ) . ' ', '</span>' ); ?>
 
 <?php do_action( 'woocommerce_product_meta_end' ); ?>
 <?php

@@ -35,14 +35,17 @@ function display_price_in_variation_option_name( $term ) {
 				$taxonomy = mb_substr( $key, 10 ) ;
 				$attribute = get_term_by('slug', $slug, $taxonomy);
 				if($attribute->name == $term){
-					$price_d = " " . wp_kses( wc_price($variation['display_price']), array()) . "";
-				}
+          if(wp_kses( wc_price($variation['display_regular_price']), array()) != wp_kses( wc_price($variation['display_price']), array())){
+            $price_d = " <del>" . wp_kses( wc_price($variation['display_regular_price']), array()) . "</del>  <span>". wp_kses( wc_price($variation['display_price']), array()).'</span>';
+            }
+            else{
+            $price_d = "<span>" . wp_kses( wc_price($variation['display_regular_price']), array()) . "</span>";
+            }
+				  }
 			}
 		}
 	}
-	
     return $price_d ;
-
 }
 add_filter( 'woocommerce_variation_option_name_price', 'display_price_in_variation_option_name' );
 add_action('add_to_cart_redirect', 'resolve_dupes_add_to_cart_redirect');
@@ -171,7 +174,7 @@ function woocommerce_custom_sale_text($text, $post, $_product)
 }
 
 // Output the Custom field in Product pages
-add_action( 'woocommerce_review_order_before_payments', 'bbloomer_checkout_radio_choice' );
+// add_action( 'woocommerce_review_order_before_payments', 'bbloomer_checkout_radio_choice' );
 add_action( 'woocommerce_review_order_before_payment', 'bbloomer_checkout_radio_choice' );
  
 function bbloomer_checkout_radio_choice() {
@@ -233,9 +236,7 @@ function bbloomer_checkout_radio_choice_fee( $cart ) {
    $fee = 10;
    $name = 'Text Card';
   }
-   
   $cart->add_fee( __($name, 'woocommerce'), $fee );
-  
 }
  
 // Part 3 

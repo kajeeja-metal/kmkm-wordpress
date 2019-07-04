@@ -236,7 +236,12 @@ class WC_Checkout {
 				'order_comments' => array(
 					'type'        => 'textarea',
 					'class'       => array( 'notes' ),
-					'label'       => __( 'Order notes', 'woocommerce' ),
+					'label'       => __( '<span style="display:block;"><b>Order notes</b><BR>1. ต้องการใบกำกับภาษี แบบบุคคลธรรมดา กรุณากรอกข้อมูลต่อไปนี้ให้ครบถ้วน
+						<BR>คำนำหน้าชื่อ ชื่อ นามสกุล  เลขประจำตัวผู้เสียภาษีอากร
+						<BR>ที่อยู่ ถนน แขวง/ตำบล เขต/อำเภอ จังหวัด ประเทศ รหัสไปรษณีย์ เบอร์โทรศัพท์<BR><BR>
+						2. ต้องการใบกำกับภาษี แบบนิติบุคคล กรุณากรอกข้อมูลต่อไปนี้ให้ครบถ้วน
+						<BR>ชื่อนิติบุคคล (สำนักงาน/สาขา) เลขประจำตัวผู้เสียภาษีอากร
+						<BR>ที่อยู่ ถนน แขวง/ตำบล เขต/อำเภอ จังหวัด ประเทศ รหัสไปรษณีย์ เบอร์โทรศัพท์</span>', 'woocommerce' ),
 					'placeholder' => esc_attr__(
 						'Notes about your order, e.g. special notes for delivery.',
 						'woocommerce'

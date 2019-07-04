@@ -1,0 +1,80 @@
+2019-06-20T09:44:45+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:44:51+00:00 CRITICAL syntax error, unexpected '.' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:44:53+00:00 CRITICAL syntax error, unexpected '.' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:45:03+00:00 CRITICAL syntax error, unexpected '.' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:45:14+00:00 CRITICAL syntax error, unexpected 'margin' (T_STRING), expecting ',' or ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:45:23+00:00 CRITICAL syntax error, unexpected 'get_post_meta' (T_STRING), expecting ',' or ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:45:24+00:00 CRITICAL syntax error, unexpected 'get_post_meta' (T_STRING), expecting ',' or ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:45:30+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on null in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php:1120
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): woocommerce_template_loop_product_title('')
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\content-product.php(49): do_action('woocommerce_sho...')
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template.php(690): require('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('D:\\xampp\\htdocs...', false)
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php(71): wc_get_template_part('content', 'product')
+#7 D:\xampp\htdocs\km in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:45:43+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on null in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php:1120
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): woocommerce_template_loop_product_title('')
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\content-product.php(49): do_action('woocommerce_sho...')
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template.php(690): require('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('D:\\xampp\\htdocs...', false)
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php(71): wc_get_template_part('content', 'product')
+#7 D:\xampp\htdocs\km in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:45:46+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on null in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php:1120
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): woocommerce_template_loop_product_title('')
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\content-product.php(49): do_action('woocommerce_sho...')
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template.php(690): require('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('D:\\xampp\\htdocs...', false)
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php(71): wc_get_template_part('content', 'product')
+#7 D:\xampp\htdocs\km in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:46:16+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php:1120
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): woocommerce_template_loop_product_title('')
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\content-product.php(49): do_action('woocommerce_sho...')
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template.php(690): require('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('D:\\xampp\\htdocs...', false)
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php(71): wc_get_template_part('content', 'product')
+#7 D:\xampp\htdocs\kmkm-word in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:46:18+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php:1120
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): woocommerce_template_loop_product_title('')
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\content-product.php(49): do_action('woocommerce_sho...')
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template.php(690): require('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('D:\\xampp\\htdocs...', false)
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php(71): wc_get_template_part('content', 'product')
+#7 D:\xampp\htdocs\kmkm-word in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+
+2019-06-20T09:46:24+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php:1120
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): woocommerce_template_loop_product_title('')
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\content-product.php(49): do_action('woocommerce_sho...')
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template.php(690): require('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('D:\\xampp\\htdocs...', false)
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\templates\archive-product.php(71): wc_get_template_part('content', 'product')
+#7 D:\xampp\htdocs\kmkm-word in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1120
+

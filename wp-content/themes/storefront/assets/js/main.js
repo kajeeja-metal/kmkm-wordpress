@@ -146,7 +146,10 @@ jQuery(document).ready(function($) {
 	$('.site-search').click(function (e) {
 		$('#woocommerce-product-search-field-0').toggleClass('active');
 	});
-	$('.product_meta + .price').css({'display':'none'});
+
+	
+
+
 	$('.selectScents').click(function( event, variation) {
 		$('.overlay-select-scents').addClass('active');
 		$('body').css({'overflow':'hidden'});
@@ -227,7 +230,6 @@ function ScrollHandler(pageId) {
   var page = jQuery('#' + pageId);
   var pageStart = page.offset().top;
   var pageJump = false;
-
   function scrollToPage() {
     pageJump = true;
       jQuery('html, body').animate({ 
@@ -267,10 +269,15 @@ function ScrollHandler(pageId) {
    }    
   },{passive: false});
 }
-new ScrollHandler('product-582'); 
+var idproduct = jQuery('.single-product .site-main').children().attr('id');
+new ScrollHandler(idproduct); 
 new ScrollHandler('two');
 new ScrollHandler('three');
 new ScrollHandler('four');
 
+
+// jQuery(document).mouseleave(function () {
+//     console.log('out');
+// });
 
 
