@@ -8,7 +8,7 @@ Author URI: https://www.privageapp.com
 Version: 1.0
 */
 
-function coupon_checking() {
+function private_coupon_checking() {
   check_ajax_referer( 'apply-coupon', 'security' );
 
   // Coupon Code
@@ -25,4 +25,15 @@ function coupon_checking() {
 }
 
 // Override coupon ajax
-add_action('wc_ajax_apply_coupon', 'coupon_checking');
+add_action('wc_ajax_apply_coupon', 'private_coupon_checking');
+
+
+function privage_locate_template( $template, $template_name, $template_path ) {
+  $basename = basename( $template );
+  if( $basename == 'form-login.php' ) {
+    $template = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'templates/form-login.php';
+  }
+  return $template;
+}
+
+add_filter( 'woocommerce_locate_template', 'privage_locate_template', 10, 3 );
