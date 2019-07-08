@@ -3,8 +3,8 @@ Contributors: KubiQ
 Donate link: https://kubiq.sk
 Tags: smooth scroll, mousewheel scroll, scrolling
 Requires at least: 3.0.1
-Tested up to: 5.0
-Stable tag: 5.0
+Tested up to: 5.2.1
+Stable tag: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,14 @@ Replace basic website scrolling "effect" with nice smooth scroll using mousewhee
 1. Plugin settings
 
 == Changelog ==
+
+= 5.2 =
+* tested on WP 5.2.1
+* make it works on Firefox
+
+= 5.1 =
+* tested on WP 5.1
+* updated scrolling script to version 1.4.9
 
 = 5.0 =
 * tested on WP 5.0

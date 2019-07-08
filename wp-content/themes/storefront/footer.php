@@ -36,6 +36,16 @@
 
 <?php wp_footer(); ?>
 <script src="<?php bloginfo("template_url"); ?>/assets/js/main.js"></script>
+<script src="<?php bloginfo("template_url"); ?>/assets/js/cbpFWTabs.js"></script>
+<script>
+	(function() {
+
+		[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+			new CBPFWTabs( el );
+		});
+
+	})();
+</script>
 <script type="text/javascript" charset="utf-8">
   
 </script>

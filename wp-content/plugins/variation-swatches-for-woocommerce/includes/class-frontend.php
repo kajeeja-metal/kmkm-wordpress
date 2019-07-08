@@ -111,7 +111,7 @@ class TA_WC_Variation_Swatches_Frontend {
 		$selected = sanitize_title( $args['selected'] ) == $term->slug ? 'selected' : '';
 		$name     = esc_html( apply_filters( 'woocommerce_variation_option_name', $term->name ) );
 		$description     = esc_html( apply_filters( 'woocommerce_variation_option_name', $term->description ) );
-		$prices     = esc_html( apply_filters( 'woocommerce_variation_option_name_price', $term->name) );
+		$prices     = apply_filters( 'woocommerce_variation_option_name_price', $term->name);
 		
 		global $product;
 		if ($product->is_type( 'variable' )) 
@@ -150,7 +150,7 @@ class TA_WC_Variation_Swatches_Frontend {
 							<div class="group-box-scents">
 								<span class="name-scents">%s</span>
 								<span class="description-scents">'.$description.'</span>
-								<span>'.$prices.'</span>
+								'.$prices.'
 							</div>
 						</div>
 					</div>',

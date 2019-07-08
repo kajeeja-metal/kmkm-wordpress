@@ -35,14 +35,17 @@ function display_price_in_variation_option_name( $term ) {
 				$taxonomy = mb_substr( $key, 10 ) ;
 				$attribute = get_term_by('slug', $slug, $taxonomy);
 				if($attribute->name == $term){
-					$price_d = " " . wp_kses( wc_price($variation['display_price']), array()) . "";
-				}
+          if(wp_kses( wc_price($variation['display_regular_price']), array()) != wp_kses( wc_price($variation['display_price']), array())){
+            $price_d = " <del>" . wp_kses( wc_price($variation['display_regular_price']), array()) . "</del>  <span>". wp_kses( wc_price($variation['display_price']), array()).'</span>';
+            }
+            else{
+            $price_d = "<span>" . wp_kses( wc_price($variation['display_regular_price']), array()) . "</span>";
+            }
+				  }
 			}
 		}
 	}
-	
     return $price_d ;
-
 }
 add_filter( 'woocommerce_variation_option_name_price', 'display_price_in_variation_option_name' );
 add_action('add_to_cart_redirect', 'resolve_dupes_add_to_cart_redirect');
@@ -163,3 +166,277 @@ add_action( 'after_setup_theme', 'bbloomer_remove_zoom_lightbox_theme_support', 
 function bbloomer_remove_zoom_lightbox_theme_support() { 
 	remove_theme_support( 'wc-product-gallery-zoom' );
 }
+
+add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_text', 10, 3);
+function woocommerce_custom_sale_text($text, $post, $_product)
+{
+    return '<span class="onsale">DISCOUNT</span>';
+}
+
+// Output the Custom field in Product pages
+// add_action( 'woocommerce_review_order_before_payments', 'bbloomer_checkout_radio_choice' );
+add_action( 'woocommerce_review_order_before_payment', 'bbloomer_checkout_radio_choice' );
+ 
+function bbloomer_checkout_radio_choice() {
+    
+   $chosen = WC()->session->get('radio_chosen');
+   $chosen = empty( $chosen ) ? WC()->checkout->get_value('radio_choice') : $chosen;
+   $chosen = empty( $chosen ) ? 'no_option' : $chosen;
+       
+   $args = array(
+   'type' => 'radio',
+   'class' => array( 'form-row-wide' ),
+   'options' => array(
+      'no_option' => 'None',
+      'option_1' => 'HBD Card',
+      'option_2' => 'Congradtulation Card',
+      'option_3' => 'Text Card',
+   ),
+   'default' => $chosen
+   );
+    
+   echo '<div id="checkout-radio">';
+   echo '<h3>Customize Your Order!</h3>';
+   woocommerce_form_field( 'radio_choice', $args, $chosen );
+   echo '</div>';
+    
+}
+ 
+// Part 2 
+// Add Fee and Calculate Total
+// Based on session's "radio_chosen"
+ 
+#2 Calculate New Total
+add_filter( 'woocommerce_get_price_html', 'bbloomer_price_free_zero_empty', 100, 2 );
+  
+function bbloomer_price_free_zero_empty( $price, $product ){
+ 
+if ( '' === $product->get_price() || 0 == $product->get_price() ) {
+    $price = '<span class="woocommerce-Price-amount amount">FREE</span>';
+} 
+ 
+return $price;
+}
+add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
+ 
+function bbloomer_checkout_radio_choice_fee( $cart ) {
+  
+  if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
+   
+  $radio = WC()->session->get( 'radio_chosen' );
+    
+  if ( "option_1" == $radio ) {
+   $fee = 0;
+   $name = 'HBD Card';
+  } elseif ( "option_2" == $radio ) {
+   $fee = 0;
+   $name = 'Congradtulation Card';
+  }
+  elseif ( "option_3" == $radio ) {
+   $fee = 10;
+   $name = 'Text Card';
+  }
+  $cart->add_fee( __($name, 'woocommerce'), $fee );
+}
+ 
+// Part 3 
+// Refresh Checkout if Radio Changes
+// Uses jQuery
+ 
+add_action( 'wp_footer', 'bbloomer_checkout_radio_choice_refresh' );
+ 
+function bbloomer_checkout_radio_choice_refresh() {
+if ( ! is_checkout() ) return;
+    ?>
+    <script type="text/javascript">
+    jQuery( function($){
+        $('form.checkout').on('change', 'input[name=radio_choice]', function(e){
+            e.preventDefault();
+            var p = $(this).val();
+            $.ajax({
+                type: 'POST',
+                url: wc_checkout_params.ajax_url,
+                data: {
+                    'action': 'woo_get_ajax_data',
+                    'radio': p,
+                },
+                success: function (result) {
+                    $('body').trigger('update_checkout');
+                }
+            });
+        });
+    });
+    </script>
+    <?php
+}
+ 
+// Part 4 
+// Add Radio Choice to Session
+// Uses Ajax
+add_action( 'wp_ajax_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
+add_action( 'wp_ajax_nopriv_woo_get_ajax_data', 'bbloomer_checkout_radio_choice_set_session' );
+ 
+function bbloomer_checkout_radio_choice_set_session() {
+    if ( isset($_POST['radio']) ){
+        $radio = sanitize_key( $_POST['radio'] );
+        WC()->session->set('radio_chosen', $radio );
+        echo json_encode( $radio );
+    }
+    die();
+}
+
+add_shortcode('list_taxonomy_archive', 'wckc_list_taxonomy_archive');
+function wckc_list_taxonomy_archive($atts){
+    $a = shortcode_atts( array(
+        'cpt' => 'post',
+        'tax' => 'category',
+    ), $atts );
+ 
+    $output = '';
+ 
+    $terms = get_terms( array('taxonomy' => $a['tax'], 'hide_empty' => false) );
+
+ 
+    if( $terms ){
+        $output .= '<div class="list_tax_archive">';
+        foreach ($terms as $term) {
+            if ( is_array($term) && isset($term['invalid_taxonomy']) )
+                return;
+ 
+            $args = array (
+                'post_type'         => $a['cpt'],
+                $a['tax']           => $term->slug,
+                'posts_per_page'    => '-1',
+            );
+ 
+            // The Query
+            $posts = get_posts($args);
+ 
+            if( empty($posts)){
+                return;
+            }
+            $output .= "<h4><a href=http://localhost/kmkm-wordpress/category/".$term->slug.">".$term->name."</a></h4>";
+            $output .= '<ul class="term_archive">';
+            foreach($posts as $post){
+                $output .= '<li><a href="'.get_permalink( $post  ).'">'.get_the_title( $post ).'</a></li>';
+            }
+            $output .= '</ul>';
+ 
+        }
+        $output .= '</div>';
+    }
+    return $output;
+ 
+}
+  
+    if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            // Replace [YOUR THEME TEXT DOMAIN] below with the text domain of your theme (found in the theme's `style.css`).
+            'label' => __( 'Secondary Image', '[YOUR THEME TEXT DOMAIN]'),
+            'id' => 'Ads Images',
+            'post_type' => 'page'
+        )
+    );
+
+}
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            // Replace [YOUR THEME TEXT DOMAIN] below with the text domain of your theme (found in the theme's `style.css`).
+            'label' => __( 'Secondary Image', '[YOUR THEME TEXT DOMAIN]'),
+            'id' => 'Banner Images',
+            'post_type' => 'post'
+        )
+    );
+
+}
+
+// Filter except length to 35 words.
+// tn custom excerpt length
+function excerpt($limit) {
+    $excerpt = explode(' ', get_the_excerpt(), $limit);
+    if (count($excerpt)>=$limit) {
+        array_pop($excerpt);
+        $excerpt = implode(" ",$excerpt).'';
+      } else {
+        $excerpt = implode(" ",$excerpt);
+      } 
+    $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+    return $excerpt;
+    }
+remove_filter( 'the_excerpt', 'wpautop' );
+
+/**
+ * Extend Recent Posts Widget 
+ *
+ * Adds different formatting to the default WordPress Recent Posts Widget
+ */
+
+Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
+
+        function widget($args, $instance) {
+
+                if ( ! isset( $args['widget_id'] ) ) {
+                $args['widget_id'] = $this->id;
+            }
+
+            $title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Posts' );
+
+            /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
+            $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+
+            $number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
+            if ( ! $number )
+                $number = 5;
+            $show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
+
+            /**
+             * Filter the arguments for the Recent Posts widget.
+             *
+             * @since 3.4.0
+             *
+             * @see WP_Query::get_posts()
+             *
+             * @param array $args An array of arguments used to retrieve the recent posts.
+             */
+            $r = new WP_Query( apply_filters( 'widget_posts_args', array(
+                'posts_per_page'      => $number,
+                'no_found_rows'       => true,
+                'post_status'         => 'publish',
+                'ignore_sticky_posts' => true
+            ) ) );
+
+            if ($r->have_posts()) :
+            ?>
+            <?php echo $args['before_widget']; ?>
+            <?php if ( $title ) {
+                echo $args['before_title'] . $title . $args['after_title'];
+            } ?>
+            <ul>
+            <?php while ( $r->have_posts() ) : $r->the_post(); ?>
+                <li>
+
+                    <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );?>
+                    <div class="blog-img" style="background-image: url(<?php echo $url; ?>)"></div>
+                    <div class="blog-detail">
+                      <a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
+                      <span class="post-date"><?php echo get_the_date( 'd F Y' );; ?></span>
+                    </div>
+                </li>
+            <?php endwhile; ?>
+            </ul>
+            <?php echo $args['after_widget']; ?>
+            <?php
+            // Reset the global $the_post as this query will have stomped on it
+            wp_reset_postdata();
+
+            endif;
+        }
+}
+function my_recent_widget_registration() {
+  unregister_widget('WP_Widget_Recent_Posts');
+  register_widget('My_Recent_Posts_Widget');
+}
+add_action('widgets_init', 'my_recent_widget_registration');
+

@@ -1,7 +1,6 @@
 //
-// SmoothScroll for websites v1.4.8 (Balazs Galambosi)
+// SmoothScroll for websites v1.4.9 (Balazs Galambosi)
 // http://www.smoothscroll.net/
-// https://github.com/gblazex/smoothscroll-for-websites
 //
 // Licensed under the terms of the MIT license.
 //
@@ -588,12 +587,12 @@ function isScrollBehaviorSmooth(el) {
  * HELPERS
  ***********************************************/
 
-function addEvent(type, fn) {
-    window.addEventListener(type, fn, false);
+function addEvent(type, fn, arg) {
+    window.addEventListener(type, fn, arg || false);
 }
 
-function removeEvent(type, fn) {
-    window.removeEventListener(type, fn, false);  
+function removeEvent(type, fn, arg) {
+    window.removeEventListener(type, fn, arg || false);  
 }
 
 function isNodeName(el, tag) {
@@ -736,22 +735,29 @@ function pulse(x) {
  ***********************************************/
 
 var userAgent = window.navigator.userAgent;
-var isEdge    = /Edge/.test(userAgent); // thank you MS
-var isChrome  = /chrome/i.test(userAgent) && !isEdge; 
-var isSafari  = /safari/i.test(userAgent) && !isEdge; 
+var isEdge    = /Edge/.test(userAgent);
+var isChrome  = /chrome/i.test(userAgent) && !isEdge;
+var isSafari  = /safari/i.test(userAgent) && !isEdge;
+var isFirefox = /firefox/i.test(userAgent);
 var isMobile  = /mobile/i.test(userAgent);
 var isIEWin7  = /Windows NT 6.1/i.test(userAgent) && /rv:11/i.test(userAgent);
 var isOldSafari = isSafari && (/Version\/8/i.test(userAgent) || /Version\/9/i.test(userAgent));
-var isEnabledForBrowser = !isMobile;
+var isEnabledForBrowser = (isChrome || isSafari || isIEWin7 || isFirefox) && !isMobile;
 
-var wheelEvent;
-if ('onwheel' in document.createElement('div'))
-    wheelEvent = 'wheel';
-else if ('onmousewheel' in document.createElement('div'))
-    wheelEvent = 'mousewheel';
+var supportsPassive = false;
+try {
+  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () {
+            supportsPassive = true;
+        } 
+    }));
+} catch(e) {}
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel'; 
 
 if (wheelEvent && isEnabledForBrowser) {
-    addEvent(wheelEvent, wheel);
+    addEvent(wheelEvent, wheel, wheelOpt);
     addEvent('mousedown', mousedown);
     addEvent('load', init);
 }

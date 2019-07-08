@@ -1,9 +1,0 @@
-2019-05-22T07:26:08+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function wc_add_notice(), 0 passed in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-cart-functions.php on line 136 and at least 1 expected in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-notice-functions.php:72
-Stack trace:
-#0 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-cart-functions.php(136): wc_add_notice()
-#1 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-form-handler.php(943): wc_add_to_cart_message(Array, true)
-#2 D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-form-handler.php(744): WC_Form_Handler::add_to_cart_handler_variable(582)
-#3 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): WC_Form_Handler::add_to_cart_action('')
-#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
-#5 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453 in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\wc-notice-functions.php on line 72
-

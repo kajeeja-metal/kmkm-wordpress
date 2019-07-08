@@ -1,0 +1,48 @@
+2019-06-07T06:48:47+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 30
+
+2019-06-07T07:37:01+00:00 CRITICAL Object of class WP_Query could not be converted to string in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php on line 20
+
+2019-06-07T07:41:16+00:00 CRITICAL Object of class WP_Post could not be converted to string in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php on line 26
+
+2019-06-07T07:41:31+00:00 CRITICAL Uncaught Error: Call to undefined function dd() in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php:26
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template-loader.php(74): include()
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\kmkm-wordpress\index.php(17): require('D:\\xampp\\htdocs...')
+#3 {main}
+  thrown in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php on line 26
+
+2019-06-07T07:49:16+00:00 CRITICAL syntax error, unexpected end of file in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 352
+
+2019-06-07T07:58:00+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php:33
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template-loader.php(74): include()
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\kmkm-wordpress\index.php(17): require('D:\\xampp\\htdocs...')
+#3 {main}
+  thrown in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php on line 33
+
+2019-06-07T07:58:01+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php:33
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template-loader.php(74): include()
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\kmkm-wordpress\index.php(17): require('D:\\xampp\\htdocs...')
+#3 {main}
+  thrown in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php on line 33
+
+2019-06-07T07:58:06+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php:33
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template-loader.php(74): include()
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\kmkm-wordpress\index.php(17): require('D:\\xampp\\htdocs...')
+#3 {main}
+  thrown in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php on line 33
+
+2019-06-07T08:15:25+00:00 CRITICAL Uncaught Error: Call to undefined function content() in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php:36
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template-loader.php(74): include()
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\kmkm-wordpress\index.php(17): require('D:\\xampp\\htdocs...')
+#3 {main}
+  thrown in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\single.php on line 36
+
