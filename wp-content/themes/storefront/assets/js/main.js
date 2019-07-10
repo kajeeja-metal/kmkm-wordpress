@@ -135,13 +135,13 @@ jQuery(document).ready(function($) {
 
 	// }
 	// }});
-	setTimeout(function(){ 
-		$('.woocommerce-notices-wrapper').fadeTo("slow", 0.001, function(){ //fade
-             $(this).slideUp("slow", function() { //slide up
-                 $(this).remove(); //then remove from the DOM
-             });
-         });
-	}, 3000);
+	// setTimeout(function(){ 
+	// 	$('.woocommerce-notices-wrapper').fadeTo("slow", 0.001, function(){ //fade
+ //             $(this).slideUp("slow", function() { //slide up
+ //                 $(this).remove(); //then remove from the DOM
+ //             });
+ //         });
+	// }, 3000);
 	
 	$('.site-search').click(function (e) {
 		$('#woocommerce-product-search-field-0').toggleClass('active');
