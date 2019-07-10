@@ -33,6 +33,20 @@ function private_coupon_checking() {
 
   if($result->can_use) {
     WC()->cart->add_discount( wc_format_coupon_code( wp_unslash( $result->link_code ) ) );
+
+    // Kill Coupon
+    $url = "https://service.privageapp.com/remote/api/check_code/".$code;
+
+    $ch = curl_init(); 
+    curl_setopt($ch, CURLOPT_URL, $url); 
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, true); 
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+      "Authorize-Key: " . $api_key,
+      "Content-Type: application/json"
+    ));
+
+    curl_exec($ch);
   }
   else {
     wc_add_notice( WC_Coupon::get_generic_coupon_error( WC_Coupon::E_WC_COUPON_NOT_EXIST ), 'error' );
@@ -201,9 +215,37 @@ function get_privage_profile($user_id) {
 add_action( 'woocommerce_payment_complete', 'privage_payment_complete' );
 
 function privage_payment_complete( $order_id ){
-    $order = wc_get_order( $order_id );
-    $user = $order->get_user();
-    if( $user ){
+  $api_key = 'f2c659dc5e4aaf84465488d10baa836a9ad9b1c61c56e5386be30ab31a9e0ffa';
+  $order = wc_get_order( $order_id );
+  $user = $order->get_user();
 
-    }
+  if($user){
+    $url = "https://service.privageapp.com/remote/api/update_point/";
+
+    $order_data = $order->get_data();
+
+    $member_id = get_user_meta( $user->ID, 'card_id', true );
+
+    $params = array(
+      "member_id" => $member_id,
+      "machine" => "web",
+      "bill_total" => strval($order_data['id']),
+      "bill_reference" => $order_data['subtotal'],
+      "bill_branch" => "web"
+    );
+
+    $data_string = json_encode($params); 
+
+    $ch = curl_init(); 
+    curl_setopt($ch, CURLOPT_URL, $url); 
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, true); 
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string); 
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+      "Authorize-Key: " . $api_key,
+      "Content-Type: application/json"
+    ));
+
+    curl_exec($ch);
+  }
 }
