@@ -220,7 +220,7 @@ function privage_payment_complete( $order_id ){
   $user = $order->get_user();
 
   if($user){
-    $url = "https://service.privageapp.com/remote/api/update_point/";
+    $url = "https://service.privageapp.com/remote/api/update_point";
 
     $order_data = $order->get_data();
 
