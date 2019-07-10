@@ -1,0 +1,26 @@
+2019-06-10T09:40:56+00:00 CRITICAL syntax error, unexpected ')' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 30
+
+2019-06-10T09:41:06+00:00 CRITICAL syntax error, unexpected ''<div class="box-group-item">'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 30
+
+2019-06-10T09:49:01+00:00 CRITICAL syntax error, unexpected '==' (T_IS_EQUAL) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 31
+
+2019-06-10T10:02:57+00:00 CRITICAL syntax error, unexpected '!=' (T_IS_NOT_EQUAL) in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 31
+
+2019-06-10T10:22:54+00:00 CRITICAL syntax error, unexpected '<' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 58
+
+2019-06-10T10:33:12+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 32
+
+2019-06-10T10:33:39+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 32
+
+2019-06-10T10:33:54+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 32
+
+2019-06-10T10:34:02+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 32
+
+2019-06-10T10:40:41+00:00 CRITICAL syntax error, unexpected ')' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 38
+
+2019-06-10T11:05:33+00:00 CRITICAL syntax error, unexpected '}' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 48
+
+2019-06-10T11:11:43+00:00 CRITICAL syntax error, unexpected '{' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 48
+
+2019-06-10T11:18:56+00:00 CRITICAL syntax error, unexpected '{' in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php on line 48
+

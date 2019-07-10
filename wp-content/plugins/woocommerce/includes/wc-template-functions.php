@@ -1116,7 +1116,9 @@ if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 	 * Show the product title in the product loop. By default this is an H2.
 	 */
 	function woocommerce_template_loop_product_title() {
+		global $product;
 		echo '<h2 class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . get_the_title() . '</h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<p style="    margin: 0px;padding-bottom: 0px;letter-spacing: 1px;font-size: 14px;padding: 10px 15px;position: relative;top: 0;margin-top: -28px;z-index: 9;" class="size-main">' . get_post_meta($product->get_id(), 'scents', true) .'</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 if ( ! function_exists( 'woocommerce_template_loop_category_title' ) ) {

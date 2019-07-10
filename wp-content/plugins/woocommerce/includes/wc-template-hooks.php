@@ -149,8 +149,8 @@ add_action( 'woocommerce_related_single_product_summary', 'woocommerce_output_re
  */
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 30 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
 
@@ -215,7 +215,7 @@ add_action( 'woocommerce_product_additional_information', 'wc_display_product_at
  * @see woocommerce_checkout_payment()
  */
 add_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
-add_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+add_action( 'woocommerce_before_checkout_coupons_form', 'woocommerce_checkout_coupon_form', 10 );
 add_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
 add_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 add_action( 'woocommerce_checkout_terms_and_conditions', 'wc_checkout_privacy_policy_text', 20 );

@@ -35,14 +35,17 @@ function display_price_in_variation_option_name( $term ) {
 				$taxonomy = mb_substr( $key, 10 ) ;
 				$attribute = get_term_by('slug', $slug, $taxonomy);
 				if($attribute->name == $term){
-					$price_d = " " . wp_kses( wc_price($variation['display_price']), array()) . "";
-				}
+          if(wp_kses( wc_price($variation['display_regular_price']), array()) != wp_kses( wc_price($variation['display_price']), array())){
+            $price_d = " <del>" . wp_kses( wc_price($variation['display_regular_price']), array()) . "</del>  <span>". wp_kses( wc_price($variation['display_price']), array()).'</span>';
+            }
+            else{
+            $price_d = "<span>" . wp_kses( wc_price($variation['display_regular_price']), array()) . "</span>";
+            }
+				  }
 			}
 		}
 	}
-	
     return $price_d ;
-
 }
 add_filter( 'woocommerce_variation_option_name_price', 'display_price_in_variation_option_name' );
 add_action('add_to_cart_redirect', 'resolve_dupes_add_to_cart_redirect');
@@ -171,7 +174,7 @@ function woocommerce_custom_sale_text($text, $post, $_product)
 }
 
 // Output the Custom field in Product pages
-add_action( 'woocommerce_review_order_before_payments', 'bbloomer_checkout_radio_choice' );
+// add_action( 'woocommerce_review_order_before_payments', 'bbloomer_checkout_radio_choice' );
 add_action( 'woocommerce_review_order_before_payment', 'bbloomer_checkout_radio_choice' );
  
 function bbloomer_checkout_radio_choice() {
@@ -214,29 +217,27 @@ if ( '' === $product->get_price() || 0 == $product->get_price() ) {
  
 return $price;
 }
-add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
+// add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
  
-function bbloomer_checkout_radio_choice_fee( $cart ) {
+// function bbloomer_checkout_radio_choice_fee( $cart ) {
   
-  if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
+//   if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
    
-  $radio = WC()->session->get( 'radio_chosen' );
+//   $radio = WC()->session->get( 'radio_chosen' );
     
-  if ( "option_1" == $radio ) {
-   $fee = 0;
-   $name = 'HBD Card';
-  } elseif ( "option_2" == $radio ) {
-   $fee = 0;
-   $name = 'Congradtulation Card';
-  }
-  elseif ( "option_3" == $radio ) {
-   $fee = 10;
-   $name = 'Text Card';
-  }
-   
-  $cart->add_fee( __($name, 'woocommerce'), $fee );
-  
-}
+//   if ( "option_1" == $radio ) {
+//    $fee = 0;
+//    $name = 'HBD Card';
+//   } elseif ( "option_2" == $radio ) {
+//    $fee = 0;
+//    $name = 'Congradtulation Card';
+//   }
+//   elseif ( "option_3" == $radio ) {
+//    $fee = 10;
+//    $name = 'Text Card';
+//   }
+//   $cart->add_fee( __($name, 'woocommerce'), $fee );
+// }
  
 // Part 3 
 // Refresh Checkout if Radio Changes
@@ -327,3 +328,115 @@ function wckc_list_taxonomy_archive($atts){
     return $output;
  
 }
+  
+    if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            // Replace [YOUR THEME TEXT DOMAIN] below with the text domain of your theme (found in the theme's `style.css`).
+            'label' => __( 'Secondary Image', '[YOUR THEME TEXT DOMAIN]'),
+            'id' => 'Ads Images',
+            'post_type' => 'page'
+        )
+    );
+
+}
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            // Replace [YOUR THEME TEXT DOMAIN] below with the text domain of your theme (found in the theme's `style.css`).
+            'label' => __( 'Secondary Image', '[YOUR THEME TEXT DOMAIN]'),
+            'id' => 'Banner Images',
+            'post_type' => 'post'
+        )
+    );
+
+}
+
+// Filter except length to 35 words.
+// tn custom excerpt length
+function excerpt($limit) {
+    $excerpt = explode(' ', get_the_excerpt(), $limit);
+    if (count($excerpt)>=$limit) {
+        array_pop($excerpt);
+        $excerpt = implode(" ",$excerpt).'';
+      } else {
+        $excerpt = implode(" ",$excerpt);
+      } 
+    $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+    return $excerpt;
+    }
+remove_filter( 'the_excerpt', 'wpautop' );
+
+/**
+ * Extend Recent Posts Widget 
+ *
+ * Adds different formatting to the default WordPress Recent Posts Widget
+ */
+
+Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
+
+        function widget($args, $instance) {
+
+                if ( ! isset( $args['widget_id'] ) ) {
+                $args['widget_id'] = $this->id;
+            }
+
+            $title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Posts' );
+
+            /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
+            $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+
+            $number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
+            if ( ! $number )
+                $number = 5;
+            $show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
+
+            /**
+             * Filter the arguments for the Recent Posts widget.
+             *
+             * @since 3.4.0
+             *
+             * @see WP_Query::get_posts()
+             *
+             * @param array $args An array of arguments used to retrieve the recent posts.
+             */
+            $r = new WP_Query( apply_filters( 'widget_posts_args', array(
+                'posts_per_page'      => $number,
+                'no_found_rows'       => true,
+                'post_status'         => 'publish',
+                'ignore_sticky_posts' => true
+            ) ) );
+
+            if ($r->have_posts()) :
+            ?>
+            <?php echo $args['before_widget']; ?>
+            <?php if ( $title ) {
+                echo $args['before_title'] . $title . $args['after_title'];
+            } ?>
+            <ul>
+            <?php while ( $r->have_posts() ) : $r->the_post(); ?>
+                <li>
+
+                    <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );?>
+                    <div class="blog-img" style="background-image: url(<?php echo $url; ?>)"></div>
+                    <div class="blog-detail">
+                      <a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
+                      <span class="post-date"><?php echo get_the_date( 'd F Y' );; ?></span>
+                    </div>
+                </li>
+            <?php endwhile; ?>
+            </ul>
+            <?php echo $args['after_widget']; ?>
+            <?php
+            // Reset the global $the_post as this query will have stomped on it
+            wp_reset_postdata();
+
+            endif;
+        }
+}
+function my_recent_widget_registration() {
+  unregister_widget('WP_Widget_Recent_Posts');
+  register_widget('My_Recent_Posts_Widget');
+}
+add_action('widgets_init', 'my_recent_widget_registration');
+

@@ -1,3 +1,4 @@
+
 .product_title.entry-title{
     font-size: 30px;
     color:#000000;
@@ -6,6 +7,32 @@
     @include font-title;
     & ~ .price{
         display: none;
+    }
+}
+.tagged_as{
+    a{
+    border: 1px solid #000;
+    color: #000;
+    padding: 2px 10px;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    }
+}
+.product-type-simple{
+    .product_title.entry-title{
+        font-size: 30px;
+        color:#000000;
+        line-height: 1;
+        letter-spacing: 1px;
+        @include font-title;
+        & ~ .price{
+            display: block;
+        }
+    }
+    .product_meta {
+       display: block;
     }
 }
 .single-product .product_title.entry-title, .woocommerce-tabs .panel h2{
