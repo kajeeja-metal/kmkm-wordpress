@@ -59,16 +59,27 @@ $desktop-width: 1920px;
          url('../fonts/dtlalbertinastmedium_regular-webfont.svg#dtlalbertinastmediumregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
+}
+@font-face {
+    font-family: 'TF-Srivichai';
+    src: url('../fonts/TF-Srivichai.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TF-Srivichai-Bol';
+    src: url('../fonts/TF-Srivichai-Bol.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
  @mixin font-base{
-     font-family: 'HKGrotesk-Regular' !important;
+     font-family: 'HKGrotesk-Regular','TF-Srivichai' !important;
 }
 @mixin font-mid{
-     font-family: 'HKGrotesk-Medium' !important;
+     font-family: 'HKGrotesk-Medium','TF-Srivichai' !important;
 }
 @mixin font-bold{
-    font-family: 'HKGrotesk-Bold' !important;
+    font-family: 'HKGrotesk-Bold','TF-Srivichai-Bol' !important;
 }
 @mixin font-title{
     font-family: 'dtlalbertinastmediumregular' !important;
