@@ -32,6 +32,9 @@ function privage_locate_template( $template, $template_name, $template_path ) {
   if( $basename == 'form-login.php' ) {
     $template = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'templates/form-login.php';
   }
+  else if($basename == 'form-edit-account.php') {
+    $template = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'templates/form-edit-account.php';
+  }
   return $template;
 }
 
@@ -90,11 +93,19 @@ function privage_login() {
     // Update profile
     $current_user = get_user_by('login', $user_id);
 
-    $result = wp_update_user(array(
-      'ID' => $current_user->ID,
-      'nickname' => $name,
-      'display_name' => $name
-    ));
+    if($current_user->display_name != $name) {
+      $names = explode(" ", $name);
+
+      $result = wp_update_user(array(
+        'ID' => $current_user->ID,
+        'nickname' => $name,
+        'first_name' => sizeof($names) > 0 ? $names[0] : '',
+        'last_name' => sizeof($names) > 1 ? $names[1] : '',
+        'display_name' => $name
+      ));
+    }
+
+    update_usermeta( $current_user->ID, 'token', $access_token );
     
   } catch (Exception $e) { 
     echo $e;
