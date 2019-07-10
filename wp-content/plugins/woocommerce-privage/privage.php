@@ -61,7 +61,7 @@ add_action('wc_ajax_apply_coupon', 'private_coupon_checking');
 
 function privage_locate_template( $template, $template_name, $template_path ) {
   $basename = basename( $template );
-  if( $basename == 'form-login.php' ) {
+  if( $template_name == 'myaccount/form-login.php' ) {
     $template = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'templates/form-login.php';
   }
   else if($basename == 'form-edit-account.php') {
@@ -215,37 +215,39 @@ function get_privage_profile($user_id) {
 add_action( 'woocommerce_payment_complete', 'privage_payment_complete' );
 
 function privage_payment_complete( $order_id ){
-  $api_key = 'f2c659dc5e4aaf84465488d10baa836a9ad9b1c61c56e5386be30ab31a9e0ffa';
   $order = wc_get_order( $order_id );
-  $user = $order->get_user();
+  $user = $order->get_user(); 
+  $user_id = $order->get_user_id(); 
+  
+  $api_key = 'f2c659dc5e4aaf84465488d10baa836a9ad9b1c61c56e5386be30ab31a9e0ffa';
 
-  if($user){
+  if($user_id){
     $url = "https://service.privageapp.com/remote/api/update_point";
 
-    $order_data = $order->get_data();
+    $member_id = get_user_meta( $user_id, 'card_id', true );
 
-    $member_id = get_user_meta( $user->ID, 'card_id', true );
+    if($member_id != null) {
+      $params = array(
+        "member_id" => $member_id,
+        "machine" => "web",
+        "bill_total" => $order->get_total(),
+        "bill_reference" => $order->get_order_number(),
+        "bill_branch" => "web"
+      );
 
-    $params = array(
-      "member_id" => $member_id,
-      "machine" => "web",
-      "bill_total" => strval($order_data['id']),
-      "bill_reference" => $order_data['subtotal'],
-      "bill_branch" => "web"
-    );
+      $data_string = json_encode($params); 
 
-    $data_string = json_encode($params); 
+      $ch = curl_init(); 
+      curl_setopt($ch, CURLOPT_URL, $url); 
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_POST, true); 
+      curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string); 
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        "Authorize-Key: " . $api_key,
+        "Content-Type: application/json"
+      ));
 
-    $ch = curl_init(); 
-    curl_setopt($ch, CURLOPT_URL, $url); 
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, true); 
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string); 
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-      "Authorize-Key: " . $api_key,
-      "Content-Type: application/json"
-    ));
-
-    curl_exec($ch);
+      curl_exec($ch);
+    }
   }
 }
