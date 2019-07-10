@@ -9,15 +9,33 @@ Version: 1.0
 */
 
 function private_coupon_checking() {
+  $api_key = 'f2c659dc5e4aaf84465488d10baa836a9ad9b1c61c56e5386be30ab31a9e0ffa';
+
   check_ajax_referer( 'apply-coupon', 'security' );
 
   // Coupon Code
   $code = $_POST['coupon_code'];
 
-  if ( ! empty( $code ) ) {
-    WC()->cart->add_discount( wc_format_coupon_code( wp_unslash( $code ) ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-  } else {
-    wc_add_notice( WC_Coupon::get_generic_coupon_error( WC_Coupon::E_WC_COUPON_PLEASE_ENTER ), 'error' );
+  $url = "https://service.privageapp.com/remote/api/check_code/".$code;
+
+  $ch = curl_init(); 
+  curl_setopt($ch, CURLOPT_URL, $url); 
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    "Authorize-Key: " . $api_key,
+    "Content-Type: application/json"
+  ));
+
+  $output = curl_exec($ch);
+  $result = json_decode($output);
+
+  curl_close($ch);
+
+  if($result->can_use) {
+    WC()->cart->add_discount( wc_format_coupon_code( wp_unslash( $result->link_code ) ) );
+  }
+  else {
+    wc_add_notice( WC_Coupon::get_generic_coupon_error( WC_Coupon::E_WC_COUPON_NOT_EXIST ), 'error' );
   }
 
   wc_print_notices();
@@ -177,4 +195,15 @@ function get_privage_profile($user_id) {
   curl_close($ch); 
 
   return $result->results;
+}
+
+// Complete payment
+add_action( 'woocommerce_payment_complete', 'privage_payment_complete' );
+
+function privage_payment_complete( $order_id ){
+    $order = wc_get_order( $order_id );
+    $user = $order->get_user();
+    if( $user ){
+
+    }
 }
