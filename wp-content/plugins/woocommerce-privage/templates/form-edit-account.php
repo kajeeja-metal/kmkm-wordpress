@@ -56,6 +56,9 @@ if($name != $user->display_name) {
 	));
 }
 
+$profile = apply_filters('privage_profile', $user->ID);
+$card_design = $profile->card->card_type->image;
+
 ?>
 
 <?php do_action( 'woocommerce_edit_account_form_start' ); ?>
@@ -79,6 +82,17 @@ if($name != $user->display_name) {
 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 	<label for="account_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?></label>
 	<input type="email" class="woocommerce-Input woocommerce-Input--email input-text" readonly="readonly" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $email ); ?>" />
+</p>
+
+<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+	<label for="account_email">Member Card</label>
+	<div style="width: 300px; min-height: 150px; background-color: #efefef; border-radius: 8px; overflow: hidden; position: relative;">
+		<img style="width: 100%;" src="https://service.privageapp.com<?php echo $card_design; ?>" />
+		<div style="font-size: 14px; text-align: center; color: black; padding: 8px; background: rgba(255,255,255,0.8); position: absolute; left: 8px; right: 8px; bottom: 8px;">
+			<div><strong>#<?php echo $profile->card->card_id; ?></strong></div>
+			<div><?php echo $profile->card->point; ?> Points</div>
+		</div>
+	</div>
 </p>
 
 <div class="clear"></div>

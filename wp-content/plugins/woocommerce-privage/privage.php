@@ -105,7 +105,7 @@ function privage_login() {
       ));
     }
 
-    update_usermeta( $current_user->ID, 'token', $access_token );
+    update_user_meta( $current_user->ID, 'token', $access_token );
     
   } catch (Exception $e) { 
     echo $e;
@@ -120,4 +120,61 @@ function privage_login() {
   </script>
   <?php
   exit();
+}
+
+// Get user profile
+add_filter( 'privage_profile', 'get_privage_profile', 10, 1);
+
+function get_privage_profile($user_id) {
+  $sso_token = get_user_meta( $user_id, 'token', true );
+  $privage_token = get_user_meta( $user_id, 'privage_token', true );
+  if($privage_token == null) {
+    $url = "https://service.privageapp.com/bridge/login";
+
+    $params = array(
+      "login_token" => $sso_token
+    );
+
+    $data_string = json_encode($params); 
+    $ch = curl_init(); 
+    curl_setopt($ch, CURLOPT_URL, $url); 
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+        'Content-Type: application/json',                                                                                
+        'Content-Length: ' . strlen($data_string))                                                                       
+    );     
+    
+    $output = curl_exec($ch); 
+    $result = json_decode($output);
+
+    update_user_meta( $user_id, 'privage_token', $result->access_token );
+    $privage_token = $result->access_token;
+
+    curl_close($ch); 
+  }
+
+  $url = 'https://service.privageapp.com/v2/member/dashboard';
+
+  $ch = curl_init(); 
+  curl_setopt($ch, CURLOPT_URL, $url); 
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);                                                                
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+      'Content-Type: application/json',                                                                                
+      'access-token: ' . $privage_token,
+      'bundle-identifier: com.privage.hmc'                                                                      
+  ));
+  
+  $output = curl_exec($ch); 
+  $result = json_decode($output);
+
+  // Save member id
+  if($result->results->card != null) {
+    update_user_meta( $user_id, 'card_id', $result->results->card->card_id);
+  }
+
+  curl_close($ch); 
+
+  return $result->results;
 }
