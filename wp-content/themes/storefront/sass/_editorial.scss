@@ -143,6 +143,13 @@
     
    
 }
+.group_category_blog.editorial{
+    .list_category_blog{
+        &:hover{
+                margin-bottom: auto;
+        }
+    }
+}
 .background-post{
 	background-size: cover;
     height: 550px;

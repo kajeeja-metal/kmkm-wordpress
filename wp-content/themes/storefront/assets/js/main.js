@@ -135,6 +135,63 @@ jQuery(document).ready(function($) {
 
 	// }
 	// }});
+	jQuery(document).ready(function ($) {
+		$('.accordion_wrap ul li div').addClass('hide');
+		$(".accordion_wrap ul li h2").each(function () {
+		    $(this).children('span').css({
+		        WebkitTransform: 'rotate(' + 180 + 'deg)',
+		            '-moz-transform': 'rotate(' + 180 + 'deg)'
+		    });
+		});
+		$(".accordion_wrap ul li").eq(0).children('div').addClass('active').slideDown();
+		$(".accordion_wrap ul li").eq(0).children('h2').addClass('arrowUp').children('span').css({
+		    WebkitTransform: 'rotate(' + 0 + 'deg)',
+		        '-moz-transform': 'rotate(' + 0 + 'deg)'
+		});
+		$('.accordion_wrap ul li h2').on('click', function (e) {
+
+    e.preventDefault();
+    $(this).parent().siblings().children('div').removeClass('active').slideUp('ease');
+    $(this).next().addClass('active').slideToggle('ease');
+
+
+    var $elie = $(this),
+        plus = 0,
+        minus = 180,
+        timer;
+    rotate();
+
+    function rotate() {
+        console.log($elie.parents('.accordion_wrap').find("h2.arrowUp span").length);
+        $elie.parents('.accordion_wrap').find("h2.arrowUp span").css({
+            WebkitTransform: 'rotate(' + plus + 'deg)',
+                '-moz-transform': 'rotate(' + plus + 'deg)'
+        });
+
+        if ($elie.next("div").hasClass('active')) {
+            $elie.children('span').css({
+                WebkitTransform: 'rotate(' + minus + 'deg)',
+                    '-moz-transform': 'rotate(' + minus + 'deg)'
+            });
+        }
+
+        timer = setTimeout(function () {
+            if (plus < 180) {
+                ++plus;
+                rotate();
+            }
+            if (minus > 0) {
+                --minus;
+                rotate();
+                if (minus == 1) {
+                    $elie.parents('.accordion_wrap').find("h2").removeClass('arrowUp');
+                    $elie.addClass('arrowUp');
+                }
+            }
+        }, 15);
+    }
+});
+	});
 	setTimeout(function(){ 
 		$('.woocommerce-notices-wrapper').fadeTo("slow", 0.001, function(){ //fade
              $(this).slideUp("slow", function() { //slide up
@@ -269,13 +326,13 @@ function ScrollHandler(pageId) {
    }    
   },{passive: false});
 }
+
+
 var idproduct = jQuery('.single-product .site-main').children().attr('id');
 new ScrollHandler(idproduct); 
 new ScrollHandler('two');
 new ScrollHandler('three');
 new ScrollHandler('four');
-
-
 // jQuery(document).mouseleave(function () {
 //     console.log('out');
 // });

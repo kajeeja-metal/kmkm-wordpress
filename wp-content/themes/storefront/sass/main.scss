@@ -72,6 +72,7 @@ $desktop-width: 1920px;
 }
 @mixin font-title{
     font-family: 'dtlalbertinastmediumregular' !important;
+    
 }
  @mixin animation-delay($time){
      -webkit-transition: all $time+s ease;
@@ -721,6 +722,11 @@ ul.products li.product.product-category .woocommerce-loop-category__title, ul.pr
     position: relative;
     letter-spacing: 1px;
     color: #000000;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 36px;
+    text-overflow: ellipsis;
 }
 .woocommerce-loop-category__title mark.count{
   display: none;
@@ -1197,6 +1203,53 @@ ul.products li.product.product-category img {
   .tabs nav a:before {
     margin-right: 0;
   }
+}
+
+#responsive-form{
+  max-width:600px /*-- change this to get your desired form width --*/;
+  margin:0 auto;
+        width:100%;
+}
+.form-row{
+  width: 100%;
+}
+.column-half, .column-full{
+  float: left;
+  position: relative;
+  padding: 0.65rem;
+  width:100%;
+  -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**---------------- Media query ----------------**/
+@media only screen and (min-width: 48em) { 
+  .column-half{
+    width: 50%;
+  }
+}
+.input-text, input[type=email], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], textarea {
+    padding: 6.5px;
+    background-color: #ffffff;
+    color: #43454b;
+    outline: 0;
+    border: 1px solid #dadada;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    font-weight: 400;
+    box-shadow: none;
+    margin-top: 5px;
+}
+button, input[type="button"], input[type="reset"], input[type="submit"], .button, .widget a.button {
+    background-color: #000000;
+    border-color: #eeeeee;
+    color: #ffffff;
 }
 @import "_product-detail";
 @import "_editorial";

@@ -217,27 +217,27 @@ if ( '' === $product->get_price() || 0 == $product->get_price() ) {
  
 return $price;
 }
-add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
+// add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
  
-function bbloomer_checkout_radio_choice_fee( $cart ) {
+// function bbloomer_checkout_radio_choice_fee( $cart ) {
   
-  if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
+//   if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
    
-  $radio = WC()->session->get( 'radio_chosen' );
+//   $radio = WC()->session->get( 'radio_chosen' );
     
-  if ( "option_1" == $radio ) {
-   $fee = 0;
-   $name = 'HBD Card';
-  } elseif ( "option_2" == $radio ) {
-   $fee = 0;
-   $name = 'Congradtulation Card';
-  }
-  elseif ( "option_3" == $radio ) {
-   $fee = 10;
-   $name = 'Text Card';
-  }
-  $cart->add_fee( __($name, 'woocommerce'), $fee );
-}
+//   if ( "option_1" == $radio ) {
+//    $fee = 0;
+//    $name = 'HBD Card';
+//   } elseif ( "option_2" == $radio ) {
+//    $fee = 0;
+//    $name = 'Congradtulation Card';
+//   }
+//   elseif ( "option_3" == $radio ) {
+//    $fee = 10;
+//    $name = 'Text Card';
+//   }
+//   $cart->add_fee( __($name, 'woocommerce'), $fee );
+// }
  
 // Part 3 
 // Refresh Checkout if Radio Changes

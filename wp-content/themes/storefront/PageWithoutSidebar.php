@@ -18,7 +18,7 @@
 			
     	 ?>
 
-    	 <div class="group_category_blog">
+    	 <div class="group_category_blog editorial">
 			<div class="list_category_blog">
 				<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/all-editorial" class="hover_blog">ALL EDITORIAL</a></div>
 				<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/craftmanship" class="hover_blog">CRAFTMANSHIP</a></div>
