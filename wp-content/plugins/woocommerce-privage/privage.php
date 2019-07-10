@@ -31,8 +31,8 @@ function private_coupon_checking() {
 
   curl_close($ch);
 
-  if($result->can_use) {
-    WC()->cart->add_discount( wc_format_coupon_code( wp_unslash( $result->link_code ) ) );
+  if($result->status == "ok" && $result->results->can_use) {
+    WC()->cart->add_discount( wc_format_coupon_code( wp_unslash( $result->results->link_code ) ) );
 
     // Kill Coupon
     $url = "https://service.privageapp.com/remote/api/check_code/".$code;
