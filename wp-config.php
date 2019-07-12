@@ -23,10 +23,10 @@
 define('DB_NAME', 'kmkmonline');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'server_test');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'server_test');
 
 /** MySQL hostname */
 define('DB_HOST', '127.0.0.1');
