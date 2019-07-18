@@ -35,6 +35,9 @@
        display: block;
     }
 }
+.product_title.entry-title{
+    text-align: left !important;
+}
 .single-product .product_title.entry-title, .woocommerce-tabs .panel h2{
     font-size: 30px !important;
     color:#000000;
@@ -140,7 +143,7 @@
         padding-top: 25px;
         color: #fff;
         background: rgba(0, 0, 0, 0.62);
-        z-index: 2;
+        z-index: 1;
         @include animation-delay(0.5) ;
     }
 }
@@ -375,9 +378,16 @@
 .products.columns-3.columns-4{
     width: 82.66% !important;
 }
-table th {
+.entry-title{
+    text-align: center !important;
+}
+table th{
     background-color: #000 !important;
     color: #fff !important;
+}
+table tfoot th{
+    background-color: #fff !important;
+    color: #000 !important;
 }
 table td, table th {
     padding: 1em 1.41575em;

@@ -1358,5 +1358,52 @@ color: #fff;
 margin: 0;
 
 }
+.star-rating span:before, .quantity .plus, .quantity .minus, p.stars a:hover:after, p.stars a:after, .star-rating span:before, #payment .payment_methods li input[type=radio]:first-child:checked+label:before {
+    color: #800008 !important;
+}
+#order_review .total{
+  display: none;
+}
+#order_review table:nth-child(2n) {
+  display: inline-table;
+  width: 50%;
+  border:1px solid #000;
+  float: right;
+}
+#order_review .product-thumbnail img{
+  width: 90px;
+  height: 90px;
+}
+.woocommerce-order-overview__date.date{
+  position: relative;
+  bottom: 0;
+}
+.woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received{
+  text-align: center;
+}
+.woocommerce-order{
+  width: 47.8260869565%;
+  margin: 0 auto;
+}
+.woocommerce-order-details{
+      margin-bottom: 60px;
+}
+.form-row.woocommerce-validated input.input-text {
+    box-shadow: none;
+}
+
+@media (min-width: 768px){
+  .page-template-template-fullwidth-php .col2-set .form-row-first {
+      width: 45.4545454545%;
+      float: left;
+      margin-right: 3.090909%;
+  }
+  .page-template-template-fullwidth-php .col2-set .form-row-last {
+      width: 51.454545%;
+      float: right;
+      margin-right: 0;
+  }
+}
+
 @import "_product-detail";
 @import "_editorial";

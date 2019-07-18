@@ -72,23 +72,31 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<?php endif; ?>
 </section>
 	<section id="section-bar-4" class="">
+		<style type="text/css">
+			#payment{
+				overflow: hidden;
+    			width: 100%;
+			}
+		</style>
 		<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 		
-		<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
+		<!-- <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3> -->
 		
 		<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
+
 		<div id="order_review" class="woocommerce-checkout-review-order">
 			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+
 		</div>
 
+
 		<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+
 	</section>
-	<section id="section-bar-5" class=""><p>5</p></section>
 
 </form>
 </div><!-- /content -->
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 </div>
-
