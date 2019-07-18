@@ -2521,7 +2521,7 @@ a.remove::before {
     list-style: none;
     display: table-cell;
     vertical-align: middle;
-    padding-right: 15px;
+    padding-right: 10px;
   }
 
   /* line 512, ../sass/_product-detail.scss */

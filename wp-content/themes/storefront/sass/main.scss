@@ -83,7 +83,7 @@ $desktop-width: 1920px;
 }
 @mixin font-title{
     font-family: 'dtlalbertinastmediumregular' !important;
-    
+
 }
  @mixin animation-delay($time){
      -webkit-transition: all $time+s ease;
@@ -149,7 +149,7 @@ body {
   @include font-base;
   // animation: fadein 3s;
   overflow-x: hidden;
-  overflow-y: auto; 
+  overflow-y: auto;
   padding-right: 0 !important;
   // &:after{
   //  content: '';
@@ -751,7 +751,7 @@ ul.products li.product.product-category .woocommerce-loop-category__title, ul.pr
     border: 1px solid #d7d7d7;
     border-left:none;
     border-top:none;
-    border-right:none; 
+    border-right:none;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -1240,7 +1240,7 @@ ul.products li.product.product-category img {
 }
 
 /**---------------- Media query ----------------**/
-@media only screen and (min-width: 48em) { 
+@media only screen and (min-width: 48em) {
   .column-half{
     width: 50%;
   }

@@ -196,8 +196,8 @@
 .affix{
     position: fixed !important;
 }
-.affix-bottom { 
-    position: absolute !important; 
+.affix-bottom {
+    position: absolute !important;
 }
 .related.products{
     padding: 60px 0;
@@ -507,7 +507,7 @@ a.remove::before {
         list-style: none;
         display: table-cell;
         vertical-align: middle;
-        padding-right: 15px;
+        padding-right: 10px;
     }
     footer .menu-copyright {
         padding: 15px 20px;
@@ -577,7 +577,7 @@ a.remove::before {
     .single-product div.product {
         position: relative;
         overflow: hidden;
-        height: auto; 
+        height: auto;
         display: flex;
         align-items: center;
         position: unset;
