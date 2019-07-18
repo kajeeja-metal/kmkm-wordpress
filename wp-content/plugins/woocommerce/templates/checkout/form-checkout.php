@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="tabs tabs-style-bar">
 	<nav>
 		<ul>
-			<li class="tab-current"><a href="#section-bar-1" class="icon icon-home"><span>LOGIN</span></a></li>
+			<!-- <li class="tab-current"><a href="#section-bar-1" class="icon icon-home"><span>LOGIN</span></a></li> -->
 			<li class=""><a href="#section-bar-2" class="icon icon-box"><span>COUPON</span></a></li>
 			<li class=""><a href="#section-bar-3" class="icon icon-display"><span>BILLING & SHIPPING</span></a></li>
 			<li class=""><a href="#section-bar-4" class="icon icon-upload"><span>ORDER & PAYMENT</span></a></li>
@@ -31,9 +31,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<BR><BR>
 <div class="content-wrap">
 
-<section id="section-bar-1" class=" content-current">
+<!-- <section id="section-bar-1" class=" content-current">
 <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
-</section>
+</section> -->
+<style type="text/css">
+	.checkout_coupon{
+		display: block !important;
+	}
+</style>
 <section id="section-bar-2" class="">
 <?php do_action( 'woocommerce_before_checkout_coupons_form', $checkout ); ?>
 </section>

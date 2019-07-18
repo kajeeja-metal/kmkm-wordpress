@@ -434,6 +434,25 @@ Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
             endif;
         }
 }
+add_filter( 'woocommerce_available_variation', 'set_packaging_type_after_variation_price', 10, 3 );
+function set_packaging_type_after_variation_price( $data, $product, $variation ) {
+    $targeted_taxonomy  = 'pa_verpackung'; // <== Define here the product attribute taxonomy
+
+    // Loop through variation attributes
+    foreach( $data['attributes'] as $variation_attribute => $term_slug ) {
+        $attribute_taxonomy = str_replace( 'attribute_', '', $variation_attribute ); // Get product attribute the taxonomy
+
+        // For matching variation attribute …
+        if ( $attribute_taxonomy == $targeted_taxonomy ){
+            $verpackung  = get_term_by( 'slug', $term_slug, $attribute_taxonomy )->name; // Get the term name
+            $verpackung = ' <span class="verpackung">'. __('für eine '). $verpackung .'</span></span>';
+            // Set the "packaging" after the selected viariation price
+            $data['price_html'] = str_replace( '</span></span>', '</span>' . $verpackung, $data['price_html'] );
+            break; // Stop the loop
+        }
+    }
+    return $data;
+}
 function my_recent_widget_registration() {
   unregister_widget('WP_Widget_Recent_Posts');
   register_widget('My_Recent_Posts_Widget');
