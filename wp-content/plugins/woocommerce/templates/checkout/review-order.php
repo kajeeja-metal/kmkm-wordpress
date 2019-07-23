@@ -19,41 +19,90 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<table class="shop_table woocommerce-checkout-review-order-table">
+<table class="shop_table woocommerce-checkout-review-order-table" style="    border: 1px solid #000;">
 	<thead>
 		<tr>
-			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
+			<th class="product-thumbnail"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
+			<th class="product-name">&nbsp;</th>
+			<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
+			<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
+			<th class="product-subtotal"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
 		</tr>
 	</thead>
 	<tbody>
-		<?php
-			do_action( 'woocommerce_review_order_before_cart_contents' );
-
+			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
+			<?php
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-				$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
-				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					?>
-					<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-						<td class="product-name">
-							<?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;'; ?>
-							<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times; %s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); ?>
-							<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
+					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+
+
+						<td class="product-thumbnail">
+						<?php
+						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+
+						if ( ! $product_permalink ) {
+							echo $thumbnail; // PHPCS: XSS ok.
+						} else {
+							printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+						}
+						?>
 						</td>
-						<td class="product-total">
-							<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
+
+						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+						<?php
+						if ( ! $product_permalink ) {
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
+						} else {
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+						}
+
+						do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
+
+						// Meta data.
+						echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
+
+						// Backorder notification.
+						if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
+						}
+						?>
+						</td>
+
+						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
+							<?php
+								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+							?>
+						</td>
+
+						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>" style="text-align: center;">
+						<?php
+						echo $cart_item['quantity'];
+
+						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
+						?>
+						</td>
+
+						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
+							<?php
+								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+							?>
 						</td>
 					</tr>
 					<?php
 				}
 			}
-
-			do_action( 'woocommerce_review_order_after_cart_contents' );
-		?>
+			?>
 	</tbody>
-	<tfoot>
-
+	
+</table>
+<table class="total" style="display: inline-block;">
+	<tbody>
 		<tr class="cart-subtotal">
 			<th><?php _e( 'Subtotal', 'woocommerce' ); ?></th>
 			<td><?php wc_cart_totals_subtotal_html(); ?></td>
@@ -107,6 +156,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</tr>
 
 		<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
-
-	</tfoot>
+	</tbody>
 </table>
+<?php do_action( 'woocommerce_after_cart_table' ); ?>
+
+

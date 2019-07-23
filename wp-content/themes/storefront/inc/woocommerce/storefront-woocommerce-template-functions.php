@@ -572,6 +572,7 @@ if ( ! function_exists( 'storefront_best_selling_products' ) ) {
 	}
 }
 
+
 if ( ! function_exists( 'storefront_promoted_products' ) ) {
 	/**
 	 * Featured and On-Sale Products
