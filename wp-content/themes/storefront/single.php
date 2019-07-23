@@ -54,10 +54,13 @@ get_header(); ?>
 			$count = count($products);
 			$id_products = $_SESSION['id_products'];
 			$is = 0;
+
 			for ($i=0; $i < $count; $i++) { 
 				$editoral = 'editoral'.$i;
 				$is++;
-				 if(get_post_meta($products[$i]->ID, 'editoral'.$is , true) == $tags[0]->name && $tags[0]->name != ''){
+				$custom_field = $editoral;
+				
+				 if(get_post_meta($products[$i]->ID, $custom_field , true) == $tags[0]->name && $tags[0]->name != ''){
 				 	 $id_products = $id_products . $products[$i]->ID . ",";
 				 	 $_SESSION['id_products'] = $id_products;
 				 }
