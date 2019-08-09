@@ -44,7 +44,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 		<input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $user->user_email ); ?>" />
 	</p>
 
-	<fieldset>
+	<!-- <fieldset>
 		<legend><?php esc_html_e( 'Password change', 'woocommerce' ); ?></legend>
 
 		<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
@@ -59,7 +59,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 			<label for="password_2"><?php esc_html_e( 'Confirm new password', 'woocommerce' ); ?></label>
 			<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2" autocomplete="off" />
 		</p>
-	</fieldset>
+	</fieldset> -->
 	<div class="clear"></div>
 
 	<?php do_action( 'woocommerce_edit_account_form' ); ?>

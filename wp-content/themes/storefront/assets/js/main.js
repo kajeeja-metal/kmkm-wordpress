@@ -200,6 +200,28 @@ jQuery(document).ready(function($) {
          });
 	}, 3000);
 	
+	// setTimeout(function(){ 
+	// 	$('.woocommerce-notices-wrapper').fadeTo("slow", 0.001, function(){ //fade
+ //             $(this).slideUp("slow", function() { //slide up
+ //                 $(this).remove(); //then remove from the DOM
+ //             });
+ //         });
+	// }, 3000);
+	$(document).ready(function() {
+	    // validate the comment form when it is submitted
+	    $('.tabs-style-bar li:not(:nth-child(3))').click(function (e) {
+	    	$('.tabs-style-bar li').removeClass('tab-current');
+	    	$('#section-bar-4').removeClass('content-current');
+		});
+	    $('.step4').click(function (e) {
+	    	$('.tabs-style-bar li').removeClass('tab-current');
+	    	$('.tabs-style-bar li:nth-child(3)').addClass('tab-current');
+	    	$('#section-bar-1').removeClass('content-current');
+	    	$('#section-bar-2').removeClass('content-current');
+	    	$('#section-bar-3').removeClass('content-current');
+	    	$('#section-bar-4').addClass('content-current');
+		});
+	});
 	$('.site-search').click(function (e) {
 		$('#woocommerce-product-search-field-0').toggleClass('active');
 	});

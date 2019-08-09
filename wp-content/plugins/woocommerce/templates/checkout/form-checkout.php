@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="tabs tabs-style-bar">
 	<nav>
 		<ul>
-			<li class="tab-current"><a href="#section-bar-1" class="icon icon-home"><span>LOGIN</span></a></li>
+			<!-- <li class="tab-current"><a href="#section-bar-1" class="icon icon-home"><span>LOGIN</span></a></li> -->
 			<li class=""><a href="#section-bar-2" class="icon icon-box"><span>COUPON</span></a></li>
 			<li class=""><a href="#section-bar-3" class="icon icon-display"><span>BILLING & SHIPPING</span></a></li>
 			<li class=""><a href="#section-bar-4" class="icon icon-upload"><span>ORDER & PAYMENT</span></a></li>
@@ -31,9 +31,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<BR><BR>
 <div class="content-wrap">
 
-<section id="section-bar-1" class=" content-current">
+<!-- <section id="section-bar-1" class=" content-current">
 <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
-</section>
+</section> -->
+<style type="text/css">
+	.checkout_coupon{
+		display: block !important;
+	}
+</style>
 <section id="section-bar-2" class="">
 <?php do_action( 'woocommerce_before_checkout_coupons_form', $checkout ); ?>
 </section>
@@ -67,23 +72,31 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<?php endif; ?>
 </section>
 	<section id="section-bar-4" class="">
+		<style type="text/css">
+			#payment{
+				overflow: hidden;
+    			width: 100%;
+			}
+		</style>
 		<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 		
-		<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
+		<!-- <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3> -->
 		
 		<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
+
 		<div id="order_review" class="woocommerce-checkout-review-order">
 			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+
 		</div>
 
+
 		<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+
 	</section>
-	<section id="section-bar-5" class=""><p>5</p></section>
 
 </form>
 </div><!-- /content -->
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 </div>
-
