@@ -4332,7 +4332,7 @@ b, strong {
   footer .footer-main ul li {
     list-style: none;
     float: left;
-    width: 25%;
+    width: 28.33%;
   }
 
   /* line 1740, ../sass/main.scss */
@@ -4535,4 +4535,16 @@ b, strong {
 /* line 1876, ../sass/main.scss */
 #payment .place-order {
   margin-bottom: 1.523em;
+}
+
+@media (max-width: 768px) {
+  /* line 1882, ../sass/main.scss */
+  .return-to-shop {
+    text-align: center;
+  }
+
+  /* line 1885, ../sass/main.scss */
+  .cart-empty {
+    margin-left: 10px;
+  }
 }
