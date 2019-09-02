@@ -155,8 +155,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"  style="    float: left;"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
-
+					<!-- <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"  style="    float: left;"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+ -->
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
