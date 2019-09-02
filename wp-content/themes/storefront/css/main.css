@@ -3232,6 +3232,11 @@ a:focus {
     overflow: hidden;
     margin: 0 -0.41575em;
   }
+
+  /* line 872, ../sass/_product-detail.scss */
+  .h2-fix {
+    font-size: 40px;
+  }
 }
 /* line 1, ../sass/_editorial.scss */
 .group_category_blog {
@@ -4250,7 +4255,7 @@ b, strong {
   }
 
   /* line 1676, ../sass/main.scss */
-  #el-dab25348 h2 {
+  #el-409efa43 h2 {
     font-size: 23px !important;
     padding: 0px 0 !important;
     color: #ffffff;
