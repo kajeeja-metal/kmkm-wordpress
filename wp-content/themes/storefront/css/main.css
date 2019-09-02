@@ -4255,7 +4255,7 @@ b, strong {
   }
 
   /* line 1676, ../sass/main.scss */
-  #el-409efa43 h2 {
+  #el-dab25348 h2 {
     font-size: 23px !important;
     padding: 0px 0 !important;
     color: #ffffff;
@@ -4552,5 +4552,10 @@ b, strong {
   /* line 1888, ../sass/main.scss */
   .cart-empty {
     margin-left: 10px;
+  }
+
+  /* line 1891, ../sass/main.scss */
+  #el-6d6a72e5 h2 {
+    margin-top: 0px !important;
   }
 }
