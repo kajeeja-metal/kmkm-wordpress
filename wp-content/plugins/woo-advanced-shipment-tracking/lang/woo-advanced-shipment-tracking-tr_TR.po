@@ -1,0 +1,1376 @@
+# Translation of Plugins - WooCommerce Advanced Shipment Tracking - Development (trunk) in Turkish
+# This file is distributed under the same license as the Plugins - WooCommerce Advanced Shipment Tracking - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-07-29 08:25+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: tr_TR\n"
+"Project-Id-Version: Plugins - WooCommerce Advanced Shipment Tracking - "
+"Development (trunk)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-29 07:28+0000\n"
+"Last-Translator: gaurav <gaurav1092@zorem.com>\n"
+"Language-Team: Turkish\n"
+"X-Loco-Version: 2.3.0; wp-5.2.2"
+
+#: woocommerce-advanced-shipment-tracking.php:109
+#, php-format
+msgid ""
+"Please install and activate %sWooCommerce%s for WooCommerce Advanced "
+"Shipment Tracking!"
+msgstr ""
+"WooCommerce Advanced Shipment Tracking için %sWooCommerce%s eklentisini "
+"yükleyin ve etkinleştirin! "
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:208
+msgid "Shipped"
+msgstr "Gönderildi"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:225
+#, php-format
+msgid "Shipped <span class=\"count\">(%s)</span>"
+msgid_plural "Shipped <span class=\"count\">(%s)</span>"
+msgstr[0] "Gönderildi <span class=\"count\">(%s)</span>"
+msgstr[1] "Gönderildi <span class=\"count\">(%s)</span>"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:239
+msgid "Change status to shipped"
+msgstr "Gönderildi olarak değiştir"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:249
+#: includes/class-wc-advanced-shipment-tracking-admin.php:278
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1449
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1669
+#: includes/customizer/class-wcast-customizer.php:104
+#: includes/customizer/class-wc-delivered-email-customizer.php:115
+#: includes/views/admin_options_trackship_integration.php:133
+msgid "Delivered"
+msgstr "Teslim Edildi"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:254
+#, php-format
+msgid "Delivered <span class=\"count\">(%s)</span>"
+msgid_plural "Delivered <span class=\"count\">(%s)</span>"
+msgstr[0] "Teslim Edildi <span class=\"count\">(%s)</span>"
+msgstr[1] "Teslim Edildi <span class=\"count\">(%s)</span>"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:260
+#: includes/class-wc-advanced-shipment-tracking-admin.php:289
+msgid "Updated Tracking"
+msgstr "Güncellenmiş İzleme"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:265
+#, php-format
+msgid "Updated Tracking <span class=\"count\">(%s)</span>"
+msgid_plural "Updated Tracking <span class=\"count\">(%s)</span>"
+msgstr[0] "Güncellenmiş İzleme <span class = \"count\"> (% s) </span>"
+msgstr[1] "Güncellenmiş İzleme <span class = \"count\"> (% s) </span>"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:319
+msgid "Change status to delivered"
+msgstr "Teslim edildi olarak değiştir"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:522
+msgid "Shipment status"
+msgstr "Sipariş durumu"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:650
+msgid "Order"
+msgstr "Sipariş"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:651
+msgid "Item"
+msgstr "Öğe"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:652
+msgid "Line Item"
+msgstr "Satır Öğesi"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:653
+msgid "Class"
+msgstr "Sınıfı"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:654
+msgid "Delete the selected rates?"
+msgstr "Seçilen oranlar silinsin mi?"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:655
+msgid "Duplicate the selected rates?"
+msgstr "Seçilen oranlar kopyalansın mı?"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:656
+msgid "Really want to bulk change all provider status?"
+msgstr ""
+"Gerçekten tüm sağlayıcı durumunu toplu olarak değiştirmek ister misiniz?"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:657
+#: includes/views/admin_options_settings.php:27
+msgid "Data saved successfully."
+msgstr "Veri başarıyla kaydedildi."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:658
+msgid "Really delete this entry? This will not be undo."
+msgstr "Bu girişi gerçekten sil? Bu geri alınmayacak."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:659
+msgid "You can upload only csv file."
+msgstr "Sadece csv dosyasını yükleyebilirsiniz."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:660
+msgid "This browser does not support HTML5."
+msgstr "Bu tarayıcı HTML5'i desteklemiyor."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:661
+msgid "Please upload a valid CSV file."
+msgstr "Lütfen geçerli bir CSV dosyası yükleyin."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:719
+msgid "Shipping Providers"
+msgstr "Kargo Sağlayıcıları"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:722
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:725
+msgid "Bulk Upload"
+msgstr "Toplu Karşıya Yükle"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:728
+msgid "Email Notifications"
+msgstr ""
+"Email bildirimleri\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:859
+msgid "Connected"
+msgstr "bağlı"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:865
+msgid ""
+"Auto-track all your shipments, get real-time shipment tracking updates "
+"without leaving your stores admin."
+msgstr ""
+"Tüm gönderilerinizi otomatik takip edin, mağazalarınızın yönetiminden "
+"ayrılmadan gerçek zamanlı gönderi takibi güncellemelerini alın.\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:868
+#, php-format
+msgid ""
+"You must have account and connect your store to %s in order to activate "
+"these advanced features."
+msgstr ""
+"Bu gelişmiş özellikleri etkinleştirmek için hesabınız olmalı ve mağazanızı% "
+"s adresine bağlamanız gerekir."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:871
+#, php-format
+msgid "50 free Trackers for every new account! Get your %s account now>>"
+msgstr ""
+"Her yeni hesap için 50 ücretsiz İzleyici! % S hesabınızı şimdi alın >>\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:922
+msgid "TrackShip Connection Status"
+msgstr "TrackShip Bağlantı Durumu"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:929
+msgid "Enable/Disable"
+msgstr "Etkin/Kapat"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:935
+msgid "Set order status Delivered when order is delivered"
+msgstr "Sipariş durumunu ayarla Sipariş teslim edildiğinde teslim edilir"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:941
+msgid "Retry Trackship Api call for failed orders"
+msgstr "Başarısız emirler için Trackship Api çağrısını tekrar deneyin"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:976
+msgid "Select Tracking Page"
+msgstr ""
+"İzleme Sayfası Seç\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:983
+#: includes/customizer/class-wc-tracking-page-customizer.php:150
+msgid "Remove Trackship branding from tracking page"
+msgstr ""
+"İzleme sayfasından Trackship markasını kaldır\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:989
+msgid "Use the tracking page in the customer email/my account tracking link"
+msgstr ""
+"Müşteri e-postasında / hesap izleme bağlantımda izleme sayfasını kullanın"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:995
+msgid "Select primary color for tracking page"
+msgstr "Select primary color for tracking page"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1001
+msgid "Select content border color for tracking page"
+msgstr "İzleme sayfası için içerik sınır rengini seçin"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1064
+msgid "Rename the “Completed” Order status to “Shipped”"
+msgstr "“Tamamlandı” Sipariş durumunu “Gönderildi” olarak yeniden adlandırın"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1070
+msgid "On which customer order status email to include tracking info?"
+msgstr "Hangi müşteri sipariş durumu e-postasında izleme bilgileri bulunur?"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1071
+msgid "Cancelled"
+msgstr "İptal edildi"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1072
+msgid "Customer Invoice"
+msgstr "müşteri faturası"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1073
+msgid "Refunded"
+msgstr "Geri Ödendi"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1074
+msgid "Processing"
+msgstr "İşleme"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1075
+msgid "Failed"
+msgstr "Başarısız oldu"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1076
+msgid "Completed"
+msgstr "Tamamlanan"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1083
+msgid "Show tracking info in Invoice"
+msgstr "Faturada izleme bilgilerini göster"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1090
+msgid "Show tracking info in Packing Slip"
+msgstr "Ambalaj Fişinde izleme bilgilerini göster"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1108
+msgid "Enable a New Custom order status -  “Delivered”"
+msgstr "Sipariş durumunu \"Teslim Edildi\" olarak değiştir"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1109
+msgid ""
+"if you enable the delivered item, you will have the option to send delivered "
+"email notifications."
+msgstr ""
+"Teslim edilen öğeyi etkinleştirirseniz, teslim edilen e-posta bildirimlerini "
+"gönderme seçeneğiniz olur."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1115
+msgid "Delivered Status Label color"
+msgstr "Teslim Edildi durumu rengi"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1121
+#: includes/customizer/class-wcast-customizer.php:58
+#: includes/customizer/class-wc-email-customizer.php:155
+#: includes/views/admin_options_email_notifications.php:22
+msgid "Delivered order status email"
+msgstr ""
+"Teslim edilen sipariş durumu e-postası\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1122
+#: includes/views/admin_options_email_notifications.php:23
+#: includes/views/admin_options_email_notifications.php:38
+#: includes/views/admin_options_email_notifications.php:50
+#: includes/views/admin_options_email_notifications.php:62
+#: includes/views/admin_options_email_notifications.php:74
+#: includes/views/admin_options_email_notifications.php:86
+#: includes/views/admin_options_trackship_integration.php:79
+#: includes/views/admin_options_trackship_integration.php:93
+#: includes/views/admin_options_trackship_integration.php:107
+#: includes/views/admin_options_trackship_integration.php:120
+#: includes/views/admin_options_trackship_integration.php:134
+#: includes/views/admin_options_trackship_integration.php:149
+msgid "Edit"
+msgstr "Düzenle"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1139
+msgid ""
+"Change the \"Delivered\" orders to \"Completed\" when you deactivate the "
+"plugin"
+msgstr ""
+"Eklentiyi devre dışı bıraktığınızda \"Teslim\" siparişlerini \"Tamamlandı\" "
+"olarak değiştirin"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1141
+msgid "No, I will use the snippet"
+msgstr "Hayır, pasajı kullanacağım"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1142
+msgid "Yes, change all Delivered orders to Completed"
+msgstr "Evet, Teslim Edilen tüm siparişleri Tamamlandı olarak değiştirin."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1144
+#, php-format
+msgid ""
+"PLEASE NOTE - If you use the custom order status \"Delivered\", when you "
+"deactivate the plugin, you must register this order status in function.php "
+"in order to see these orders in the orders admin. You can find the snippet "
+"to use in functions.php %s or we can set to change all your \"delivered\" "
+"order to \"completed\"."
+msgstr ""
+"LÜTFEN DİKKAT - Özel sipariş durumunu \"Teslim Edildi\" kullanıyorsanız, "
+"eklentiyi devre dışı bıraktığınızda, bu siparişleri sipariş yöneticisinde "
+"görmek için function.php dosyasına kaydetmelisiniz. İşlevinde kullanılacak "
+"pasajı bulabilirsiniz.% S veya% \"teslim edilmiş\" siparişinizi "
+"\"tamamlandı\" olarak değiştirebiliriz."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1415
+msgid "Get shipment status"
+msgstr "Gönderi durumunu al"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1443
+#: includes/customizer/class-wcast-customizer.php:74
+#: includes/customizer/class-wc-intransit-email-customizer.php:115
+#: includes/views/admin_options_trackship_integration.php:78
+msgid "In Transit"
+msgstr "Transit olarak"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1446
+#: includes/customizer/class-wcast-customizer.php:66
+msgid "Pre Transit"
+msgstr "Ön Geçiş"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1452
+msgid "Out for delivery"
+msgstr ""
+"dağıtıma çıkmış\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1455
+#: includes/customizer/class-wcast-customizer.php:89
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:116
+#: includes/views/admin_options_trackship_integration.php:106
+msgid "Available For Pickup"
+msgstr ""
+"Pickup için Mevcut\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1458
+#: includes/customizer/class-wcast-customizer.php:82
+#: includes/customizer/class-wc-returntosender-email-customizer.php:116
+#: includes/views/admin_options_trackship_integration.php:92
+msgid "Return To Sender"
+msgstr ""
+"Gönderene iade\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1461
+msgid "Delivery Failure"
+msgstr "Teslim edilmedi"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1464
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1467
+msgid "Pending TrackShip"
+msgstr "Bekleyen TrackShip"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1470
+msgid "Invalid Tracking"
+msgstr "Geçersiz İzleme"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1473
+msgid "Carrier unsupported"
+msgstr ""
+"Taşıyıcı desteklenmiyor\n"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1577
+msgid "Resend delivered order notification"
+msgstr "Teslim edildi bildirimini tekrar gönder."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1634
+msgid "Shipped Order"
+msgstr "Sevk Sipariş"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1653
+msgid "Mark order as delivered"
+msgstr "Siparişi teslim edildi olarak işaretle"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1681
+msgid "Change order status to"
+msgstr "Sipariş durumunu değiştir"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1776
+#: includes/views/admin_options_shipping_provider.php:89
+#, php-format
+msgid "You don't have any %s shipping providers."
+msgstr "% S gönderim sağlayıcınız yok."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2033
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2045
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2057
+msgid "view details"
+msgstr "detayları göster"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2034
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2046
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2058
+msgid "hide details"
+msgstr "detayları gizle"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:147
+msgid ""
+"To track your order please enter your Order ID in the box below and press "
+"the \"Track\" button. This was given to you on your receipt and in the "
+"confirmation email you should have received."
+msgstr ""
+"Siparişinizi takip etmek için lütfen aşağıdaki kutuya Sipariş Kimliğinizi "
+"girin ve \"Takip\" düğmesine basın. Bu size makbuzunuzda verildi ve onay e-"
+"postasında almanız gereken mesaj."
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:148
+msgid "Order ID"
+msgstr "Sipariş Kimliği"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:148
+#: includes/class-wc-advanced-shipment-tracking-front.php:149
+msgid "Found in your order confirmation email."
+msgstr "Sipariş onayı e-postasında bulundu."
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:149
+msgid "Order Email"
+msgstr "Sipariş e-postası"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:152
+#: includes/class-wc-advanced-shipment-tracking.php:163
+#: includes/class-wc-advanced-shipment-tracking.php:601
+#: includes/customizer/class-wc-tracking-info-customizer.php:137
+#: includes/customizer/class-wc-tracking-info-customizer.php:380
+#: includes/views/html-tracking-info-design-preview.php:69
+#: templates/emails/tracking-info.php:151
+#: templates/myaccount/view-order.php:123 templates/pip/tracking-info.php:23
+msgid "Track"
+msgstr "Kargo Takip"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:278
+#: includes/class-wc-advanced-shipment-tracking-front.php:592
+#, php-format
+msgid "Shipment - %s (out of %s)"
+msgstr "Gönderi -% s (% s dışında)"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:282
+#: includes/class-wc-advanced-shipment-tracking-front.php:596
+msgid "Order: "
+msgstr "Sipariş:"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:283
+#: includes/class-wc-advanced-shipment-tracking-front.php:597
+msgid "Tracking: "
+msgstr "Takip:"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:291
+#: includes/class-wc-advanced-shipment-tracking-front.php:295
+#: includes/class-wc-advanced-shipment-tracking-front.php:605
+#: includes/class-wc-advanced-shipment-tracking-front.php:609
+msgid "Estimated Delivery Date: "
+msgstr "Tahmini Teslim Tarihi:"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:400
+#: includes/class-wc-advanced-shipment-tracking-front.php:714
+msgid "Tracking Details"
+msgstr "Yürüyüş detayları"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:422
+#: includes/class-wc-advanced-shipment-tracking-front.php:736
+msgid "view more"
+msgstr "daha fazla göster"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:423
+#: includes/class-wc-advanced-shipment-tracking-front.php:737
+msgid "view less"
+msgstr "daha az göster"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:430
+#: includes/class-wc-advanced-shipment-tracking-front.php:744
+msgid "Invalid Tracking Number"
+msgstr "Geçersiz takip numarası"
+
+#. esc_html__( '%1$s %2$s.' ),
+#: includes/class-wc-advanced-shipment-tracking-install.php:1446
+#, php-format
+msgid ""
+"We added many improvements to %1$s, please help and give us a review :) "
+"Thanks!"
+msgstr ""
+"% 1 $ s'ye pek çok geliştirme ekledik, lütfen yardım edin ve bize yorum "
+"yazın :) Teşekkürler!"
+
+#: includes/class-wc-advanced-shipment-tracking.php:88
+#: includes/class-wc-advanced-shipment-tracking.php:146
+#: includes/customizer/class-wcast-customizer.php:30
+msgid "Shipment Tracking"
+msgstr "Kargo Takibi"
+
+#: includes/class-wc-advanced-shipment-tracking.php:163
+#: templates/pip/tracking-info.php:23
+msgid "Click here to track your shipment"
+msgstr "Kargo takibi için tıklayın"
+
+#. translators: 1: date of shipping
+#. translators: 1: shipping date
+#: includes/class-wc-advanced-shipment-tracking.php:171
+#: templates/pip/tracking-info.php:29
+#, php-format
+msgid "Shipped on %s"
+msgstr "%s tarihinde gönderildi"
+
+#: includes/class-wc-advanced-shipment-tracking.php:172
+msgid "Delete"
+msgstr "Sil"
+
+#: includes/class-wc-advanced-shipment-tracking.php:262
+msgid "Add Tracking Info"
+msgstr "Kargo takip kodu ekleyin"
+
+#: includes/class-wc-advanced-shipment-tracking.php:266
+msgid "Provider:"
+msgstr "Kargo:"
+
+#: includes/class-wc-advanced-shipment-tracking.php:267
+msgid "Select Provider"
+msgstr "Kargo firması seçin"
+
+#: includes/class-wc-advanced-shipment-tracking.php:300
+msgid "Tracking number:"
+msgstr "Kargo takip kodu"
+
+#: includes/class-wc-advanced-shipment-tracking.php:308
+msgid "Date shipped:"
+msgstr "Kargo gönderim tarihi:"
+
+#: includes/class-wc-advanced-shipment-tracking.php:322
+msgid "Save Tracking"
+msgstr "Takip Kodunu Kaydet"
+
+#: includes/class-wc-advanced-shipment-tracking.php:323
+msgid "Preview:"
+msgstr "Ön İzleme"
+
+#: includes/class-wc-advanced-shipment-tracking.php:323
+msgid "Click here to track shipment"
+msgstr "Kargo takibi için buraya tıklayın"
+
+#: includes/customizer/class-wcast-customizer.php:39
+msgid "Shipment Status Emails"
+msgstr "Gönderi Durumu E-postaları"
+
+#: includes/customizer/class-wcast-customizer.php:50
+msgid "Tracking info display"
+msgstr ""
+"İzleme bilgi ekranı\n"
+
+#: includes/customizer/class-wcast-customizer.php:51
+msgid "This section lets you customize the Tracking Info display design."
+msgstr "Bu alanda takip bilgisinin görsel düzenlemesini yapabilirsiniz."
+
+#: includes/customizer/class-wcast-customizer.php:96
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:115
+#: includes/views/admin_options_trackship_integration.php:119
+msgid "Out For Delivery"
+msgstr "Dağıtıma çıkmış"
+
+#: includes/customizer/class-wcast-customizer.php:112
+#: includes/customizer/class-wc-failure-email-customizer.php:113
+#: includes/views/admin_options_trackship_integration.php:148
+msgid "Failed Attempt"
+msgstr "Başarısız deneme"
+
+#: includes/customizer/class-wcast-customizer.php:352
+msgid "Select order to preview"
+msgstr "Önizleme için sipariş seçin"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:115
+msgid "Your order #{order_number} is available for pickup"
+msgstr "Sipariş # {order_number} siparişiniz alınabilir"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:117
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} is available for pickup."
+msgstr ""
+"Merhaba. {site_title} adresindeki son siparişinizin teslim alınabildiğini "
+"bilmek istediğinizi düşündük."
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:148
+#: includes/views/admin_options_email_notifications.php:85
+msgid "Available For Pickup shipment status email"
+msgstr "Alma Gönderi durumu e-postası için Uygun"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:149
+#: includes/customizer/class-wc-delivered-email-customizer.php:148
+#: includes/customizer/class-wc-email-customizer.php:156
+#: includes/customizer/class-wc-intransit-email-customizer.php:147
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:148
+#: includes/customizer/class-wc-returntosender-email-customizer.php:149
+#: includes/customizer/class-wc-failure-email-customizer.php:145
+msgid "This section lets you customize the Email Content."
+msgstr "Bu bölüm, E-posta İçeriğini özelleştirmenizi sağlar."
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:163
+msgid "Enable Available For Pickup shipment status email"
+msgstr "Teslim Alma Gönderi Durumu E-postasını Etkinleştir"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:179
+#: includes/customizer/class-wc-delivered-email-customizer.php:178
+#: includes/customizer/class-wc-email-customizer.php:189
+#: includes/customizer/class-wc-intransit-email-customizer.php:178
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:178
+#: includes/customizer/class-wc-returntosender-email-customizer.php:179
+#: includes/customizer/class-wc-tracking-info-customizer.php:161
+#: includes/customizer/class-wc-failure-email-customizer.php:175
+msgid "Preview order"
+msgstr "Önizleme siparişi"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:200
+#: includes/customizer/class-wc-delivered-email-customizer.php:199
+#: includes/customizer/class-wc-email-customizer.php:211
+#: includes/customizer/class-wc-intransit-email-customizer.php:199
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:199
+#: includes/customizer/class-wc-returntosender-email-customizer.php:200
+#: includes/customizer/class-wc-failure-email-customizer.php:196
+msgid "To"
+msgstr "Kime"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:201
+#: includes/customizer/class-wc-delivered-email-customizer.php:200
+#: includes/customizer/class-wc-email-customizer.php:212
+#: includes/customizer/class-wc-intransit-email-customizer.php:200
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:200
+#: includes/customizer/class-wc-returntosender-email-customizer.php:201
+#: includes/customizer/class-wc-failure-email-customizer.php:197
+msgid ""
+"Enter emails here or use variables such as {customer_email}. Multiple emails "
+"can be separated by commas."
+msgstr ""
+"E-posta adreslerini buraya girin veya {customer_email} gibi değişkenler "
+"kullanın. Birden fazla girmek için virgül ile ayırın."
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:207
+#: includes/customizer/class-wc-delivered-email-customizer.php:206
+#: includes/customizer/class-wc-email-customizer.php:218
+#: includes/customizer/class-wc-intransit-email-customizer.php:206
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:206
+#: includes/customizer/class-wc-returntosender-email-customizer.php:207
+#: includes/customizer/class-wc-failure-email-customizer.php:203
+msgid "E.g. {customer.email}, admin@example.org"
+msgstr "Örnek: {customer.email}, admin@orneksite.org"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:222
+#: includes/customizer/class-wc-delivered-email-customizer.php:221
+#: includes/customizer/class-wc-email-customizer.php:234
+#: includes/customizer/class-wc-intransit-email-customizer.php:221
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:221
+#: includes/customizer/class-wc-returntosender-email-customizer.php:222
+#: includes/customizer/class-wc-failure-email-customizer.php:218
+msgid "Email subject"
+msgstr "E-posta konusu"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:223
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:245
+#: includes/customizer/class-wc-delivered-email-customizer.php:222
+#: includes/customizer/class-wc-delivered-email-customizer.php:244
+#: includes/customizer/class-wc-email-customizer.php:235
+#: includes/customizer/class-wc-email-customizer.php:258
+#: includes/customizer/class-wc-intransit-email-customizer.php:222
+#: includes/customizer/class-wc-intransit-email-customizer.php:244
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:222
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:244
+#: includes/customizer/class-wc-returntosender-email-customizer.php:223
+#: includes/customizer/class-wc-returntosender-email-customizer.php:245
+#: includes/customizer/class-wc-failure-email-customizer.php:219
+#: includes/customizer/class-wc-failure-email-customizer.php:241
+msgid "Available placeholders: {site_title}, {order_number}"
+msgstr "Mevcut yer tutucular: {site_title}, {order_number}"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:229
+#: includes/customizer/class-wc-delivered-email-customizer.php:228
+#: includes/customizer/class-wc-email-customizer.php:241
+#: includes/customizer/class-wc-intransit-email-customizer.php:228
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:228
+#: includes/customizer/class-wc-returntosender-email-customizer.php:229
+#: includes/customizer/class-wc-failure-email-customizer.php:225
+msgid "Please enter email subject here"
+msgstr "Lütfen e-posta konusunu buraya girin"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:244
+#: includes/customizer/class-wc-delivered-email-customizer.php:243
+#: includes/customizer/class-wc-email-customizer.php:257
+#: includes/customizer/class-wc-intransit-email-customizer.php:243
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:243
+#: includes/customizer/class-wc-returntosender-email-customizer.php:244
+#: includes/customizer/class-wc-failure-email-customizer.php:240
+msgid "Email heading"
+msgstr "E-posta başlığı"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:251
+#: includes/customizer/class-wc-delivered-email-customizer.php:250
+#: includes/customizer/class-wc-email-customizer.php:264
+#: includes/customizer/class-wc-intransit-email-customizer.php:250
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:250
+#: includes/customizer/class-wc-returntosender-email-customizer.php:251
+#: includes/customizer/class-wc-failure-email-customizer.php:247
+msgid "Please enter email heading here"
+msgstr "Lütfen e-posta başlığını buraya girin"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:266
+#: includes/customizer/class-wc-delivered-email-customizer.php:265
+#: includes/customizer/class-wc-email-customizer.php:279
+#: includes/customizer/class-wc-intransit-email-customizer.php:265
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:265
+#: includes/customizer/class-wc-returntosender-email-customizer.php:266
+#: includes/customizer/class-wc-failure-email-customizer.php:262
+msgid "Show tracking details"
+msgstr "İzleme ayrıntılarını göster"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:282
+#: includes/customizer/class-wc-delivered-email-customizer.php:281
+#: includes/customizer/class-wc-email-customizer.php:295
+#: includes/customizer/class-wc-intransit-email-customizer.php:281
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:281
+#: includes/customizer/class-wc-returntosender-email-customizer.php:282
+#: includes/customizer/class-wc-failure-email-customizer.php:278
+msgid "Show order details"
+msgstr "Sipariş ayrıntılarını göster"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:298
+#: includes/customizer/class-wc-delivered-email-customizer.php:297
+#: includes/customizer/class-wc-email-customizer.php:311
+#: includes/customizer/class-wc-intransit-email-customizer.php:297
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:297
+#: includes/customizer/class-wc-returntosender-email-customizer.php:298
+#: includes/customizer/class-wc-failure-email-customizer.php:294
+msgid "Show billing address"
+msgstr "Fatura adresini göster"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:315
+#: includes/customizer/class-wc-delivered-email-customizer.php:314
+#: includes/customizer/class-wc-email-customizer.php:328
+#: includes/customizer/class-wc-intransit-email-customizer.php:314
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:314
+#: includes/customizer/class-wc-returntosender-email-customizer.php:315
+#: includes/customizer/class-wc-failure-email-customizer.php:311
+msgid "Show shipping address"
+msgstr "Gönderim adresini göster"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:332
+#: includes/customizer/class-wc-delivered-email-customizer.php:331
+#: includes/customizer/class-wc-email-customizer.php:345
+#: includes/customizer/class-wc-intransit-email-customizer.php:331
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:331
+#: includes/customizer/class-wc-returntosender-email-customizer.php:332
+#: includes/customizer/class-wc-failure-email-customizer.php:328
+msgid "Email content"
+msgstr "E-posta içeriği"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:352
+#: includes/customizer/class-wc-delivered-email-customizer.php:351
+#: includes/customizer/class-wc-email-customizer.php:365
+#: includes/customizer/class-wc-intransit-email-customizer.php:351
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:351
+#: includes/customizer/class-wc-returntosender-email-customizer.php:352
+#: includes/customizer/class-wc-failure-email-customizer.php:348
+msgid "Available placeholders"
+msgstr "Kullanılabilir yer tutucular"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:396
+#: includes/customizer/class-wc-delivered-email-customizer.php:395
+#: includes/customizer/class-wc-email-customizer.php:411
+#: includes/customizer/class-wc-intransit-email-customizer.php:394
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:394
+#: includes/customizer/class-wc-returntosender-email-customizer.php:396
+#: includes/customizer/class-wc-tracking-info-customizer.php:729
+#: includes/customizer/class-wc-failure-email-customizer.php:391
+msgid "Please select preview order."
+msgstr ""
+"Lütfen önizleme sırasını seçin.\n"
+
+#: includes/customizer/class-wc-delivered-email-customizer.php:114
+msgid "Your order #{order_number} has neen delivered"
+msgstr "Sipariş # {order_number} siparişiniz teslim edilmedi"
+
+#: includes/customizer/class-wc-delivered-email-customizer.php:116
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} has been Delivered."
+msgstr ""
+"Merhaba. {site_title} 'daki son siparişinizin Teslim Edildiğini bilmek "
+"istediğinizi düşündük."
+
+#: includes/customizer/class-wc-delivered-email-customizer.php:147
+#: includes/views/admin_options_email_notifications.php:61
+msgid "Delivered shipment status email"
+msgstr "Gönderilen gönderi durumu e-postası"
+
+#: includes/customizer/class-wc-delivered-email-customizer.php:162
+msgid "Enable Delivered shipment status email"
+msgstr ""
+"Gönderilen gönderi durumu e-postasını etkinleştir\n"
+
+#: includes/customizer/class-wc-email-customizer.php:122
+msgid "Your {site_title} order is now delivered"
+msgstr "{Site_title} siparişiniz şimdi teslim edildi"
+
+#: includes/customizer/class-wc-email-customizer.php:123
+msgid "Thanks for shopping with us"
+msgstr "Bizimle alışveriş için teşekkürler"
+
+#: includes/customizer/class-wc-email-customizer.php:124
+msgid "Hi there. Your recent order on {site_title} has been delivered."
+msgstr "Merhaba. {Site_title} tarihinde son siparişiniz teslim edildi."
+
+#: includes/customizer/class-wc-email-customizer.php:171
+msgid "Enable Delivered order status email"
+msgstr "Teslim edilen sipariş durumu e-postasını etkinleştir"
+
+#: includes/customizer/class-wc-intransit-email-customizer.php:114
+msgid "Your order #{order_number} is in transit"
+msgstr "Sipariş # {order_number} siparişiniz yayında"
+
+#: includes/customizer/class-wc-intransit-email-customizer.php:116
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} is in transit"
+msgstr ""
+"Merhaba. {site_title} 'den son siparişinizin transit geçtiğini bilmek "
+"istediğinizi düşündük"
+
+#: includes/customizer/class-wc-intransit-email-customizer.php:146
+#: includes/views/admin_options_email_notifications.php:37
+msgid "In Transit shipment status email"
+msgstr "Transit gönderi durumu e-postasında"
+
+#: includes/customizer/class-wc-intransit-email-customizer.php:161
+msgid "Enable In Transit shipment status email"
+msgstr "Transit gönderi durumu e-postasında etkinleştir"
+
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:114
+msgid "Your order #{order_number} is out for delivery"
+msgstr "Sipariş # {order_number} siparişiniz teslim edilmek üzere"
+
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:116
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} is out for delivery."
+msgstr ""
+"Merhaba. {site_title} adresinden verdiğiniz son siparişin teslim edilmek "
+"üzere olduğunu bilmek istediğinizi düşündük."
+
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:147
+#: includes/views/admin_options_email_notifications.php:49
+msgid "Out For Delivery shipment status email"
+msgstr "Teslimata Gönderme durumu e-postası"
+
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:162
+msgid "Enable Out For Delivery shipment status email"
+msgstr "Gönderi Gönderi Durumu E-postasını Etkinleştir"
+
+#: includes/customizer/class-wc-returntosender-email-customizer.php:115
+msgid "Your order #{order_number} has returned to sender"
+msgstr "Sipariş # # {order_number} gönderene geri döndü"
+
+#: includes/customizer/class-wc-returntosender-email-customizer.php:117
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} has been returned to sender."
+msgstr ""
+"Merhaba. {site_title} 'daki son siparişinizin gönderene iade edildiğini "
+"bilmek istediğinizi düşündük."
+
+#: includes/customizer/class-wc-returntosender-email-customizer.php:148
+#: includes/views/admin_options_email_notifications.php:73
+msgid "Return To Sender shipment status email"
+msgstr "Gönderene Gönderim Durumunun E-postası"
+
+#: includes/customizer/class-wc-returntosender-email-customizer.php:163
+msgid "Enable Return To Sender shipment status email"
+msgstr "Gönderene İade gönderi durumu e-postasını etkinleştir"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:134
+#: includes/customizer/class-wc-tracking-info-customizer.php:300
+#: includes/views/html-tracking-info-design-preview.php:45
+#: templates/emails/tracking-info.php:110 templates/myaccount/view-order.php:89
+msgid "Provider"
+msgstr "Kargo Firması"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:135
+#: includes/customizer/class-wc-tracking-info-customizer.php:322
+#: includes/views/html-tracking-info-design-preview.php:46
+#: templates/emails/tracking-info.php:134
+#: templates/myaccount/view-order.php:111
+msgid "Tracking Number"
+msgstr "Takip No"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:136
+#: includes/customizer/class-wc-tracking-info-customizer.php:343
+msgid "Shipped Date"
+msgstr ""
+"Sevk tarihi\n"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:162
+msgid ""
+"select from last 20 orders one order that you added tracking info in order "
+"to preview and design the tracking info table."
+msgstr ""
+"takip bilgisi tablosunu önizlemek ve tasarlamak için takip bilgisi "
+"eklediğiniz son siparişlerden birini seçin."
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:165
+msgid "Please select a order..."
+msgstr ""
+"Lütfen bir sipariş seçin ...\n"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:181
+msgid "Tracking Display Position"
+msgstr "İzleme Ekranı Konumu"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:185
+msgid "Before Order Details"
+msgstr "Sipariş Detayından Önce"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:186
+msgid "After Order Details"
+msgstr "Sipariş Detayları Sonra"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:201
+msgid "Main Header text"
+msgstr "Ana başlık metni"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:208
+#: templates/pip/tracking-info.php:17
+msgid "Tracking Information"
+msgstr "Takip Bilgisi"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:223
+msgid "Additional text after header"
+msgstr "Başlıktan sonra ek metin"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:244
+msgid "Table Layout"
+msgstr "Tablo düzeni"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:259
+msgid "Display Shipment Provider image"
+msgstr "Gönderi Sağlayıcı görüntüsünü görüntüle"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:276
+msgid "Hide date"
+msgstr "Tarihi gizle"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:293
+msgid "Provider Header Text"
+msgstr ""
+"Sağlayıcı Üstbilgi Metni\n"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:315
+msgid "Tracking Number Header Text"
+msgstr ""
+"Takip Numarası Üstbilgi Metni\n"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:336
+msgid "Shipped Date Header Text"
+msgstr ""
+"Gönderilen Tarih Üstbilgi Metni\n"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:357
+msgid "Track Label"
+msgstr ""
+"Parça Etiketi\n"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:373
+msgid "Track Header Text"
+msgstr "Üstbilgi Metnini İzle"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:395
+msgid "Table Design"
+msgstr "Masa Tasarımı"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:410
+msgid "Padding"
+msgstr "Dolgu malzemesi"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:430
+msgid "Background color"
+msgstr ""
+"Arka plan rengi\n"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:458
+msgid "Border color"
+msgstr "Sınır rengi"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:474
+msgid "Border size"
+msgstr ""
+"Kenarlık boyutu\n"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:478
+#: includes/customizer/class-wc-tracking-info-customizer.php:502
+#: includes/customizer/class-wc-tracking-info-customizer.php:510
+msgid "Select"
+msgstr "Seçin"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:498
+msgid "Table text align"
+msgstr "Tablo metni hizala"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:503
+msgid "Left"
+msgstr "Ayrıldı"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:504
+msgid "Right"
+msgstr "Sağ"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:505
+msgid "Center"
+msgstr "merkez"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:524
+msgid "Table header font size"
+msgstr "Tablo başlığı yazı tipi boyutu"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:543
+msgid "Table header font color"
+msgstr "Tablo başlığı yazı tipi rengi"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:559
+msgid "Table content font size"
+msgstr "Tablo içeriği yazı tipi boyutu"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:576
+msgid "Table content font color"
+msgstr "Tablo içeriği yazı tipi rengi"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:592
+msgid "Content line height"
+msgstr "İçerik satır yüksekliği"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:613
+msgid "Content font weight"
+msgstr "İçerik yazı tipi ağırlığı"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:635
+msgid "Track Link"
+msgstr "Parça Bağlantısı"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:649
+msgid "Track Link Font Color"
+msgstr "Bağlantı Yazı Tipi Rengini İzleme"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:665
+msgid "Track Link Background Color"
+msgstr "Bağlantı Arka Plan Rengini İzleme"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:680
+msgid "Track link Border"
+msgstr "Bağlantı sınırını izle"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:167
+msgid "Header Color"
+msgstr "Başlık Rengi"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:183
+msgid "Success Status Color"
+msgstr "Başarı Durumu Rengi"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:199
+msgid "Warning Status Color"
+msgstr "Uyarı durumu renk"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:215
+msgid "Tracking info Border Color"
+msgstr "İzleme bilgisi Kenarlık Rengi"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:230
+msgid "Tracking info width (px)"
+msgstr "İzleme bilgisi genişliği (px)"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:250
+msgid "Tracking details Border Color"
+msgstr "İzleme detayları Border Color"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:265
+msgid "Tracking info table shade color"
+msgstr "İzleme bilgi masa gölge rengi"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:280
+msgid "Tracking events font color"
+msgstr "İzleme etkinlikleri yazı tipi rengi"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:295
+msgid "Tracking info table margin top/bottom(px)"
+msgstr "İzleme bilgisi tablo marjı üst / alt (px)"
+
+#: includes/customizer/class-wc-failure-email-customizer.php:112
+msgid "Your order #{order_number} is Failed Attempt"
+msgstr "Sipariş # {order_number} siparişiniz başarısız oldu"
+
+#: includes/customizer/class-wc-failure-email-customizer.php:114
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} is Failed Attempt"
+msgstr ""
+"Merhaba. {site_title} 'daki son siparişinizin Başarısız Girişimi olduğunu "
+"bilmek istediğinizi düşündük"
+
+#: includes/customizer/class-wc-failure-email-customizer.php:144
+msgid "Failed Attempt shipment status email"
+msgstr "Gönderi durumu e-postası başarısız oldu"
+
+#: includes/customizer/class-wc-failure-email-customizer.php:159
+msgid "Enable Failed Attempt shipment status email"
+msgstr "Başarısız Deneme gönderimi durum e-postasını etkinleştir"
+
+#: includes/views/admin_options_bulk_upload.php:2
+msgid "Upload CSV"
+msgstr "Karşıya CSV Yükle"
+
+#: includes/views/admin_options_bulk_upload.php:14
+msgid ""
+"Replace tracking info if exists? (if not checked, the tracking info will be "
+"added)"
+msgstr ""
+"Mevcut takip durumunun üzerine yazılsın mı? (eğer seçilmezse takip durumu "
+"eklenecek)"
+
+#: includes/views/admin_options_bulk_upload.php:24
+#: includes/views/admin_options_shipping_provider.php:112
+#: includes/views/admin_options_shipping_provider.php:145
+msgid "Upload"
+msgstr "Yükle"
+
+#: includes/views/admin_options_bulk_upload.php:27
+#: includes/views/admin_options_trackship_integration.php:26
+#: includes/views/admin_options_trackship_integration.php:44
+msgid "Settings Saved."
+msgstr "Ayarlar Kaydedildi."
+
+#: includes/views/admin_options_bulk_upload.php:33
+msgid "You can download an example of the csv file:"
+msgstr ""
+"CSV dosyasının bir örneğini indirebilirsiniz:\n"
+
+#: includes/views/admin_options_bulk_upload.php:34
+#: includes/views/admin_options_bulk_upload.php:52
+msgid "Download sample csv file"
+msgstr "Örnek csv dosyası indirin"
+
+#: includes/views/admin_options_bulk_upload.php:35
+msgid ""
+"For detailed instructions on how to upload tracking info in bulk, see our"
+msgstr ""
+"İzleme bilgilerinin toplu olarak nasıl yükleneceğine ilişkin ayrıntılı "
+"talimatlar için, bkz."
+
+#: includes/views/admin_options_bulk_upload.php:35
+msgid "documentation"
+msgstr "belgeleme"
+
+#: includes/views/admin_options_bulk_upload.php:37
+msgid "Upload Progress - "
+msgstr "Karşıya Yükleme Drumu - "
+
+#: includes/views/admin_options_bulk_upload.php:43
+msgid "Bulk import tracking info"
+msgstr "Takip durumlarını toplu olarak içeri al"
+
+#: includes/views/admin_options_bulk_upload.php:44
+msgid ""
+"Upload multiple tracking # to orders from CSV file.  Option to download a "
+"CSV file with example with the fields format:"
+msgstr ""
+"CSV dosyasındaki siparişlere birden fazla takip numarası yükleyin. Alan "
+"biçimiyle birlikte bir CSV dosyası indirme seçeneği:"
+
+#: includes/views/admin_options_bulk_upload.php:46
+msgid "order_id - WooCommerce order id"
+msgstr "order_id - WooCommerce sipariş numarası"
+
+#: includes/views/admin_options_bulk_upload.php:47
+msgid ""
+"tracking_provider - Shipment Provider - Must match the shipping Provider "
+"name as in the advanced shipment tracking settings."
+msgstr ""
+"tracking_provider - Kargo firması - Ayarlardaki kargo firmalarından birinin "
+"ismi ile tam olarak uyuşmalı."
+
+#: includes/views/admin_options_bulk_upload.php:48
+msgid "tracking_number - Tracking code / number"
+msgstr "tracking_number - Kargo takip kodu / numarası"
+
+#: includes/views/admin_options_bulk_upload.php:49
+msgid ""
+"date_shipped (Optional) Shipping date - Date format DD/MM/YYYY - if not "
+"added, we set the upload date."
+msgstr ""
+"date_shipped (İsteğe bağlı) Gönderim tarihi - Tarih formatı DD/MM/YYYY - "
+"eğer eklenmezse, karşıya yükleme tarihi doldurulur."
+
+#: includes/views/admin_options_bulk_upload.php:50
+msgid ""
+"status_shipped (1=yes, 0=no) (Optional)  Change order status to “Shipped” "
+"(completed) - if this field in null, we will treat it as 0"
+msgstr ""
+"status_shipped (Evet için 1, hayır için 0 girin) (İsteğe bağlı) Gönderi "
+"durumunu \"Gönderildi\" (tamamlandı) olarak değiştir - eğer bu alanı boş "
+"bırakırsanız sıfır girilmiş gibi çalışacak"
+
+#: includes/views/admin_options_settings.php:7
+#: includes/views/admin_options_trackship_integration.php:9
+msgid "General"
+msgstr "Genel"
+
+#: includes/views/admin_options_settings.php:10
+#: includes/views/admin_options_settings.php:19
+msgid "Delivered Order Status"
+msgstr "Teslim Edilen Sipariş Durumu"
+
+#: includes/views/admin_options_settings.php:12
+msgid "Tracking Info Display Designer"
+msgstr "İzleme Bilgisi Görüntüleme Tasarımcısı"
+
+#: includes/views/admin_options_settings.php:15
+#: includes/views/admin_options_trackship_integration.php:18
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: includes/views/admin_options_settings.php:21
+msgid "Uninstall Options"
+msgstr "Kaldırma Seçenekleri"
+
+#: includes/views/admin_options_settings.php:25
+#: includes/views/admin_options_trackship_integration.php:24
+#: includes/views/admin_options_trackship_integration.php:42
+msgid "Save"
+msgstr "Kaydet"
+
+#: includes/views/admin_options_shipping_provider.php:95
+msgid "Add Custom Shipping Provider"
+msgstr "Yeni Kargo Firması Ekle"
+
+#: includes/views/admin_options_shipping_provider.php:102
+#: includes/views/admin_options_shipping_provider.php:135
+msgid "Shiping Country"
+msgstr "Nakliye ülkesi"
+
+#: includes/views/admin_options_shipping_provider.php:128
+msgid "Edit Custom Shipping Provider"
+msgstr "Özel Nakliye Sağlayıcıyı Düzenle"
+
+#: includes/views/admin_options_shipping_provider.php:162
+#: includes/views/admin_options_shipping_provider.php:169
+msgid "Sync Providers"
+msgstr "Senkronizasyon Sağlayıcıları"
+
+#: includes/views/admin_options_shipping_provider.php:163
+msgid "Do you really want to sync all providers?"
+msgstr "Tüm sağlayıcıları gerçekten senkronize etmek istiyor musunuz?"
+
+#: includes/views/admin_options_shipping_provider.php:165
+msgid "Providers Added"
+msgstr "Sağlayıcılar Eklendi"
+
+#: includes/views/admin_options_shipping_provider.php:166
+msgid "Providers Updated"
+msgstr "Güncelleme Sağlayıcıları"
+
+#: includes/views/admin_options_shipping_provider.php:167
+msgid "Providers Deleted"
+msgstr "Sağlayıcılar Silindi"
+
+#: includes/views/admin_options_shipping_provider.php:170
+msgid "Close"
+msgstr "Kapat"
+
+#: includes/views/admin_options_trackship_integration.php:12
+#: includes/views/admin_options_trackship_integration.php:34
+msgid "Tracking Page"
+msgstr "Kargo Takip Sayfası"
+
+#: includes/views/admin_options_trackship_integration.php:15
+msgid "Shipment Status Notifications"
+msgstr "Gönderi Durumu Bildirimleri"
+
+#: includes/views/admin_options_trackship_integration.php:39
+msgid "Click to preview the tracking page"
+msgstr "İzleme sayfasını önizlemek için tıklayın"
+
+#: includes/views/admin_options_trackship_integration.php:40
+msgid "PLEASE NOTE - make sure to save your settings before preview."
+msgstr ""
+"LÜTFEN DİKKAT - önizlemeden önce ayarlarınızı kaydettiğinizden emin olun."
+
+#: includes/views/admin_options_trackship_integration.php:52
+msgid "Shipment Status Notifications "
+msgstr "Gönderi Durumu Bildirimleri"
+
+#: includes/views/admin_options_trackship_integration.php:80
+msgid ""
+"Carrier has accepted or picked up shipment from shipper. The shipment is on "
+"the way."
+msgstr "Taşıyıcı, göndericiden nakliyeyi kabul etti veya aldı. Gönderi yolda."
+
+#: includes/views/admin_options_trackship_integration.php:94
+msgid "Shipment is returned to sender"
+msgstr "Gönderi gönderene iade edilir"
+
+#: includes/views/admin_options_trackship_integration.php:108
+msgid "The shipment is ready to pickup."
+msgstr "Gönderi almaya hazır."
+
+#: includes/views/admin_options_trackship_integration.php:121
+msgid "Carrier is about to deliver the shipment"
+msgstr "Taşıyıcı sevkiyat yapmak üzere"
+
+#: includes/views/admin_options_trackship_integration.php:135
+msgid "The shipment was delivered successfully"
+msgstr "Gönderi başarıyla teslim edildi"
+
+#: includes/views/admin_options_trackship_integration.php:136
+msgid ""
+"You already have delivered email enabled, to enable this email you'll need "
+"to disable the order status delivered in settings."
+msgstr ""
+"Etkinleştirilmiş bir e-posta gönderdiniz, bu e-postayı etkinleştirmek için "
+"ayarlarda verilen sipariş durumunu devre dışı bırakmanız gerekecek."
+
+#: includes/views/admin_options_trackship_integration.php:150
+msgid ""
+"Carrier attempted to deliver but failed, and usually leaves a notice and "
+"will try to deliver the package again."
+msgstr ""
+"Taşıyıcı teslim etmeye çalıştı ancak başarısız oldu ve genellikle bir "
+"bildirim bıraktı ve paketi tekrar teslim etmeye çalışacak."
+
+#: includes/views/html-tracking-info-design-preview.php:60
+msgid "USPS"
+msgstr "USPS"
+
+#: templates/emails/tracking-info.php:138
+msgid "Status"
+msgstr "Durum"
+
+#: templates/emails/wcast-email-order-details.php:26
+msgid "Order Details"
+msgstr ""
+"sipariş detayları\n"
+
+#. %s: Order ID.
+#: templates/emails/wcast-email-order-details.php:42
+#, php-format
+msgid "Order number: %s"
+msgstr "Sipariş numarası:% s"
+
+#: templates/emails/wcast-email-order-details.php:49
+msgid "Order date:"
+msgstr "Sipariş tarihi:"
+
+#: templates/emails/plain/tracking-info.php:18
+msgid "TRACKING INFORMATION"
+msgstr "KARGO TAKİP BİLGİSİ"

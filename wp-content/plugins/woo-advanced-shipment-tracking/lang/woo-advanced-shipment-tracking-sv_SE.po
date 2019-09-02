@@ -1,0 +1,1342 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Advanced Shipment Tracking\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-29 07:28+0000\n"
+"PO-Revision-Date: 2019-07-29 13:19+0000\n"
+"Last-Translator: gaurav <gaurav1092@zorem.com>\n"
+"Language-Team: Swedish\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.2.2"
+
+#: woocommerce-advanced-shipment-tracking.php:109
+#, php-format
+msgid ""
+"Please install and activate %sWooCommerce%s for WooCommerce Advanced "
+"Shipment Tracking!"
+msgstr ""
+"Vänligen installera och aktivera% sWooCommerce% s för att kunna använda "
+"WooCommerce Advanced Shipping Tracking!"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:208
+msgid "Shipped"
+msgstr "Skickad"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:225
+#, php-format
+msgid "Shipped <span class=\"count\">(%s)</span>"
+msgid_plural "Shipped <span class=\"count\">(%s)</span>"
+msgstr[0] "<span class = \"count\"> (% s) </ span> skickad"
+msgstr[1] "<span class = \"count\"> (% s) </ span> skickade"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:239
+msgid "Change status to shipped"
+msgstr "Ändra status till skickad"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:249
+#: includes/class-wc-advanced-shipment-tracking-admin.php:278
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1449
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1669
+#: includes/customizer/class-wcast-customizer.php:104
+#: includes/customizer/class-wc-delivered-email-customizer.php:115
+#: includes/views/admin_options_trackship_integration.php:133
+msgid "Delivered"
+msgstr "Levererad"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:254
+#, php-format
+msgid "Delivered <span class=\"count\">(%s)</span>"
+msgid_plural "Delivered <span class=\"count\">(%s)</span>"
+msgstr[0] "Skickades <span class = \"count\"> (% s) </ span>"
+msgstr[1] "Skickades <span class = \"count\"> (% s) </ span>"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:260
+#: includes/class-wc-advanced-shipment-tracking-admin.php:289
+msgid "Updated Tracking"
+msgstr "Uppdaterad spårning"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:265
+#, php-format
+msgid "Updated Tracking <span class=\"count\">(%s)</span>"
+msgid_plural "Updated Tracking <span class=\"count\">(%s)</span>"
+msgstr[0] "Uppdaterad spårning <span class = \"count\"> (% s) </ span>"
+msgstr[1] "Uppdaterad spårning <span class = \"count\"> (% s) </ span>"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:319
+msgid "Change status to delivered"
+msgstr "Ändra status till levererad"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:522
+msgid "Shipment status"
+msgstr "Leveransstatus"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:650
+msgid "Order"
+msgstr "Order"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:651
+msgid "Item"
+msgstr "Produkt"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:652
+msgid "Line Item"
+msgstr "Orderrad"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:653
+msgid "Class"
+msgstr "Klass"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:654
+msgid "Delete the selected rates?"
+msgstr "Ta bort valda taxa?"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:655
+msgid "Duplicate the selected rates?"
+msgstr "Kopiera vald taxa?"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:656
+msgid "Really want to bulk change all provider status?"
+msgstr "Vill du verkligen ändra aktiveringsstatus på alla leverantörer?"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:657
+#: includes/views/admin_options_settings.php:27
+msgid "Data saved successfully."
+msgstr "Data sparades."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:658
+msgid "Really delete this entry? This will not be undo."
+msgstr "Vill du verkligen radera den här posten? Går ej att ångra."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:659
+msgid "You can upload only csv file."
+msgstr "Du kan bara ladda upp csv-filer."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:660
+msgid "This browser does not support HTML5."
+msgstr "Den här webbläsaren stöder inte HTML5."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:661
+msgid "Please upload a valid CSV file."
+msgstr "Var god ladda upp en giltig CSV-fil."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:719
+msgid "Shipping Providers"
+msgstr "Fraktleverantörer"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:722
+msgid "Settings"
+msgstr "Inställningar"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:725
+msgid "Bulk Upload"
+msgstr "Massuppladdning"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:728
+msgid "Email Notifications"
+msgstr "E-post notifieringar"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:859
+msgid "Connected"
+msgstr "Ansluten"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:865
+msgid ""
+"Auto-track all your shipments, get real-time shipment tracking updates "
+"without leaving your stores admin."
+msgstr ""
+"Autospåra alla dina sändningar i realtid utan att lämna "
+"Administratörspanelen för din butik."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:868
+#, php-format
+msgid ""
+"You must have account and connect your store to %s in order to activate "
+"these advanced features."
+msgstr ""
+"Du måste ha ett konto och ansluta din butik till %s för att använda de "
+"avancerade funktionerna."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:871
+#, php-format
+msgid "50 free Trackers for every new account! Get your %s account now>>"
+msgstr "50 spårningar gratis för varje nytt konto! Skapa ditt %s konto nu>>"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:922
+msgid "TrackShip Connection Status"
+msgstr "TrackShip-anslutningsstatus"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:929
+msgid "Enable/Disable"
+msgstr "Aktivera/Inaktivera"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:935
+msgid "Set order status Delivered when order is delivered"
+msgstr "Ställ in order status till Levererad när beställningen levererats"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:941
+msgid "Retry Trackship Api call for failed orders"
+msgstr "Försök skicka API-data igen för alla misslyckade ordrar"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:976
+msgid "Select Tracking Page"
+msgstr "Välj spårningssida"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:983
+#: includes/customizer/class-wc-tracking-page-customizer.php:150
+msgid "Remove Trackship branding from tracking page"
+msgstr "Ta bort Trackship logotyp från spårningssida"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:989
+msgid "Use the tracking page in the customer email/my account tracking link"
+msgstr "Använd spårningssidan för kund e-postmeddelanden & i 'Mitt konto'"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:995
+msgid "Select primary color for tracking page"
+msgstr "Välj huvudsaklig färg för spårningssida"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1001
+msgid "Select content border color for tracking page"
+msgstr "Välj kantlinjefärg för innehållet på spårningssidan."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1064
+msgid "Rename the “Completed” Order status to “Shipped”"
+msgstr "Ändra namn på orderstatusen 'Färdigbehandlad' till 'Skickad'"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1070
+msgid "On which customer order status email to include tracking info?"
+msgstr ""
+"På vilken kundbeställningsstatus e-post för att inkludera spårningsinfo?"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1071
+msgid "Cancelled"
+msgstr "Avbokad"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1072
+msgid "Customer Invoice"
+msgstr "Kundfaktura"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1073
+msgid "Refunded"
+msgstr "återbetalas"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1074
+msgid "Processing"
+msgstr "bearbetning"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1075
+msgid "Failed"
+msgstr "misslyckades"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1076
+msgid "Completed"
+msgstr "Avslutad"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1083
+msgid "Show tracking info in Invoice"
+msgstr "Visa spårningsinfo i faktura"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1090
+msgid "Show tracking info in Packing Slip"
+msgstr "Visa spårningsinfo i Packing Slip"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1108
+msgid "Enable a New Custom order status -  “Delivered”"
+msgstr "Aktivera ny anpassad orderstatus - \"Levererad\""
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1109
+msgid ""
+"if you enable the delivered item, you will have the option to send delivered "
+"email notifications."
+msgstr ""
+"Om du aktiverar 'Levererad'-status, så kan du skicka e-postmeddelanden till "
+"kunden för att bekräfta leveransen."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1115
+msgid "Delivered Status Label color"
+msgstr "Statusfärg för rubrik vid 'Levererad'-status"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1121
+#: includes/customizer/class-wcast-customizer.php:58
+#: includes/customizer/class-wc-email-customizer.php:155
+#: includes/views/admin_options_email_notifications.php:22
+msgid "Delivered order status email"
+msgstr "E-postmeddelande för 'Levererad'-status"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1122
+#: includes/views/admin_options_email_notifications.php:23
+#: includes/views/admin_options_email_notifications.php:38
+#: includes/views/admin_options_email_notifications.php:50
+#: includes/views/admin_options_email_notifications.php:62
+#: includes/views/admin_options_email_notifications.php:74
+#: includes/views/admin_options_email_notifications.php:86
+#: includes/views/admin_options_trackship_integration.php:79
+#: includes/views/admin_options_trackship_integration.php:93
+#: includes/views/admin_options_trackship_integration.php:107
+#: includes/views/admin_options_trackship_integration.php:120
+#: includes/views/admin_options_trackship_integration.php:134
+#: includes/views/admin_options_trackship_integration.php:149
+msgid "Edit"
+msgstr "Ändra"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1139
+msgid ""
+"Change the \"Delivered\" orders to \"Completed\" when you deactivate the "
+"plugin"
+msgstr "Ändra levererade order till \"Slutförd\" när du inaktiverar plugin"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1141
+msgid "No, I will use the snippet"
+msgstr "Nej, jag ska använda utdraget"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1142
+msgid "Yes, change all Delivered orders to Completed"
+msgstr "Ja, ändra alla Levererade order till Slutförda"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1144
+#, php-format
+msgid ""
+"PLEASE NOTE - If you use the custom order status \"Delivered\", when you "
+"deactivate the plugin, you must register this order status in function.php "
+"in order to see these orders in the orders admin. You can find the snippet "
+"to use in functions.php %s or we can set to change all your \"delivered\" "
+"order to \"completed\"."
+msgstr ""
+"OBSERVERA - Om du använder beställningsstatusen \"Delivered\", när du "
+"inaktiverar pluginet måste du registrera denna orderstatus i function.php "
+"för att kunna se dessa order i orderadministratören. Du kan hitta utdraget "
+"att använda i functions.php% s eller vi kan ställa in för att ändra all din "
+"\"levererade\" ordning till \"klar\"."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1415
+msgid "Get shipment status"
+msgstr "Se leveransstatus"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1443
+#: includes/customizer/class-wcast-customizer.php:74
+#: includes/customizer/class-wc-intransit-email-customizer.php:115
+#: includes/views/admin_options_trackship_integration.php:78
+msgid "In Transit"
+msgstr "Under leverans"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1446
+#: includes/customizer/class-wcast-customizer.php:66
+msgid "Pre Transit"
+msgstr "Registrerad för sändning"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1452
+msgid "Out for delivery"
+msgstr "Ute för leverans"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1455
+#: includes/customizer/class-wcast-customizer.php:89
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:116
+#: includes/views/admin_options_trackship_integration.php:106
+msgid "Available For Pickup"
+msgstr "Tillgänglig för upphämtning"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1458
+#: includes/customizer/class-wcast-customizer.php:82
+#: includes/customizer/class-wc-returntosender-email-customizer.php:116
+#: includes/views/admin_options_trackship_integration.php:92
+msgid "Return To Sender"
+msgstr "Åter till avsändare"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1461
+msgid "Delivery Failure"
+msgstr "Leveransfel"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1464
+msgid "Unknown"
+msgstr "Okänd"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1467
+msgid "Pending TrackShip"
+msgstr "Avvaktar TrackShip"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1470
+msgid "Invalid Tracking"
+msgstr "Felaktig sändningsinformation"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1473
+msgid "Carrier unsupported"
+msgstr "Fraktleverantören stöds inte"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1577
+msgid "Resend delivered order notification"
+msgstr "Återsänd ordermeddelande om 'Levererat'"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1634
+msgid "Shipped Order"
+msgstr "Skickad beställning"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1653
+msgid "Mark order as delivered"
+msgstr "Markera ordning som levererad"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1681
+msgid "Change order status to"
+msgstr "Ändra orderstatus till"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:1776
+#: includes/views/admin_options_shipping_provider.php:89
+#, php-format
+msgid "You don't have any %s shipping providers."
+msgstr "Du har inga% s fraktleverantörer."
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2033
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2045
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2057
+msgid "view details"
+msgstr "visa detaljer"
+
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2034
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2046
+#: includes/class-wc-advanced-shipment-tracking-admin.php:2058
+msgid "hide details"
+msgstr "gömma detaljer"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:147
+msgid ""
+"To track your order please enter your Order ID in the box below and press "
+"the \"Track\" button. This was given to you on your receipt and in the "
+"confirmation email you should have received."
+msgstr ""
+"För att spåra din beställning, ange ditt order-id i rutan nedan och tryck på "
+"'Spåra'-knappen. Informationen återfinns på ditt kvitt and i bekräftelse e-"
+"postmeddelandet som du mottagit."
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:148
+msgid "Order ID"
+msgstr "Order-ID"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:148
+#: includes/class-wc-advanced-shipment-tracking-front.php:149
+msgid "Found in your order confirmation email."
+msgstr "Som återfinns i e-postmeddelandet med din orderbekräftelse."
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:149
+msgid "Order Email"
+msgstr "Orderbekräftelse"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:152
+#: includes/class-wc-advanced-shipment-tracking.php:163
+#: includes/class-wc-advanced-shipment-tracking.php:601
+#: includes/customizer/class-wc-tracking-info-customizer.php:137
+#: includes/customizer/class-wc-tracking-info-customizer.php:380
+#: includes/views/html-tracking-info-design-preview.php:69
+#: templates/emails/tracking-info.php:151
+#: templates/myaccount/view-order.php:123 templates/pip/tracking-info.php:23
+msgid "Track"
+msgstr "Spåra"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:278
+#: includes/class-wc-advanced-shipment-tracking-front.php:592
+#, php-format
+msgid "Shipment - %s (out of %s)"
+msgstr "Leverans - %s (av %s)"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:282
+#: includes/class-wc-advanced-shipment-tracking-front.php:596
+msgid "Order: "
+msgstr "Ordning:"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:283
+#: includes/class-wc-advanced-shipment-tracking-front.php:597
+msgid "Tracking: "
+msgstr "spårning:"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:291
+#: includes/class-wc-advanced-shipment-tracking-front.php:295
+#: includes/class-wc-advanced-shipment-tracking-front.php:605
+#: includes/class-wc-advanced-shipment-tracking-front.php:609
+msgid "Estimated Delivery Date: "
+msgstr "Beräknat leveransdatum:"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:400
+#: includes/class-wc-advanced-shipment-tracking-front.php:714
+msgid "Tracking Details"
+msgstr "Spårningsinformation"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:422
+#: includes/class-wc-advanced-shipment-tracking-front.php:736
+msgid "view more"
+msgstr "visa mer"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:423
+#: includes/class-wc-advanced-shipment-tracking-front.php:737
+msgid "view less"
+msgstr "visa mindre"
+
+#: includes/class-wc-advanced-shipment-tracking-front.php:430
+#: includes/class-wc-advanced-shipment-tracking-front.php:744
+msgid "Invalid Tracking Number"
+msgstr "Ogiltigt sändningsnummer"
+
+#. esc_html__( '%1$s %2$s.' ),
+#: includes/class-wc-advanced-shipment-tracking-install.php:1446
+#, php-format
+msgid ""
+"We added many improvements to %1$s, please help and give us a review :) "
+"Thanks!"
+msgstr ""
+"Vi har lagt till många förbättringar till% 1 $ s, snälla hjälp och ge oss en "
+"recension :) Tack!"
+
+#: includes/class-wc-advanced-shipment-tracking.php:88
+#: includes/class-wc-advanced-shipment-tracking.php:146
+#: includes/customizer/class-wcast-customizer.php:30
+msgid "Shipment Tracking"
+msgstr "Försändelsespårning"
+
+#: includes/class-wc-advanced-shipment-tracking.php:163
+#: templates/pip/tracking-info.php:23
+msgid "Click here to track your shipment"
+msgstr "Klicka här för att spåra din försändelse"
+
+#. 1: shipping date
+#: includes/class-wc-advanced-shipment-tracking.php:171
+#: templates/pip/tracking-info.php:29
+#, php-format
+msgid "Shipped on %s"
+msgstr "Skickad %s"
+
+#: includes/class-wc-advanced-shipment-tracking.php:172
+msgid "Delete"
+msgstr "Ta bort"
+
+#: includes/class-wc-advanced-shipment-tracking.php:262
+msgid "Add Tracking Info"
+msgstr "Lägg till sändningsinformation"
+
+#: includes/class-wc-advanced-shipment-tracking.php:266
+msgid "Provider:"
+msgstr "Leverantör:"
+
+#: includes/class-wc-advanced-shipment-tracking.php:267
+msgid "Select Provider"
+msgstr "Välj leverantör"
+
+#: includes/class-wc-advanced-shipment-tracking.php:300
+msgid "Tracking number:"
+msgstr "Sändningsnummer:"
+
+#: includes/class-wc-advanced-shipment-tracking.php:308
+msgid "Date shipped:"
+msgstr "Leveransdatum:"
+
+#: includes/class-wc-advanced-shipment-tracking.php:322
+msgid "Save Tracking"
+msgstr "Spara sändningsinformation"
+
+#: includes/class-wc-advanced-shipment-tracking.php:323
+msgid "Preview:"
+msgstr "Förhandsvisning:"
+
+#: includes/class-wc-advanced-shipment-tracking.php:323
+msgid "Click here to track shipment"
+msgstr "Klicka här för att spåra försändelsen"
+
+#: includes/customizer/class-wcast-customizer.php:39
+msgid "Shipment Status Emails"
+msgstr "E-postmeddelanden om leveransstatus"
+
+#: includes/customizer/class-wcast-customizer.php:50
+msgid "Tracking info display"
+msgstr "Utseende för sändningsinformationen"
+
+#: includes/customizer/class-wcast-customizer.php:51
+msgid "This section lets you customize the Tracking Info display design."
+msgstr ""
+"I det här avsnittet kan du anpassa utseendet på sändningsinformationen."
+
+#: includes/customizer/class-wcast-customizer.php:96
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:115
+#: includes/views/admin_options_trackship_integration.php:119
+msgid "Out For Delivery"
+msgstr "Ute för Leverans"
+
+#: includes/customizer/class-wcast-customizer.php:112
+#: includes/customizer/class-wc-failure-email-customizer.php:113
+#: includes/views/admin_options_trackship_integration.php:148
+msgid "Failed Attempt"
+msgstr "Misslyckat försök"
+
+#: includes/customizer/class-wcast-customizer.php:352
+msgid "Select order to preview"
+msgstr "Välj order att förhandsgranska"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:115
+msgid "Your order #{order_number} is available for pickup"
+msgstr "Din beställning #{order_number} finns nu tillgänglig för upphämtning"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:117
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} is available for pickup."
+msgstr "Hej. Din beställning från {site_title} är tillänglig för upphämtning."
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:148
+#: includes/views/admin_options_email_notifications.php:85
+msgid "Available For Pickup shipment status email"
+msgstr "E-postmeddelande för Frakt-status - Tillgänglig för upphämtning"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:149
+#: includes/customizer/class-wc-delivered-email-customizer.php:148
+#: includes/customizer/class-wc-email-customizer.php:156
+#: includes/customizer/class-wc-intransit-email-customizer.php:147
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:148
+#: includes/customizer/class-wc-returntosender-email-customizer.php:149
+#: includes/customizer/class-wc-failure-email-customizer.php:145
+msgid "This section lets you customize the Email Content."
+msgstr "Det här avsnittet låter dig anpassa e-postmeddelanden."
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:163
+msgid "Enable Available For Pickup shipment status email"
+msgstr ""
+"Aktivera e-postmeddelande för Frakt-status - Tillgänglig för upphämtning"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:179
+#: includes/customizer/class-wc-delivered-email-customizer.php:178
+#: includes/customizer/class-wc-email-customizer.php:189
+#: includes/customizer/class-wc-intransit-email-customizer.php:178
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:178
+#: includes/customizer/class-wc-returntosender-email-customizer.php:179
+#: includes/customizer/class-wc-tracking-info-customizer.php:161
+#: includes/customizer/class-wc-failure-email-customizer.php:175
+msgid "Preview order"
+msgstr "Förhandsgranska order"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:200
+#: includes/customizer/class-wc-delivered-email-customizer.php:199
+#: includes/customizer/class-wc-email-customizer.php:211
+#: includes/customizer/class-wc-intransit-email-customizer.php:199
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:199
+#: includes/customizer/class-wc-returntosender-email-customizer.php:200
+#: includes/customizer/class-wc-failure-email-customizer.php:196
+msgid "To"
+msgstr "Till"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:201
+#: includes/customizer/class-wc-delivered-email-customizer.php:200
+#: includes/customizer/class-wc-email-customizer.php:212
+#: includes/customizer/class-wc-intransit-email-customizer.php:200
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:200
+#: includes/customizer/class-wc-returntosender-email-customizer.php:201
+#: includes/customizer/class-wc-failure-email-customizer.php:197
+msgid ""
+"Enter emails here or use variables such as {customer_email}. Multiple emails "
+"can be separated by commas."
+msgstr ""
+"Ange e-postadresser här eller använd variabler som {customer_email}. "
+"Separera flera adresser med kommatecken."
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:207
+#: includes/customizer/class-wc-delivered-email-customizer.php:206
+#: includes/customizer/class-wc-email-customizer.php:218
+#: includes/customizer/class-wc-intransit-email-customizer.php:206
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:206
+#: includes/customizer/class-wc-returntosender-email-customizer.php:207
+#: includes/customizer/class-wc-failure-email-customizer.php:203
+msgid "E.g. {customer.email}, admin@example.org"
+msgstr "T.ex. {customer.email}, admin@example.org"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:222
+#: includes/customizer/class-wc-delivered-email-customizer.php:221
+#: includes/customizer/class-wc-email-customizer.php:234
+#: includes/customizer/class-wc-intransit-email-customizer.php:221
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:221
+#: includes/customizer/class-wc-returntosender-email-customizer.php:222
+#: includes/customizer/class-wc-failure-email-customizer.php:218
+msgid "Email subject"
+msgstr "E-post ämne"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:223
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:245
+#: includes/customizer/class-wc-delivered-email-customizer.php:222
+#: includes/customizer/class-wc-delivered-email-customizer.php:244
+#: includes/customizer/class-wc-email-customizer.php:235
+#: includes/customizer/class-wc-email-customizer.php:258
+#: includes/customizer/class-wc-intransit-email-customizer.php:222
+#: includes/customizer/class-wc-intransit-email-customizer.php:244
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:222
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:244
+#: includes/customizer/class-wc-returntosender-email-customizer.php:223
+#: includes/customizer/class-wc-returntosender-email-customizer.php:245
+#: includes/customizer/class-wc-failure-email-customizer.php:219
+#: includes/customizer/class-wc-failure-email-customizer.php:241
+msgid "Available placeholders: {site_title}, {order_number}"
+msgstr "Tillgängliga platshållare: {site_title}, {order_number}"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:229
+#: includes/customizer/class-wc-delivered-email-customizer.php:228
+#: includes/customizer/class-wc-email-customizer.php:241
+#: includes/customizer/class-wc-intransit-email-customizer.php:228
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:228
+#: includes/customizer/class-wc-returntosender-email-customizer.php:229
+#: includes/customizer/class-wc-failure-email-customizer.php:225
+msgid "Please enter email subject here"
+msgstr "Ange e-postämne här"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:244
+#: includes/customizer/class-wc-delivered-email-customizer.php:243
+#: includes/customizer/class-wc-email-customizer.php:257
+#: includes/customizer/class-wc-intransit-email-customizer.php:243
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:243
+#: includes/customizer/class-wc-returntosender-email-customizer.php:244
+#: includes/customizer/class-wc-failure-email-customizer.php:240
+msgid "Email heading"
+msgstr "E-postadress"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:251
+#: includes/customizer/class-wc-delivered-email-customizer.php:250
+#: includes/customizer/class-wc-email-customizer.php:264
+#: includes/customizer/class-wc-intransit-email-customizer.php:250
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:250
+#: includes/customizer/class-wc-returntosender-email-customizer.php:251
+#: includes/customizer/class-wc-failure-email-customizer.php:247
+msgid "Please enter email heading here"
+msgstr "Ange e-postadress rubrik här"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:266
+#: includes/customizer/class-wc-delivered-email-customizer.php:265
+#: includes/customizer/class-wc-email-customizer.php:279
+#: includes/customizer/class-wc-intransit-email-customizer.php:265
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:265
+#: includes/customizer/class-wc-returntosender-email-customizer.php:266
+#: includes/customizer/class-wc-failure-email-customizer.php:262
+msgid "Show tracking details"
+msgstr "Visa sändningsinformation"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:282
+#: includes/customizer/class-wc-delivered-email-customizer.php:281
+#: includes/customizer/class-wc-email-customizer.php:295
+#: includes/customizer/class-wc-intransit-email-customizer.php:281
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:281
+#: includes/customizer/class-wc-returntosender-email-customizer.php:282
+#: includes/customizer/class-wc-failure-email-customizer.php:278
+msgid "Show order details"
+msgstr "Visa orderdetaljer"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:298
+#: includes/customizer/class-wc-delivered-email-customizer.php:297
+#: includes/customizer/class-wc-email-customizer.php:311
+#: includes/customizer/class-wc-intransit-email-customizer.php:297
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:297
+#: includes/customizer/class-wc-returntosender-email-customizer.php:298
+#: includes/customizer/class-wc-failure-email-customizer.php:294
+msgid "Show billing address"
+msgstr "Visa fakturaadress"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:315
+#: includes/customizer/class-wc-delivered-email-customizer.php:314
+#: includes/customizer/class-wc-email-customizer.php:328
+#: includes/customizer/class-wc-intransit-email-customizer.php:314
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:314
+#: includes/customizer/class-wc-returntosender-email-customizer.php:315
+#: includes/customizer/class-wc-failure-email-customizer.php:311
+msgid "Show shipping address"
+msgstr "Visa leveransadress"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:332
+#: includes/customizer/class-wc-delivered-email-customizer.php:331
+#: includes/customizer/class-wc-email-customizer.php:345
+#: includes/customizer/class-wc-intransit-email-customizer.php:331
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:331
+#: includes/customizer/class-wc-returntosender-email-customizer.php:332
+#: includes/customizer/class-wc-failure-email-customizer.php:328
+msgid "Email content"
+msgstr "E-postinnehåll"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:352
+#: includes/customizer/class-wc-delivered-email-customizer.php:351
+#: includes/customizer/class-wc-email-customizer.php:365
+#: includes/customizer/class-wc-intransit-email-customizer.php:351
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:351
+#: includes/customizer/class-wc-returntosender-email-customizer.php:352
+#: includes/customizer/class-wc-failure-email-customizer.php:348
+msgid "Available placeholders"
+msgstr "Tillgängliga platshållare"
+
+#: includes/customizer/class-wc-availableforpickup-email-customizer.php:396
+#: includes/customizer/class-wc-delivered-email-customizer.php:395
+#: includes/customizer/class-wc-email-customizer.php:411
+#: includes/customizer/class-wc-intransit-email-customizer.php:394
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:394
+#: includes/customizer/class-wc-returntosender-email-customizer.php:396
+#: includes/customizer/class-wc-tracking-info-customizer.php:729
+#: includes/customizer/class-wc-failure-email-customizer.php:391
+msgid "Please select preview order."
+msgstr "Välj order att förhandsgranska."
+
+#: includes/customizer/class-wc-delivered-email-customizer.php:114
+msgid "Your order #{order_number} has neen delivered"
+msgstr "Hej. Din beställning #{order_number} har levererats"
+
+#: includes/customizer/class-wc-delivered-email-customizer.php:116
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} has been Delivered."
+msgstr "Hej. Din beställning från {site_title} har levererats."
+
+#: includes/customizer/class-wc-delivered-email-customizer.php:147
+#: includes/views/admin_options_email_notifications.php:61
+msgid "Delivered shipment status email"
+msgstr "E-postmeddelande för Frakt-status - 'Levererad'"
+
+#: includes/customizer/class-wc-delivered-email-customizer.php:162
+msgid "Enable Delivered shipment status email"
+msgstr "Aktivera e-postmeddelande för Frakt-status - Levererad"
+
+#: includes/customizer/class-wc-email-customizer.php:122
+msgid "Your {site_title} order is now delivered"
+msgstr "Din {site_title} beställning är nu skickad"
+
+#: includes/customizer/class-wc-email-customizer.php:123
+msgid "Thanks for shopping with us"
+msgstr "Tack för att du handlar hos oss"
+
+#: includes/customizer/class-wc-email-customizer.php:124
+msgid "Hi there. Your recent order on {site_title} has been delivered."
+msgstr "Hej. Din beställning från {site_title} har skickats."
+
+#: includes/customizer/class-wc-email-customizer.php:171
+msgid "Enable Delivered order status email"
+msgstr "Aktivera e-postmeddelande för 'Levererad'-status"
+
+#: includes/customizer/class-wc-intransit-email-customizer.php:114
+msgid "Your order #{order_number} is in transit"
+msgstr "Din beställning #{order_number} är nu under leverans"
+
+#: includes/customizer/class-wc-intransit-email-customizer.php:116
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} is in transit"
+msgstr "Hej. Din leverans från {site_title} är på väg."
+
+#: includes/customizer/class-wc-intransit-email-customizer.php:146
+#: includes/views/admin_options_email_notifications.php:37
+msgid "In Transit shipment status email"
+msgstr "E-postmeddelande för Frakt-status - På väg"
+
+#: includes/customizer/class-wc-intransit-email-customizer.php:161
+msgid "Enable In Transit shipment status email"
+msgstr "Aktivera e-postmeddelande för Frakt-status - Under transport"
+
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:114
+msgid "Your order #{order_number} is out for delivery"
+msgstr "Din beställning #{order_number} är ute för leverans"
+
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:116
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} is out for delivery."
+msgstr "Hej. Din beställning från {site_title} är ute för leverans."
+
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:147
+#: includes/views/admin_options_email_notifications.php:49
+msgid "Out For Delivery shipment status email"
+msgstr "E-postmeddelande för Frakt-status - Ute för leverans"
+
+#: includes/customizer/class-wc-outfordelivery-email-customizer.php:162
+msgid "Enable Out For Delivery shipment status email"
+msgstr "Aktivera e-postmeddelande för Frakt-status - Ute för leverans"
+
+#: includes/customizer/class-wc-returntosender-email-customizer.php:115
+msgid "Your order #{order_number} has returned to sender"
+msgstr "Din beställning #{order_number} har returnerats till avsändaren"
+
+#: includes/customizer/class-wc-returntosender-email-customizer.php:117
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} has been returned to sender."
+msgstr ""
+"Hej. Din beställning från {site_title} har returnerats till avsändaren."
+
+#: includes/customizer/class-wc-returntosender-email-customizer.php:148
+#: includes/views/admin_options_email_notifications.php:73
+msgid "Return To Sender shipment status email"
+msgstr "E-postmeddelande för Frakt-status - Åter till avsändare"
+
+#: includes/customizer/class-wc-returntosender-email-customizer.php:163
+msgid "Enable Return To Sender shipment status email"
+msgstr "Aktivera e-postmeddelande för Frakt-status - Åter till avsändare"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:134
+#: includes/customizer/class-wc-tracking-info-customizer.php:300
+#: includes/views/html-tracking-info-design-preview.php:45
+#: templates/emails/tracking-info.php:110 templates/myaccount/view-order.php:89
+msgid "Provider"
+msgstr "Fraktleverantör"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:135
+#: includes/customizer/class-wc-tracking-info-customizer.php:322
+#: includes/views/html-tracking-info-design-preview.php:46
+#: templates/emails/tracking-info.php:134
+#: templates/myaccount/view-order.php:111
+msgid "Tracking Number"
+msgstr "Sändningsnummer"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:136
+#: includes/customizer/class-wc-tracking-info-customizer.php:343
+msgid "Shipped Date"
+msgstr "Skickat datum"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:162
+msgid ""
+"select from last 20 orders one order that you added tracking info in order "
+"to preview and design the tracking info table."
+msgstr ""
+"Välj någon av tidigare 20 ordrar där du lagt till sändningsinformation, för "
+"att förhandsgranska & ändra utseendet på tabellen med sändningsinformation."
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:165
+msgid "Please select a order..."
+msgstr "Välj beställning..."
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:181
+msgid "Tracking Display Position"
+msgstr "Spårar visningsposition"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:185
+msgid "Before Order Details"
+msgstr "Innan orderdetaljer"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:186
+msgid "After Order Details"
+msgstr "Efter beställningsinformation"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:201
+msgid "Main Header text"
+msgstr "Huvudtexttext"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:208
+#: templates/pip/tracking-info.php:17
+msgid "Tracking Information"
+msgstr "Spåra din försändelse"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:223
+msgid "Additional text after header"
+msgstr "Ytterligare text"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:244
+msgid "Table Layout"
+msgstr "Tabelllayout"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:259
+msgid "Display Shipment Provider image"
+msgstr "Visa leverantörens bild"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:276
+msgid "Hide date"
+msgstr "Dölj datum"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:293
+msgid "Provider Header Text"
+msgstr "Rubriktext - Fraktleverantörkolumn"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:315
+msgid "Tracking Number Header Text"
+msgstr "Rubriktext - Sändningsnummerkolumn"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:336
+msgid "Shipped Date Header Text"
+msgstr "Rubriktext - 'Skickat datum'-kolumn"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:357
+msgid "Track Label"
+msgstr "Tabellrubrik för Spårningslänk"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:373
+msgid "Track Header Text"
+msgstr "Rubriktext - Spårningslänkkolumn"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:395
+msgid "Table Design"
+msgstr "Tabelldesign"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:410
+msgid "Padding"
+msgstr "Innermarginal"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:430
+msgid "Background color"
+msgstr "Bakgrundsfärg"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:458
+msgid "Border color"
+msgstr "Kantlinjefärg"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:474
+msgid "Border size"
+msgstr "Kantlinjestorlek"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:478
+#: includes/customizer/class-wc-tracking-info-customizer.php:502
+#: includes/customizer/class-wc-tracking-info-customizer.php:510
+msgid "Select"
+msgstr "Välj"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:498
+msgid "Table text align"
+msgstr "Tabelltext anpassas"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:503
+msgid "Left"
+msgstr "Vänster"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:504
+msgid "Right"
+msgstr "Höger"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:505
+msgid "Center"
+msgstr "Centrera"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:524
+msgid "Table header font size"
+msgstr "Tabellrubrikstilsstorlek"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:543
+msgid "Table header font color"
+msgstr "Tabellhuvud typsnittsfärg"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:559
+msgid "Table content font size"
+msgstr "Tabellens innehållsstorlek"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:576
+msgid "Table content font color"
+msgstr "Tabellinnehåll typsnittsfärg"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:592
+msgid "Content line height"
+msgstr "Innehåll - Radhöjd"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:613
+msgid "Content font weight"
+msgstr "Innehåll - Fetstil"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:635
+msgid "Track Link"
+msgstr "Spårlänk"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:649
+msgid "Track Link Font Color"
+msgstr "Spårlänksteckensfärg"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:665
+msgid "Track Link Background Color"
+msgstr "Spårlänk bakgrundsfärg"
+
+#: includes/customizer/class-wc-tracking-info-customizer.php:680
+msgid "Track link Border"
+msgstr "Spårlänk gränsen"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:167
+msgid "Header Color"
+msgstr "Tabellrubrik - Textfärg"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:183
+msgid "Success Status Color"
+msgstr "Lyckades-status färg"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:199
+msgid "Warning Status Color"
+msgstr "Varnings-status färg"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:215
+msgid "Tracking info Border Color"
+msgstr "Sändningsinformation - Kantfärg"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:230
+msgid "Tracking info width (px)"
+msgstr "Sändningsinformation - Bredd (px)"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:250
+msgid "Tracking details Border Color"
+msgstr "Spårningsdetaljer - Kantfärg"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:265
+msgid "Tracking info table shade color"
+msgstr "Sändningsinformation - Skuggfärg"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:280
+msgid "Tracking events font color"
+msgstr "Leveranshändelser - Textfärg"
+
+#: includes/customizer/class-wc-tracking-page-customizer.php:295
+msgid "Tracking info table margin top/bottom(px)"
+msgstr "Sändningsinformation - Tabellmarginal topp/botten(px)"
+
+#: includes/customizer/class-wc-failure-email-customizer.php:112
+msgid "Your order #{order_number} is Failed Attempt"
+msgstr "Din beställning # {order_nummer} misslyckades"
+
+#: includes/customizer/class-wc-failure-email-customizer.php:114
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} is Failed Attempt"
+msgstr ""
+"Hallå där. vi trodde att du vill veta att din senaste beställning från "
+"{site_title} misslyckades"
+
+#: includes/customizer/class-wc-failure-email-customizer.php:144
+msgid "Failed Attempt shipment status email"
+msgstr "Det gick inte att försöka e-postmeddelanden om leveransstatus"
+
+#: includes/customizer/class-wc-failure-email-customizer.php:159
+msgid "Enable Failed Attempt shipment status email"
+msgstr "Aktivera misslyckat försök e-postmeddelanden om leveransstatus"
+
+#: includes/views/admin_options_bulk_upload.php:2
+msgid "Upload CSV"
+msgstr "Ladda upp CSV"
+
+#: includes/views/admin_options_bulk_upload.php:14
+msgid ""
+"Replace tracking info if exists? (if not checked, the tracking info will be "
+"added)"
+msgstr ""
+"Ersätt sändningsinformationen om den redan finns? (annars läggs den till "
+"befintlig information)"
+
+#: includes/views/admin_options_bulk_upload.php:24
+#: includes/views/admin_options_shipping_provider.php:112
+#: includes/views/admin_options_shipping_provider.php:145
+msgid "Upload"
+msgstr "Ladda upp"
+
+#: includes/views/admin_options_bulk_upload.php:27
+#: includes/views/admin_options_trackship_integration.php:26
+#: includes/views/admin_options_trackship_integration.php:44
+msgid "Settings Saved."
+msgstr "Inställningar Sparade."
+
+#: includes/views/admin_options_bulk_upload.php:33
+msgid "You can download an example of the csv file:"
+msgstr "Du kan ladda ned ett exempel på CSV-fil:"
+
+#: includes/views/admin_options_bulk_upload.php:34
+#: includes/views/admin_options_bulk_upload.php:52
+msgid "Download sample csv file"
+msgstr "Hämta test csv-fil"
+
+#: includes/views/admin_options_bulk_upload.php:35
+msgid ""
+"For detailed instructions on how to upload tracking info in bulk, see our"
+msgstr ""
+"För detaljerad beskrivning av hur du laddar upp sändningsinformation i "
+"bulkformat, se vår"
+
+#: includes/views/admin_options_bulk_upload.php:35
+msgid "documentation"
+msgstr "dokumentation"
+
+#: includes/views/admin_options_bulk_upload.php:37
+msgid "Upload Progress - "
+msgstr "Uppladdningsförlopp - "
+
+#: includes/views/admin_options_bulk_upload.php:43
+msgid "Bulk import tracking info"
+msgstr "Bulkimportera sändningsinformation"
+
+#: includes/views/admin_options_bulk_upload.php:44
+msgid ""
+"Upload multiple tracking # to orders from CSV file.  Option to download a "
+"CSV file with example with the fields format:"
+msgstr ""
+"Ladda upp flera spårningar # till beställningar från CSV-filen. Alternativ "
+"för att ladda ner en CSV-fil med exempel med fältformatet:"
+
+#: includes/views/admin_options_bulk_upload.php:46
+msgid "order_id - WooCommerce order id"
+msgstr "order_id - WooCommerce Order-ID"
+
+#: includes/views/admin_options_bulk_upload.php:47
+msgid ""
+"tracking_provider - Shipment Provider - Must match the shipping Provider "
+"name as in the advanced shipment tracking settings."
+msgstr ""
+"tracking_provider - Fraktleverantör - Måste matcha fraktleverantörens namn "
+"som angetts i de avancerade inställningarna."
+
+#: includes/views/admin_options_bulk_upload.php:48
+msgid "tracking_number - Tracking code / number"
+msgstr "tracking_number - Sändningskod / -nummer"
+
+#: includes/views/admin_options_bulk_upload.php:49
+msgid ""
+"date_shipped (Optional) Shipping date - Date format DD/MM/YYYY - if not "
+"added, we set the upload date."
+msgstr ""
+"date_shipped (Valfritt) Leveransdatum - Datumformat DD / MM / ÅÅÅÅ - om ej "
+"tillagt, så ställer vi in uppladdningsdatum."
+
+#: includes/views/admin_options_bulk_upload.php:50
+msgid ""
+"status_shipped (1=yes, 0=no) (Optional)  Change order status to “Shipped” "
+"(completed) - if this field in null, we will treat it as 0"
+msgstr ""
+"status_shipped (1 = ja, 0 = nej) (Valfritt) Ändra orderstatus till "
+"\"Skickad\" (slutfört) - om det här fältet är tomt, så behandlar vi det som 0"
+
+#: includes/views/admin_options_settings.php:7
+#: includes/views/admin_options_trackship_integration.php:9
+msgid "General"
+msgstr "Allmänt"
+
+#: includes/views/admin_options_settings.php:10
+#: includes/views/admin_options_settings.php:19
+msgid "Delivered Order Status"
+msgstr "Levererad orderstatus"
+
+#: includes/views/admin_options_settings.php:12
+msgid "Tracking Info Display Designer"
+msgstr "Sändningsinformation - Anpassare"
+
+#: includes/views/admin_options_settings.php:15
+#: includes/views/admin_options_trackship_integration.php:18
+msgid "General Settings"
+msgstr "Allmänna Inställningar"
+
+#: includes/views/admin_options_settings.php:21
+msgid "Uninstall Options"
+msgstr "Avinstallera alternativ"
+
+#: includes/views/admin_options_settings.php:25
+#: includes/views/admin_options_trackship_integration.php:24
+#: includes/views/admin_options_trackship_integration.php:42
+msgid "Save"
+msgstr "Spara"
+
+#: includes/views/admin_options_shipping_provider.php:95
+msgid "Add Custom Shipping Provider"
+msgstr "Lägg till anpassad fraktleverantör"
+
+#: includes/views/admin_options_shipping_provider.php:102
+#: includes/views/admin_options_shipping_provider.php:135
+msgid "Shiping Country"
+msgstr "Fraktland"
+
+#: includes/views/admin_options_shipping_provider.php:128
+msgid "Edit Custom Shipping Provider"
+msgstr "Redigera anpassad leveransleverantör"
+
+#: includes/views/admin_options_shipping_provider.php:162
+#: includes/views/admin_options_shipping_provider.php:169
+msgid "Sync Providers"
+msgstr "Synkroniseringsleverantörer"
+
+#: includes/views/admin_options_shipping_provider.php:163
+msgid "Do you really want to sync all providers?"
+msgstr "Vill du verkligen synkronisera alla leverantörer?"
+
+#: includes/views/admin_options_shipping_provider.php:165
+msgid "Providers Added"
+msgstr "Leverantörer tillagda"
+
+#: includes/views/admin_options_shipping_provider.php:166
+msgid "Providers Updated"
+msgstr "Leverantörer uppdaterade"
+
+#: includes/views/admin_options_shipping_provider.php:167
+msgid "Providers Deleted"
+msgstr "Leverantörer raderade"
+
+#: includes/views/admin_options_shipping_provider.php:170
+msgid "Close"
+msgstr "Stänga"
+
+#: includes/views/admin_options_trackship_integration.php:12
+#: includes/views/admin_options_trackship_integration.php:34
+msgid "Tracking Page"
+msgstr "Spårningssida"
+
+#: includes/views/admin_options_trackship_integration.php:15
+msgid "Shipment Status Notifications"
+msgstr "Meddelanden om leveransstatus"
+
+#: includes/views/admin_options_trackship_integration.php:39
+msgid "Click to preview the tracking page"
+msgstr "Klicka för att förhandsgranska spårningssidan"
+
+#: includes/views/admin_options_trackship_integration.php:40
+msgid "PLEASE NOTE - make sure to save your settings before preview."
+msgstr ""
+"Observera - se till att spara dina inställningar innan förhandsgranskning."
+
+#: includes/views/admin_options_trackship_integration.php:52
+msgid "Shipment Status Notifications "
+msgstr "Meddelanden om leveransstatus"
+
+#: includes/views/admin_options_trackship_integration.php:80
+msgid ""
+"Carrier has accepted or picked up shipment from shipper. The shipment is on "
+"the way."
+msgstr ""
+"Transportören har accepterat eller hämtat frakt från avsändaren. Sändningen "
+"är på väg."
+
+#: includes/views/admin_options_trackship_integration.php:94
+msgid "Shipment is returned to sender"
+msgstr "Frakt returneras till avsändaren"
+
+#: includes/views/admin_options_trackship_integration.php:108
+msgid "The shipment is ready to pickup."
+msgstr "Leveransen är redo att hämtas."
+
+#: includes/views/admin_options_trackship_integration.php:121
+msgid "Carrier is about to deliver the shipment"
+msgstr "Carrier håller på att leverera leveransen"
+
+#: includes/views/admin_options_trackship_integration.php:135
+msgid "The shipment was delivered successfully"
+msgstr "Leveransen levererades framgångsrikt"
+
+#: includes/views/admin_options_trackship_integration.php:136
+msgid ""
+"You already have delivered email enabled, to enable this email you'll need "
+"to disable the order status delivered in settings."
+msgstr ""
+"Du har redan levererat e-post aktiverat, för att aktivera det här e-"
+"postmeddelandet måste du inaktivera orderstatusen som levererats i "
+"inställningarna."
+
+#: includes/views/admin_options_trackship_integration.php:150
+msgid ""
+"Carrier attempted to deliver but failed, and usually leaves a notice and "
+"will try to deliver the package again."
+msgstr ""
+"Carrier försökte leverera men misslyckades, och lämnar vanligtvis ett "
+"meddelande och kommer att försöka leverera paketet igen."
+
+#: includes/views/html-tracking-info-design-preview.php:60
+msgid "USPS"
+msgstr "USPS"
+
+#: templates/emails/tracking-info.php:138
+msgid "Status"
+msgstr "Aktiveringsstatus"
+
+#: templates/emails/wcast-email-order-details.php:26
+msgid "Order Details"
+msgstr "Orderdetaljer"
+
+#. %s: Order ID.
+#: templates/emails/wcast-email-order-details.php:42
+#, php-format
+msgid "Order number: %s"
+msgstr "Ordernummer: %s"
+
+#: templates/emails/wcast-email-order-details.php:49
+msgid "Order date:"
+msgstr "Orderdatum:"
+
+#: templates/emails/plain/tracking-info.php:18
+msgid "TRACKING INFORMATION"
+msgstr "SÄNDNINGSINFORMATION"

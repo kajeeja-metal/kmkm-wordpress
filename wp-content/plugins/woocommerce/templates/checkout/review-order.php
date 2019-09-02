@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<table class="shop_table woocommerce-checkout-review-order-table" style="    border: 1px solid #000;">
+<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents woocommerce-checkout-review-order-table" style="    border: 1px solid #000;">
 	<thead>
 		<tr>
 			<th class="product-thumbnail"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
