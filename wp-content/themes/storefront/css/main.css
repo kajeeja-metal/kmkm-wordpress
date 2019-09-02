@@ -4515,4 +4515,9 @@ b, strong {
   .return-to-shop {
     text-align: center;
   }
+
+  /* line 1885, ../sass/main.scss */
+  .cart-empty {
+    margin-left: 10px;
+  }
 }
