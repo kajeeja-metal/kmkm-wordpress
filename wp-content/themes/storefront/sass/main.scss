@@ -565,7 +565,7 @@ footer {
 }
 .site {
     overflow-x: hidden;
-    padding-bottom: 253px;
+    padding-bottom: 250px;
     min-height: 100%;
     position: relative;
     overflow: hidden;
@@ -574,7 +574,9 @@ footer {
 form {
     margin-bottom: 0;
 }
-
+.grecaptcha-badge{
+  display:none;
+}
 .product_type_variable.add_to_cart_button{
   display: none;
 }
@@ -1360,3 +1362,8 @@ margin: 0;
 }
 @import "_product-detail";
 @import "_editorial";
+
+.sp-header-row {
+    margin-left: -0.41575em;
+    margin-right: -0.41575em;
+  }
