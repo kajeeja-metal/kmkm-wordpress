@@ -34,7 +34,7 @@ if (!VcvEnv::has('VCV_PREMIUM_TOKEN_URL')) {
 }
 
 if (!VcvEnv::has('VCV_API_URL')) {
-    VcvEnv::set('VCV_API_URL', 'https://account.visualcomposer.io');
+    VcvEnv::set('VCV_API_URL', defined('VCV_API_URL') ? constant('VCV_API_URL') : 'https://api.visualcomposer.com');
 }
 
 if (!VcvEnv::has('VCV_LICENSE_ACTIVATE_URL')) {
@@ -150,4 +150,8 @@ if (!VcvEnv::has('VCV_ENV_PLUGIN_UPDATE_CHANGELOG_URL')) {
 
 if (!VcvEnv::has('VCV_ENV_PLUGIN_UPDATE_PACKAGE_URL')) {
     VcvEnv::set('VCV_ENV_PLUGIN_UPDATE_PACKAGE_URL', defined('VCV_ENV_PLUGIN_UPDATE_PACKAGE_URL') ? constant('VCV_ENV_PLUGIN_UPDATE_PACKAGE_URL'): 'http://updates.visualcomposer.io/visual-composer-website-builder/visualcomposer.zip');
+}
+
+if (!VcvEnv::has('VCV_JS_FT_DYNAMIC_FIELDS')) {
+    VcvEnv::set('VCV_JS_FT_DYNAMIC_FIELDS', false); // Must be false! SEE the devAddons/dynamicFields/ env files
 }

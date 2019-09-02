@@ -167,14 +167,14 @@ class PostType implements Helper
     {
         // @codingStandardsIgnoreStart
         global $post_type, $post_type_object, $post, $wp_query;
-        $post = get_post($sourceId);
-
+        $queryPost = get_post($sourceId);
         $currentUserAccessHelper = vchelper('AccessCurrentUser');
 
-        if (isset($post->post_type) && post_type_exists($post->post_type)
+        if (isset($queryPost->post_type) && post_type_exists($queryPost->post_type)
             && $currentUserAccessHelper->wpAll(
-                [get_post_type_object($post->post_type)->cap->read, $post->ID]
+                [get_post_type_object($queryPost->post_type)->cap->read, $queryPost->ID]
             )->get()) {
+            $post = $queryPost;
             setup_postdata($post);
             /** @var \WP_Query $wp_query */
             $wp_query->queried_object = $post;
@@ -226,7 +226,7 @@ class PostType implements Helper
         // @codingStandardsIgnoreLine
             [$post_type_object->cap->publish_posts, $post->ID]
         )->get();
-        $data['backendEditorUrl'] = get_edit_post_link($post->ID, 'url');
+        $data['backendEditorUrl'] = str_replace('&classic-editor', '', get_edit_post_link($post->ID, 'url'));
         $data['adminDashboardUrl'] = self_admin_url('index.php');
         $data['adminDashboardPostTypeListUrl'] = self_admin_url('edit.php?post_type=' . get_post_type());
         // @codingStandardsIgnoreLine

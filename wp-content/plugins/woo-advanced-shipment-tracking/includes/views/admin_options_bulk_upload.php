@@ -33,7 +33,7 @@
 			<hr>
 			<p><?php _e('You can download an example of the csv file:', 'woo-advanced-shipment-tracking'); ?></p>
 			<a class="button-primary btn_green2" href="<?php echo wc_advanced_shipment_tracking()->plugin_dir_url()?>/assets/tracking.csv"><?php _e('Download sample csv file', 'woo-advanced-shipment-tracking'); ?></a>
-			<!--p><?php _e('For detailed instructions on how to upload tracking info in bulk, see our', 'woo-advanced-shipment-tracking'); ?> <a class="" href="https://www.zorem.com/docs/woocommerce-advanced-shipment-tracking/bulk-import-shipment-tracking/" target="blank"><?php _e('documentation', 'woo-advanced-shipment-tracking'); ?></a></p-->
+			<p><?php _e('For detailed instructions on how to upload tracking info in bulk, see our', 'woo-advanced-shipment-tracking'); ?> <a class="" href="https://www.zorem.com/docs/woocommerce-advanced-shipment-tracking/bulk-import-shipment-tracking/" target="blank"><?php _e('documentation', 'woo-advanced-shipment-tracking'); ?></a>.</p>
 			<div id="p1" class="mdl-progress mdl-js-progress" style="display:none;"></div>
 			<h3 class="progress_title" style="display:none;"><?php _e('Upload Progress - ', 'woo-advanced-shipment-tracking'); ?><span class="progress_number"></span></h3>
 			<ol class="csv_upload_status">

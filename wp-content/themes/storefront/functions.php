@@ -175,32 +175,32 @@ function woocommerce_custom_sale_text($text, $post, $_product)
 
 // Output the Custom field in Product pages
 // add_action( 'woocommerce_review_order_before_payments', 'bbloomer_checkout_radio_choice' );
-add_action( 'woocommerce_review_order_before_payment', 'bbloomer_checkout_radio_choice' );
+// add_action( 'woocommerce_review_order_before_payment', 'bbloomer_checkout_radio_choice' );
  
-function bbloomer_checkout_radio_choice() {
+// function bbloomer_checkout_radio_choice() {
     
-   $chosen = WC()->session->get('radio_chosen');
-   $chosen = empty( $chosen ) ? WC()->checkout->get_value('radio_choice') : $chosen;
-   $chosen = empty( $chosen ) ? 'no_option' : $chosen;
+//    $chosen = WC()->session->get('radio_chosen');
+//    $chosen = empty( $chosen ) ? WC()->checkout->get_value('radio_choice') : $chosen;
+//    $chosen = empty( $chosen ) ? 'no_option' : $chosen;
        
-   $args = array(
-   'type' => 'radio',
-   'class' => array( 'form-row-wide' ),
-   'options' => array(
-      'no_option' => 'None',
-      'option_1' => 'HBD Card',
-      'option_2' => 'Congradtulation Card',
-      'option_3' => 'Text Card',
-   ),
-   'default' => $chosen
-   );
+//    $args = array(
+//    'type' => 'radio',
+//    'class' => array( 'form-row-wide' ),
+//    'options' => array(
+//       'no_option' => 'None',
+//       'option_1' => 'HBD Card',
+//       'option_2' => 'Congradtulation Card',
+//       'option_3' => 'Text Card',
+//    ),
+//    'default' => $chosen
+//    );
     
-   echo '<div id="checkout-radio">';
-   echo '<h3>Customize Your Order!</h3>';
-   woocommerce_form_field( 'radio_choice', $args, $chosen );
-   echo '</div>';
+//    echo '<div id="checkout-radio">';
+//    echo '<h3>Customize Your Order!</h3>';
+//    woocommerce_form_field( 'radio_choice', $args, $chosen );
+//    echo '</div>';
     
-}
+// }
  
 // Part 2 
 // Add Fee and Calculate Total
@@ -217,27 +217,27 @@ if ( '' === $product->get_price() || 0 == $product->get_price() ) {
  
 return $price;
 }
-// add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
+add_action( 'woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1 );
  
-// function bbloomer_checkout_radio_choice_fee( $cart ) {
+function bbloomer_checkout_radio_choice_fee( $cart ) {
   
-//   if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
+  if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
    
-//   $radio = WC()->session->get( 'radio_chosen' );
+  $radio = WC()->session->get( 'radio_chosen' );
     
-//   if ( "option_1" == $radio ) {
-//    $fee = 0;
-//    $name = 'HBD Card';
-//   } elseif ( "option_2" == $radio ) {
-//    $fee = 0;
-//    $name = 'Congradtulation Card';
-//   }
-//   elseif ( "option_3" == $radio ) {
-//    $fee = 10;
-//    $name = 'Text Card';
-//   }
-//   $cart->add_fee( __($name, 'woocommerce'), $fee );
-// }
+  if ( "option_1" == $radio ) {
+   $fee = 0;
+   $name = 'HBD Card';
+  } elseif ( "option_2" == $radio ) {
+   $fee = 0;
+   $name = 'Congradtulation Card';
+  }
+  elseif ( "option_3" == $radio ) {
+   $fee = 10;
+   $name = 'Text Card';
+  }
+  $cart->add_fee( __($name, 'woocommerce'), $fee );
+}
  
 // Part 3 
 // Refresh Checkout if Radio Changes
@@ -315,7 +315,7 @@ function wckc_list_taxonomy_archive($atts){
             if( empty($posts)){
                 return;
             }
-            $output .= "<h4><a href=http://localhost/kmkm-wordpress/category/".$term->slug.">".$term->name."</a></h4>";
+            $output .= "<h4><a href=https://www.karmakametonline.com/category/".$term->slug.">".$term->name."</a></h4>";
             $output .= '<ul class="term_archive">';
             foreach($posts as $post){
                 $output .= '<li><a href="'.get_permalink( $post  ).'">'.get_the_title( $post ).'</a></li>';
@@ -330,27 +330,14 @@ function wckc_list_taxonomy_archive($atts){
 }
   
     if (class_exists('MultiPostThumbnails')) {
-    new MultiPostThumbnails(
-        array(
-            // Replace [YOUR THEME TEXT DOMAIN] below with the text domain of your theme (found in the theme's `style.css`).
-            'label' => __( 'Secondary Image', '[YOUR THEME TEXT DOMAIN]'),
-            'id' => 'Ads Images',
-            'post_type' => 'page'
-        )
-    );
-
-}
-if (class_exists('MultiPostThumbnails')) {
-    new MultiPostThumbnails(
-        array(
-            // Replace [YOUR THEME TEXT DOMAIN] below with the text domain of your theme (found in the theme's `style.css`).
-            'label' => __( 'Secondary Image', '[YOUR THEME TEXT DOMAIN]'),
-            'id' => 'Banner Images',
-            'post_type' => 'post'
-        )
-    );
-
-}
+ 
+    new MultiPostThumbnails(array(
+    'label' => 'Secondary Image',
+    'id' => 'secondary-image',
+    'post_type' => 'post'
+     ) );
+     
+     }
 
 // Filter except length to 35 words.
 // tn custom excerpt length
@@ -374,7 +361,6 @@ remove_filter( 'the_excerpt', 'wpautop' );
  */
 
 Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
-
         function widget($args, $instance) {
 
                 if ( ! isset( $args['widget_id'] ) ) {
@@ -400,12 +386,33 @@ Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
              *
              * @param array $args An array of arguments used to retrieve the recent posts.
              */
+            global $post;
+            $args = wp_parse_args($args, array(
+                'post_id' => !empty($post) ? $post->ID : '',
+                'taxonomy' => 'category',
+                'post_type' => !empty($post) ? $post->post_type : 'post',
+                'orderby' => 'date',
+                'order' => 'DESC'
+            ));
+            $taxonomies = wp_get_post_terms($args['post_id'], $args['taxonomy'], array('fields' => 'ids'));
+            
             $r = new WP_Query( apply_filters( 'widget_posts_args', array(
                 'posts_per_page'      => $number,
                 'no_found_rows'       => true,
                 'post_status'         => 'publish',
-                'ignore_sticky_posts' => true
-            ) ) );
+                'orderby' => 'rand',
+                'ignore_sticky_posts' => true,
+                'post_type' => $args['post_type'],
+                'post__not_in' => (array) $args['post_id'],
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => $args['taxonomy'],
+                        'field' => 'term_id',
+                        'terms' => $taxonomies
+                    ),
+                ),
+            ) ) ); 
+
 
             if ($r->have_posts()) :
             ?>
@@ -413,19 +420,28 @@ Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
             <?php if ( $title ) {
                 echo $args['before_title'] . $title . $args['after_title'];
             } ?>
-            <ul>
+            
+            <hr>
+            <h1 class="woocommerce-products-header__title page-title" style="text-align:center;">Related Posts </h1>
+            <div class="box-group-item">
             <?php while ( $r->have_posts() ) : $r->the_post(); ?>
-                <li>
-
+              <a href="<?php the_permalink(); ?>" style="    font-size: 14px;    line-height: 1.2;">
+                <div class="box-container">
                     <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );?>
-                    <div class="blog-img" style="background-image: url(<?php echo $url; ?>)"></div>
-                    <div class="blog-detail">
-                      <a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
-                      <span class="post-date"><?php echo get_the_date( 'd F Y' );; ?></span>
+                    <div class="background-post pull-left box" style="background-image:url(<?php echo $url; ?>) "> </div>
+                      <div class="box-detail pull-right box" style="width: 34%;
+                        padding: 50px 20px;
+                        background: #fff;    border: 1px solid;    height: 305px;">
+                      <h3><?php get_the_title() ? the_title() : the_ID(); ?></h3>
+                      <div style="font-size:22px;">
+                          <?php echo excerpt(5); ?>
+                      </div>
+                      <div class="date"><?php echo get_the_date( 'd F Y' );; ?></div>
                     </div>
-                </li>
+                </div>
+                </a>
             <?php endwhile; ?>
-            </ul>
+            </div>
             <?php echo $args['after_widget']; ?>
             <?php
             // Reset the global $the_post as this query will have stomped on it
@@ -434,28 +450,11 @@ Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
             endif;
         }
 }
-add_filter( 'woocommerce_available_variation', 'set_packaging_type_after_variation_price', 10, 3 );
-function set_packaging_type_after_variation_price( $data, $product, $variation ) {
-    $targeted_taxonomy  = 'pa_verpackung'; // <== Define here the product attribute taxonomy
-
-    // Loop through variation attributes
-    foreach( $data['attributes'] as $variation_attribute => $term_slug ) {
-        $attribute_taxonomy = str_replace( 'attribute_', '', $variation_attribute ); // Get product attribute the taxonomy
-
-        // For matching variation attribute …
-        if ( $attribute_taxonomy == $targeted_taxonomy ){
-            $verpackung  = get_term_by( 'slug', $term_slug, $attribute_taxonomy )->name; // Get the term name
-            $verpackung = ' <span class="verpackung">'. __('für eine '). $verpackung .'</span></span>';
-            // Set the "packaging" after the selected viariation price
-            $data['price_html'] = str_replace( '</span></span>', '</span>' . $verpackung, $data['price_html'] );
-            break; // Stop the loop
-        }
-    }
-    return $data;
-}
 function my_recent_widget_registration() {
   unregister_widget('WP_Widget_Recent_Posts');
   register_widget('My_Recent_Posts_Widget');
 }
 add_action('widgets_init', 'my_recent_widget_registration');
+
+
 

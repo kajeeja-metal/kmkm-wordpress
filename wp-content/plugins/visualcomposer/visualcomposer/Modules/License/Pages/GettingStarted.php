@@ -39,7 +39,7 @@ class GettingStarted extends Container implements Module
         $this->wpAddAction(
             'admin_menu',
             function (License $licenseHelper, Request $requestHelper) {
-                if (!vchelper('AccessCurrentUser')->wpAll('manage_options')->get()) {
+                if (!vchelper('AccessCurrentUser')->wpAll('edit_posts')->get()) {
                     return;
                 }
 
@@ -62,13 +62,13 @@ class GettingStarted extends Container implements Module
         $urlHelper = vchelper('Url');
         wp_register_script(
             'vcv:wpUpdate:script',
-            $urlHelper->assetUrl('dist/wpUpdate.bundle.js'),
-            [],
+            $urlHelper->to('public/dist/wpUpdate.bundle.js'),
+            ['vcv:assets:vendor:script'],
             VCV_VERSION
         );
         wp_register_style(
             'vcv:wpUpdate:style',
-            $urlHelper->assetUrl('dist/wpUpdate.bundle.css'),
+            $urlHelper->to('public/dist/wpUpdate.bundle.css'),
             [],
             VCV_VERSION
         );
@@ -87,7 +87,7 @@ class GettingStarted extends Container implements Module
             'layout' => 'standalone',
             'showTab' => false,
             'controller' => $this,
-            'capability' => 'manage_options',
+            'capability' => 'edit_posts',
         ];
         $this->addSubmenuPage($page);
     }

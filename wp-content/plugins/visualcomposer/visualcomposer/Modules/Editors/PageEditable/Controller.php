@@ -11,6 +11,7 @@ if (!defined('ABSPATH')) {
 use VisualComposer\Framework\Illuminate\Support\Module;
 use VisualComposer\Helpers\Assets;
 use VisualComposer\Helpers\Frontend;
+use VisualComposer\Helpers\Request;
 use VisualComposer\Helpers\Url;
 use VisualComposer\Framework\Container;
 use VisualComposer\Helpers\Traits\WpFiltersActions;
@@ -27,7 +28,7 @@ class Controller extends Container implements Module
     /**
      * Controller constructor.
      */
-    public function __construct()
+    public function __construct(Request $requestHelper)
     {
         /** @see \VisualComposer\Modules\Editors\PageEditable\Controller::templateRedirect */
         $this->wpAddAction('template_redirect', 'templateRedirect');
@@ -39,6 +40,11 @@ class Controller extends Container implements Module
         /** @see \VisualComposer\Modules\Editors\PageEditable\Controller::pejQueryReady */
         $this->wpAddAction('wp_enqueue_scripts', 'pejQueryReady');
         $this->wpAddAction('wp_enqueue_scripts', 'enqueueAssets');
+
+        // Fix for staging auto urls 404->301
+        if ($requestHelper->exists('vcv-editable')) {
+            add_filter('redirect_canonical', '__return_false');
+        }
     }
 
     protected function check404($response, Frontend $frontendHelper)
@@ -195,10 +201,8 @@ class Controller extends Container implements Module
     {
         $bundleJsUrl = $urlHelper->to('public/dist/pe.bundle.js');
         $bundleCssUrl = $urlHelper->to('public/dist/pe.bundle.css');
-        $vendorBundleJsUrl = $urlHelper->to('public/dist/vendor.bundle.js');
 
-        wp_register_script('vcv:assets:vendor:script', $vendorBundleJsUrl, ['jquery'], VCV_VERSION, true);
-        wp_register_script('vcv:pageEditable:bundle', $bundleJsUrl, ['vcv:assets:vendor:script'], VCV_VERSION, true);
+        wp_register_script('vcv:pageEditable:bundle', $bundleJsUrl, [], VCV_VERSION, true);
         wp_register_style('vcv:pageEditable:css', $bundleCssUrl, [], VCV_VERSION);
     }
 
@@ -206,7 +210,6 @@ class Controller extends Container implements Module
     {
         if ($frontendHelper->isPageEditable()) {
             wp_enqueue_script('jquery');
-            wp_enqueue_script('vcv:assets:vendor:script');
             wp_enqueue_script('vcv:pageEditable:bundle');
             wp_enqueue_style('vcv:pageEditable:css');
         }

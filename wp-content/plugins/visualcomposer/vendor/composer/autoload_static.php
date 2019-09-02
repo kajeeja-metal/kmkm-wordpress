@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
+class ComposerStaticInitc48e1e2729aea87299519cdf1f7e8d52
 {
     public static $prefixLengthsPsr4 = array (
         'V' => 
@@ -54,6 +54,7 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
         'VisualComposer\\Helpers\\Filters' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Filters.php',
         'VisualComposer\\Helpers\\Frontend' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Frontend.php',
         'VisualComposer\\Helpers\\GridItemTemplate' => __DIR__ . '/../..' . '/visualcomposer/Helpers/GridItemTemplate.php',
+        'VisualComposer\\Helpers\\Gutenberg' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Gutenberg.php',
         'VisualComposer\\Helpers\\Hub\\Actions\\ActionBundle' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Hub/Actions/ActionBundle.php',
         'VisualComposer\\Helpers\\Hub\\Actions\\AddonsBundle' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Hub/Actions/AddonsBundle.php',
         'VisualComposer\\Helpers\\Hub\\Actions\\CategoriesBundle' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Hub/Actions/CategoriesBundle.php',
@@ -72,6 +73,7 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
         'VisualComposer\\Helpers\\Hub\\SharedLibraries' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Hub/SharedLibraries.php',
         'VisualComposer\\Helpers\\Hub\\Templates' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Hub/Templates.php',
         'VisualComposer\\Helpers\\Hub\\Update' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Hub/Update.php',
+        'VisualComposer\\Helpers\\Image' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Image.php',
         'VisualComposer\\Helpers\\License' => __DIR__ . '/../..' . '/visualcomposer/Helpers/License.php',
         'VisualComposer\\Helpers\\Localizations' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Localizations.php',
         'VisualComposer\\Helpers\\Logger' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Logger.php',
@@ -79,13 +81,12 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
         'VisualComposer\\Helpers\\Nonce' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Nonce.php',
         'VisualComposer\\Helpers\\Notice' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Notice.php',
         'VisualComposer\\Helpers\\Options' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Options.php',
+        'VisualComposer\\Helpers\\PostData' => __DIR__ . '/../..' . '/visualcomposer/Helpers/PostData.php',
         'VisualComposer\\Helpers\\PostType' => __DIR__ . '/../..' . '/visualcomposer/Helpers/PostType.php',
         'VisualComposer\\Helpers\\PostsGridPagination' => __DIR__ . '/../..' . '/visualcomposer/Helpers/PostsGridPagination.php',
         'VisualComposer\\Helpers\\PostsGridPostIterator' => __DIR__ . '/../..' . '/visualcomposer/Helpers/PostsGridPostIterator.php',
         'VisualComposer\\Helpers\\PostsGridSourcePosts' => __DIR__ . '/../..' . '/visualcomposer/Helpers/PostsGridSourcePosts.php',
         'VisualComposer\\Helpers\\Request' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Request.php',
-        'VisualComposer\\Helpers\\Settings\\Pages\\About' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Settings/Pages/About.php',
-        'VisualComposer\\Helpers\\Settings\\SettingsHelper' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Settings/SettingsHelper.php',
         'VisualComposer\\Helpers\\Status' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Status.php',
         'VisualComposer\\Helpers\\Str' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Str.php',
         'VisualComposer\\Helpers\\Tabs' => __DIR__ . '/../..' . '/visualcomposer/Helpers/Tabs.php',
@@ -122,6 +123,8 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
         'VisualComposer\\Modules\\Editors\\Attributes\\WpEditor' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/Attributes/WpEditor.php',
         'VisualComposer\\Modules\\Editors\\Backend\\SaveSetEditorController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/Backend/SaveSetEditorController.php',
         'VisualComposer\\Modules\\Editors\\DataAjax\\Controller' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/DataAjax/Controller.php',
+        'VisualComposer\\Modules\\Editors\\DataAjax\\PostDataController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/DataAjax/PostDataController.php',
+        'VisualComposer\\Modules\\Editors\\DataAjax\\PostFieldsController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/DataAjax/PostFieldsController.php',
         'VisualComposer\\Modules\\Editors\\DataAjax\\RevisionController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/DataAjax/RevisionController.php',
         'VisualComposer\\Modules\\Editors\\EditPostLinks\\Controller' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/EditPostLinks/Controller.php',
         'VisualComposer\\Modules\\Editors\\EnvController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/EnvController.php',
@@ -137,6 +140,7 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
         'VisualComposer\\Modules\\Editors\\Settings\\PageTemplatesController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/Settings/PageTemplatesController.php',
         'VisualComposer\\Modules\\Editors\\Settings\\PageTemplatesSaveController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/Settings/PageTemplatesSaveController.php',
         'VisualComposer\\Modules\\Editors\\Settings\\PageTemplatesVariablesController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/Settings/PageTemplatesVariablesController.php',
+        'VisualComposer\\Modules\\Editors\\Settings\\SlugController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/Settings/SlugController.php',
         'VisualComposer\\Modules\\Editors\\Settings\\TitleController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/Settings/TitleController.php',
         'VisualComposer\\Modules\\Editors\\Templates\\Controller' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/Templates/Controller.php',
         'VisualComposer\\Modules\\Editors\\Templates\\PostType' => __DIR__ . '/../..' . '/visualcomposer/Modules/Editors/Templates/PostType.php',
@@ -152,6 +156,7 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
         'VisualComposer\\Modules\\Elements\\WpWidgets\\WpWidgetsController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Elements/WpWidgets/WpWidgetsController.php',
         'VisualComposer\\Modules\\Elements\\WpWidgets\\WpWidgetsShortcodes' => __DIR__ . '/../..' . '/visualcomposer/Modules/Elements/WpWidgets/WpWidgetsShortcodes.php',
         'VisualComposer\\Modules\\FrontView\\AssetUrlReplaceController' => __DIR__ . '/../..' . '/visualcomposer/Modules/FrontView/AssetUrlReplaceController.php',
+        'VisualComposer\\Modules\\FrontView\\FrontVariablesController' => __DIR__ . '/../..' . '/visualcomposer/Modules/FrontView/FrontVariablesController.php',
         'VisualComposer\\Modules\\FrontView\\FrontViewController' => __DIR__ . '/../..' . '/visualcomposer/Modules/FrontView/FrontViewController.php',
         'VisualComposer\\Modules\\FrontView\\PluginsInfoController' => __DIR__ . '/../..' . '/visualcomposer/Modules/FrontView/PluginsInfoController.php',
         'VisualComposer\\Modules\\Hub\\Actions\\PostUpdateAction' => __DIR__ . '/../..' . '/visualcomposer/Modules/Hub/Actions/PostUpdateAction.php',
@@ -185,6 +190,7 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
         'VisualComposer\\Modules\\Hub\\Templates\\TemplateDownloadController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Hub/Templates/TemplateDownloadController.php',
         'VisualComposer\\Modules\\Hub\\Templates\\TemplatesUpdater' => __DIR__ . '/../..' . '/visualcomposer/Modules/Hub/Templates/TemplatesUpdater.php',
         'VisualComposer\\Modules\\Hub\\Traits\\Action' => __DIR__ . '/../..' . '/visualcomposer/Modules/Hub/Traits/Action.php',
+        'VisualComposer\\Modules\\Hub\\Unsplash\\UnsplashDownloadController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Hub/Unsplash/UnsplashDownloadController.php',
         'VisualComposer\\Modules\\Hub\\UpdateController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Hub/UpdateController.php',
         'VisualComposer\\Modules\\Internationalization\\Locale' => __DIR__ . '/../..' . '/visualcomposer/Modules/Internationalization/Locale.php',
         'VisualComposer\\Modules\\License\\ActivationRedirectController' => __DIR__ . '/../..' . '/visualcomposer/Modules/License/ActivationRedirectController.php',
@@ -197,6 +203,7 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
         'VisualComposer\\Modules\\Migrations\\Assets22Migration' => __DIR__ . '/../..' . '/visualcomposer/Modules/Migrations/Assets22Migration.php',
         'VisualComposer\\Modules\\Migrations\\CustomTemplatesUpdate24Migration' => __DIR__ . '/../..' . '/visualcomposer/Modules/Migrations/CustomTemplatesUpdate24Migration.php',
         'VisualComposer\\Modules\\Migrations\\DefaultElementsMigration' => __DIR__ . '/../..' . '/visualcomposer/Modules/Migrations/DefaultElementsMigration.php',
+        'VisualComposer\\Modules\\Migrations\\FixPredefinedTemplateUpdate' => __DIR__ . '/../..' . '/visualcomposer/Modules/Migrations/FixPredefinedTemplateUpdate.php',
         'VisualComposer\\Modules\\Migrations\\GlobalJavascriptMigration' => __DIR__ . '/../..' . '/visualcomposer/Modules/Migrations/GlobalJavascriptMigration.php',
         'VisualComposer\\Modules\\Migrations\\MigrationsController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Migrations/MigrationsController.php',
         'VisualComposer\\Modules\\Migrations\\PredefinedTemplateMigration' => __DIR__ . '/../..' . '/visualcomposer/Modules/Migrations/PredefinedTemplateMigration.php',
@@ -230,6 +237,7 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
         'VisualComposer\\Modules\\Vendors\\NinjaFormsController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Vendors/NinjaFormsController.php',
         'VisualComposer\\Modules\\Vendors\\RevSliderController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Vendors/RevSliderController.php',
         'VisualComposer\\Modules\\Vendors\\ThemeTwentySeventeenController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Vendors/ThemeTwentySeventeenController.php',
+        'VisualComposer\\Modules\\Vendors\\WooCommerceController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Vendors/WooCommerceController.php',
         'VisualComposer\\Modules\\Vendors\\WordpressController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Vendors/WordpressController.php',
         'VisualComposer\\Modules\\Vendors\\WpbakeryController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Vendors/WpbakeryController.php',
         'VisualComposer\\Modules\\Vendors\\WpmlController' => __DIR__ . '/../..' . '/visualcomposer/Modules/Vendors/WpmlController.php',
@@ -239,9 +247,9 @@ class ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit98f61d4bbd5c99e76dd655bb53130983::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc48e1e2729aea87299519cdf1f7e8d52::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc48e1e2729aea87299519cdf1f7e8d52::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc48e1e2729aea87299519cdf1f7e8d52::$classMap;
 
         }, null, ClassLoader::class);
     }

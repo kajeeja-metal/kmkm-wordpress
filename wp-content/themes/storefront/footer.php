@@ -35,9 +35,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.79/jquery.form-validator.min.js"></script>
 <script src="<?php bloginfo("template_url"); ?>/assets/js/main.js"></script>
-
 <script src="<?php bloginfo("template_url"); ?>/assets/js/cbpFWTabs.js"></script>
 <script>
 	(function() {

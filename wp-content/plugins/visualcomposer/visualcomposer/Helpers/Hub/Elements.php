@@ -32,14 +32,20 @@ class Elements implements Helper
         return false;
     }
 
-    public function getElements($raw = false, $elementRealPath = true)
+    public function getElements($raw = false, $outputElementRealPath = true)
     {
         $optionHelper = vchelper('Options');
         $dbElements = $optionHelper->get('hubElements', []);
         if (!is_array($dbElements)) {
             $dbElements = [];
         }
-        $elements = array_merge($this->thirdPartyElements, $this->defaultElements, $dbElements);
+
+        /**
+         * Default elements has maximum priority
+         * Then Database elements
+         * Last one is 3rd party elements
+         */
+        $elements = array_merge($this->thirdPartyElements, $dbElements, $this->defaultElements);
         $outputElements = [];
         foreach ($elements as $tag => $element) {
             $data = $element;
@@ -60,7 +66,7 @@ class Elements implements Helper
                 ]
             );
 
-            if (!$elementRealPath) {
+            if (!$outputElementRealPath) {
                 unset($data['elementRealPath']);
                 unset($data['phpFiles']);
             }

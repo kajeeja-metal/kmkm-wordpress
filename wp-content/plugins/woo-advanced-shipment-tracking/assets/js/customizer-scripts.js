@@ -18,6 +18,10 @@ jQuery(document).ready(function() {
 	if(jQuery("#_customize-input-show_track_label").prop("checked") != true){	
 		jQuery('#customize-control-track_header_text').hide();
 	}
+	
+	if(jQuery("#_customize-input-wcast_enable_delivered_ga_tracking").prop("checked") != true){	
+		jQuery('#customize-control-wcast_delivered_analytics_link').hide();
+	}
 
 });
 jQuery(document).on("change", "#_customize-input-show_track_label", function(){
@@ -25,6 +29,13 @@ jQuery(document).on("change", "#_customize-input-show_track_label", function(){
 		jQuery('#customize-control-track_header_text').show();
 	} else{
 		jQuery('#customize-control-track_header_text').hide();
+	}
+});
+jQuery(document).on("change", "#_customize-input-wcast_enable_delivered_ga_tracking", function(){
+	if(jQuery(this).prop("checked") == true){
+		jQuery('#customize-control-wcast_delivered_analytics_link').show();
+	} else{
+		jQuery('#customize-control-wcast_delivered_analytics_link').hide();
 	}
 });	
 jQuery(document).on("change", "#customize-control-woocommerce_customer_delivered_order_settings-enabled input", function(){	

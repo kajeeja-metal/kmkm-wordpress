@@ -32,18 +32,21 @@ get_header(); ?>
 		<figure class="banner-single" style="background-image: url('<?php echo $imgURL ?>')">
 			<figcaption class="content-box-images">
 				<h2><?php echo get_the_title(); ?></h2>
-				<h6><?php echo excerpt(20); ?></h6>
+				<!-- <h6><?php echo excerpt(20); ?></h6> -->
 			</figcaption>
 		</figure>
 		<div class="col-grid">
-			<div class="content-area">
+			<div class="">
+				<div style="    font-size: 20px;"><?php echo get_the_date( 'd F Y' ); ?></div>
 				<?php echo the_content();?>
+				
 			</div>
 			<?php
 				do_action( 'storefront_single_post_after' );
 
 			endwhile; // End of the loop.
 			?>
+
 			<?php get_sidebar(); ?>
 		</div>
 		<?php
@@ -54,13 +57,10 @@ get_header(); ?>
 			$count = count($products);
 			$id_products = $_SESSION['id_products'];
 			$is = 0;
-
 			for ($i=0; $i < $count; $i++) { 
 				$editoral = 'editoral'.$i;
 				$is++;
-				$custom_field = $editoral;
-				
-				 if(get_post_meta($products[$i]->ID, $custom_field , true) == $tags[0]->name && $tags[0]->name != ''){
+				 if(get_post_meta($products[$i]->ID, 'editoral'.$is , true) == $tags[0]->name && $tags[0]->name != ''){
 				 	 $id_products = $id_products . $products[$i]->ID . ",";
 				 	 $_SESSION['id_products'] = $id_products;
 				 }

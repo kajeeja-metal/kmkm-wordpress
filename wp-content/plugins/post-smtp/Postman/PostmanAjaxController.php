@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+
 if (! class_exists ( 'PostmanAbstractAjaxHandler' )) {
 	
 	require_once ('PostmanPreRequisitesCheck.php');
@@ -15,8 +19,8 @@ if (! class_exists ( 'PostmanAbstractAjaxHandler' )) {
 		}
 		/**
 		 *
-		 * @param unknown $actionName        	
-		 * @param unknown $callbackName        	
+		 * @param mixed $actionName        	
+		 * @param mixed $callbackName        	
 		 */
 		protected function registerAjaxHandler($actionName, $class, $callbackName) {
 			if (is_admin ()) {
@@ -31,7 +35,7 @@ if (! class_exists ( 'PostmanAbstractAjaxHandler' )) {
 		
 		/**
 		 *
-		 * @param unknown $parameterName        	
+		 * @param mixed $parameterName        	
 		 * @return mixed
 		 */
 		protected function getBooleanRequestParameter($parameterName) {
@@ -40,8 +44,8 @@ if (! class_exists ( 'PostmanAbstractAjaxHandler' )) {
 		
 		/**
 		 *
-		 * @param unknown $parameterName        	
-		 * @return unknown
+		 * @param mixed $parameterName        	
+		 * @return mixed
 		 */
 		protected function getRequestParameter($parameterName) {
 			if (isset ( $_POST [$parameterName] )) {

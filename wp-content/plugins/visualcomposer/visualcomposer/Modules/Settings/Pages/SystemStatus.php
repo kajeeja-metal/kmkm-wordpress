@@ -47,6 +47,8 @@ class SystemStatus extends Container implements Module
             return;
         }
 
+        $this->addFilter('vcv:settings:tabs', 'addSettingsTab', 10);
+
         $this->wpAddAction(
             'admin_menu',
             'addPage'
@@ -70,6 +72,20 @@ class SystemStatus extends Container implements Module
 
         $this->statusHelper = $statusHelper;
         $this->optionsHelper = $optionsHelper;
+    }
+
+    /**
+     * @param $tabs
+     *
+     * @return mixed
+     */
+    protected function addSettingsTab($tabs)
+    {
+        $tabs['vcv-system-status'] = [
+            'name' => __('System Status', 'vcwb'),
+        ];
+
+        return $tabs;
     }
 
     protected function subMenuHighlight($submenuFile)
@@ -130,15 +146,15 @@ class SystemStatus extends Container implements Module
     public function getPostMaxSize()
     {
         $postMaxSize = $this->statusHelper->postMaxSize();
-        $memoryLimitCheck = $this->statusHelper->getMemoryLimitStatus();
+        $postMaxSizeTest = $this->statusHelper->getPostMaxSizeStatus();
 
         if ($postMaxSize === '-1') {
             $postMaxSize = __('Unlimited', 'vcwb');
         }
 
-        $textResponse = $memoryLimitCheck ? $postMaxSize : sprintf(__('Memory limit should be %sM, currently it is %s', 'vcwb'), $this->statusHelper->getDefaultMemoryLimit(), $postMaxSize);
+        $textResponse = $postMaxSizeTest ? $postMaxSize : sprintf(__('Post max size should be %sM, currently it is %s', 'vcwb'), $this->statusHelper->getDefaultPostMaxSize(), $postMaxSize);
 
-        return ['text' => $textResponse, 'status' => $this->getStatusCssClass($memoryLimitCheck)];
+        return ['text' => $textResponse, 'status' => $this->getStatusCssClass($postMaxSizeTest)];
     }
 
     public function getMemoryLimitStatusForView()
@@ -288,7 +304,7 @@ class SystemStatus extends Container implements Module
         $urlHelper = vchelper('Url');
         wp_register_style(
             'vcv:wpUpdate:style',
-            $urlHelper->assetUrl('dist/wpUpdate.bundle.css'),
+            $urlHelper->to('public/dist/wpUpdate.bundle.css'),
             [],
             VCV_VERSION
         );
@@ -296,8 +312,8 @@ class SystemStatus extends Container implements Module
 
         wp_register_script(
             'vcv:wpVcSettings:script',
-            $urlHelper->assetUrl('dist/wpVcSettings.bundle.js'),
-            [],
+            $urlHelper->to('public/dist/wpVcSettings.bundle.js'),
+            ['vcv:assets:vendor:script'],
             VCV_VERSION
         );
         wp_enqueue_script('vcv:wpVcSettings:script');

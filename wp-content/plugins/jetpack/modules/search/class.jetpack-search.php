@@ -7,6 +7,8 @@
  * @since      5.0.0
  */
 
+use Automattic\Jetpack\Connection\Client;
+
 /**
  * The main class for the Jetpack Search module.
  *
@@ -150,7 +152,7 @@ class Jetpack_Search {
 	 * @since 5.0.0
 	 */
 	public function setup() {
-		if ( ! Jetpack::is_active() || ! Jetpack::active_plan_supports( 'search' ) ) {
+		if ( ! Jetpack::is_active() || ! Jetpack_Plan::supports( 'search' ) ) {
 			return;
 		}
 
@@ -184,11 +186,38 @@ class Jetpack_Search {
 			add_action( 'init', array( $this, 'set_filters_from_widgets' ) );
 
 			add_action( 'pre_get_posts', array( $this, 'maybe_add_post_type_as_var' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'load_assets' ) );
 		} else {
 			add_action( 'update_option', array( $this, 'track_widget_updates' ), 10, 3 );
 		}
 
 		add_action( 'jetpack_deactivate_module_search', array( $this, 'move_search_widgets_to_inactive' ) );
+	}
+
+	/**
+	 * Loads assets for Jetpack Search Prototype featuring Search As You Type experience.
+	 */
+	public function load_assets() {
+		if ( defined( 'JETPACK_SEARCH_PROTOTYPE' ) ) {
+			$script_relative_path = '_inc/search/dist/jp-search.bundle.js';
+			if ( file_exists( JETPACK__PLUGIN_DIR . $script_relative_path ) ) {
+				$script_version = self::get_asset_version( $script_relative_path );
+				$script_path    = plugins_url( $script_relative_path, JETPACK__PLUGIN_FILE );
+				wp_enqueue_script( 'jetpack-search', $script_path, array(), $script_version, false );
+			}
+		}
+	}
+
+	/**
+	 * Get the version number to use when loading the file. Allows us to bypass cache when developing.
+	 *
+	 * @param string $file Path of the file we are looking for.
+	 * @return string $script_version Version number.
+	 */
+	public static function get_asset_version( $file ) {
+		return Jetpack::is_development_version() && file_exists( JETPACK__PLUGIN_DIR . $file )
+			? filemtime( $file )
+			: JETPACK__VERSION;
 	}
 
 	/**
@@ -243,6 +272,13 @@ class Jetpack_Search {
 				intval( $this->last_query_info['elapsed_time'] ),
 				esc_html( $this->last_query_info['es_time'] )
 			);
+
+			if ( isset( $_GET['searchdebug'] ) ) {
+				printf(
+					'<!-- Query response data: %s -->',
+					esc_html( print_r( $this->last_query_info, 1 ) )
+				);
+			}
 		}
 	}
 
@@ -308,7 +344,7 @@ class Jetpack_Search {
 	 * @param WP_Query $query A WP_Query instance.
 	 */
 	public function maybe_add_post_type_as_var( WP_Query $query ) {
-		if ( $query->is_main_query() && $query->is_search && ! empty( $_GET['post_type'] ) ) {
+		if ( $this->should_handle_query( $query ) && ! empty( $_GET['post_type'] ) ) {
 			$post_types = ( is_string( $_GET['post_type'] ) && false !== strpos( $_GET['post_type'], ',' ) )
 				? $post_type = explode( ',', $_GET['post_type'] )
 				: (array) $_GET['post_type'];
@@ -332,7 +368,7 @@ class Jetpack_Search {
 
 		$do_authenticated_request = false;
 
-		if ( class_exists( 'Jetpack_Client' ) &&
+		if ( class_exists( 'Client' ) &&
 			isset( $es_args['authenticated_request'] ) &&
 			true === $es_args['authenticated_request'] ) {
 			$do_authenticated_request = true;
@@ -355,7 +391,7 @@ class Jetpack_Search {
 		if ( $do_authenticated_request ) {
 			$request_args['method'] = 'POST';
 
-			$request = Jetpack_Client::wpcom_json_api_request_as_blog( $endpoint, Jetpack_Client::WPCOM_JSON_API_VERSION, $request_args, $request_body );
+			$request = Client::wpcom_json_api_request_as_blog( $endpoint, Client::WPCOM_JSON_API_VERSION, $request_args, $request_body );
 		} else {
 			$request_args = array_merge( $request_args, array(
 				'body' => $request_body,
@@ -442,17 +478,7 @@ class Jetpack_Search {
 	 * @return array Array of matching posts.
 	 */
 	public function filter__posts_pre_query( $posts, $query ) {
-		/**
-		 * Determine whether a given WP_Query should be handled by ElasticSearch.
-		 *
-		 * @module search
-		 *
-		 * @since  5.6.0
-		 *
-		 * @param bool     $should_handle Should be handled by Jetpack Search.
-		 * @param WP_Query $query         The WP_Query object.
-		 */
-		if ( ! apply_filters( 'jetpack_search_should_handle_query', ( $query->is_main_query() && $query->is_search() ), $query ) ) {
+		if ( ! $this->should_handle_query( $query ) ) {
 			return $posts;
 		}
 
@@ -500,7 +526,7 @@ class Jetpack_Search {
 	 * @param WP_Query $query The original WP_Query to use for the parameters of our search.
 	 */
 	public function do_search( WP_Query $query ) {
-		if ( ! $query->is_main_query() || ! $query->is_search() ) {
+		if ( ! $this->should_handle_query( $query ) ) {
 			return;
 		}
 
@@ -1765,7 +1791,8 @@ class Jetpack_Search {
 			return;
 		}
 
-		jetpack_tracks_record_event(
+		$tracking = new Automattic\Jetpack\Tracking();
+		$tracking->tracks_record_event(
 			wp_get_current_user(),
 			sprintf( 'jetpack_search_widget_%s', $event['action'] ),
 			$event['widget']
@@ -1812,6 +1839,27 @@ class Jetpack_Search {
 		if ( $changed ) {
 			wp_set_sidebars_widgets( $sidebars_widgets );
 		}
+	}
+
+	/**
+	 * Determine whether a given WP_Query should be handled by ElasticSearch.
+	 *
+	 * @param WP_Query $query The WP_Query object.
+	 *
+	 * @return bool
+	 */
+	public function should_handle_query( $query ) {
+		/**
+		 * Determine whether a given WP_Query should be handled by ElasticSearch.
+		 *
+		 * @module search
+		 *
+		 * @since  5.6.0
+		 *
+		 * @param bool     $should_handle Should be handled by Jetpack Search.
+		 * @param WP_Query $query         The WP_Query object.
+		 */
+		return apply_filters( 'jetpack_search_should_handle_query', $query->is_main_query() && $query->is_search(), $query );
 	}
 
 	/**

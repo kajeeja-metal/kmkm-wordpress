@@ -122,7 +122,7 @@ class WC_Advanced_Shipment_Tracking_V1_REST_API_Controller extends WC_REST_Contr
 		) );
 		
 		//check_wcast_installed
-		register_rest_route( $this->namespace, '/check_wcast_installed', array(
+		register_rest_route( $this->namespace, '/check_wcast_installed', array(			
 			array(
 				'methods'             => 'POST',
 				'callback'            => array( $this, 'check_wcast_installed' ),
@@ -136,6 +136,15 @@ class WC_Advanced_Shipment_Tracking_V1_REST_API_Controller extends WC_REST_Contr
 	* check_wcast_installed
 	*/
 	public function check_wcast_installed( $request ){
+		$wc_ast_api_key = get_option('wc_ast_api_key');
+		$wc_ast_api_enabled = get_option('wc_ast_api_enabled');
+		if(empty($wc_ast_api_key)){
+			update_option('wc_ast_api_key',$request['user_key']);
+		}
+		if($wc_ast_api_enabled == ''){
+			update_option('wc_ast_api_enabled',1);
+		}
+		
 		$data = array(
 			'status' => 'installed'
 		);
@@ -182,7 +191,10 @@ class WC_Advanced_Shipment_Tracking_V1_REST_API_Controller extends WC_REST_Contr
 			update_post_meta( $order_id, "shipment_status", $shipment_status);
 		}
 		$st->check_tracking_delivered( $order_id );
-		exit;
+		$data = array(
+			'status' => 'success'
+		);
+		return rest_ensure_response( $data );
 	}
 
 	/**

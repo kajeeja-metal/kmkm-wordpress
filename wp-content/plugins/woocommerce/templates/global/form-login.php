@@ -24,13 +24,7 @@ if ( is_user_logged_in() ) {
 }
 
 ?>
-<style type="text/css">
-	.woocommerce-form-login-toggle{
-		display: none;
-	}
-</style>
-<div class="products columns-3">
-<form class="woocommerce-form woocommerce-form-login login" method="post" <?php echo ( $hidden ) ? 'style="display:block;"' : ''; ?>>
+<form class="woocommerce-form woocommerce-form-login login" method="post" <?php echo ( $hidden ) ? 'style="display:none;"' : ''; ?>>
 
 	<?php do_action( 'woocommerce_login_form_start' ); ?>
 
@@ -65,4 +59,3 @@ if ( is_user_logged_in() ) {
 	<?php do_action( 'woocommerce_login_form_end' ); ?>
 
 </form>
-</div>

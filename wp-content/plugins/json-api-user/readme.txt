@@ -3,9 +3,9 @@
 Donate link: http://www.parorrey.com/solutions/json-api-user-plus/
 Tags: json api, RESTful user registration, authentication, RESTful Facebook Login, RESTful User Meta and BuddyPress xProfile
 Contributors: parorrey
-Stable tag: 3.0.0
+Stable tag: 3.1.4
 Requires at least: 3.0.1
-Tested up to: 5.0.0
+Tested up to: 5.2.2
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,6 +16,7 @@ Extends the JSON API Plugin to allow RESTful user registration, authentication a
 
 JSON API User extends the JSON API Plugin with a new Controller to allow RESTful user registration, authentication, password reset, RESTful Facebook Login, RESTful User Meta and BuddyPress xProfile get and update methods. This plugin is for WordPress/Mobile app developers who want to use WordPress as mobile app data backend. 
 
+JSON API Plugin, that is required, was closed on August 7, 2019 from WordPress repository. You can download <a href="https://github.com/PI-Media/json-api">JSON API Plugin</a> from https://github.com/PI-Media/json-api until it is republished and available on WordPress.
 
 Features include:
 
@@ -40,9 +41,9 @@ Hope this will help some.
 
 Pro Version - JSON API User Plus
 
-A pro version of this plugin, JSON API User Plus, is available here http://www.parorrey.com/solutions/json-api-user-plus/ that supports BuddyPress Messages component, BuddyPress avatar upload and other BuddyPress related functions to integrate BuddyPress features in your mobile app via REST.
+A pro version of this plugin, <a href="http://www.parorrey.com/solutions/json-api-user-plus/">JSON API User Plus</a>, is available here http://www.parorrey.com/solutions/json-api-user-plus/ that supports BuddyPress Messages component, BuddyPress avatar upload, BuddyPress Extended Profile, BuddyPress Groups, BuddyPress Friends, BuddyPress Activity, BuddyPress Notifications, BuddyPres Settings and other BuddyPress related functions to integrate BuddyPress features in your mobile app via REST api.
 
-'JSON API User Plus' includes API key which protects and restricts the endpoint calls. This key can be updated from Settings > User Plus options page. Your app must include this key with every call to get the data from REST API. Please see documentation for calling endpoints examples for 'JSON API User Plus'.
+<a href="http://www.parorrey.com/solutions/json-api-user-plus/">JSON API User Plus</a> includes API key which protects and restricts the endpoint calls. This key can be updated from Settings > User Plus options page. Your app must include this key with every call to get the data from REST API. Please see documentation for calling endpoints examples for 'JSON API User Plus'.
 
 JSON API User Plus features include:
 
@@ -87,6 +88,21 @@ To install JSON API User just follow these steps:
 
 
 == Changelog ==
+
+= 3.1.3 =
+* Fixed action links
+
+= 3.1.3 =
+* Added action links to Settings > JSON API > User controller, and User Plus Plugin
+
+= 3.1.2 =
+* Added url for JSON API User Plus Plugin 
+
+= 3.1.1 =
+* Added url for JSON API Plugin 
+
+= 3.1.0 =
+* tagging the version for latest WordPress version 5.2.2 & added <a href="https://github.com/PI-Media/json-api">JSON API Plugin</a> (https://github.com/PI-Media/json-api) url on GitHub
 
 = 3.0.0 =
 * tagging the version for latest WordPress version 5.0.0 

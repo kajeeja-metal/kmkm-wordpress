@@ -141,9 +141,10 @@ if ( ! class_exists( 'WC_Email_Customer_Delivered_Order', false ) ) :
 				
 				$message = wc_advanced_shipment_tracking_email_class()->email_content($email_content,$order_id,$order);
 				
+				$wcast_enable_delivered_ga_tracking = get_theme_mod('wcast_enable_delivered_ga_tracking');
 				$wcast_delivered_analytics_link = get_theme_mod('wcast_delivered_analytics_link');				
 				
-				if($wcast_delivered_analytics_link){	
+				if($wcast_delivered_analytics_link && $wcast_enable_delivered_ga_tracking == 1){	
 					$regex = '#(<a href=")([^"]*)("[^>]*?>)#i';
 					$message = preg_replace_callback($regex, array( $this, '_appendCampaignToString'), $message);	
 				}

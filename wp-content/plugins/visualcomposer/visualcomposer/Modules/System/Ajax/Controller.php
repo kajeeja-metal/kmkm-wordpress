@@ -39,12 +39,30 @@ class Controller extends Container implements Module
             'disableAjaxErrors',
             10
         );
+        /** @see \VisualComposer\Modules\System\Ajax\Controller::listenAjax */
+        $this->wpAddAction(
+            'wp_loaded',
+            'listenLateAjax',
+            100
+        );
     }
 
     protected function getResponse($requestAction)
     {
-        $response = vcfilter('vcv:' . $this->scope, '');
-        $response = vcfilter('vcv:' . $this->scope . ':' . $requestAction, $response);
+        $requestHelper = vchelper('Request');
+        global $post;
+        if (empty($post) && $requestHelper->exists('vcv-source-id') && $requestHelper->input('vcv-source-id')
+            && $requestHelper->input('vcv-source-id') !== 'template') {
+            return '';
+        }
+
+        $response = vcfilter(
+            'vcv:' . $this->scope . ':' . $requestAction,
+            '',
+            [
+                'sourceId' => $post ? $post->ID : $requestHelper->input('vcv-source-id'),
+            ]
+        );
 
         return $response;
     }
@@ -73,7 +91,18 @@ class Controller extends Container implements Module
 
     protected function listenAjax(Request $requestHelper)
     {
-        if ($requestHelper->isAjax()) {
+        if ($requestHelper->isAjax() && !$requestHelper->exists('vcv-late-request')) {
+            $this->setGlobals();
+            /** @see \VisualComposer\Modules\System\Ajax\Controller::parseRequest */
+            $rawResponse = $this->call('parseRequest');
+            $output = $this->renderResponse($rawResponse);
+            $this->output($output, $rawResponse);
+        }
+    }
+
+    protected function listenLateAjax(Request $requestHelper)
+    {
+        if ($requestHelper->isAjax() && $requestHelper->exists('vcv-late-request')) {
             $this->setGlobals();
             /** @see \VisualComposer\Modules\System\Ajax\Controller::parseRequest */
             $rawResponse = $this->call('parseRequest');
@@ -115,21 +144,13 @@ class Controller extends Container implements Module
                 if (isset($rawResponse['body'])) {
                     $messages[] = $rawResponse['body'];
                 }
-                if (isset($rawResponse['message'])) {
-                    if (is_array($rawResponse['message'])) {
-                        $responseMsg = implode('. ', $rawResponse['message']);
-                    } else {
-                        $responseMsg = $rawResponse['message'];
-                    }
-                    $messages[] = $responseMsg;
-                }
             }
             if (count($messages) > 0) {
                 echo json_encode(
                     [
                         'status' => false,
                         'response' => $rawResponse,
-                        'message' => implode('. ', $messages),
+                        'message' => implode('. ', array_unique($messages)),
                         'details' => $loggerHelper->details(),
                     ]
                 );

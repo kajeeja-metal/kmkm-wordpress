@@ -1,0 +1,41 @@
+2019-08-15T09:28:25+00:00 CRITICAL syntax error, unexpected ''posts_per_page'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 393
+
+2019-08-15T09:41:58+00:00 CRITICAL Uncaught Error: Call to undefined function alert() in /var/www/html/wp-content/themes/storefront/functions.php:392
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-widget.php(378): My_Recent_Posts_Widget->widget(Array, Array)
+#1 /var/www/html/wp-includes/widgets.php(770): WP_Widget->display_callback(Array, Array)
+#2 /var/www/html/wp-content/themes/storefront/sidebar.php(14): dynamic_sidebar('sidebar-1')
+#3 /var/www/html/wp-includes/template.php(704): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-includes/template.php(653): load_template('/var/www/html/w...', true)
+#5 /var/www/html/wp-includes/general-template.php(111): locate_template(Array, true)
+#6 /var/www/html/wp-content/themes/storefront/single.php(48): get_sidebar()
+#7 /var/www/html/wp-includes/template-loader.php(77): include('/var/www/html/w...')
+#8 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#9 /var/www/html/index.php(17): require('/var/www/html/w...')
+#10 {main}
+  thrown in /var/www/html/wp-content/themes/storefront/functions.php on line 392
+
+2019-08-15T09:50:23+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 402
+
+2019-08-15T09:50:34+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 402
+
+2019-08-15T09:50:36+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 402
+
+2019-08-15T09:50:38+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 402
+
+2019-08-15T09:50:41+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 402
+
+2019-08-15T09:58:04+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 396
+
+2019-08-15T09:58:12+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 396
+
+2019-08-15T09:58:17+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 396
+
+2019-08-15T09:58:28+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 398
+
+2019-08-15T09:58:43+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' in /var/www/html/wp-content/themes/storefront/functions.php on line 398
+
+2019-08-15T10:02:08+00:00 CRITICAL syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/wp-content/themes/storefront/functions.php on line 364
+
+2019-08-15T10:02:10+00:00 CRITICAL syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/wp-content/themes/storefront/functions.php on line 364
+

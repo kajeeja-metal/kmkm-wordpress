@@ -35,6 +35,9 @@ class Controller extends Container implements Module
     {
         /** @see \VisualComposer\Modules\Editors\Frontend\Controller::renderEditorBase */
         $this->addFilter('vcv:editors:frontend:render', 'renderEditorBase');
+        /** @see \VisualComposer\Modules\Editors\Frontend\Controller::enableEditorForProtectedPosts */
+        $this->wpAddFilter('post_password_required', 'enableEditorForProtectedPosts');
+
         /** @see \VisualComposer\Modules\Editors\Frontend\Controller::init */
         defined('WP_ADMIN') && WP_ADMIN
         && $this->wpAddFilter(
@@ -131,6 +134,10 @@ class Controller extends Container implements Module
         UserCapabilities $userCapabilitiesHelper
     ) {
         global $post;
+        if (!isset($post, $post->ID)) {
+            return false;
+        }
+
         $sourceId = $post->ID;
         if (is_numeric($sourceId) && $userCapabilitiesHelper->canEdit($sourceId)) {
             $feError = intval(get_option('page_for_posts')) === $sourceId ? 'page_for_posts' : false;
@@ -148,27 +155,21 @@ class Controller extends Container implements Module
         return false;
     }
 
-    protected function addFeOopsAssets($response, $payload, Url $urlHelper)
+    /**
+     * Enable editor for password protected posts
+     *
+     * @param $required
+     *
+     * @return bool
+     */
+    protected function enableEditorForProtectedPosts($required)
     {
-        // Add Vendor JS
-        $response = array_merge(
-            (array)$response,
-            [
-                sprintf(
-                    '<link rel="stylesheet" href="%s"></link>',
-                    $urlHelper->assetUrl(
-                        'dist/wpfeoops.bundle.css?v=' . VCV_VERSION
-                    )
-                ),
-                sprintf(
-                    '<script id="vcv-script-vendor-bundle-fe-oops" type="text/javascript" src="%s"></script>',
-                    $urlHelper->assetUrl(
-                        'dist/wpfeoops.bundle.js?v=' . VCV_VERSION
-                    )
-                ),
-            ]
-        );
+        $frontendHelper = vchelper('Frontend');
 
-        return $response;
+        if ($frontendHelper->isPageEditable()) {
+            return false;
+        }
+
+        return $required;
     }
 }

@@ -53,6 +53,11 @@ do_action( 'woocommerce_email_customer_details', $order, $sent_to_admin, $plain_
 <p>
 <?php esc_html_e( 'Thanks for shopping with us.', 'woocommerce' ); ?>
 </p>
+<BR><BR>
+<div style="text-align:center;font-family:Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;font-size: 12px;">
+	<span style="color:#666666">For the case that you have any further inquiries, please contact us.<span><BR>
+Email : customerservice@karmakamet.co.th, Tel: 02-392-3182,<BR> 
+Line Official Account: @karmakametworld</div>
 <?php
 
 /*

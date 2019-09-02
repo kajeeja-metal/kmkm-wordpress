@@ -113,6 +113,10 @@ class WC_Advanced_Shipment_Tracking_Admin {
 			// add 'get_shipment_status' order meta box order action
 			add_action( 'woocommerce_order_actions', array( $this, 'add_order_meta_box_get_shipment_status_actions' ) );
 			add_action( 'woocommerce_order_action_get_shipment_status_edit_order', array( $this, 'process_order_meta_box_actions_get_shipment_status' ) );
+			
+			// add bulk order filter for exported / non-exported orders
+			add_action( 'restrict_manage_posts', array( $this, 'filter_orders_by_shipment_status') , 20 );
+			add_filter( 'request', array( $this, 'filter_orders_by_shipment_status_query' ) );		
 		}
 		
 		// trigger when order status changed to shipped or completed
@@ -135,12 +139,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 		add_filter("trackship_status_filter", array($this, "trackship_status_filter_func"), 10 , 1);
 		
 		// filter for shipment status icon
-		add_filter("trackship_status_icon_filter", array($this, "trackship_status_icon_filter_func"), 10 , 2);
-		
-		//added wrong tracking filter
-		add_filter( 'views_edit-shop_order', array( $this, 'filter_views_edit_shop_order'), 10, 1 );
-		//change query for invalid tracking
-		add_filter( 'parse_query', array( $this, 'zorem_woocommerce_admin_order_filter_query') );
+		add_filter("trackship_status_icon_filter", array($this, "trackship_status_icon_filter_func"), 10 , 2);				
 		
 		add_action( 'wcast_retry_trackship_apicall', array( $this, 'wcast_retry_trackship_apicall_func' ) );					
 		
@@ -168,7 +167,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 		
 		add_action( 'wp_ajax_update_shipment_status', array( $this, 'update_shipment_status_fun') );
 		
-		add_action( 'wp_ajax_sync_providers', array( $this, 'sync_providers_fun') );	
+		add_action( 'wp_ajax_sync_providers', array( $this, 'sync_providers_fun') );		
 	}
 	
 	/*
@@ -569,10 +568,12 @@ class WC_Advanced_Shipment_Tracking_Admin {
 								$has_est_delivery = false;
 								$status = $shipment_status[$key]['status'];
 								$status_date = $shipment_status[$key]['status_date'];
-								$est_delivery_date = $shipment_status[$key]['est_delivery_date'];
+								if(isset($shipment_status[$key]['est_delivery_date'])){
+									$est_delivery_date = $shipment_status[$key]['est_delivery_date'];
+								}
 								if( $status != 'delivered' && $status != 'return_to_sender' && !empty($est_delivery_date) ){
 									$has_est_delivery = true;
-								}
+								}								
                             ?>
                             <li id="tracking-item-<?php echo $tracking_item['tracking_id'];?>" class="tracking-item-<?php echo $tracking_item['tracking_id'];?>">
                             	<div class="wcast-shipment-status-icon">
@@ -715,7 +716,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 					
 			}
 		}
-		wp_enqueue_script( 'shipment_tracking_table_rows' );
+		wp_enqueue_script( 'shipment_tracking_table_rows' );		
 		 ?>		
 			<h1 class="plugin-title"><?php _e('Advanced Shipment Tracking', 'woo-advanced-shipment-tracking'); ?></h1>
             <div class="wrap woocommerce zorem_admin_layout">
@@ -799,6 +800,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 							?>
 						<span class="mdl-list__item-secondary-action">
 							<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="<?php echo $id?>">
+								<input type="hidden" name="<?php echo $id?>" value="0"/>
 								<input type="checkbox" id="<?php echo $id?>" name="<?php echo $id?>" class="mdl-switch__input" <?php echo $checked ?> value="1"/>
 							</label>
 						</span>
@@ -919,7 +921,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 		$page_list = wp_list_pluck( get_pages(), 'post_title', 'ID' );
 		
 		$form_data = array(
-			'wc_ast_api_key' => array(
+			'wc_ast_trackship_connection_status' => array(
 				'type'		=> 'key_field',
 				'title'		=> __( 'TrackShip Connection Status', 'woo-advanced-shipment-tracking' ),
 				'connected' => $connected,	
@@ -1054,10 +1056,29 @@ class WC_Advanced_Shipment_Tracking_Admin {
 		} else{
 			$show_invoice_field = false;
 		}
+
+		$wc_ast_status_shipped = get_option('wc_ast_status_shipped');
+		if($wc_ast_status_shipped == 1){
+			$completed_order_label = __( 'Shipped', 'woo-advanced-shipment-tracking' );	
+			$mark_as_shipped_label = __( 'Default "mark as <span class="shipped_label">shipped</span>" checkbox state', 'woo-advanced-shipment-tracking' );	
+			$mark_as_shipped_tooltip = __( "This means that the 'mark as <span class='shipped_label'>shipped</span>' will be selected by default when adding tracking info to orders.", 'woo-advanced-shipment-tracking' );				
+		} else{
+			$completed_order_label = __( 'Completed', 'woo-advanced-shipment-tracking' );
+			$mark_as_shipped_label = __( 'Default "mark as <span class="shipped_label">completed</span>" checkbox state', 'woo-advanced-shipment-tracking' );
+			$mark_as_shipped_tooltip = __( "This means that the 'mark as <span class='shipped_label'>completed</span>' will be selected by default when adding tracking info to orders.", 'woo-advanced-shipment-tracking' );	
+		}
+		
 		$form_data = array(
 			'wc_ast_status_shipped' => array(
 				'type'		=> 'checkbox',
 				'title'		=> __( 'Rename the “Completed” Order status to “Shipped”', 'woo-advanced-shipment-tracking' ),				
+				'show'		=> true,
+				'class'     => '',
+			),
+			'wc_ast_default_mark_shipped' => array(
+				'type'		=> 'checkbox',
+				'title'		=> $mark_as_shipped_label,
+				'tooltip'      => $mark_as_shipped_tooltip,
 				'show'		=> true,
 				'class'     => '',
 			),
@@ -1069,7 +1090,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 									"show_in_refunded" =>__( 'Refunded', 'woo-advanced-shipment-tracking' ),
 									"show_in_processing" =>__( 'Processing', 'woo-advanced-shipment-tracking' ),
 									"show_in_failed" =>__( 'Failed', 'woo-advanced-shipment-tracking' ),
-									"show_in_completed" =>__( 'Completed', 'woo-advanced-shipment-tracking' ),
+									"show_in_completed" =>__( $completed_order_label, 'woo-advanced-shipment-tracking' ),
 								),						
 				'show'		=> true,
 				'class'     => '',
@@ -1277,7 +1298,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 			$date_shipped = date("d-m-Y");
 		}
 		$replace_tracking_info = $_POST['replace_tracking_info'];
-		// echo '<pre>';print_r($_POST['trackings']);echo '</pre>';
+		
 		global $wpdb;	
 		$woo_shippment_table_name = $this->table;		
 		$shippment_provider = $wpdb->get_var( "SELECT COUNT(*) FROM $woo_shippment_table_name WHERE provider_name = '".$tracking_provider."'" );
@@ -1304,7 +1325,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 				if ( count( $tracking_items ) > 0 ) {
 					foreach ( $tracking_items as $key => $item ) {
 						$tracking_number = $item['tracking_number'];
-							
+						//echo '<pre>';print_r($tracking_number);echo '</pre>';exit;	
 						if(in_array($tracking_number, array_column($_POST['trackings'], 'tracking_number'))) {
 							
 						} else{
@@ -1459,6 +1480,10 @@ class WC_Advanced_Shipment_Tracking_Admin {
 			case "carrier_unsupported":
 				$status = __( 'Carrier unsupported', 'woo-advanced-shipment-tracking' );
 				break;
+			case "invalid_user_key":
+				$status = __( 'Invalid User Key', 'woo-advanced-shipment-tracking' );
+				break;
+				
 		}
 		return $status;
 	}
@@ -1498,55 +1523,16 @@ class WC_Advanced_Shipment_Tracking_Admin {
 			case "INVALID_TRACKING_NUM":
 				$html = '<i class="fa fa-question-circle icon-'.$status.'" aria-hidden="true"></i>';
 				break;
+			case "invalid_user_key":
+				$html = '<span class="icon-'.$status.'">';
+				break;	
 			default:
 				$html = '<i class="fa fa-question-circle icon-'.$status.'" aria-hidden="true"></i>';
 				break;
 
 		}
 		return $html;
-	}
-	
-	/*
-	* added wrong tracking filter
-	*/
-	function filter_views_edit_shop_order( $array ) {
-		global $wpdb;
-		$sql = "SELECT count(DISTINCT pm.post_id) 
-            FROM $wpdb->postmeta pm 
-            JOIN $wpdb->posts p ON (p.ID = pm.post_id) 
-            WHERE pm.meta_key = 'shipment_status' AND pm.meta_value like '%INVALID_TRACKING_NUM%' AND p.post_type = 'shop_order' "; 
-		$count = $wpdb->get_var($sql); 
-		
-		$query = array(
-            'post_type'   => 'shop_order',			
-        );  
-        $result = new WP_Query($query);
-
-		
-		$class = ( isset( $_REQUEST['wrong_tracking'] ) && $_REQUEST['wrong_tracking'] == 'yes' ) ? 'current' : '';
-		$url = "edit.php?post_type=shop_order";
-		$query_string = add_query_arg( 'wrong_tracking', urlencode('yes'), $url );
-		$array['wrong_tracking'] = '<a href="' . $query_string . '" class="' . $class . '">' . __('Wrong Tracking ('.$count.')', 'wpla') . '</a>';
-		return $array; 
-	}
-	
-	/*
-	* change query for invalid tracking nunmber
-	*/
-	function zorem_woocommerce_admin_order_filter_query( $query ) {
-		global $typenow, $wp_query, $wpdb;
-		
-		if ( $typenow == 'shop_order' ) {
-			
-			if ( ! empty( $_GET['wrong_tracking'] ) ) {
-	
-				$query->set('meta_key', 'shipment_status');
-				$query->set('meta_value', 'INVALID_TRACKING_NUM' );
-				$query->set('meta_compare', 'LIKE' );
-	
-			}
-		}
-	}
+	}		
 	
 	/*
 	* retry trackship api call
@@ -1898,15 +1884,10 @@ class WC_Advanced_Shipment_Tracking_Admin {
 	}
 	
 	public function sync_providers_fun(){
-		global $wpdb;
-		$wc_ast_api_key = get_option('wc_ast_api_key');
-		$url = 'https://trackship.info/wp-json/WCAST/v1/Provider';
-		$arg = array(
-			'body' => array(
-				'user_key' => $wc_ast_api_key
-			),
-		);
-		$resp = wp_remote_get( $url, $arg );
+		global $wpdb;		
+		
+		$url = 'https://trackship.info/wp-json/WCAST/v1/Provider';		
+		$resp = wp_remote_get( $url );
 		$providers = json_decode($resp['body'],true);
 		
 		$default_shippment_providers = $wpdb->get_results( "SELECT * FROM $this->table WHERE shipping_default = 1" );
@@ -1952,6 +1933,7 @@ class WC_Advanced_Shipment_Tracking_Admin {
 				}
 			} else{
 				$img_url = $provider['img_url'];
+				
 				$img_slug = sanitize_title($provider_name);
 				$img = wc_advanced_shipment_tracking()->get_plugin_path().'/assets/shipment-provider-img/'.$img_slug.'.png';
 				
@@ -2050,4 +2032,118 @@ class WC_Advanced_Shipment_Tracking_Admin {
 		<a class="view_synch_details" id="view_deleted_details" href="javaScript:void(0);" style="display: block;"><?php _e( 'view details', 'woo-advanced-shipment-tracking'); ?></a>
 		<a class="view_synch_details" id="hide_deleted_details" href="javaScript:void(0);" style="display: none;"><?php _e( 'hide details', 'woo-advanced-shipment-tracking'); ?></a>
 	<?php }	
+	/**
+	 * Add bulk filter for Shipment status in orders list
+	 *
+	 * @since 2.4
+	 */
+	public function filter_orders_by_shipment_status(){
+		global $typenow;
+
+		if ( 'shop_order' === $typenow ) {
+
+			$count = $this->get_order_count();
+
+			$terms = array(
+				'unknown' => (object) array( 'count' => $count['unknown'], 'term' => __( 'Unknown', 'woo-advanced-shipment-tracking' ) ),
+				'pre_transit' => (object) array( 'count' => $count['pre_transit'],'term' => __( 'Pre Transit', 'woo-advanced-shipment-tracking' ) ),
+				'in_transit' => (object) array( 'count' => $count['in_transit'],'term' => __( 'In Transit', 'woo-advanced-shipment-tracking' ) ),
+				'available_for_pickup' => (object) array( 'count' => $count['available_for_pickup'],'term' => __( 'Available for Pickup', 'woo-advanced-shipment-tracking' ) ),
+				'out_for_delivery' => (object) array( 'count' => $count['out_for_delivery'],'term' => __( 'Out for Delivery', 'woo-advanced-shipment-tracking' ) ),
+				'delivered' => (object) array( 'count' => $count['delivered'],'term' => __( 'Delivered', 'woo-advanced-shipment-tracking' ) ),
+				'failed_attempt' => (object) array( 'count' => $count['failed_attempt'],'term' => __( 'Failed Attempt', 'woo-advanced-shipment-tracking' ) ),
+				'cancelled' => (object) array( 'count' => $count['cancelled'],'term' => __( 'Cancelled', 'woo-advanced-shipment-tracking' ) ),
+				'carrier_unsupported' => (object) array( 'count' => $count['carrier_unsupported'],'term' => __( 'Carrier Unsupported', 'woo-advanced-shipment-tracking' ) ),
+				'return_to_sender' => (object) array( 'count' => $count['return_to_sender'],'term' => __( 'Return To Sender', 'woo-advanced-shipment-tracking' ) ),				
+				'INVALID_TRACKING_NUM' => (object) array( 'count' => $count['invalid_tracking_number'],'term' => __( 'Invalid Tracking Number', 'woo-advanced-shipment-tracking' ) ),
+			);
+
+			?>
+			<select name="_shop_order_shipment_status" id="dropdown_shop_order_shipment_status">
+				<option value=""><?php _e( 'Filter by shipment status', 'woo-advanced-shipment-tracking' ); ?></option>
+				<?php foreach ( $terms as $value => $term ) : ?>
+				<option value="<?php echo esc_attr( $value ); ?>" <?php echo esc_attr( isset( $_GET['_shop_order_shipment_status'] ) ? selected( $value, $_GET['_shop_order_shipment_status'], false ) : '' ); ?>>
+					<?php printf( '%1$s (%2$s)', esc_html( $term->term ), esc_html( $term->count ) ); ?>
+				</option>
+				<?php endforeach; ?>
+			</select>
+			<?php
+		}
+	}
+	
+	/**
+	 * Get the order count for orders by shipment status	 	 	 
+	 * @since 2.4	 
+	 */
+	private function get_order_count() {
+
+		$query_args = array(
+			'fields'      => 'ids',
+			'post_type'   => 'shop_order',
+			'post_status' => isset( $_GET['post_status'] ) ? $_GET['post_status'] : 'any',
+			'meta_query'  => array(
+				array(
+					'key'   => 'shipment_status',
+					'value' => '',
+					'compare' => 'LIKE',
+				)
+			),
+			'nopaging'    => true,
+		);
+
+		$order_query = new WP_Query( $query_args );
+
+		$query_args['meta_query'][0]['value'] = 'delivered';
+		$delivered_query = new WP_Query( $query_args );
+		
+		$query_args['meta_query'][0]['value'] = 'unknown';
+		$unknown_query = new WP_Query( $query_args );
+		
+		$query_args['meta_query'][0]['value'] = 'pre_transit';
+		$pre_transit_query = new WP_Query( $query_args );
+		
+		$query_args['meta_query'][0]['value'] = 'in_transit';
+		$in_transit_query = new WP_Query( $query_args );
+		
+		$query_args['meta_query'][0]['value'] = 'available_for_pickup';
+		$available_for_pickup_query = new WP_Query( $query_args );
+		
+		$query_args['meta_query'][0]['value'] = 'out_for_delivery';
+		$out_for_delivery_query = new WP_Query( $query_args );
+		
+		$query_args['meta_query'][0]['value'] = 'failed_attempt';
+		$failed_attempt_query = new WP_Query( $query_args );
+		
+		$query_args['meta_query'][0]['value'] = 'cancelled';
+		$cancelled_query = new WP_Query( $query_args );
+
+		$query_args['meta_query'][0]['value'] = 'carrier_unsupported';
+		$carrier_unsupported_query = new WP_Query( $query_args );
+
+		$query_args['meta_query'][0]['value'] = 'return_to_sender';
+		$return_to_sender_query = new WP_Query( $query_args );
+
+		$query_args['meta_query'][0]['value'] = 'INVALID_TRACKING_NUM';
+		$invalid_tracking_number_query = new WP_Query( $query_args );		
+
+		return array( 'unknown' => $unknown_query->found_posts, 'pre_transit' => $pre_transit_query->found_posts, 'in_transit' => $in_transit_query->found_posts, 'available_for_pickup' => $available_for_pickup_query->found_posts, 'out_for_delivery' => $out_for_delivery_query->found_posts, 'failed_attempt' => $failed_attempt_query->found_posts, 'cancelled' => $cancelled_query->found_posts, 'carrier_unsupported' => $carrier_unsupported_query->found_posts, 'return_to_sender' => $return_to_sender_query->found_posts, 'delivered' => $delivered_query->found_posts, 'invalid_tracking_number' => $invalid_tracking_number_query->found_posts);
+	}
+	/**
+	 * Process bulk filter action for shipment status orders
+	 *
+	 * @since 3.0.0
+	 * @param array $vars query vars without filtering
+	 * @return array $vars query vars with (maybe) filtering
+	 */
+	public function filter_orders_by_shipment_status_query( $vars ){
+		global $typenow;
+
+		if ( 'shop_order' === $typenow && isset( $_GET['_shop_order_shipment_status'] )) {
+			$vars['meta_key']   = 'shipment_status';
+			$vars['meta_value'] = $_GET['_shop_order_shipment_status'];
+			$vars['meta_compare'] = 'LIKE';						
+		}
+
+		return $vars;
+	}
 }

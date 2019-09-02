@@ -132,17 +132,17 @@ class Update implements Helper
         ];
         $variables[] = [
             'key' => 'VCV_UPDATE_SKIP_POST_URL',
-            'value' => $urlHelper->adminAjax(['vcv-action' => 'hub:action:postUpdate:skipPost']),
+            'value' => $urlHelper->adminAjax(['vcv-action' => 'hub:action:postUpdate:skipPost:adminNonce']),
             'type' => 'constant',
         ];
         $variables[] = [
             'key' => 'VCV_UPDATE_WP_BUNDLE_URL',
-            'value' => $urlHelper->to('public/dist/wp.bundle.js'),
+            'value' => $urlHelper->to('public/dist/wp.bundle.js') . '?v=' . VCV_VERSION,
             'type' => 'constant',
         ];
         $variables[] = [
             'key' => 'VCV_UPDATE_VENDOR_URL',
-            'value' => $urlHelper->to('public/dist/vendor.bundle.js'),
+            'value' => $urlHelper->to('public/dist/vendor.bundle.js'). '?v=' . VCV_VERSION,
             'type' => 'constant',
         ];
         $variables[] = [
@@ -194,6 +194,12 @@ class Update implements Helper
         $variables[] = [
             'key' => 'VCV_PREMIUM_URL',
             'value' => admin_url('admin.php?page=vcv-go-premium&vcv-ref=' . $vcvRef),
+            'type' => 'constant',
+        ];
+
+        $variables[] = [
+            'key' => 'VCV_MANAGE_OPTIONS',
+            'value' => vchelper('AccessCurrentUser')->wpAll('manage_options')->get(),
             'type' => 'constant',
         ];
 

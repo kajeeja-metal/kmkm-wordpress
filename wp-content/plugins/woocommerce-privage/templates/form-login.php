@@ -33,7 +33,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
     <script>
     function doLogin() {
-      var redirect = location.origin + '/kmkm-wordpress/?wc-ajax=login_callback';
+      var redirect = location.origin + '/?wc-ajax=login_callback';
       var url = 'https://account.privageapp.com/?identifier=com.privage.hmc&redirect_url=' + redirect;
       window.open(url,'popUpWindow','height=700,width=400,resizable=no');
     }

@@ -538,14 +538,14 @@ jQuery(document).on("click", ".close_synch_popup", function(){
 		error = true;
 	} else{		
 		hideerror(thumb_url);
-	}*/
+	}
 	
 	if( tracking_url.val() === '' ){				
 		showerror(tracking_url);
 		error = true;
 	} else{		
 		hideerror(tracking_url);
-	}
+	}*/
 	
 	
 	if(error == true){
@@ -672,12 +672,12 @@ jQuery(document).on("submit", "#edit_provider_form", function(){
 		hideerror(shipping_country);
 	}		
 	
-	if( tracking_url.val() === '' ){				
+	/*if( tracking_url.val() === '' ){				
 		showerror(tracking_url);
 		error = true;
 	} else{		
 		hideerror(tracking_url);
-	}
+	}*/
 	
 	
 	if(error == true){
@@ -896,3 +896,12 @@ function showerror(element){
 function hideerror(element){
 	element.css("border","1px solid #ddd");
 }
+jQuery(document).on("change", "#wc_ast_status_shipped", function(){
+	if(jQuery(this).prop("checked") == true){
+		jQuery("[for=show_in_completed] .multiple_label").text('Shipped');
+		jQuery("label .shipped_label").text('shipped');
+	} else{
+		jQuery("[for=show_in_completed] .multiple_label").text('Completed');
+		jQuery("label .shipped_label").text('completed');
+	}
+});

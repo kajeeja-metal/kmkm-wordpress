@@ -16,6 +16,8 @@ class WpEditor extends Container implements Module
 {
     use EventsFilters;
 
+    protected $editorButtonStyles = false;
+
     public function __construct()
     {
         /** @see \VisualComposer\Modules\Editors\Attributes\WpEditor::addWpEditorScripts */
@@ -28,13 +30,22 @@ class WpEditor extends Container implements Module
             '<script type="text/html" id="vcv-wpeditor-template">%s</script>',
             $this->getWpEditor()
         );
+        $output[] = sprintf(
+            '<script type="text/html" id="vcv-wpeditor-dynamic-template">%s</script>',
+            $this->getWpEditorDynamic()
+        );
 
         return $output;
     }
 
     protected function getWpEditor()
     {
+        // @codingStandardsIgnoreStart
+        global $wp_rich_edit;
+        $wp_rich_edit = true;
+        // @codingStandardsIgnoreEnd
         ob_start();
+        $this->getEditorButtonStyles();
         wp_editor(
             '%%content%%',
             '__VCVID__',
@@ -48,5 +59,41 @@ class WpEditor extends Container implements Module
         $output = ob_get_clean();
 
         return $output;
+    }
+
+    protected function getWpEditorDynamic()
+    {
+        // @codingStandardsIgnoreStart
+        global $wp_rich_edit;
+        $wp_rich_edit = true;
+        // @codingStandardsIgnoreEnd
+        ob_start();
+        $this->getEditorButtonStyles();
+        wp_editor(
+            '%%content%%',
+            '__VCVIDDYNAMIC__',
+            $settings = [
+                'media_buttons' => false,
+                'default_editor' => 'html',
+                'quicktags' => false,
+                'tinymce' => [
+                    'wordpress_adv_hidden' => false,
+                ],
+            ]
+        );
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    protected function getEditorButtonStyles()
+    {
+        if (!$this->editorButtonStyles) {
+            ob_start();
+            wp_print_styles('editor-buttons');
+            $this->editorButtonStyles = ob_get_clean();
+        }
+
+        echo $this->editorButtonStyles;
     }
 }

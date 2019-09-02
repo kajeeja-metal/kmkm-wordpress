@@ -124,7 +124,7 @@ function privage_login() {
 
     // Update profile
     $current_user = get_user_by('login', $user_id);
-
+    var_dump(wp_create_user( $user_id, $user_id.$identifier, $email ));
     if($current_user->display_name != $name) {
       $names = explode(" ", $name);
 

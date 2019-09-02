@@ -23,7 +23,7 @@ class ErrorReportingController extends Container implements Module
 
     public function __construct()
     {
-        $this->addFilter('vcv:license:variables', 'addVariables');
+        $this->addFilter('vcv:editor:variables', 'addVariables');
         $this->addFilter('vcv:ajax:account:error:report:adminNonce', 'sendReport');
     }
 
@@ -49,7 +49,7 @@ class ErrorReportingController extends Container implements Module
             $data['request'] = $requestHelper->all();
 
             wp_remote_post(
-                vcvenv('VCV_API_URL') . '/api/report/error',
+                vcvenv('VCV_HUB_URL') . '/api/report/error',
                 [
                     'timeout' => 30,
                     'body' => $data,

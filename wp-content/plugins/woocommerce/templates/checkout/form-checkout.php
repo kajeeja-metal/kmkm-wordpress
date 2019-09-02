@@ -23,9 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<nav>
 		<ul>
 			<!-- <li class="tab-current"><a href="#section-bar-1" class="icon icon-home"><span>LOGIN</span></a></li> -->
-			<li class=""><a href="#section-bar-2" class="icon icon-box"><span>COUPON</span></a></li>
-			<li class=""><a href="#section-bar-3" class="icon icon-display"><span>BILLING & SHIPPING</span></a></li>
-			<li class=""><a href="#section-bar-4" class="icon icon-upload"><span>ORDER & PAYMENT</span></a></li>
+			<li class=""><a href="#section-bar-2" class=""><span>STEP 1 : COUPON</span></a></li>
+			<li class=""><a href="#section-bar-3" class=""><span>STEP 2 : BILLING & SHIPPING</span></a></li>
+			<li class=""><a href="#section-bar-4" class=""><span>STEP 3 : ORDER & PAYMENT</span></a></li>
 		</ul>
 	</nav>
 	<BR><BR>
@@ -39,8 +39,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		display: block !important;
 	}
 </style>
-<section id="section-bar-2" class="">
+<section id="section-bar-2" class="col2-set">
+	<div class="col2-set" style="margin: 0 auto;float: none;" >
 <?php do_action( 'woocommerce_before_checkout_coupons_form', $checkout ); ?>
+	<div id="payment">
+	<div class="form-row place-order" style="padding: 0;">
+		<a href="#section-bar-4" class="button alt step3" name="woocommerce_checkout_place_order" style="text-align:center;">NEXT STEP</a>
+	</div>
+</div>
+</div>
 </section>
 <?php // If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
@@ -57,7 +64,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 			<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-			<div class="products columns-3" id="customer_details">
+			<div class="col2-set" id="customer_details">
 				<div class="col-1">
 					<?php do_action( 'woocommerce_checkout_billing' ); ?>
 				</div>

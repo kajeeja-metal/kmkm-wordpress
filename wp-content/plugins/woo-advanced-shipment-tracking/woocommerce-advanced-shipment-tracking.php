@@ -4,14 +4,14 @@
  * Plugin Name: Advanced Shipment Tracking for WooCommerce 
  * Plugin URI:  
  * Description: Add shipment tracking information to your WooCommerce orders and provide customers with an easy way to track their orders. Shipment tracking Info will appear in customers accounts (in the order panel) and in WooCommerce order complete email. 
- * Version: 2.3.7
+ * Version: 2.4.2
  * Author:      zorem
  * Author URI:  
  * License:     GPL-2.0+
  * License URI: 
  * Text Domain: woo-advanced-shipment-tracking
  * Domain Path: /lang/
- * WC tested up to: 3.6.5
+ * WC tested up to: 3.7
 */
 
 
@@ -22,7 +22,7 @@ class zorem_woocommerce_advanced_shipment_tracking {
 	 *
 	 * @var string
 	 */
-	public $version = '2.3.7';
+	public $version = '2.4.2';
 	
 	/**
 	 * Initialize the main plugin function
@@ -51,7 +51,7 @@ class zorem_woocommerce_advanced_shipment_tracking {
 			$this->table = $wpdb->prefix."woo_shippment_provider";	
 		}
 		
-		add_action( 'plugins_loaded', array( $this, 'on_plugins_loaded' ) );		
+			
 		
 		if ( $this->is_wc_active() ) {			
 			// Include required files.
@@ -68,6 +68,8 @@ class zorem_woocommerce_advanced_shipment_tracking {
 			
 			//plugin install class init
 			$this->install->init();
+			
+			add_action( 'plugins_loaded', array( $this, 'on_plugins_loaded' ) );	
 		}	
 		add_action( 'admin_footer', array( $this, 'uninstall_notice') );	
 		//register_deactivation_hook( __FILE__, array( $this, 'uninstall' ) );	
@@ -321,12 +323,12 @@ class zorem_woocommerce_advanced_shipment_tracking {
 		WC()->api->WC_Advanced_Shipment_Tracking_REST_API_Controller->register_routes();
 		
 	}
-	public function on_plugins_loaded() {
+	public function on_plugins_loaded() {		
+		require_once $this->get_plugin_path() . '/includes/email-manager.php';
+		
 		require_once $this->get_plugin_path() . '/includes/customizer/class-wcast-customizer.php';
 		
-		require_once $this->get_plugin_path() . '/includes/customizer/class-wc-tracking-info-customizer.php';
-		
-		//require_once $this->get_plugin_path() . '/includes/customizer/class-wc-tracking-page-customizer.php';
+		require_once $this->get_plugin_path() . '/includes/customizer/class-wc-tracking-info-customizer.php';	
 		
 		require_once $this->get_plugin_path() . '/includes/customizer/class-wc-email-customizer.php';
 		

@@ -1,0 +1,12 @@
+2019-08-06T10:51:41+01:00 CRITICAL Call to undefined function mb_internal_encoding() in /var/www/html/wp-content/plugins/woocommerce-pdf-invoices/vendor/mpdf/mpdf/mpdf.php on line 1784
+
+2019-08-06T10:52:25+01:00 CRITICAL Call to undefined function mb_internal_encoding() in /var/www/html/wp-content/plugins/woocommerce-pdf-invoices/vendor/mpdf/mpdf/mpdf.php on line 1784
+
+2019-08-06T10:52:29+01:00 CRITICAL Call to undefined function mb_internal_encoding() in /var/www/html/wp-content/plugins/woocommerce-pdf-invoices/vendor/mpdf/mpdf/mpdf.php on line 1784
+
+2019-08-06T10:52:32+01:00 CRITICAL Call to undefined function mb_internal_encoding() in /var/www/html/wp-content/plugins/woocommerce-pdf-invoices/vendor/mpdf/mpdf/mpdf.php on line 1784
+
+2019-08-06T10:52:34+01:00 CRITICAL Call to undefined function mb_internal_encoding() in /var/www/html/wp-content/plugins/woocommerce-pdf-invoices/vendor/mpdf/mpdf/mpdf.php on line 1784
+
+2019-08-06T10:52:58+01:00 CRITICAL Call to undefined function mb_internal_encoding() in /var/www/html/wp-content/plugins/woocommerce-pdf-invoices/vendor/mpdf/mpdf/mpdf.php on line 1784
+

@@ -363,7 +363,7 @@ class Jetpack_Top_Posts_Widget extends WP_Widget {
 					$image         = Jetpack_PostImages::get_image(
 						$post['post_id'],
 						array(
-							'fallback_to_avatars' => true,
+							'fallback_to_avatars' => (bool) $get_image_options['fallback_to_avatars'],
 							'width'               => (int) $width,
 							'height'              => (int) $height,
 							'avatar_size'         => (int) $get_image_options['avatar_size'],
@@ -542,7 +542,7 @@ class Jetpack_Top_Posts_Widget extends WP_Widget {
 			$days = 2;
 		}
 
-		$post_view_posts = stats_get_from_restapi( array(), 'top-posts?max=11&summarize=1&num=' . absint( $days ) );
+		$post_view_posts = stats_get_from_restapi( array(), 'top-posts?max=11&summarize=1&num=' . intval( $days ) );
 
 		if ( ! isset( $post_view_posts->summary ) || empty( $post_view_posts->summary->postviews ) ) {
 			return array();

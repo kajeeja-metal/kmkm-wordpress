@@ -571,7 +571,72 @@ if ( ! function_exists( 'storefront_best_selling_products' ) ) {
 		}
 	}
 }
+if ( ! function_exists( 'storefront_best_selling_products' ) ) {
+	/**
+	 * Display Best Selling Products
+	 * Hooked into the `homepage` action in the homepage template
+	 *
+	 * @since 2.0.0
+	 * @param array $args the product section args.
+	 * @return void
+	 */
+	add_shortcode('gift_selling','example_shortcode');
 
+	function example_shortcode( $atts ) {
+	  ob_start();
+	  do_action('storefront_best_selling');
+	  return ob_get_clean();
+	}
+
+	add_action('storefront_best_selling', 'storefront_best_selling_products');
+
+	function example_action_output() {
+	    echo "<p>This should be output at the end.</p>";
+	}
+	function storefront_best_selling_products( $args ) {
+		$args = apply_filters(
+			'storefront_best_selling_products_args', array(
+				'limit'   => 4,
+				'columns' => 4,
+				'orderby' => '',
+				'category' => 'best_selling',
+				'order'   => 'desc',
+				// 'title'   => esc_attr__( 'Best Sellers', 'storefront' ),
+			)
+		);
+
+		$shortcode_content = storefront_do_shortcode(
+			'products', apply_filters(
+				'storefront_best_selling_products_shortcode_args', array(
+					'per_page' => intval( $args['limit'] ),
+					'columns'  => intval( $args['columns'] ),
+					'orderby'  => esc_attr( $args['orderby'] ),
+					'category'  => esc_attr( $args['category'] ),
+					'order'    => esc_attr( $args['order'] ),
+				)
+			)
+		);
+
+		/**
+		 * Only display the section if the shortcode returns products
+		 */
+		if ( false !== strpos( $shortcode_content, 'product' ) ) {
+			echo '<section class="storefront-product-section storefront-best-selling-products" aria-label="' . esc_attr__( 'Best Selling Products', 'storefront' ) . '">';
+
+			do_action( 'storefront_homepage_before_best_selling_products' );
+
+			'<h2 class="section-title">' . wp_kses_post( $args['title'] ) . '</h2>';
+
+			do_action( 'storefront_homepage_after_best_selling_products_title' );
+
+			echo $shortcode_content; // WPCS: XSS ok.
+
+			do_action( 'storefront_homepage_after_best_selling_products' );
+
+			echo '</section>';
+		}
+	}
+}
 
 if ( ! function_exists( 'storefront_promoted_products' ) ) {
 	/**
@@ -660,8 +725,7 @@ if ( ! function_exists( 'storefront_handheld_footer_bar' ) ) {
 		$links = apply_filters( 'storefront_handheld_footer_bar_links', $links );
 		?>
 		<div class="storefront-handheld-footer-bar">
-			<!-- <ul class="columns-<?php echo count( $links ); ?>"> -->
-				<ul class="columns-2">
+			<ul class="columns-<?php echo count( $links ); ?>">
 				<?php foreach ( $links as $key => $link ) : ?>
 					<li class="<?php echo esc_attr( $key ); ?>">
 						<?php

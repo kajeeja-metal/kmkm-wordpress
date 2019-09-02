@@ -65,7 +65,6 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<div id="selectScents" class="button alt wc-variation-selection-needed selectScents">Select Scents</div>
 </div>
 <div class="overlay-select-scents">
-	
 		<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 		<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>

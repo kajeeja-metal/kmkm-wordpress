@@ -127,7 +127,7 @@ class WC_Advanced_Shipment_Tracking_Install {
 					"shipping_default" => $shipping_provider['shipping_default'],
 				));
 			}
-			update_option( 'wc_advanced_shipment_tracking', '2.9');	
+			update_option( 'wc_advanced_shipment_tracking', '3.1');	
 		}			
 	}
 	/**
@@ -234,9 +234,9 @@ class WC_Advanced_Shipment_Tracking_Install {
 				),
 
 				12 => array (
-					"provider_name" => 'Hermes',
-					"ts_slug" => 'hermes',
-					"provider_url" => 'https://tracking.hermesworld.com/?TrackID=%number%',
+					"provider_name" => 'Hermes Germany',
+					"ts_slug" => 'hermes-de',
+					"provider_url" => 'https://www.myhermes.de/empfangen/sendungsverfolgung/?suche=%number%',
 					"shipping_country" => 'DE',
 					"shipping_default" => '1'
 				),
@@ -914,8 +914,23 @@ class WC_Advanced_Shipment_Tracking_Install {
 					"provider_url" => 'https://www.deppon.com/en/toTrack.action',
 					"shipping_country" => 'CN',
 					"shipping_default" => '1',					
-				),					
+				),	
+				106 => array (
+					"provider_name" => 'GLS Italy',
+					"ts_slug" => 'gls-italy',
+					"provider_url" => 'https://www.gls-italy.com/?option=com_gls&view=track_e_trace&mode=search&numero_spedizione=%number%&tipo_codice=nazionale',
+					"shipping_country" => 'IT',
+					"shipping_default" => '1',					
+				),
+				107 => array (
+					"provider_name" => 'Hermes World',
+					"ts_slug" => 'hermes',
+					"provider_url" => 'https://new.myhermes.co.uk/track.html#/parcel/%number%/details',
+					"shipping_country" => 'Global',
+					"shipping_default" => '1',					
+				),				
 			);
+		
 			return $providers;
 	}	
 	/*
@@ -1428,7 +1443,119 @@ class WC_Advanced_Shipment_Tracking_Install {
 				
 				update_option( 'wc_advanced_shipment_tracking', '2.9');	
 			}
+			if(version_compare(get_option( 'wc_advanced_shipment_tracking' ),'3.0', '<') ){
+				global $wpdb;
+				$new_providers = array (
+					1 => array (
+						"provider_name" => 'GLS Italy',
+						"ts_slug" => 'gls-italy',
+						"provider_url" => 'https://www.gls-italy.com/?option=com_gls&view=track_e_trace&mode=search&numero_spedizione=%number%&tipo_codice=nazionale',
+						"shipping_country" => 'IT',
+						"shipping_default" => '1',
+						"display_in_order" => 0,
+					)			
+				);
+				
+				foreach($new_providers as $provider){	
+					$success = $wpdb->insert($this->table, array(
+						"provider_name" => $provider['provider_name'],
+						"ts_slug" => $provider['ts_slug'],
+						"provider_url" => $provider['provider_url'],
+						"shipping_country" => $provider['shipping_country'],
+						"shipping_default" => $provider['shipping_default'],
+						"display_in_order" => $provider['display_in_order'],
+					));				
+				}
+				update_option( 'wc_advanced_shipment_tracking', '3.0');	
+			}
+			if(version_compare(get_option( 'wc_advanced_shipment_tracking' ),'3.1', '<') ){				
+				$this->update_shipping_providers();
+				update_option( 'wc_advanced_shipment_tracking', '3.1');	
+			}
+			if(version_compare(get_option( 'wc_advanced_shipment_tracking' ),'3.2', '<') ){				
+				$this->update_shipping_providers();
+				update_option( 'wc_advanced_shipment_tracking', '3.2');	
+			}
 		}
+	}
+	
+	public function update_shipping_providers(){
+		global $wpdb;		
+		$url = 'https://trackship.info/wp-json/WCAST/v1/Provider';		
+		$resp = wp_remote_get( $url );
+		$providers = json_decode($resp['body'],true);
+		
+		$providers_name = array();
+		
+		$default_shippment_providers = $wpdb->get_results( "SELECT * FROM $this->table WHERE shipping_default = 1" );
+		
+		foreach ( $default_shippment_providers as $key => $val ){
+			$shippment_providers[ $val->provider_name ] = $val;						
+		}
+
+		foreach ( $providers as $key => $val ){
+			$providers_name[ $val['provider_name'] ] = $val;						
+		}					
+		
+		foreach($providers as $provider){
+			
+			$provider_name = $provider['shipping_provider'];
+			$provider_url = $provider['provider_url'];
+			$shipping_country = $provider['shipping_country'];
+			$ts_slug = $provider['shipping_provider_slug'];
+			
+			if(isset($shippment_providers[$provider_name])){				
+				$db_provider_url = $shippment_providers[$provider_name]->provider_url;
+				$db_shipping_country = $shippment_providers[$provider_name]->shipping_country;
+				$db_ts_slug = $shippment_providers[$provider_name]->ts_slug;
+				if(($db_provider_url != $provider_url) || ($db_shipping_country != $shipping_country) || ($db_ts_slug != $ts_slug)){
+					$data_array = array(
+						'ts_slug' => $ts_slug,
+						'provider_url' => $provider_url,
+						'shipping_country' => $shipping_country,						
+					);
+					$where_array = array(
+						'provider_name' => $provider_name,			
+					);					
+					$wpdb->update( $this->table, $data_array, $where_array);					
+				}
+			} else{
+				$img_url = $provider['img_url'];
+				$img_slug = sanitize_title($provider_name);
+				$img = wc_advanced_shipment_tracking()->get_plugin_path().'/assets/shipment-provider-img/'.$img_slug.'.png';
+				
+				$ch = curl_init(); 
+  
+				curl_setopt($ch, CURLOPT_HEADER, 0); 
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+				curl_setopt($ch, CURLOPT_URL, $img_url); 
+			
+				$data = curl_exec($ch); 
+				curl_close($ch); 
+				
+				file_put_contents($img, $data); 			
+							
+								
+				$data_array = array(
+					'shipping_country' => sanitize_text_field($shipping_country),
+					'provider_name' => sanitize_text_field($provider_name),
+					'ts_slug' => $ts_slug,
+					'provider_url' => sanitize_text_field($provider_url),			
+					'display_in_order' => 0,
+					'shipping_default' => 1,
+				);
+				$result = $wpdb->insert( $this->table, $data_array );				
+			}		
+		}		
+		foreach($default_shippment_providers as $db_provider){
+			if(!is_array($providers_name[$db_provider->provider_name])){			
+				$where = array(
+					'provider_name' => $db_provider->provider_name,
+					'shipping_default' => 1
+				);
+				$wpdb->delete( $this->table, $where );					
+			}
+		}					
 	}
 	/*
 	* Display admin notice on plugin install or update

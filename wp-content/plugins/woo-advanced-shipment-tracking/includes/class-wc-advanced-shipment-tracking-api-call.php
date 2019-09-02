@@ -105,8 +105,20 @@ class WC_Advanced_Shipment_Tracking_Api_Call {
 	
 	public function get_trackship_data( $order, $tracking_number, $tracking_provider ){
 		$user_key = get_option("wc_ast_api_key");
-		$domain = get_site_url();
+		$domain = get_home_url();
 		$order_id = $order->get_id();
+		
+		if($order->get_shipping_country() != null){
+			$shipping_country = $order->get_shipping_country();	
+		} else{
+			$shipping_country = $order->get_billing_country();	
+		}
+		
+		if($order->get_shipping_postcode() != null){
+			$shipping_postal_code = $order->get_shipping_postcode();	
+		} else{
+			$shipping_postal_code = $order->get_billing_postcode();
+		}
 		
 		$url = 'https://trackship.info/wp-json/tracking/create';
 		
@@ -116,6 +128,8 @@ class WC_Advanced_Shipment_Tracking_Api_Call {
 			'domain' => $domain,
 			'tracking_number' => $tracking_number,
 			'tracking_provider' => $tracking_provider,
+			'postal_code' => $shipping_postal_code,
+			'destination_country' => $shipping_country,
 		);
 
 		$args['headers'] = array(

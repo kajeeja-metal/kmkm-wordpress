@@ -105,7 +105,7 @@ if ( $tracking_items ) :
 		</thead>
 
 		<tbody><?php
-		foreach ( $tracking_items as $tracking_item ) {
+		foreach ( $tracking_items as $tracking_item ) {			
 				?><tr class="tracking">
 					<td class="tracking-provider" data-title="<?php _e( 'Provider', 'woo-advanced-shipment-tracking' ); ?>" style="<?php echo $td_column_style; ?>">
 						<?php 
@@ -114,7 +114,7 @@ if ( $tracking_items ) :
 						$shippment_provider = $wpdb->get_results( "SELECT * FROM $woo_shippment_table_name WHERE provider_name='".$tracking_item['formatted_tracking_provider']."'" );
 						$custom_thumb_id = $shippment_provider['0']->custom_thumb_id;
 						//echo $custom_thumb_id;
-						if($custom_thumb_id == 0){
+						if($custom_thumb_id == 0 && $shippment_provider['0']->shipping_default == 1){
 							$src = wc_advanced_shipment_tracking()->plugin_dir_url()."assets/shipment-provider-img/".sanitize_title($tracking_item['formatted_tracking_provider']).".png";
 						} else{
 							$image_attributes = wp_get_attachment_image_src( $custom_thumb_id , array('60','60') );
@@ -147,8 +147,10 @@ if ( $tracking_items ) :
 						} ?>
 
 					<td class="order-actions" style="<?php echo $td_column_style; ?>">
-							<?php $url = str_replace('%number%',$tracking_item['tracking_number'],$tracking_item['formatted_tracking_link']); ?>	
-							<a href="<?php echo esc_url( $url ); ?>" style="<?php echo $tracking_link_style; ?>" target="_blank"><?php _e( 'Track', 'woo-advanced-shipment-tracking' ); ?></a>
+							<?php if($tracking_item['formatted_tracking_link']){ ?>
+								<?php $url = str_replace('%number%',$tracking_item['tracking_number'],$tracking_item['formatted_tracking_link']); ?>	
+								<a href="<?php echo esc_url( $url ); ?>" style="<?php echo $tracking_link_style; ?>" target="_blank"><?php _e( 'Track', 'woo-advanced-shipment-tracking' ); ?></a>
+							<?php } ?>
 					</td>
 				</tr><?php
 		}

@@ -94,6 +94,20 @@ return array (
       'make' => false,
       'singleton' => true,
     ),
+    'GutenbergHelper' => 
+    array (
+      'name' => 'GutenbergHelper',
+      'abstract' => 'VisualComposer\\Helpers\\Gutenberg',
+      'make' => false,
+      'singleton' => true,
+    ),
+    'ImageHelper' => 
+    array (
+      'name' => 'ImageHelper',
+      'abstract' => 'VisualComposer\\Helpers\\Image',
+      'make' => false,
+      'singleton' => true,
+    ),
     'LicenseHelper' => 
     array (
       'name' => 'LicenseHelper',
@@ -140,6 +154,13 @@ return array (
     array (
       'name' => 'OptionsHelper',
       'abstract' => 'VisualComposer\\Helpers\\Options',
+      'make' => false,
+      'singleton' => true,
+    ),
+    'PostDataHelper' => 
+    array (
+      'name' => 'PostDataHelper',
+      'abstract' => 'VisualComposer\\Helpers\\PostData',
       'make' => false,
       'singleton' => true,
     ),
@@ -402,20 +423,6 @@ return array (
       'make' => false,
       'singleton' => true,
     ),
-    'SettingsSettingsHelperHelper' => 
-    array (
-      'name' => 'SettingsSettingsHelperHelper',
-      'abstract' => 'VisualComposer\\Helpers\\Settings\\SettingsHelper',
-      'make' => false,
-      'singleton' => true,
-    ),
-    'SettingsPagesAboutHelper' => 
-    array (
-      'name' => 'SettingsPagesAboutHelper',
-      'abstract' => 'VisualComposer\\Helpers\\Settings\\Pages\\About',
-      'make' => false,
-      'singleton' => true,
-    ),
   ),
   'modules' => 
   array (
@@ -437,6 +444,13 @@ return array (
     array (
       'name' => 'MigrationsDefaultElementsMigration',
       'abstract' => 'VisualComposer\\Modules\\Migrations\\DefaultElementsMigration',
+      'make' => true,
+      'singleton' => true,
+    ),
+    'MigrationsFixPredefinedTemplateUpdate' => 
+    array (
+      'name' => 'MigrationsFixPredefinedTemplateUpdate',
+      'abstract' => 'VisualComposer\\Modules\\Migrations\\FixPredefinedTemplateUpdate',
       'make' => true,
       'singleton' => true,
     ),
@@ -678,6 +692,20 @@ return array (
       'make' => true,
       'singleton' => true,
     ),
+    'EditorsDataAjaxPostDataController' => 
+    array (
+      'name' => 'EditorsDataAjaxPostDataController',
+      'abstract' => 'VisualComposer\\Modules\\Editors\\DataAjax\\PostDataController',
+      'make' => true,
+      'singleton' => true,
+    ),
+    'EditorsDataAjaxPostFieldsController' => 
+    array (
+      'name' => 'EditorsDataAjaxPostFieldsController',
+      'abstract' => 'VisualComposer\\Modules\\Editors\\DataAjax\\PostFieldsController',
+      'make' => true,
+      'singleton' => true,
+    ),
     'EditorsDataAjaxRevisionController' => 
     array (
       'name' => 'EditorsDataAjaxRevisionController',
@@ -724,6 +752,13 @@ return array (
     array (
       'name' => 'EditorsSettingsPageTemplatesVariablesController',
       'abstract' => 'VisualComposer\\Modules\\Editors\\Settings\\PageTemplatesVariablesController',
+      'make' => true,
+      'singleton' => true,
+    ),
+    'EditorsSettingsSlugController' => 
+    array (
+      'name' => 'EditorsSettingsSlugController',
+      'abstract' => 'VisualComposer\\Modules\\Editors\\Settings\\SlugController',
       'make' => true,
       'singleton' => true,
     ),
@@ -871,6 +906,13 @@ return array (
     array (
       'name' => 'HubTemplatesTeasersTeasersDownloadController',
       'abstract' => 'VisualComposer\\Modules\\Hub\\Templates\\Teasers\\TeasersDownloadController',
+      'make' => true,
+      'singleton' => true,
+    ),
+    'HubUnsplashUnsplashDownloadController' => 
+    array (
+      'name' => 'HubUnsplashUnsplashDownloadController',
+      'abstract' => 'VisualComposer\\Modules\\Hub\\Unsplash\\UnsplashDownloadController',
       'make' => true,
       'singleton' => true,
     ),
@@ -1042,6 +1084,13 @@ return array (
       'make' => true,
       'singleton' => true,
     ),
+    'FrontViewFrontVariablesController' => 
+    array (
+      'name' => 'FrontViewFrontVariablesController',
+      'abstract' => 'VisualComposer\\Modules\\FrontView\\FrontVariablesController',
+      'make' => true,
+      'singleton' => true,
+    ),
     'FrontViewFrontViewController' => 
     array (
       'name' => 'FrontViewFrontViewController',
@@ -1165,6 +1214,13 @@ return array (
     array (
       'name' => 'VendorsThemeTwentySeventeenController',
       'abstract' => 'VisualComposer\\Modules\\Vendors\\ThemeTwentySeventeenController',
+      'make' => true,
+      'singleton' => true,
+    ),
+    'VendorsWooCommerceController' => 
+    array (
+      'name' => 'VendorsWooCommerceController',
+      'abstract' => 'VisualComposer\\Modules\\Vendors\\WooCommerceController',
       'make' => true,
       'singleton' => true,
     ),

@@ -804,7 +804,7 @@ function wc_get_privacy_policy_text( $type = '' ) {
 	switch ( $type ) {
 		case 'checkout':
 			/* translators: %s privacy policy page name and link */
-			$text = get_option( 'woocommerce_checkout_privacy_policy_text', sprintf( __( ' %s.', 'woocommerce' ), '[privacy_policy]' ) );
+			$text = get_option( 'woocommerce_checkout_privacy_policy_text', sprintf( __( 'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.', 'woocommerce' ), '[privacy_policy]' ) );
 			break;
 		case 'registration':
 			/* translators: %s privacy policy page name and link */
@@ -1118,7 +1118,7 @@ if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 	function woocommerce_template_loop_product_title() {
 		global $product;
 		echo '<h2 class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . get_the_title() . '</h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo '<p style="    margin: 0px;padding-bottom: 0px;letter-spacing: 1px;font-size: 14px;padding: 10px 15px;position: relative;top: 0;margin-top: -28px;z-index: 9;" class="size-main">' . get_post_meta($product->get_id(), 'scents', true) .'</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<p style="    margin: 0px;padding-bottom: 0px;letter-spacing: 1px;font-size: 9px;padding: 7px 15px;position: relative;top: 0;margin-top: -14px;z-index: 9;height: 20px;" class="size-main">' . get_post_meta($product->get_id(), 'scents', true) .'</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 if ( ! function_exists( 'woocommerce_template_loop_category_title' ) ) {

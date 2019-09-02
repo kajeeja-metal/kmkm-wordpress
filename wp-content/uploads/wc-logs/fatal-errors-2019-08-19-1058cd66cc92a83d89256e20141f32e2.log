@@ -1,0 +1,76 @@
+2019-08-19T04:28:10+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:10+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:12+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:12+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:22+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:22+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:36+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:38+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:52+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:52+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:55+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:28:56+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:29:03+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:29:15+00:00 CRITICAL syntax error, unexpected '$showitems' (T_VARIABLE) in /var/www/html/wp-content/themes/storefront/functions.php on line 459
+
+2019-08-19T04:29:20+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:29:21+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:29:22+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:29:22+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:29:24+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:29:29+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:29:32+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:29:52+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:29:52+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:30:09+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:30:11+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:30:21+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:30:22+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:30:22+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/storefront/functions.php on line 454
+
+2019-08-19T04:37:08+00:00 CRITICAL syntax error, unexpected 'endwhile' (T_ENDWHILE) in /var/www/html/wp-content/themes/storefront/content-blog.php on line 76
+
+2019-08-19T04:37:15+00:00 CRITICAL syntax error, unexpected 'endwhile' (T_ENDWHILE) in /var/www/html/wp-content/themes/storefront/content-blog.php on line 76
+
+2019-08-19T04:42:23+00:00 CRITICAL Object of class WP_Query could not be converted to string in /var/www/html/wp-content/themes/storefront/content-blog.php on line 32
+
+2019-08-19T04:42:50+00:00 CRITICAL Object of class WP_Query could not be converted to string in /var/www/html/wp-content/themes/storefront/content-blog.php on line 32
+
+2019-08-19T07:14:11+00:00 CRITICAL syntax error, unexpected '++' (T_INC), expecting ',' or ';' in /var/www/html/wp-content/themes/storefront/content-blog.php on line 32
+
+2019-08-19T07:20:23+00:00 CRITICAL syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting end of file in /var/www/html/wp-content/themes/storefront/content-blog.php on line 58
+
+2019-08-19T07:28:18+00:00 CRITICAL syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting end of file in /var/www/html/wp-content/themes/storefront/PageWithoutSidebar.php on line 39
+
+2019-08-19T07:28:20+00:00 CRITICAL syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting end of file in /var/www/html/wp-content/themes/storefront/PageWithoutSidebar.php on line 39
+
+2019-08-19T07:28:33+00:00 CRITICAL syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting end of file in /var/www/html/wp-content/themes/storefront/PageWithoutSidebar.php on line 39
+
+2019-08-19T07:28:53+00:00 CRITICAL Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes) in /var/www/html/wp-content/plugins/revslider/includes/googlefonts.php on line 33
+

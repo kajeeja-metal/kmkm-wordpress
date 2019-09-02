@@ -141,7 +141,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</div>
 					<?php } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>" style="    float: left;"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"  style="    float: left;"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -154,7 +154,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 	</table>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
-
 <div class="cart-collaterals">
 
 	<?php

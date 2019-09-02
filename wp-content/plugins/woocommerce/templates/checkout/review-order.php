@@ -80,7 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							?>
 						</td>
 
-						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>" style="text-align: center;">
+						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 						<?php
 						echo $cart_item['quantity'];
 
@@ -101,7 +101,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</tbody>
 	
 </table>
-<table class="total" style="display: inline-block;">
+<table class="total">
 	<tbody>
 		<tr class="cart-subtotal">
 			<th><?php _e( 'Subtotal', 'woocommerce' ); ?></th>
@@ -159,5 +159,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</tbody>
 </table>
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
-
-

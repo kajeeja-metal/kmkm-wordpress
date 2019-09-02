@@ -11,6 +11,7 @@ if (!defined('ABSPATH')) {
 use VisualComposer\Framework\Container;
 use VisualComposer\Framework\Illuminate\Support\Module;
 use VisualComposer\Helpers\Access\CurrentUser;
+use VisualComposer\Helpers\Gutenberg;
 use VisualComposer\Helpers\Options;
 use VisualComposer\Helpers\Traits\EventsFilters;
 use VisualComposer\Helpers\Traits\WpFiltersActions;
@@ -33,6 +34,7 @@ class GutenbergAttributeController extends Container implements Module
     {
         $this->addEvent('vcv:system:activation:hook', 'setGutenbergEditor');
         $this->wpAddAction('init', 'initialize');
+        $this->addFilter('vcv:frontend:content vcv:frontend:content:encode', 'doGutenbergBlocks');
 
         $this->optionGroup = 'vcv-settings';
         $this->optionSlug = 'vcv-gutenberg-editor';
@@ -48,6 +50,15 @@ class GutenbergAttributeController extends Container implements Module
         );
 
         $this->addEvent('vcv:system:factory:reset', 'unsetOptions');
+    }
+
+    protected function doGutenbergBlocks($content, $payload)
+    {
+        if (function_exists('do_blocks')) {
+            $content = do_blocks($content);
+        }
+
+        return $content;
     }
 
     protected function buildPage(CurrentUser $currentUserAccess)
@@ -135,12 +146,30 @@ class GutenbergAttributeController extends Container implements Module
 
     /**
      * Disable the gutenberg
+     *
      * @param \VisualComposer\Helpers\Options $optionsHelper
+     *
+     * @throws \ReflectionException
      */
-    protected function disableGutenberg(Options $optionsHelper)
+    protected function disableGutenberg(Options $optionsHelper, Request $requestHelper)
     {
         $settings = $optionsHelper->get('settings', ['gutenberg-editor']);
-        if (!$this->isVcwbPage() && (!empty($settings) && in_array('gutenberg-editor', $settings))) {
+        $savedEditor = get_post_meta($requestHelper->input('post'), VCV_PREFIX . 'be-editor', true);
+        if ((
+                $requestHelper->input('vcv-set-editor') === 'gutenberg'
+                && !$requestHelper->exists('classic-editor')
+                && (
+                    !empty($settings) && in_array('gutenberg-editor', $settings)
+                )
+            )
+            || (!$requestHelper->exists('classic-editor') && !$this->isVcwbPage() && !empty($settings)
+                && in_array(
+                    'gutenberg-editor',
+                    $settings
+                ))
+            || ($savedEditor === 'gutenberg' && !empty($settings) && in_array('gutenberg-editor', $settings))
+            || ($requestHelper->exists('classic-editor__forget'))
+        ) {
             return;
         }
 
@@ -155,10 +184,16 @@ class GutenbergAttributeController extends Container implements Module
      * Check if page build by VCWB
      *
      * @return bool
+     * @throws \ReflectionException
      */
     protected function isVcwbPage()
     {
         $sourceId = get_the_ID();
+        if (!$sourceId) {
+            $requestHelper = vchelper('Request');
+            $sourceId = $requestHelper->input('post');
+        }
+
         $postContent = get_post_meta($sourceId, VCV_PREFIX . 'pageContent', true);
         if (!empty($postContent) && !$this->call('overrideDisableGutenberg', ['sourceId' => $sourceId])) {
             return true;
@@ -203,6 +238,7 @@ class GutenbergAttributeController extends Container implements Module
             && $requestHelper->input('post_type') === $this->postTypeSlug
         ) {
             $this->registerGutenbergAttributeType();
+            $this->wpAddAction('add_meta_boxes', 'removeUiMetaboxes', 100);
             $this->wpAddAction('admin_print_styles', 'removeAdminUi');
             // @codingStandardsIgnoreStart
             global $wp_version;
@@ -297,7 +333,7 @@ class GutenbergAttributeController extends Container implements Module
             'hierarchical' => false,
             'menu_position' => null,
             'show_in_rest' => true,
-            'supports' => array('editor')
+            'supports' => ['editor'],
         ];
         register_post_type($this->postTypeSlug, $args);
         if ($this->removeGutenberg) {
@@ -338,6 +374,14 @@ class GutenbergAttributeController extends Container implements Module
             .gutenberg .gutenberg__editor .edit-post-layout .editor-post-publish-panel, html .block-editor-page .edit-post-layout .editor-post-publish-panel, html .block-editor-page .edit-post-header__settings {
                 display: none;
             }
+
+            .components-panel__header.edit-post-sidebar-header.edit-post-sidebar__panel-tabs li:first-child {
+                display: none;
+            }
+
+            .edit-post-sidebar .components-panel > :not(.edit-post-settings-sidebar__panel-block) {
+                display: none;
+            }
         </style>
         <?php
     }
@@ -371,6 +415,20 @@ class GutenbergAttributeController extends Container implements Module
         return false;
     }
 
+    protected function removeUiMetaboxes()
+    {
+        // @codingStandardsIgnoreStart
+        global $wp_meta_boxes;
+        $wp_meta_boxes = [
+            'vcv_gutenberg_attr' => [
+                'normal' => [
+                    'core' => [],
+                ],
+            ],
+        ];
+        // @codingStandardsIgnoreEnd
+    }
+
     protected function unsetOptions(Options $optionsHelper)
     {
         $optionsHelper->delete('settings');
@@ -382,21 +440,14 @@ class GutenbergAttributeController extends Container implements Module
      * @param \VisualComposer\Helpers\Options $optionsHelper
      * @param \VisualComposer\Helpers\Request $requestHelper
      */
-    protected function outputGutenberg(Options $optionsHelper, Request $requestHelper)
+    protected function outputGutenberg(Options $optionsHelper, Request $requestHelper, Gutenberg $gutenbergHelper)
     {
         if ($this->printed) {
             return;
         }
 
-        $settings = $optionsHelper->get('settings', ['gutenberg-editor']);
         $available = false;
-        if ((function_exists('the_gutenberg_project') || function_exists('use_block_editor_for_post'))
-            && (!empty($settings) && in_array('gutenberg-editor', $settings))
-            && (!function_exists('classic_editor_init_actions'))
-            || (function_exists('classic_editor_init_actions')
-                && get_option('classic-editor-replace') === 'no-replace'
-                && !$requestHelper->exists('classic-editor'))
-        ) {
+        if ($gutenbergHelper->isGutenbergAvailable()) {
             $available = true;
         }
         evcview(

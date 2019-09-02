@@ -13,10 +13,8 @@
 				<span class="dashicons dashicons-admin-generic dropdown_menu"></span>			
 			</div>
 			<ul class="dropdown-content">
-				<li><a href="javaScript:void(0);" class="add_custom_provider" id="add-custom">Add Custom Provider</a></li>
-				<?php if($wc_ast_api_key){ ?>
-				<li><a href="javaScript:void(0);" class="sync_providers">Sync Provider List</a></li>
-				<?php } ?>
+				<li><a href="javaScript:void(0);" class="add_custom_provider" id="add-custom">Add Custom Provider</a></li>				
+				<li><a href="javaScript:void(0);" class="sync_providers">Sync Provider List</a></li>				
 				<li>Reset <a href="javaScript:void(0);" class="reset_active">active</a> | <a href="javaScript:void(0);" class="reset_inactive">inactive</a></li>
 			</ul>
 			<div class="search_section">

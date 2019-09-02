@@ -86,8 +86,8 @@ class Localizations extends Container implements Helper
             ),
             'removeTemplateWarning' => __('Do you want to remove this template?', 'vcwb'),
             'templateRemoveFailed' => __('Failed to remove template', 'vcwb'),
-            'blankPageHeadingPart1' => __('Select Blank Page', 'vcwb'),
-            'blankPageHeadingPart2' => __('or Start With a Template', 'vcwb'),
+            'blankPageHeadingPart1' => __('Name Your Page, Select', 'vcwb'),
+            'blankPageHeadingPart2' => __('Layout and Start Building', 'vcwb'),
             'blankPageTitleHeadingPart1' => __('Name Your ', 'vcwb'),
             'blankPageTitleHeadingPart2' => __('and Start Building', 'vcwb'),
             'blankPageHelperText' => __(
@@ -95,6 +95,7 @@ class Localizations extends Container implements Helper
                 'Start by adding an element to your layout or select one of the pre-defined templates.',
                 'vcwb'
             ),
+            'blankPageInputPlaceholderText' => __('Page title', 'vcwb'),
             'addTemplateHelperText' => __(
             // @codingStandardsIgnoreLine
                 'Didn\'t find a perfect template? Get a Premium license to download it from Visual Composer Hub.',
@@ -267,7 +268,7 @@ class Localizations extends Container implements Helper
                 '</a>'
             ),
             'selectHFS' => __(
-                'Select {name} template',
+                'Default',
                 'vcwb'
             ),
             'elementDownloadRequiresUpdate' => __(
@@ -421,6 +422,90 @@ class Localizations extends Container implements Helper
             ),
             'shortcodeElementAttrDescription' => __(
                 'Copy your shortcode here with all the correct parameters. The shortcode must be installed on your WordPress site via plugin or theme.',
+                'vcwb'
+            ),
+            'activatePremium' => __(
+                'Activate Premium',
+                'vcwb'
+            ),
+            'searchPhotosOnUnsplash' => __(
+                'Search free high-resolution photos on Unsplash',
+                'vcwb'
+            ),
+            'getPhotosWithPremiumText' => __(
+                'Download and Add Free Beautiful Photos to Your Site With Visual Composer Premium',
+                'vcwb'
+            ),
+            'getPhotosText' => __(
+                'Download and Add Free Beautiful Photos to Your Site',
+                'vcwb'
+            ),
+            'noAccessCheckLicence' => __(
+                'No access, please check your license!',
+                'vcwb'
+            ),
+            'noConnectionToUnsplash' => __(
+                'Could not connect to Unsplash Server!',
+                'vcwb'
+            ),
+            'imageDownloadedToMediaLibrary' => __(
+                'Image has been downloaded to your Media Library.',
+                'vcwb'
+            ),
+            'coundNotParseData' => __(
+                'Could not parse data from server!',
+                'vcwb'
+            ),
+            'small' => __(
+                'Small',
+                'vcwb'
+            ),
+            'medium' => __(
+                'Medium',
+                'vcwb'
+            ),
+            'large' => __(
+                'Large',
+                'vcwb'
+            ),
+            'images' => __(
+                'images',
+                'vcwb'
+            ),
+            'downloadImageFromUnsplash' => __(
+                'Download images from Unsplash to your Media Library',
+                'vcwb'
+            ),
+            'permalink' => __(
+                'Permalink',
+                'vcwb'
+            ),
+            'spreadTheWordText' => __(
+                'Enjoy Visual Composer Website Builder? Let your friends know about it - spread the word.',
+                'vcwb'
+            ),
+            'dynamicFieldsOpenText' => __(
+                'Insert dynamic content',
+                'vcwb'
+            ),
+            'dynamicFieldsCloseText' => __(
+                'Remove dynamic content',
+                'vcwb'
+            ),
+            'dynamicAutocompleteDescription' => __(
+                'Select page, post, or custom post type.',
+                'vcwb'
+            ),
+            'dynamicAutocompleteToggleDescription' => __(
+                'By default, dynamic content is taken from the current post.',
+                'vcwb'
+            ),
+            'dynamicAutocompleteToggleLabel' => __(
+                'Set custom post source',
+                'vcwb'
+            ),
+            'dynamicTypeDescription' => __(
+                'Select data source for dynamic content.',
                 'vcwb'
             ),
         ];

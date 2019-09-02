@@ -303,6 +303,11 @@ input.tab_input_1:checked + label{
 .ast_admin_content .form-table th.titledesc {
 	width: 50%;
 }
+.woocommerce .ast_admin_content table.form-table th label .woocommerce-help-tip{
+	margin: -4px 0 0 5px;
+    position: relative;
+	font-size: 21px;
+}
 .woocommerce.zorem_admin_layout table.form-table th.th_80 {
 	width: 80%;
 }
@@ -762,6 +767,15 @@ span.email_status_span i.enable {
 	margin-top: 4px;
 	display: inline-block;
 }
+.wcast-shipment-status-icon .icon-invalid_user_key:before{	 
+	content: ' ';
+    background-image: url(icons/invalid-user-key-v4.png);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;	
+}
 .wcast-shipment-status-icon .icon-delivered:before{	 
 	content: ' ';
     background-image: url(icons/delivered-v4.png);
@@ -918,6 +932,15 @@ span.email_status_span i.enable {
 .ast-shipment-status .icon-pending_trackship:before{
 	content: ' ';
     background-image: url(icons/pending-trackship-v4.png);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ast-shipment-status .icon-invalid_user_key:before{
+	content: ' ';
+    background-image: url(icons/invalid-user-key-v4.png);
     width: 20px;
     height: 20px;
     background-size: cover;

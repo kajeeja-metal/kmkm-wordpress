@@ -1,0 +1,34 @@
+2019-08-22T03:50:44+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:50:47+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:50:48+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:50:51+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:50:54+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:50:58+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:50:58+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:51:02+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:51:02+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:51:12+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:51:17+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:51:20+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:51:27+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T03:51:27+00:00 CRITICAL Cannot redeclare dequeue_woocommerce_cart_fragments() (previously declared in /var/www/html/wp-content/themes/storefront/functions.php:459) in /var/www/html/wp-content/themes/storefront/functions.php on line 465
+
+2019-08-22T04:01:14+00:00 CRITICAL Out of memory (allocated 69206016) (tried to allocate 32768 bytes) in /var/www/html/wp-content/plugins/woocommerce/includes/api/v2/class-wc-rest-system-status-tools-v2-controller.php on line 525
+
+2019-08-22T04:23:48+00:00 CRITICAL Out of memory (allocated 60817408) (tried to allocate 131072 bytes) in /var/www/html/wp-content/plugins/woocommerce/i18n/countries.php on line 218
+
+2019-08-22T04:24:11+00:00 CRITICAL Out of memory (allocated 69206016) (tried to allocate 131072 bytes) in /var/www/html/wp-content/plugins/jetpack/json-endpoints/class.wpcom-json-api-update-post-v1-1-endpoint.php on line 649
+

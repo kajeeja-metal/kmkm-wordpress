@@ -8,7 +8,7 @@
 
   Description: Extends the JSON API for RESTful user registration, authentication, password reset, Facebook Login, user meta and BuddyPress Profile related functions. A Pro version is also available.
 
-  Version: 3.0.0
+  Version: 3.1.4
 
   Author: Ali Qureshi
 
@@ -18,7 +18,7 @@
 
  */
 
-define('JAU_VERSION', '3.0.0');
+define('JAU_VERSION', '3.1.4');
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -34,6 +34,15 @@ if (!is_plugin_active('json-api/json-api.php')) {
 
 }
 
+function jaup_action_links( $links ) {
+	
+	$links[] = '<a href="'. esc_url( get_admin_url(null, '/options-general.php?page=json-api') ) .'">JSON API</a>';
+  
+  $links[] = '<a href="https://www.parorrey.com/solutions/json-api-user-plus/" target="_blank">' . __( 'Upgrade to User Plus', 'json-api-user' ) . '</a>';
+
+ return $links;
+}
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'jaup_action_links', 10, 1 );
 
 
 add_filter('json_api_controllers', 'pimJsonApiController');
@@ -50,7 +59,7 @@ function pim_draw_notice_json_api() {
 
     echo '<div id="message" class="error fade"><p style="line-height: 150%">';
 
-    _e('<strong>JSON API User</strong></a> requires the JSON API plugin to be activated. Please <a href="wordpress.org/plugins/json-api/‎">install / activate JSON API</a> first.', 'json-api-user');
+    _e('<strong>JSON API User</strong></a> requires the JSON API plugin to be activated. Please <a href="wordpress.org/plugins/json-api/‎">install / activate JSON API</a> first or from <a href="https://github.com/PI-Media/json-api">GitHub repository here</a>. You can also download a pro verison <a href="http://www.parorrey.com/solutions/json-api-user-plus/">JSON API User Plus</a>.', 'json-api-user');
 
     echo '</p></div>';
 

@@ -10,7 +10,6 @@ if (!defined('ABSPATH')) {
 
 use VisualComposer\Framework\Container;
 use VisualComposer\Framework\Illuminate\Support\Module;
-use VisualComposer\Helpers\File;
 use VisualComposer\Helpers\Frontend;
 use VisualComposer\Helpers\PostType;
 use VisualComposer\Helpers\Request;
@@ -49,7 +48,12 @@ class PageTemplatesController extends Container implements Module
                 }
             }
             // @codingStandardsIgnoreLine
-            $currentPostTemplate = $post->page_template;
+            if ($post->page_template === 'default' && isset($output['value'])) {
+                $currentPostTemplate = $output['value'];
+            } else {
+                // @codingStandardsIgnoreLine
+                $currentPostTemplate = $post->page_template;
+            }
             $customTemplate = get_post_meta($post->ID, '_vcv-page-template', true);
             $customTemplateType = get_post_meta($post->ID, '_vcv-page-template-type', true);
             $templateStretch = get_post_meta($post->ID, '_vcv-page-template-stretch', true);
@@ -86,7 +90,7 @@ class PageTemplatesController extends Container implements Module
                     )) {
                     $output = [
                         'type' => 'vc',
-                        'value' => !empty($currentPostTemplate) ? $currentPostTemplate : 'blank',
+                        'value' => 'blank',
                     ];
                 } else {
                     $output = [
@@ -100,7 +104,7 @@ class PageTemplatesController extends Container implements Module
         return $output;
     }
 
-    protected function viewPageTemplate($originalTemplate, Request $requestHelper, File $fileHelper)
+    protected function viewPageTemplate($originalTemplate, Request $requestHelper)
     {
         if ($requestHelper->input('vcv-template') === 'default') {
             return $originalTemplate;

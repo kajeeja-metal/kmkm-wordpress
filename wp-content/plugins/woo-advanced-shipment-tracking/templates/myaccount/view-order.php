@@ -94,7 +94,7 @@ if ( $tracking_items ) :
 						$shippment_provider = $wpdb->get_results( "SELECT * FROM $woo_shippment_table_name WHERE provider_name='".$tracking_item['formatted_tracking_provider']."'" );
 						$custom_thumb_id = $shippment_provider['0']->custom_thumb_id;
 						//echo $custom_thumb_id;
-						if($custom_thumb_id == 0){
+						if($custom_thumb_id == 0 && $shippment_provider['0']->shipping_default == 1){
 							$src = wc_advanced_shipment_tracking()->plugin_dir_url()."assets/shipment-provider-img/".sanitize_title($tracking_item['formatted_tracking_provider']).".png";
 						} else{
 							$image_attributes = wp_get_attachment_image_src( $custom_thumb_id , array('60','60') );

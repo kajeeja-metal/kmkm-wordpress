@@ -12,20 +12,22 @@ Add shipment tracking information to your WooCommerce orders and provide your cu
 
 == Description ==
 
-Add shipment tracking information to your WooCommerce orders and provide your customers with an easy way to track their orders. This plugin provides a list of 100+ Shipping Providers and you can also add your own custom providers.
+Add shipment tracking information to your WooCommerce orders and provide your customers with an easy way to track their orders.
 
-Shop managers can add shipment provider, tracking number and date to orders, the customer will receive tracking info and track link in the orders email and in Customer accounts.
+This plugin provide Shop managers easy ways to add shipment tracking information to order, once the order is Completed (Shipped) the customer will receive the tracking details and a link to tracker their order in the order emails and on my account section.
 
-Use WooCommerce Advanced Shipment Tracking to streamline your order management, add shipment tracking information to orders, auto track orders ([TracksShip](https://trackship.info/)) and provide superior post-purchase experience that your customers will love and appreciate!
+AST provide a list of 100+ shipping providers with pre-set tracking link and image, you can add your own custom provider, customize the tracking display, created delivered order status, customize the emails and more.
 
 == Features ==
 
-* Add shipment tracking info to orders – Shipping provider, tracking number and ship date.
+* Add shipment tracking info to orders – shipping provider, tracking number and shipping date
 * Add multiple tracking numbers to orders
-* List of more then 100 shipping providers (carriers)
+* Add tracking info to orders from the orders admin (inline)
+* List of 100+ default shipping providers (carriers)
 * Select shipping providers to use when adding tracking info to orders
 * Set the default provider when adding tracking info to orders
 * Add custom shipping providers
+* Sync the Providers list with TrackShip
 * Display Shipment tracking info and tracking link on user accounts
 * Display Shipment tracking info and tracking link on customer emails
 * Customize and preview the Tracking info display on customer emails using email designer.
@@ -39,7 +41,17 @@ Use WooCommerce Advanced Shipment Tracking to streamline your order management, 
 
 == TrackShip Integration== 
 
-Auto-track all your WooCommerce shipments with [TracksShip](https://trackship.info/). Get real-time shipment updates and automate your order management flow to increase your customers satisfaction and further engage customers.
+[TracksShip](https://trackship.info/) is a premium shipment tracking API flatform that fully integrates with WooCommerce with the Advanced Shipment Tracking. TrackShip automates the order management workflows, reduces customer inquiries, reduces time spent on customer service, and improves the post-purchase experience and satisfaction of your customers.
+
+You must have account [TracksShip](https://trackship.info/) and connect your store in order to activate these advanced features:
+
+* Automatically track your shipments with 100+ shipping providers.
+* Display Shipment Status and latest shipment status, update date and est. delivery date on WooCommerce orders admin.
+* Option to manually get shipment tracking updates for orders.
+* Automatically change order status to Delivered once the shipment is delivered to your customers.
+* Option to filter orders with invalid tracking numbers or by shipment status event in orders admin
+* Send personalized emails to notify the customer when their shipments are In Transit, Out For Delivery, Delivered or have an exception.
+* Direct customers to a Tracking page on your store.
 
 == Localization == 
 
@@ -64,7 +76,7 @@ Hebrew, Hindi, Italian, Norwegian (Bokmål), Russian, Swedish, Turkish, Bulgaria
 * [WooCommerce PDF Invoices & Packing Slips plugin](https://wordpress.org/plugins/woocommerce-pdf-invoices-packing-slips).
 
 
-https://www.youtube.com/watch?v=sQc2kVnUL-o&t=2s
+https://www.youtube.com/watch?v=Mw7laecPtyw
 
 == Frequently Asked Questions == 
 
@@ -105,6 +117,37 @@ http://a32694-tmp.s415.upress.link/wp-json/wc/v1/orders/<order-id>/shipment-trac
 3. Select default shipping provider from setting page and add tracking number in order page.
 
 == Changelog ==
+
+= 2.4.2 =
+* Fixed issue in tracking page for unknown status
+* Added PostNL International 3S,GLS Europe and Yun Express Tracking  provider
+* In tracking url added two more parameter - %country_code% and %postal_code%
+* Updated code for add tracking item programatically
+* Updated tracking page endpoint
+* Removed Tracking URL validation for add/edit custom shiping provider and if not added tracking url than not display track button
+
+= 2.4.1 =
+* Fixed Hermes World shipping provider issue
+* Fixed warnings Undefined index: Hermes Germany
+* Updated completed order status to shipped on "On which customer order status email to include tracking info?" is "Rename the “Completed” Order status to “Shipped”" enabled
+
+= 2.4 =
+* Fixed warnings in tracking page
+* Fixed error from customizer if WooCommerce uninstalled
+* Fixed date format issue in Bulk Upload 
+* Addes Sync Providers List functionality for all users
+* Added Hermes World Shipping provider
+* Added option for "mark as shipped" will be selected by default when adding tracking info to orders
+* Added Shipment Status filter in order list panel
+* Updated Delivered orderemail customizer layout and Google analytics tracking
+* Updated tracking page design
+
+= 2.3.9 =
+* Added "DHL Freight" provider
+* Added functionality when check connection store status if api key is not available in plugin than add it
+
+= 2.3.8 =
+* Fixed - Trackship connection issue when trackship setting saved
 
 = 2.3.7 =
 * Removed option auto change of delivered orders to completed when deactivating

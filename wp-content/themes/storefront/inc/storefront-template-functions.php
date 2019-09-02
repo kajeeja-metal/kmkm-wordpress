@@ -197,7 +197,7 @@ if ( ! function_exists( 'storefront_site_title_or_logo' ) ) {
 	function storefront_site_title_or_logo( $echo = true ) {
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 			$logo = get_custom_logo();
-			$html = is_home() ? '<h1 class="logo">' . $logo . '</h1>' : $logo;
+			$html = is_home() ? '' . $logo . '' : $logo;
 		} else {
 			$tag = is_home() ? 'h1' : 'div';
 

@@ -13,7 +13,7 @@ get_header(); ?>
 		padding: 0 !important;
 	}
 </style>
-	<div id="primary">
+	<div id="primary" class="page-template-PageWithoutSidebar">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -39,42 +39,45 @@ get_header(); ?>
 						<div class="group_category_blog box-shadow">
 							<div class="list_category_blog">
 								<div class="box-nav">
-									<a href="http://localhost/kmkm-wordpress/category/all-scents" class=" hover_blog">Fragrance Oil Single</a>
+									<a href="https://www.karmakametonline.com/category/fragrance-oil-single" class=" hover_blog">Fragrance Oil Single</a>
 									<div class="list_category_blog_dd hover_blog">
-										<div><a href="http://localhost/kmkm-wordpress/category/flower">Flower </a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/craftmanship">Herb and Spice</a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/decoration">Wood</a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/karmakamet-tips">Fruit</a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/new-and-events">Etcetara</a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-single/flower">Flower</a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-single/herb-and-spice">Herb and Spice</a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-single/wood">Wood</a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-single/fruit">Fruit</a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-single/etcetara">Etcetara</a></div>
 									</div>
 								</div>
 								<div class="box-nav">
-									<a href="http://localhost/kmkm-wordpress/category/craftmanship" class="hover_blog">Fragrance Oil Blend</a>
+									<a href="https://www.karmakametonline.com/category/fragrance-oil-blend" class="hover_blog">Fragrance Oil Blend</a>
 									<div class="list_category_blog_dd hover_blog">
-										<div><a href="http://localhost/kmkm-wordpress/category/all-scents">Little India Series</a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/craftmanship">Patir en voyage Series</a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/decoration">Potpourri </a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/karmakamet-tips">Special Edition </a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/new-and-events">Heritage Bazaar</a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-blend/little-india-series">Little India Series</a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-blend/patir-en-voyage-series">Patir en voyage Series</a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-blend/potpourri">Potpourri </a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-blend/special-edition">Special Edition </a></div>
+										<div><a href="https://www.karmakametonline.com/category/fragrance-oil-blend/heritage-bazaar">Heritage Bazaar</a></div>
 									</div>
 								</div>
 								<div class="box-nav">
-									<a href="http://localhost/kmkm-wordpress/category/decoration" class="hover_blog">Essential Oil Single</a>
+									<a href="https://www.karmakametonline.com/category/essential-oil-single" class="hover_blog">Essential Oil Single</a>
 									<div class="list_category_blog_dd hover_blog">
-										<div><a href="http://localhost/kmkm-wordpress/category/all-scents">Flower </a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/craftmanship">Herb and Spice</a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/decoration">Wood</a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/karmakamet-tips">Fruit</a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/new-and-events">Etcetara</a></div>
+										<div><a href="https://www.karmakametonline.com/category/flower-essential-oil-single">Flower </a></div>
+										<div><a href="https://www.karmakametonline.com/category/herb-and-spice-essential-oil-single">Herb and Spice</a></div>
+										<div><a href="https://www.karmakametonline.com/category/wood-essential-oil-single">Wood</a></div>
+										<div><a href="https://www.karmakametonline.com/category/fruit-essential-oil-single">Fruit</a></div>
+										<div><a href="https://www.karmakametonline.com/category/etcetara-essential-oil-single">Etcetara</a></div>
 									</div>
 								</div>
 								<div class="box-nav">
-									<a href="http://localhost/kmkm-wordpress/category/karmakamet-tips" class="hover_blog">Essential Oil Blend</a>
+									<a href="https://www.karmakametonline.com/category/essential-oil-blend	" class="hover_blog">Essential Oil Blend</a>
 									<div class="list_category_blog_dd hover_blog">
-										<div><a href="http://localhost/kmkm-wordpress/category/all-scents">Refreshing </a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/craftmanship">Relaxing</a></div>
-										<div><a href="http://localhost/kmkm-wordpress/category/decoration">Romantic</a></div>
+										<div><a href="https://www.karmakametonline.com/category/essential-oil-blend/refreshing">Refreshing </a></div>
+										<div><a href="https://www.karmakametonline.com/category/essential-oil-blend/relaxing">Relaxing</a></div>
+										<div><a href="https://www.karmakametonline.com/category/essential-oil-blend/romantic">Romantic</a></div>
 									</div>
+								</div>
+								<div class="box-nav">
+										<a href="https://www.karmakametonline.com/category/all-scents"  class="">All Scents</a>
 								</div>
 							</div>
 						</div>
@@ -84,13 +87,11 @@ get_header(); ?>
 					?>
 					<div class="group_category_blog">
 						<div class="list_category_blog">
-							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/all-editorial" class="hover_blog">ALL EDITORIAL</a></div>
-							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/craftmanship" class="hover_blog">CRAFTMANSHIP</a></div>
-							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/decoration" class="hover_blog">DECORATION</a></div>
-							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/karmakamet-tips" class="hover_blog">KARMAKAMET TIPS</a></div>
-							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/new-and-events" class="hover_blog">NEW AND EVENTS</a></div>
-							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/our-product" class="hover_blog">OUR PRODUCT</a></div>
-							<div class="box-nav"><a href="http://localhost/kmkm-wordpress/category/scent-and-space" class="hover_blog">SCENT AND SPACE</a></div>
+							<div class="box-nav"><a href="https://www.karmakametonline.com/category/all-editorial" class="hover_blog">ALL EDITORIAL</a></div>
+							<div class="box-nav"><a href="https://www.karmakametonline.com/category/craftmanship" class="hover_blog">CRAFTMANSHIP</a></div>
+							<div class="box-nav"><a href="https://www.karmakametonline.com/category/good-scent-good-life" class="hover_blog">GOOD SCENT, GOOD LIFE.</a></div>
+							<div class="box-nav"><a href="https://www.karmakametonline.com/category/karmakamet-tips" class="hover_blog">KARMAKAMET TIPS</a></div>
+							<div class="box-nav"><a href="https://www.karmakametonline.com/category/secret-of-scent" class="hover_blog">SECRET OF SCENT</a></div>
 						</div>
 					</div>
 					<?php		

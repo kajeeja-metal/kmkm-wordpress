@@ -39,6 +39,8 @@ trait Fields
                 'callback' => function ($data) {
                     return $data;
                 },
+                'parent' => '',
+                'vcv-args' => '',
             ],
             $sectionData
         );
@@ -49,6 +51,19 @@ trait Fields
             $sectionData['callback'],
             $sectionData['page']
         );
+
+        if (isset($sectionData['vcv-args']) && !empty($sectionData['vcv-args'])) {
+            // @codingStandardsIgnoreStart
+            global $wp_settings_sections;
+
+            if (isset($sectionData['vcv-args']['parent'])) {
+                $sectionData['vcv-args']['parent'] = $sectionData['group'] . '_' . $sectionData['vcv-args']['parent'];
+            }
+
+            $wp_settings_sections[ $sectionData['group'] ][ $sectionData['group'] . '_'
+            . $sectionData['slug'] ]['vcv-args'] = $sectionData['vcv-args'];
+            // @codingStandardsIgnoreEnd
+        }
 
         return $this;
     }

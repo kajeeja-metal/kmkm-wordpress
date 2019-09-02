@@ -57,31 +57,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 	$border_color = get_option('wc_ast_select_border_color');	 
 	?>
 	<style>
-	<?php /*if($success_color){ ?>
-	.bg-success{
-		background-color:<?php echo $success_color; ?> !important;
-	}
-	.tracker-progress-bar-with-dots .success .dot{
-		border-color: <?php echo $success_color; ?>;
-	}
-	.text-success{
-		color: <?php echo $success_color; ?> !important;
-	}
-	.progress-bar.bg-success:before{
-		background-color: <?php echo $success_color; ?>;
-	}
-	<?php } ?>
-	<?php if($warning_color){ ?>
-	.bg-warning{
-		background-color:<?php echo $warning_color; ?> !important;
-	}
-	.tracker-progress-bar-with-dots .warning .dot{
-		border-color: <?php echo $warning_color; ?>;
-	}
-	.text-warning{
-		color: <?php echo $warning_color; ?> !important;
-	}
-	<?php } */?>
+	
 	<?php if($primary_color){ ?>
 	.bg-secondary{
 		background-color:<?php echo $primary_color; ?> !important;
@@ -119,17 +95,15 @@ class WC_Advanced_Shipment_Tracking_Front {
 		if($order_key != $_GET['order_key']){
 			return;
 		}
-		//$order_key = $_GET['key'];
+		
 		if(!get_post_status( $order_id )){
 			return;
 		}		
 		if ( version_compare( WC_VERSION, '3.0', '<' ) ) {
-		$tracking_items = get_post_meta( $order_id, '_wc_shipment_tracking_items', true );
-			//$get_order_key = get_post_meta( $order_id, 'order_key', true );			
+		$tracking_items = get_post_meta( $order_id, '_wc_shipment_tracking_items', true );			
 		} else {
 			$order          = new WC_Order( $order_id );
-			$tracking_items = $order->get_meta( '_wc_shipment_tracking_items', true );
-			//$get_order_key = $order->order_key;
+			$tracking_items = $order->get_meta( '_wc_shipment_tracking_items', true );			
 		}
 		if(!$tracking_items){
 			unset($order_id);
@@ -226,23 +200,30 @@ class WC_Advanced_Shipment_Tracking_Front {
 		$num = 1;
 		$total_trackings = sizeof($tracking_items);		
 		foreach($tracking_items as $item){
+		
 		$tracking_number = $item['tracking_number'];
 		$trackship_url = 'https://trackship.info';
-		$url = $trackship_url.'/wp-json/wc/v1/get_tracking_info_by_number';		
+		
+		/*** Update in 2.4.1 
+		* Change URL
+		* Add User Key
+		***/
+		$url = $trackship_url.'/wp-json/tracking/get_tracking_info';		
 		$args['body'] = array(
-			'tracking_number' => $tracking_number
+			'tracking_number' => $tracking_number,
+			'order_id' => $order_id,
+			'domain' => get_home_url(),
+			'user_key' => $wc_ast_api_key,
 		);	
 		$response = wp_remote_post( $url, $args );
 		$data = $response['body'];				
 		$decoded_data = json_decode($data);
-		//echo '<pre>';print_r($decoded_data);echo '</pre>';
+		
 		if(!empty($decoded_data)){
 			$tracker = $decoded_data[0];
 		}
 		
-		$tracking_detail_org = '';
-		
-		
+		$tracking_detail_org = '';		
 		
 		if(isset($tracker->tracking_detail) && $tracker->tracking_detail != 'null'){			
 			$tracking_detail = array_reverse(json_decode($tracker->tracking_detail));
@@ -254,12 +235,14 @@ class WC_Advanced_Shipment_Tracking_Front {
 			$trackind_detail_by_status_rev = array_reverse($trackind_detail_by_status);	
 		}		
 		
-		$unixTimestamp = strtotime($tracker->est_delivery_date);		
-		//Get the day of the week using PHP's date function.
-		$day = date("l", $unixTimestamp);		
-		if(!empty($tracking_detail_org)){
-		//echo '<pre>';print_r($tracking_detail_org);echo '</pre>';	
 		
+		if(!empty($decoded_data)){	
+		
+		if($tracker->est_delivery_date){	
+			$unixTimestamp = strtotime($tracker->est_delivery_date);				
+			$day = date("l", $unixTimestamp);
+		}
+				
 		if($tracker->ep_status == "unknown"){ $state0_class = 'unknown'; } else{ $state0_class = 'pre_transit'; }		
 		if($tracker->ep_status == "return_to_sender" ){ 
 			$state2_class = 'return_to_sender'; 
@@ -280,7 +263,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<div class="tracking-header">
 					<div class="col-md col-md-6">
 						<?php _e( 'Order: ', 'woo-advanced-shipment-tracking' ); ?><span class="tracking-number">#<?php echo $order_id; ?></span><br/>
-						<?php _e( 'Tracking: ', 'woo-advanced-shipment-tracking' ); ?><span class="tracking-number">#<?php echo $tracker->tracking_code; ?></span>
+						<?php echo $tracker->carrier; ?>: <span class="tracking-number"><?php echo $tracker->tracking_code; ?></span>
 						<h1 class="shipment_status_heading <?php if($tracker->ep_status == "delivered") { echo 'text-success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure") { echo 'text-success'; } else{ echo 'text-secondary'; } ?>"><?php echo apply_filters("trackship_status_filter",$tracker->ep_status);?></h1>
 					</div>
 					<div class="col-md col-md-6">												
@@ -301,11 +284,11 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<div class="status-section desktop-section">
 					<div class="tracker-progress-bar tracker-progress-bar-with-dots">
 						<div class="progress">
-							<div class="progress-bar <?php if($tracker->ep_status == "delivered") { echo 'bg-success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'bg-warning'; } else{ echo 'bg-secondary';} ?>" style="<?php /*if($tracker->ep_status == "in_transit") { echo 'width:33%;'; } elseif($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'width:66%';} elseif($tracker->ep_status == "delivered") { echo 'width:100%'; }*/ ?>"></div>
+							<div class="progress-bar"></div>
 						</div>
 						<div style="background-color: transparent;" class="<?php if($tracker->ep_status == "delivered") { echo 'success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure" || $tracker->ep_status == "unknown") { echo 'warning'; } else{ echo 'secondary';} ?>">
-						<span class="dot state-0 <?php echo $state0_class?> <?php if($tracker->ep_status =="pre_transit"){ echo ' current-state'; } else{ echo 'past-state';} ?>"></span>
-						<span class="state-label <?php if($tracker->ep_status =="pre_transit"){ echo 'current-state'; } else{ echo 'past-state';} ?>">
+						<span class="dot state-0 <?php echo $state0_class?> <?php if($tracker->ep_status =="pre_transit" || $tracker->ep_status =="unknown"){ echo ' current-state'; } else{ echo 'past-state';} ?>"></span>
+						<span class="state-label <?php if($tracker->ep_status =="pre_transit" || $tracker->ep_status =="unknown"){ echo 'current-state'; } else{ echo 'past-state';} ?>">
 						<?php 
 							if($tracker->ep_status == "unknown"){
 								echo apply_filters("trackship_status_filter",'unknown');								
@@ -315,13 +298,13 @@ class WC_Advanced_Shipment_Tracking_Front {
 						?>						
 						</span>
 						             
-						<span class="dot state-1 in_transit <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>"></span>
-						<span class="state-label state-1 <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
+						<span class="dot state-1 in_transit <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown"){ echo 'future-state'; } else{ echo 'past-state'; } ?>"></span>
+						<span class="state-label state-1 <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
 						<?php echo apply_filters("trackship_status_filter",'in_transit'); ?>						
 						</span>
 											
-						<span class="dot state-2 <?php echo $state2_class; if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo ' current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit"){ echo ' future-state'; } else{ echo ' past-state'; } ?>"></span>
-						<span class="state-label state-2 <?php if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
+						<span class="dot state-2 <?php echo $state2_class; if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo ' current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit"){ echo ' future-state'; } else{ echo ' past-state'; } ?>"></span>
+						<span class="state-label state-2 <?php if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
 						<?php
 							if($tracker->ep_status == "return_to_sender"){
 								echo apply_filters("trackship_status_filter",'return_to_sender');								
@@ -333,8 +316,8 @@ class WC_Advanced_Shipment_Tracking_Front {
 						?>						
 						</span>
 												
-						<span class="dot state-3 delivered <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>"></span>
-						<span class="state-label state-3 <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>">
+						<span class="dot state-3 delivered <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>"></span>
+						<span class="state-label state-3 <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>">
 						<?php echo apply_filters("trackship_status_filter",'delivered'); ?>
 						</span>
 						</div>
@@ -344,13 +327,13 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<div class="status-section mobile-section">
 					<div class="tracker-progress-bar tracker-progress-bar-with-dots">
 						<div class="progress">
-							<div class="progress-bar <?php if($tracker->ep_status == "delivered") { echo 'bg-success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'bg-warning'; } else{ echo 'bg-secondary';} ?>" style="<?php /*if($tracker->ep_status == "in_transit") { echo 'height:33%;'; } elseif($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'height:66%';} elseif($tracker->ep_status == "delivered") { echo 'height:100%'; }*/ ?>"></div>
+							<div class="progress-bar <?php if($tracker->ep_status == "delivered") { echo 'bg-success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'bg-warning'; } else{ echo 'bg-secondary';} ?>"></div>
 						</div>
 						<div style="background-color: transparent;" class="<?php if($tracker->ep_status == "delivered") { echo 'success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure" || $tracker->ep_status == "unknown") { echo 'warning'; } else{ echo 'secondary';} ?>">
 						
 						<div class="dot-div">							
-							<span class="dot state-0 <?php echo $state0_class?> <?php if($tracker->ep_status =="pre_transit"){ echo ' current-state'; } else{ echo 'past-state';} ?>"></span>
-							<span class="state-label <?php if($tracker->ep_status =="pre_transit"){ echo 'current-state'; } else{ echo 'past-state';} ?>">
+							<span class="dot state-0 <?php echo $state0_class?> <?php if($tracker->ep_status =="pre_transit" || $tracker->ep_status =="unknown"){ echo ' current-state'; } else{ echo 'past-state';} ?>"></span>
+							<span class="state-label <?php if($tracker->ep_status =="pre_transit" || $tracker->ep_status =="unknown"){ echo 'current-state'; } else{ echo 'past-state';} ?>">
 							<?php 
 								if($tracker->ep_status == "unknown"){
 									echo apply_filters("trackship_status_filter",'unknown');								
@@ -362,15 +345,15 @@ class WC_Advanced_Shipment_Tracking_Front {
 						</div>
 
 						<div class="dot-div">	
-							<span class="dot state-1 in_transit <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>"></span>
-							<span class="state-label state-1 <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
+							<span class="dot state-1 in_transit <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown"){ echo 'future-state'; } else{ echo 'past-state'; } ?>"></span>
+							<span class="state-label state-1 <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
 								<?php echo apply_filters("trackship_status_filter",'in_transit'); ?>						
 							</span>
 						</div>
 						
 						<div class="dot-div">
-							<span class="dot state-2 <?php echo $state2_class; if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo ' current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit"){ echo ' future-state'; } else{ echo ' past-state'; } ?>"></span>
-							<span class="state-label state-2 <?php if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit"){ echo 'future-state'; } else{ echo ' past-state'; } ?>">
+							<span class="dot state-2 <?php echo $state2_class; if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo ' current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit"){ echo ' future-state'; } else{ echo ' past-state'; } ?>"></span>
+							<span class="state-label state-2 <?php if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit"){ echo 'future-state'; } else{ echo ' past-state'; } ?>">
 								<?php
 									if($tracker->ep_status == "return_to_sender"){
 										echo apply_filters("trackship_status_filter",'return_to_sender');								
@@ -384,8 +367,8 @@ class WC_Advanced_Shipment_Tracking_Front {
 						</div>
 						
 						<div class="dot-div">	
-							<span class="dot state-3 delivered <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>"></span>
-							<span class="state-label state-3 <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>">
+							<span class="dot state-3 delivered <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>"></span>
+							<span class="state-label state-3 <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>">
 							<?php echo apply_filters("trackship_status_filter",'delivered'); ?>
 							</span>
 						</div>
@@ -514,7 +497,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 				wp_reset_postdata();	
 			}			
 		}
-		//echo $order_email;exit;
+		
 		if(!get_post_status( $order_id )){
 			echo '';
 			exit;
@@ -545,15 +528,24 @@ class WC_Advanced_Shipment_Tracking_Front {
 		foreach($tracking_items as $item){
 		$tracking_number = $item['tracking_number'];
 		$trackship_url = 'https://trackship.info';
-		$url = $trackship_url.'/wp-json/wc/v1/get_tracking_info_by_number';		
+		
+		/*** Update in 2.4.1 
+		* Change URL
+		* Add User Key
+		***/
+		$url = $trackship_url.'/wp-json/tracking/get_tracking_info';		
 		$args['body'] = array(
-			'tracking_number' => $tracking_number
+			'tracking_number' => $tracking_number,
+			'order_id' => $order_id,
+			'domain' => get_home_url(),
+			'user_key' => $wc_ast_api_key,
 		);	
+		
 		$response = wp_remote_post( $url, $args );
 		
 		$data = $response['body'];				
 		$decoded_data = json_decode($data);
-		//echo '<pre>';print_r($decoded_data);echo '</pre>';exit;
+		
 		$tracker = $decoded_data[0];
 		if(!$tracker){
 			header("Status: 404 Not Found");
@@ -584,7 +576,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 		$unixTimestamp = strtotime($decoded_data[0]->est_delivery_date);		
 		//Get the day of the week using PHP's date function.
 		$day = date("l", $unixTimestamp);
-		if($tracking_detail_org){	
+		if($decoded_data){	
 	?>	
 		<div class="tracking-detail col">			
 				<?php if($total_trackings > 1 ){ ?>
@@ -594,7 +586,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<div class="tracking-header">
 					<div class="col-md col-md-6">
 						<?php _e( 'Order: ', 'woo-advanced-shipment-tracking' ); ?><span class="tracking-number">#<?php echo $order_id; ?></span><br/>
-						<?php _e( 'Tracking: ', 'woo-advanced-shipment-tracking' ); ?><span class="tracking-number">#<?php echo $tracker->tracking_code; ?></span>
+						<?php echo $tracker->carrier; ?>: <span class="tracking-number"><?php echo $tracker->tracking_code; ?></span>
 						<h1 class="shipment_status_heading <?php if($tracker->ep_status == "delivered") { echo 'text-success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure") { echo 'text-success'; } else{ echo 'text-secondary'; } ?>"><?php echo apply_filters("trackship_status_filter",$tracker->ep_status);?></h1>
 					</div>
 					<div class="col-md col-md-6">												
@@ -615,11 +607,11 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<div class="status-section desktop-section">
 					<div class="tracker-progress-bar tracker-progress-bar-with-dots">
 						<div class="progress">
-							<div class="progress-bar <?php if($tracker->ep_status == "delivered") { echo 'bg-success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'bg-warning'; } else{ echo 'bg-secondary';} ?>" style="<?php /*if($tracker->ep_status == "in_transit") { echo 'width:33%;'; } elseif($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'width:66%';} elseif($tracker->ep_status == "delivered") { echo 'width:100%'; }*/ ?>"></div>
+							<div class="progress-bar"></div>
 						</div>
 						<div style="background-color: transparent;" class="<?php if($tracker->ep_status == "delivered") { echo 'success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure" || $tracker->ep_status == "unknown") { echo 'warning'; } else{ echo 'secondary';} ?>">
-						<span class="dot state-0 <?php echo $state0_class?> <?php if($tracker->ep_status =="pre_transit"){ echo ' current-state'; } else{ echo 'past-state';} ?>"></span>
-						<span class="state-label <?php if($tracker->ep_status =="pre_transit"){ echo 'current-state'; } else{ echo 'past-state';} ?>">
+						<span class="dot state-0 <?php echo $state0_class?> <?php if($tracker->ep_status =="pre_transit" || $tracker->ep_status =="unknown"){ echo ' current-state'; } else{ echo 'past-state';} ?>"></span>
+						<span class="state-label <?php if($tracker->ep_status =="pre_transit" || $tracker->ep_status =="unknown"){ echo 'current-state'; } else{ echo 'past-state';} ?>">
 						<?php 
 							if($tracker->ep_status == "unknown"){
 								echo apply_filters("trackship_status_filter",'unknown');								
@@ -629,13 +621,13 @@ class WC_Advanced_Shipment_Tracking_Front {
 						?>						
 						</span>
 						             
-						<span class="dot state-1 in_transit <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>"></span>
-						<span class="state-label state-1 <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
+						<span class="dot state-1 in_transit <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown"){ echo 'future-state'; } else{ echo 'past-state'; } ?>"></span>
+						<span class="state-label state-1 <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
 						<?php echo apply_filters("trackship_status_filter",'in_transit'); ?>						
 						</span>
 											
-						<span class="dot state-2 <?php echo $state2_class; if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo ' current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit"){ echo ' future-state'; } else{ echo ' past-state'; } ?>"></span>
-						<span class="state-label state-2 <?php if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
+						<span class="dot state-2 <?php echo $state2_class; if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo ' current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit"){ echo ' future-state'; } else{ echo ' past-state'; } ?>"></span>
+						<span class="state-label state-2 <?php if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
 						<?php
 							if($tracker->ep_status == "return_to_sender"){
 								echo apply_filters("trackship_status_filter",'return_to_sender');								
@@ -647,8 +639,8 @@ class WC_Advanced_Shipment_Tracking_Front {
 						?>						
 						</span>
 												
-						<span class="dot state-3 delivered <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>"></span>
-						<span class="state-label state-3 <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>">
+						<span class="dot state-3 delivered <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>"></span>
+						<span class="state-label state-3 <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>">
 						<?php echo apply_filters("trackship_status_filter",'delivered'); ?>
 						</span>
 						</div>
@@ -658,13 +650,13 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<div class="status-section mobile-section">
 					<div class="tracker-progress-bar tracker-progress-bar-with-dots">
 						<div class="progress">
-							<div class="progress-bar <?php if($tracker->ep_status == "delivered") { echo 'bg-success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'bg-warning'; } else{ echo 'bg-secondary';} ?>" style="<?php /*if($tracker->ep_status == "in_transit") { echo 'height:33%;'; } elseif($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'height:66%';} elseif($tracker->ep_status == "delivered") { echo 'height:100%'; }*/ ?>"></div>
+							<div class="progress-bar <?php if($tracker->ep_status == "delivered") { echo 'bg-success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'bg-warning'; } else{ echo 'bg-secondary';} ?>"></div>
 						</div>
 						<div style="background-color: transparent;" class="<?php if($tracker->ep_status == "delivered") { echo 'success'; } elseif($tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure" || $tracker->ep_status == "unknown") { echo 'warning'; } else{ echo 'secondary';} ?>">
 						
 						<div class="dot-div">							
-							<span class="dot state-0 <?php echo $state0_class?> <?php if($tracker->ep_status =="pre_transit"){ echo ' current-state'; } else{ echo 'past-state';} ?>"></span>
-							<span class="state-label <?php if($tracker->ep_status =="pre_transit"){ echo 'current-state'; } else{ echo 'past-state';} ?>">
+							<span class="dot state-0 <?php echo $state0_class?> <?php if($tracker->ep_status =="pre_transit" || $tracker->ep_status =="unknown"){ echo ' current-state'; } else{ echo 'past-state';} ?>"></span>
+							<span class="state-label <?php if($tracker->ep_status =="pre_transit" || $tracker->ep_status =="unknown"){ echo 'current-state'; } else{ echo 'past-state';} ?>">
 							<?php 
 								if($tracker->ep_status == "unknown"){
 									echo apply_filters("trackship_status_filter",'unknown');								
@@ -676,15 +668,15 @@ class WC_Advanced_Shipment_Tracking_Front {
 						</div>
 
 						<div class="dot-div">	
-							<span class="dot state-1 in_transit <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>"></span>
-							<span class="state-label state-1 <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
+							<span class="dot state-1 in_transit <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown"){ echo 'future-state'; } else{ echo 'past-state'; } ?>"></span>
+							<span class="state-label state-1 <?php if($tracker->ep_status == "in_transit"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown"){ echo 'future-state'; } else{ echo 'past-state'; } ?>">
 								<?php echo apply_filters("trackship_status_filter",'in_transit'); ?>						
 							</span>
 						</div>
 						
 						<div class="dot-div">
-							<span class="dot state-2 <?php echo $state2_class; if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo ' current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit"){ echo ' future-state'; } else{ echo ' past-state'; } ?>"></span>
-							<span class="state-label state-2 <?php if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit"){ echo 'future-state'; } else{ echo ' past-state'; } ?>">
+							<span class="dot state-2 <?php echo $state2_class; if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo ' current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit"){ echo ' future-state'; } else{ echo ' past-state'; } ?>"></span>
+							<span class="state-label state-2 <?php if($tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "failure" || $tracker->ep_status == "return_to_sender"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit"){ echo 'future-state'; } else{ echo ' past-state'; } ?>">
 								<?php
 									if($tracker->ep_status == "return_to_sender"){
 										echo apply_filters("trackship_status_filter",'return_to_sender');								
@@ -698,8 +690,8 @@ class WC_Advanced_Shipment_Tracking_Front {
 						</div>
 						
 						<div class="dot-div">	
-							<span class="dot state-3 delivered <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>"></span>
-							<span class="state-label state-3 <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>">
+							<span class="dot state-3 delivered <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>"></span>
+							<span class="state-label state-3 <?php if($tracker->ep_status == "delivered"){ echo 'current-state'; } elseif($tracker->ep_status == "pre_transit" || $tracker->ep_status =="unknown" || $tracker->ep_status == "in_transit" || $tracker->ep_status == "out_for_delivery" || $tracker->ep_status == "available_for_pickup" || $tracker->ep_status == "return_to_sender" || $tracker->ep_status == "failure"){ echo 'future-state'; }?>">
 							<?php echo apply_filters("trackship_status_filter",'delivered'); ?>
 							</span>
 						</div>
@@ -710,12 +702,12 @@ class WC_Advanced_Shipment_Tracking_Front {
 							
 			<div class="shipment_progress_div">
 				<div class="shipment_progress_heading_div">
-	                <?php if( sizeof($trackind_detail_by_status_rev) > 0 ){?>
+	                <?php if( sizeof($trackind_detail_by_status_rev) > 0 ){?>						
 						<h4 class="tracking-number h4-heading" style=""><?php _e( 'Tracking Details', 'woo-advanced-shipment-tracking' ); ?></h4>
 					<?php } ?>
 				</div>
 				<?php if( sizeof($trackind_detail_by_status_rev) > 0 ){
-				//echo '<pre>';print_r($trackind_detail_by_status_rev);echo '</pre>';
+				
 				?>
 				<table class="tracking-table">					
 					<tbody>
@@ -737,7 +729,7 @@ class WC_Advanced_Shipment_Tracking_Front {
 				<a class="hide_table_rows" href="javaScript:void(0);"><?php _e( 'view less', 'woo-advanced-shipment-tracking' ); ?></a>
 				<?php } } ?>				
 			</div>					
-		</div>	
+		</div>
 		<?php } else{  ?>
 			<div class="tracking-detail col">
 				<h1 class="shipment_status_heading text-secondary text-center"><?php _e( 'Tracking&nbsp;#&nbsp;'.$tracking_number, 'woo-advanced-shipment-tracking' ); ?></h1>
@@ -813,7 +805,7 @@ $wc_ast_api_key = get_option('wc_ast_api_key');
 			<div class="tracking-header">
 				<div class="col-md col-md-6">
 					Order: <span class="tracking-number">#4542</span><br>
-					Tracking: <span class="tracking-number">#9405511899561468285343</span>
+					USPS: <span class="tracking-number">9405511899561468285343</span>
 					<h1 class="shipment_status_heading text-success">Delivered</h1>
 				</div>
 				<div class="col-md col-md-6">

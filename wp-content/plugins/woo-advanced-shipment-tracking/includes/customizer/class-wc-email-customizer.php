@@ -208,8 +208,8 @@ class wcast_initialise_customizer_email {
 		);
 		$wp_customize->add_control( 'woocommerce_customer_delivered_order_settings[recipient]',
 			array(
-				'label' => __( 'To', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( 'Enter emails here or use variables such as {customer_email}. Multiple emails can be separated by commas.', 'woo-advanced-shipment-tracking' ),
+				'label' => __( 'Receipts', 'woo-advanced-shipment-tracking' ),
+				'description' => esc_html__( 'Enter emails use variables such as {customer_email}. Multiple emails can be separated by commas.', 'woo-advanced-shipment-tracking' ),
 				'section' => 'customer_delivered_email',
 				'type' => 'text',
 				'input_attrs' => array(
@@ -232,7 +232,7 @@ class wcast_initialise_customizer_email {
 		$wp_customize->add_control( 'woocommerce_customer_delivered_order_settings[subject]',
 			array(
 				'label' => __( 'Email subject', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( 'Available placeholders: {site_title}, {order_number}', 'woo-advanced-shipment-tracking' ),
+				'description' => esc_html__( 'Available variables: {site_title}, {order_number}', 'woo-advanced-shipment-tracking' ),
 				'section' => 'customer_delivered_email',
 				'type' => 'text',
 				'input_attrs' => array(
@@ -255,7 +255,7 @@ class wcast_initialise_customizer_email {
 		$wp_customize->add_control( 'woocommerce_customer_delivered_order_settings[heading]',
 			array(
 				'label' => __( 'Email heading', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( 'Available placeholders: {site_title}, {order_number}', 'woo-advanced-shipment-tracking' ),
+				'description' => esc_html__( 'Available variables: {site_title}, {order_number}', 'woo-advanced-shipment-tracking' ),
 				'section' => 'customer_delivered_email',
 				'type' => 'text',
 				'input_attrs' => array(
@@ -265,6 +265,27 @@ class wcast_initialise_customizer_email {
 				),
 			)
 		);
+		
+		
+		// Test of TinyMCE control
+		$wp_customize->add_setting( 'wcast_delivered_email_content',
+			array(
+				'default' => $this->defaults['wcast_delivered_email_content'],
+				'transport' => 'refresh',
+				'sanitize_callback' => 'wp_kses_post'
+			)
+		);
+		$wp_customize->add_control( new Skyrocket_TinyMCE_Custom_control( $wp_customize, 'wcast_delivered_email_content',
+			array(
+				'label' => __( 'Email content', 'woo-advanced-shipment-tracking' ),
+				'description' => __( 'available variables: {site_title}, {customer_email}, {customer_first_name}, {customer_last_name}, {customer_username}, {order_number}', 'woo-advanced-shipment-tracking' ),
+				'section' => 'customer_delivered_email',
+				'input_attrs' => array(
+					'toolbar1' => 'bold italic bullist numlist alignleft aligncenter alignright link',
+					'mediaButtons' => true,
+				)
+			)
+		) );
 		
 		// Display Shipment Provider image/thumbnail
 		$wp_customize->add_setting( 'wcast_show_tracking_details',
@@ -276,7 +297,7 @@ class wcast_initialise_customizer_email {
 		);
 		$wp_customize->add_control( 'wcast_show_tracking_details',
 			array(
-				'label' => __( 'Show tracking details', 'woo-advanced-shipment-tracking' ),
+				'label' => __( 'Display tracking details', 'woo-advanced-shipment-tracking' ),
 				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
 				'section' => 'customer_delivered_email',
 				'type' => 'checkbox'
@@ -292,23 +313,7 @@ class wcast_initialise_customizer_email {
 		);
 		$wp_customize->add_control( 'wcast_show_order_details',
 			array(
-				'label' => __( 'Show order details', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
-				'section' => 'customer_delivered_email',
-				'type' => 'checkbox'
-			)
-		);
-		// Display Shipment Provider image/thumbnail
-		$wp_customize->add_setting( 'wcast_show_billing_address',
-			array(
-				'default' => $this->defaults['wcast_show_billing_address'],
-				'transport' => 'refresh',
-				'sanitize_callback' => ''
-			)
-		);
-		$wp_customize->add_control( 'wcast_show_billing_address',
-			array(
-				'label' => __( 'Show billing address', 'woo-advanced-shipment-tracking' ),
+				'label' => __( 'Display order details', 'woo-advanced-shipment-tracking' ),
 				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
 				'section' => 'customer_delivered_email',
 				'type' => 'checkbox'
@@ -325,32 +330,47 @@ class wcast_initialise_customizer_email {
 		);
 		$wp_customize->add_control( 'wcast_show_shipping_address',
 			array(
-				'label' => __( 'Show shipping address', 'woo-advanced-shipment-tracking' ),
+				'label' => __( 'Display Shipping Address', 'woo-advanced-shipment-tracking' ),
 				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
 				'section' => 'customer_delivered_email',
 				'type' => 'checkbox'
 			)
 		);
 		
-		// Test of TinyMCE control
-		$wp_customize->add_setting( 'wcast_delivered_email_content',
+		// Display Shipment Provider image/thumbnail
+		$wp_customize->add_setting( 'wcast_show_billing_address',
 			array(
-				'default' => $this->defaults['wcast_delivered_email_content'],
+				'default' => $this->defaults['wcast_show_billing_address'],
 				'transport' => 'refresh',
-				'sanitize_callback' => 'wp_kses_post'
+				'sanitize_callback' => ''
 			)
 		);
-		$wp_customize->add_control( new Skyrocket_TinyMCE_Custom_control( $wp_customize, 'wcast_delivered_email_content',
+		$wp_customize->add_control( 'wcast_show_billing_address',
 			array(
-				'label' => __( 'Email content', 'woo-advanced-shipment-tracking' ),
-				'description' => __( '', 'woo-advanced-shipment-tracking' ),
+				'label' => __( 'Display Billing Address', 'woo-advanced-shipment-tracking' ),
+				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
 				'section' => 'customer_delivered_email',
-				'input_attrs' => array(
-					'toolbar1' => 'bold italic bullist numlist alignleft aligncenter alignright link',
-					'mediaButtons' => true,
-				)
+				'type' => 'checkbox'
 			)
-		) );
+		);
+
+		// Display Shipment Provider image/thumbnail
+		$wp_customize->add_setting( 'wcast_enable_delivered_ga_tracking',
+			array(
+				'default' => '',
+				'transport' => 'refresh',
+				'sanitize_callback' => ''
+			)
+		);
+		$wp_customize->add_control( 'wcast_enable_delivered_ga_tracking',
+			array(
+				'label' => __( 'Enable Google Analytics tracking', 'woo-advanced-shipment-tracking' ),
+				'description' => esc_html__( '', 'woo-advanced-shipment-tracking' ),
+				'section' => 'customer_delivered_email',
+				'type' => 'checkbox'
+			)
+		);		
+		
 				
 		$wp_customize->add_setting( 'wcast_delivered_analytics_link',
 			array(
@@ -362,7 +382,7 @@ class wcast_initialise_customizer_email {
 		$wp_customize->add_control( 'wcast_delivered_analytics_link',
 			array(
 				'label' => __( 'Google Analytics link tracking', 'woo-advanced-shipment-tracking' ),
-				'description' => esc_html__( 'This will be appended to URL in the email content', 'woo-advanced-shipment-tracking' ),
+				'description' => esc_html__( 'This will be appended to URL in the email content – e.g. utm_source=ast&utm_medium=email&utm_campaign=delivered', 'woo-advanced-shipment-tracking' ),
 				'section' => 'customer_delivered_email',
 				'type' => 'text',
 				'input_attrs' => array(
