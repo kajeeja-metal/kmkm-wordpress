@@ -1703,6 +1703,10 @@ b, strong {
       border-radius: 3px;
   }
   .sp-header-row{
+      margin-left: 0em;
+      margin-right: -0.41575em;
+  }
+  .single-product .sp-header-row{
       margin-left: -0.41575em;
       margin-right: -0.41575em;
   }
@@ -1710,7 +1714,7 @@ b, strong {
       display: block;
       margin-bottom: 0;
       position: relative;
-      top: 11px;
+      top: 13px;
       z-index: 88;
       left: 0;
       margin: 0 15px;
@@ -1893,6 +1897,9 @@ ul#shipping_method {
 @media (max-width: 768px){
   .term-description p br{
     display: none;
+  }
+  .term-description p{
+        padding: 0px 8px;
   }
   #el-6d6a72e5 h2{
     margin-top: 0px !important;
