@@ -138,7 +138,6 @@ function privage_login() {
     }
 
     update_user_meta( $current_user->ID, 'token', $access_token );
-    apply_filters('privage_profile', $current_user->ID);
     
   } catch (Exception $e) { 
     echo $e;
