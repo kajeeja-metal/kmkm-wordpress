@@ -894,7 +894,7 @@ function get_custom_logo( $blog_id = 0 ) {
 		 * If the alt attribute is not empty, there's no need to explicitly pass
 		 * it because wp_get_attachment_image() already adds the alt attribute.
 		 */
-		$html = sprintf( '<a href="%1$s" class="custom-logo-link logo-group-left" rel="home" itemprop="url">%2$s</a>',
+		$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
 			esc_url( home_url( '/' ) ),
 			wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
 		);
