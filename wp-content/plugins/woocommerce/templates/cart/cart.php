@@ -155,11 +155,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
-<<<<<<< HEAD
-=======
 					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"  style="    float: left;"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
-
->>>>>>> 27ed36279744aab94e8c5534b22c09c1bcda9f7c
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
