@@ -4554,3 +4554,9 @@ b, strong {
     margin-left: 10px;
   }
 }
+@media (max-width: 768px) {
+  /* line 1894, ../sass/main.scss */
+  .term-description p br {
+    display: none;
+  }
+}

@@ -1879,13 +1879,19 @@ ul#shipping_method {
 }
 
 // ---------------Boon-------------
-// ------------หน้า Cart ---------
 
+// ------------หน้า Cart ---------
 @media (max-width: 768px){
   .return-to-shop{
     text-align: center;
   }
   .cart-empty{
     margin-left: 10px;
+  }
+}
+// ------------หน้า Atmosphere ---------
+@media (max-width: 768px){
+  .term-description p br{
+    display: none;
   }
 }
