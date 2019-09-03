@@ -4629,29 +4629,38 @@ b, strong {
 }
 
 @media (max-width: 768px) {
-  /* line 1889, ../sass/main.scss */
+  /* line 1890, ../sass/main.scss */
   .return-to-shop {
     text-align: center;
   }
 
-  /* line 1892, ../sass/main.scss */
+  /* line 1893, ../sass/main.scss */
   .cart-empty {
     margin-left: 10px;
   }
-}
-@media (max-width: 768px) {
-  /* line 1898, ../sass/main.scss */
+
+  /* line 1897, ../sass/main.scss */
   .term-description p br {
     display: none;
   }
 
-  /* line 1901, ../sass/main.scss */
+  /* line 1900, ../sass/main.scss */
   .term-description p {
     padding: 0px 8px;
   }
 
-  /* line 1904, ../sass/main.scss */
+  /* line 1903, ../sass/main.scss */
   #el-6d6a72e5 h2 {
     margin-top: 0px !important;
+  }
+
+  /* line 1907, ../sass/main.scss */
+  .place-order {
+    padding: 0 !important;
+  }
+  /* line 1909, ../sass/main.scss */
+  .place-order .woocommerce-terms-and-conditions-wrapper {
+    padding: 1.41575em;
+    padding-bottom: 0;
   }
 }
