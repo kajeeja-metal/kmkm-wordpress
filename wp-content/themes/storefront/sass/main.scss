@@ -1884,17 +1884,16 @@ ul#shipping_method {
 
 // ---------------Boon-------------
 
-// ------------หน้า Cart ---------
+
 @media (max-width: 768px){
+  // ------------หน้า Cart ---------
   .return-to-shop{
     text-align: center;
   }
   .cart-empty{
     margin-left: 10px;
   }
-}
-// ------------หน้า Atmosphere ---------
-@media (max-width: 768px){
+ // ------------หน้า Atmosphere ---------
   .term-description p br{
     display: none;
   }
@@ -1904,4 +1903,13 @@ ul#shipping_method {
   #el-6d6a72e5 h2{
     margin-top: 0px !important;
   }
+  // ------------หน้า Checkout ---------
+  .place-order{
+    padding: 0 !important;
+    .woocommerce-terms-and-conditions-wrapper{
+      padding: 1.41575em;
+      padding-bottom: 0;
+    }
+  }
 }
+

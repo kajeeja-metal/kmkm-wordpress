@@ -1,0 +1,36 @@
+2019-09-03T06:51:34+00:00 CRITICAL Uncaught Error: Class 'WC_REST_Customer_Downloads_Controller' not found in C:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php:360
+Stack trace:
+#0 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): WC_API->register_rest_routes(Object(WP_REST_Server))
+#1 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(461): do_action('rest_api_init', Object(WP_REST_Server))
+#4 C:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(288): rest_get_server()
+#5 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): rest_api_loaded(Object(WP))
+#6 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 C:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(515): WP_Hook->do_action(Array)
+#8 C:\xampp\htdocs\kmkm-wordpress\ in C:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php on line 360
+
+2019-09-03T06:51:35+00:00 CRITICAL Uncaught Error: Class 'WC_REST_Customer_Downloads_Controller' not found in C:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php:360
+Stack trace:
+#0 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): WC_API->register_rest_routes(Object(WP_REST_Server))
+#1 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(461): do_action('rest_api_init', Object(WP_REST_Server))
+#4 C:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(288): rest_get_server()
+#5 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): rest_api_loaded(Object(WP))
+#6 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 C:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(515): WP_Hook->do_action(Array)
+#8 C:\xampp\htdocs\kmkm-wordpress\ in C:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php on line 360
+
+2019-09-03T06:52:16+00:00 CRITICAL Uncaught Error: Class 'WC_REST_Customer_Downloads_Controller' not found in C:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php:360
+Stack trace:
+#0 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): WC_API->register_rest_routes(Object(WP_REST_Server))
+#1 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(461): do_action('rest_api_init', Object(WP_REST_Server))
+#4 C:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(288): rest_get_server()
+#5 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): rest_api_loaded(Object(WP))
+#6 C:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 C:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(515): WP_Hook->do_action(Array)
+#8 C:\xampp\htdocs\kmkm-wordpress\ in C:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php on line 360
+
