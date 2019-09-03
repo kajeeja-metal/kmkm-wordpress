@@ -35,8 +35,8 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script src="<?php bloginfo("template_url"); ?>/assets/js/main.js"></script>
-<script src="<?php bloginfo("template_url"); ?>/assets/js/cbpFWTabs.js"></script>
+
+
 <script>
 	(function() {
 
@@ -46,8 +46,8 @@
 
 	})();
 </script>
-<script type="text/javascript" charset="utf-8">
-  
-</script>
+<script src="<?php bloginfo("template_url"); ?>/assets/js/main.js"></script>
+<script src="<?php bloginfo("template_url"); ?>/assets/js/cbpFWTabs.js"></script>
 </body>
+
 </html>

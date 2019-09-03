@@ -1,0 +1,49 @@
+2019-09-03T09:19:37+00:00 CRITICAL Uncaught Error: Call to undefined function alert() in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php:473
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\content-blog.php(61): wpbeginner_numeric_posts_nav()
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template.php(690): require('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template.php(647): load_template('D:\\xampp\\htdocs...', false)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\archive.php(105): get_template_part('content-blog', 'page')
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-includes\template-loader.php(74): include('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\kmkm-wordpress\index.php(17): require('D:\\xampp\\htdocs...')
+#8 {main}
+  thrown in D:\xampp\htdocs\kmkm-wordpress\wp-content\themes\storefront\functions.php on line 473
+
+2019-09-03T09:23:08+00:00 CRITICAL Uncaught Error: Class 'WC_REST_Customer_Downloads_Controller' not found in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php:360
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): WC_API->register_rest_routes(Object(WP_REST_Server))
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(461): do_action('rest_api_init', Object(WP_REST_Server))
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(288): rest_get_server()
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): rest_api_loaded(Object(WP))
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(515): WP_Hook->do_action(Array)
+#8 D:\xampp\htdocs\kmkm-wordpress\ in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php on line 360
+
+2019-09-03T09:23:08+00:00 CRITICAL Uncaught Error: Class 'WC_REST_Customer_Downloads_Controller' not found in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php:360
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): WC_API->register_rest_routes(Object(WP_REST_Server))
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(461): do_action('rest_api_init', Object(WP_REST_Server))
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(288): rest_get_server()
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): rest_api_loaded(Object(WP))
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(515): WP_Hook->do_action(Array)
+#8 D:\xampp\htdocs\kmkm-wordpress\ in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php on line 360
+
+2019-09-03T09:23:09+00:00 CRITICAL Uncaught Error: Class 'WC_REST_Customer_Downloads_Controller' not found in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php:360
+Stack trace:
+#0 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): WC_API->register_rest_routes(Object(WP_REST_Server))
+#1 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(461): do_action('rest_api_init', Object(WP_REST_Server))
+#4 D:\xampp\htdocs\kmkm-wordpress\wp-includes\rest-api.php(288): rest_get_server()
+#5 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(286): rest_api_loaded(Object(WP))
+#6 D:\xampp\htdocs\kmkm-wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 D:\xampp\htdocs\kmkm-wordpress\wp-includes\plugin.php(515): WP_Hook->do_action(Array)
+#8 D:\xampp\htdocs\kmkm-wordpress\ in D:\xampp\htdocs\kmkm-wordpress\wp-content\plugins\woocommerce\includes\class-wc-api.php on line 360
+

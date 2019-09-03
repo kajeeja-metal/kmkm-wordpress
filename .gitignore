@@ -1,2 +1,3 @@
 
 *.wpress
+wp-content/plugins/all-in-one-wp-migration/storage/error.log

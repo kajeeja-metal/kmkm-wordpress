@@ -55,10 +55,9 @@
 		<?php if( ($counter%9) == 0 ){ $counter = 0 ;}?>
 		<?php $counter++ ; ?>	
     <?php } 
-	
+	wp_reset_postdata();
     ?>
     <!-- Add the pagination functions here. -->
-	<div class="nav-previous alignleft"><?php previous_posts_link( 'Older posts' ); ?></div>
-	<div class="nav-next alignright"><?php next_posts_link( 'Newer posts' ); ?></div>
+    <?php wpbeginner_numeric_posts_nav(); ?>
 </article><!-- #post-## -->
 

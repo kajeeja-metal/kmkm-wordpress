@@ -288,6 +288,14 @@ jQuery(document).ready(function($) {
         bottom: footerHeight
 	    }
 	});
+	setTimeout(function(){
+	var footerHeightMain = $('footer').outerHeight(true);
+		$('#wh-widget-send-button iframe').affix({
+	    offset: {
+	        bottom: footerHeightMain
+		    }
+		});
+	console.log(footerHeightMain);}, 800);
 });
 jQuery(window).on('mousewheel', function(event, delta) {
     //console.log(event.deltaX, event.deltaY, event.deltaFactor);
