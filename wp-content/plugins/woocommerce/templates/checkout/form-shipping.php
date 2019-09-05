@@ -70,7 +70,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <div id="payment">
 	<div class="form-row place-order" style="padding: 0;">
-		<a href="#section-bar-4" class="button alt step4" name="woocommerce_checkout_place_order" style="text-align:center;">NEXT STEP</a>
+		<a href="#section-bar-2" class="button alt step4" name="woocommerce_checkout_place_order" style="text-align:center;">NEXT STEP</a>
 	</div>
 </div>
 

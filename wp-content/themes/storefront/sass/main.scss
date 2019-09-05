@@ -1123,7 +1123,7 @@ ul.products li.product.product-category img {
   display: flex;
   margin: 0 auto;
   padding: 0;
-  max-width: 1200px;
+  max-width: 560px;
   list-style: none;
   -ms-box-orient: horizontal;
   -ms-box-pack: center;
@@ -1881,10 +1881,21 @@ ul#shipping_method {
 #payment .place-order{
   margin-bottom: 1.523em;
 }
+.btn-update-cart{
+  background-color: #800008;
+}
+.btn-update-cart:disabled{
+  background-color: #0a0a0a;
+  &:hover{
 
+  }
+}
 // ---------------Boon-------------
 
-
+.term-text strong{
+  @include font-base;
+  font-size: 26px;
+}
 @media (max-width: 768px){
   // ------------หน้า Cart ---------
   .return-to-shop{
@@ -1910,6 +1921,17 @@ ul#shipping_method {
       padding: 1.41575em;
       padding-bottom: 0;
     }
+  }
+  .navigation{
+    padding: 20px 0;
+      ul{
+      margin: 0px;
+    }
+  }
+  .navigation li a, .navigation li a:hover, .navigation li.active a, .navigation li.disabled {
+      
+      font-size: 22px;
+      padding: 10px 8px;
   }
 }
 

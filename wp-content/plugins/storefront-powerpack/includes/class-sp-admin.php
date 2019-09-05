@@ -148,7 +148,7 @@ if ( ! class_exists( 'SP_Admin' ) ) :
 					woocommerce_wp_select( array(
 											'id' 			=> '_sp_sf_product_related',
 											'value' 		=> $product_related,
-											'label' 		=> __( 'Related products', 'storefront-powerpack' ),
+											'label' 		=> __( 'Related Products', 'storefront-powerpack' ),
 											'desc_tip' 		=> true,
 											'description' 	=> sprintf( __( 'Overrides the Related Products option under %sAppearance > Customize > Product Details%s.', 'storefront-powerpack' ), '<strong>', '<strong>' ),
 											'options' 		=> array(

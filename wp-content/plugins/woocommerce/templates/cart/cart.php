@@ -128,7 +128,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		</tbody>
 	</table>
 	<div style="margin-bottom:1em; text-align:right;" >
-		<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"  ><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+		<button type="submit" class="button btn-update-cart" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"  ><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 	</div>
 
 	<div style="border-bottom: 1px solid black;"></div>
